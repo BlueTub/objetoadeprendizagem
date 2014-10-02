@@ -10,6 +10,15 @@ public class classedeteste {
 		System.out.println("Hello world");
 		//ZUZI aeee
 		//Pepeu
+		
+		/*
+		if (trabalho sair) {
+			todos ficam felizes;
+		}else{
+			DP;
+		}
+		
+		*/
 	}
 
 }
