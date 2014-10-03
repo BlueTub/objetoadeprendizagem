@@ -11,6 +11,10 @@ import javax.swing.JLabel;
 
 import controller.Metodos;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 
 public class Tela extends JFrame {
 
@@ -43,12 +47,12 @@ public class Tela extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lbltext_1 = new JLabel("10");
+		final JLabel lbltext_1 = new JLabel("10");
 		lbltext_1.setFont(new Font("Tahoma", Font.BOLD, 26));
 		lbltext_1.setBounds(58, 169, 45, 31);
 		contentPane.add(lbltext_1);
 		
-		JLabel lbltext_2 = new JLabel("20");
+		final JLabel lbltext_2 = new JLabel("20");
 		lbltext_2.setFont(new Font("Tahoma", Font.BOLD, 26));
 		lbltext_2.setBounds(120, 184, 45, 31);
 		contentPane.add(lbltext_2);
@@ -68,10 +72,25 @@ public class Tela extends JFrame {
 		lblfoto_3.setBounds(42, 115, 151, 107);
 		contentPane.add(lblfoto_3);
 		
-		Thread t1 = new Metodos(lbltext_1, lbltext_2);
-		t1.start();
 		
 		
+		final JButton btnIniciar = new JButton("Iniciar");
+		btnIniciar.setBounds(430, 337, 89, 23);
+		contentPane.add(btnIniciar);
+		
+		
+		ActionListener iniciar = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//btnIniciar.setText("Remover");
+				Thread t1 = new Metodos(lbltext_1, lbltext_2);
+				t1.start();
+				
+			}
+		};
+		
+		btnIniciar.addActionListener(iniciar);
 		
 	}
 }
