@@ -11,6 +11,7 @@ import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import controller.LerPerguntas;
+import controller.Perguntas;
 
 public class JF_Perguntas extends JFrame {
 
@@ -75,7 +76,7 @@ public class JF_Perguntas extends JFrame {
 		grupo.add(rdbtnPergunta4);
 		grupo.add(rdbtnPergunta5);
 		
-		JLabel lblEnunciado = new JLabel("enunciado");
+		final JLabel lblEnunciado = new JLabel("enunciado");
 		lblEnunciado.setBounds(6, 25, 555, 49);
 		painel.add(lblEnunciado);
 		
@@ -86,10 +87,22 @@ public class JF_Perguntas extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBounds(20, 315, 89, 23);
 		contentPane.add(btnVoltar);
+	     
+		String []printar=new String[5];
+		Perguntas p=new Perguntas(null);
+		LerPerguntas arquivo=new LerPerguntas();
+	    arquivo.leArquivos();
+	    p=(arquivo.ll1.removeFinal());
+	    printar=p.getRespostas();
+	    lblEnunciado.setText(printar[0]);
+	    rdbtnPergunta1.setText(printar[1]);
+	    rdbtnPergunta2.setText(printar[2]);
+	    rdbtnPergunta3.setText(printar[3]);
+	    rdbtnPergunta4.setText(printar[4]);
+	    rdbtnPergunta5.setText(printar[5]);
 	}
 	
 	public void teste(){
-	     LerPerguntas l1=new LerPerguntas();
-	     l1.leArquivos();
+
 	}
 }

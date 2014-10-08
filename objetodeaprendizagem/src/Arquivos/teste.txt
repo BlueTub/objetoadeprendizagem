@@ -1,2 +1,2 @@
-Qual seu nome?*João*Andre*Gustavo
-Qual a sua idade?*19*18*21
+Qual seu nome?*João*Andre*Gustavo*Pedro*Javanilson
+Qual a sua idade?*19*18*21*20*2
