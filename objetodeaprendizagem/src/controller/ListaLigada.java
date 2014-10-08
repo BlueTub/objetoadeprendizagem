@@ -47,4 +47,27 @@ public class ListaLigada {
 	     return resp;
 	 }
 	 
+	 public Perguntas removeFinal(){
+		    Perguntas r=null;
+			 if (vazia())
+			    System.out.println("ERRO!Lista Vazia!");
+		    else 
+			   if (inicio.prox==null)
+				{
+				   r=inicio.dados;
+					inicio=null;
+				} else
+				  {
+			         No aux1=inicio;
+						No aux2=null;
+						while (aux1.prox != null){
+						    aux2=aux1;
+							 aux1=aux1.prox;
+						}
+						r=aux1.dados;
+						aux2.prox=null;
+					}
+		    return r;
+		 }
+	 
 }
