@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
  *
  */
 public class LerPerguntas {
+	public ListaLigada ll1=new ListaLigada();
 	
 	public void leArquivos(){
 		StringBuffer sbDir=new StringBuffer();
@@ -37,7 +38,7 @@ public class LerPerguntas {
 					try {
 						String linha = buffer.readLine();
 						Perguntas dados;
-						ListaLigada ll1=new ListaLigada();
+						
 						while(linha!=null){							
 							String s[]=linha.split("\\*");
 							dados=new Perguntas(s);
