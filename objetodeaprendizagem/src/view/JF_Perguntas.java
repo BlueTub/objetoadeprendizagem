@@ -1,19 +1,14 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Component;
-import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.border.TitledBorder;
-import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
 
 public class JF_Perguntas extends JFrame {
 
@@ -40,7 +35,7 @@ public class JF_Perguntas extends JFrame {
 	 */
 	public JF_Perguntas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 607, 374);
+		setBounds(100, 100, 607, 402);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,7 +59,7 @@ public class JF_Perguntas extends JFrame {
 		painel.add(rdbtnPergunta3);
 		
 		JRadioButton rdbtnPergunta4 = new JRadioButton("pergunta 4");
-		rdbtnPergunta4.setBounds(6, 218, 559, 23);
+		rdbtnPergunta4.setBounds(6, 212, 559, 23);
 		painel.add(rdbtnPergunta4);
 		
 		JRadioButton rdbtnPergunta5 = new JRadioButton("pergunta 5");
@@ -81,5 +76,13 @@ public class JF_Perguntas extends JFrame {
 		JLabel lblEnunciado = new JLabel("enunciado");
 		lblEnunciado.setBounds(6, 25, 555, 49);
 		painel.add(lblEnunciado);
+		
+		JButton btnProximo = new JButton("Pr\u00F3ximo");
+		btnProximo.setBounds(440, 315, 89, 23);
+		contentPane.add(btnProximo);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(20, 315, 89, 23);
+		contentPane.add(btnVoltar);
 	}
 }
