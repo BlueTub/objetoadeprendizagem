@@ -22,8 +22,7 @@ public class Perguntas {
 		this.respostas = perguntas;
 	}
 
-	/**
-	 * 
+	/** 
 	 * Método de acesso ao enunciado e respotas
 	 * @return respostas das perguntas
 	 */
@@ -33,7 +32,7 @@ public class Perguntas {
 
 	@Override
 	public String toString() {
-		return  respostas[0] +"\n"+ 
+		return  respostas[0]+ "\n"+ 
 				respostas[1]+ "\n"+
 				respostas[2]+ "\n"+
 				respostas[3]+ "\n";

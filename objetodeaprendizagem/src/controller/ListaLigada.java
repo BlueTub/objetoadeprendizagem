@@ -38,10 +38,10 @@ public class ListaLigada {
 	 public String mostra(){
 	     if(vazia())
 	         return "Não há elementos na lista";
-	          String resp="";
+	     String resp="";
 	     No aux=inicio;
 	     while (aux != null){
-	         resp= resp+(" "+aux.dados);
+	         resp= resp+" "+aux.dados;
 	         aux=aux.prox;
 	     }
 	     return resp;
