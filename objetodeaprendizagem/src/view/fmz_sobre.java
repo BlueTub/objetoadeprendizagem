@@ -3,10 +3,16 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JTextPane;
+import java.awt.Window.Type;
+import javax.swing.JButton;
 
 public class fmz_sobre {
 
-	private JFrame frame;
+	private JFrame frmSobre;
 
 	/**
 	 * Launch the application.
@@ -16,7 +22,7 @@ public class fmz_sobre {
 			public void run() {
 				try {
 					fmz_sobre window = new fmz_sobre();
-					window.frame.setVisible(true);
+					window.frmSobre.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,9 +41,50 @@ public class fmz_sobre {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSobre = new JFrame();
+		frmSobre.setType(Type.UTILITY);
+		frmSobre.setResizable(false);
+		frmSobre.setTitle("Sobre");
+		frmSobre.setBounds(100, 100, 450, 300);
+		frmSobre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSobre.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(fmz_sobre.class.getResource("/Imagens/fatec_logo.png")));
+		lblNewLabel.setBounds(131, 11, 159, 67);
+		frmSobre.getContentPane().add(lblNewLabel);
+		
+		JLabel lblHury = new JLabel("Hury");
+		lblHury.setBounds(86, 112, 46, 14);
+		frmSobre.getContentPane().add(lblHury);
+		
+		JLabel lblLigeiro = new JLabel("Ligeiro");
+		lblLigeiro.setBounds(188, 112, 46, 14);
+		frmSobre.getContentPane().add(lblLigeiro);
+		
+		JLabel lblSuzi = new JLabel("Suzi");
+		lblSuzi.setBounds(274, 112, 46, 14);
+		frmSobre.getContentPane().add(lblSuzi);
+		
+		JLabel lblBurns = new JLabel("Burns");
+		lblBurns.setBounds(304, 150, 46, 14);
+		frmSobre.getContentPane().add(lblBurns);
+		
+		JLabel lblCorinthiano = new JLabel("Corinthiano");
+		lblCorinthiano.setBounds(107, 150, 96, 14);
+		frmSobre.getContentPane().add(lblCorinthiano);
+		
+		JLabel label = new JLabel("2014");
+		label.setBounds(199, 236, 46, 14);
+		frmSobre.getContentPane().add(label);
+		
+		JTextPane txtpnProjetoDesenvolvidoPor = new JTextPane();
+		txtpnProjetoDesenvolvidoPor.setText("Projeto desenvolvido por alunos do curso de ads");
+		txtpnProjetoDesenvolvidoPor.setBounds(171, 139, 108, 67);
+		frmSobre.getContentPane().add(txtpnProjetoDesenvolvidoPor);
+		
+		JButton btnVoutar = new JButton("Voutar");
+		btnVoutar.setBounds(345, 232, 89, 23);
+		frmSobre.getContentPane().add(btnVoutar);
 	}
-
 }
