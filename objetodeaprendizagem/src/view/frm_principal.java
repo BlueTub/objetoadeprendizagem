@@ -72,6 +72,10 @@ public class frm_principal {
 		JLabel lblNewLabel = new JLabel("lbl_titulo");
 		lblNewLabel.setBounds(294, 111, 277, 14);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblDescricaoDescricao = new JLabel("Descricao DescricaoDescricao DescricaoDescricao DescricaoDescricao DescricaoDescricao DescricaoDescricao Descrica \\n o");
+		lblDescricaoDescricao.setBounds(294, 149, 263, 74);
+		frame.getContentPane().add(lblDescricaoDescricao);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
