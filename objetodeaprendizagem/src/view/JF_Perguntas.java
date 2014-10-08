@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
+import controller.LerPerguntas;
+
 public class JF_Perguntas extends JFrame {
 
 	private JPanel contentPane;
@@ -84,5 +86,10 @@ public class JF_Perguntas extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBounds(20, 315, 89, 23);
 		contentPane.add(btnVoltar);
+	}
+	
+	public void teste(){
+	     LerPerguntas l1=new LerPerguntas();
+	     l1.leArquivos();
 	}
 }
