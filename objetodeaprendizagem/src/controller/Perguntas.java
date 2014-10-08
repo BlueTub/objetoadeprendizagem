@@ -3,6 +3,8 @@
  */
 package controller;
 
+import java.util.Arrays;
+
 /**
  * Tipo Abstrato de dados
  * @author joão
@@ -10,7 +12,6 @@ package controller;
  */
 public class Perguntas {
 
-	private String enunciado;
 	private String respostas[];
 	
 	/**
@@ -18,33 +19,25 @@ public class Perguntas {
 	 * @param enunciado enunciado das perguntas
 	 * @param respotas vetor com as respostas
 	 */
-	public Perguntas(String enunciado, String[] perguntas) {
-		this.enunciado = enunciado;
+	public Perguntas(String[] perguntas) {
 		this.respostas = perguntas;
 	}
 
 	/**
-	 * Método de acesso ao enunciado
-	 * @return enunciado das perguntas
-	 */
-	public String getEnunciado() {
-		return enunciado;
-	}
-
-	/**
-	 * Método modificador para o atributo enunciado
-	 * @param enunciado enunciado das perguntas
-	 */
-	public void setEnunciado(String enunciado) {
-		this.enunciado = enunciado;
-	}
-	
-	/**
-	 * Método de acesso as respotas
+	 * 
+	 * Método de acesso ao enunciado e respotas
 	 * @return respostas das perguntas
 	 */
 	public String[] getRespostas() {
 		return respostas;
+	}
+
+	@Override
+	public String toString() {
+		return  respostas[0] +"\n"+ 
+				respostas[1]+ "\n"+
+				respostas[2]+ "\n"+
+				respostas[3]+ "\n";
 	}
 
 	/**
