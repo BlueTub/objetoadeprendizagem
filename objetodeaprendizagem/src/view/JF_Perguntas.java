@@ -6,6 +6,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
@@ -97,9 +98,15 @@ public class JF_Perguntas extends JFrame {
 		muda.AlterarTela();
 		btnProximo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if(muda.valida()){
 				muda.AlterarTela();
+				}else{
+				JOptionPane.showMessageDialog(null, "Selecione uma opção","Opção não selecionada",JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
+		
+		
 	}
 	
 }
