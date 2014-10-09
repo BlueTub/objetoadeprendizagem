@@ -19,7 +19,7 @@ public class ObjetosPerguntas {
  private JRadioButton resposta4;
  private JRadioButton resposta5;
  
- private LerPerguntas arquivo=new LerPerguntas();
+ private LerPerguntas arquivo = new LerPerguntas();
  
 public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 		JRadioButton resposta2, JRadioButton resposta3, JRadioButton resposta4,
@@ -34,9 +34,8 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 }
  
 	public void AlterarTela(){
-		String []printar=new String[5];
+		String []printar = new String[5];
 		Perguntas p=new Perguntas(null);
-
 	    
 	    p=(arquivo.ll1.removeFinal());
 	    try{
