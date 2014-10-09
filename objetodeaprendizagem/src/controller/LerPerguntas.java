@@ -11,13 +11,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
+ * Classe que ira ler as perguntas do arquivo txt
  * @author joão
  *
  */
 public class LerPerguntas {
 	
 	public ListaLigada ll1=new ListaLigada();
-	
+	/**
+	 * Método para ler o arquivo txt é colocar os dados em uma lista ligada
+	 */
 	public void leArquivos(){
 		StringBuffer sbDir=new StringBuffer();
 		sbDir.append("src");
@@ -46,8 +49,9 @@ public class LerPerguntas {
 							ll1.adicionaInicio(dados);
 							linha=buffer.readLine();			
 						}
-						
-						System.out.println(ll1.mostra());
+						buffer.close();
+						leFluxo.close();
+						abreArquivo.close();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
