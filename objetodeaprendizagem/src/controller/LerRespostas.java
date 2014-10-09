@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class LerRespostas {
-
-	public class LerPerguntas {
 		
 		public Pilha p1 = new Pilha();
 		
@@ -50,5 +48,4 @@ public class LerRespostas {
 				}
 			}
 		}
-	}
 
