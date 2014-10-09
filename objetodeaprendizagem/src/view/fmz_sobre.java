@@ -51,7 +51,7 @@ public class fmz_sobre {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(fmz_sobre.class.getResource("/Imagens/fatec_logo.png")));
-		lblNewLabel.setBounds(131, 11, 159, 67);
+		lblNewLabel.setBounds(150, 11, 159, 67);
 		frmSobre.getContentPane().add(lblNewLabel);
 		
 		JLabel lblHury = new JLabel("Hury");
@@ -83,8 +83,8 @@ public class fmz_sobre {
 		txtpnProjetoDesenvolvidoPor.setBounds(171, 139, 108, 67);
 		frmSobre.getContentPane().add(txtpnProjetoDesenvolvidoPor);
 		
-		JButton btnVoutar = new JButton("Voutar");
-		btnVoutar.setBounds(345, 232, 89, 23);
-		frmSobre.getContentPane().add(btnVoutar);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(345, 232, 89, 23);
+		frmSobre.getContentPane().add(btnVoltar);
 	}
 }
