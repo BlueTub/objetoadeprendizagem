@@ -46,6 +46,8 @@ public class Tela_Pilha extends JFrame {
 	private JLabel lbl_valor50;
 	private JLabel lbl_valor60;
 	private JLabel lbl_valor70;
+	public int a = 0;
+	public static boolean AddRm;
 
 	/**
 	 * Launch the application.
@@ -207,16 +209,13 @@ public class Tela_Pilha extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Thread t1 = new AnimaçaoPilha(lbl_valor10, lbl_valor20, lbl_valor30, 
-						lbl_valor40, lbl_valor50, lbl_valor60, lbl_valor70);
-				t1.start();
+				a = addElemento(a);
+				
 				//btnIniciar.setText("Remover");
 				
 			}
 		};
-		
 		btnAçao.addActionListener(açao);
-		
 	}
 	private class MenuPrincipal extends AbstractAction {
 		public MenuPrincipal() {
@@ -239,4 +238,41 @@ public class Tela_Pilha extends JFrame {
 			System.exit(0);
 		}
 	}
+	
+	public int addElemento(int a){
+		if (a == 0) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor10);
+			t1.start();
+			a++;
+		}else if (a == 1) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor20);
+			t1.start();
+			a++;
+		}else if (a == 2) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor30);
+			t1.start();
+			a++;
+		}else if (a == 3) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor40);
+			t1.start();
+			a++;
+		}else if (a == 4) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor50);
+			t1.start();
+			a++;
+		}else if (a == 5) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor60);
+			t1.start();
+			a++;
+		}else if (a == 6) {
+			Thread t1 = new AnimaçaoPilha(lbl_valor70);
+			t1.start();
+			a++;
+		}
+		return a;
+	}
+
+
+	
+	
 }
