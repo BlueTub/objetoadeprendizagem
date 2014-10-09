@@ -4,20 +4,21 @@
 package controller;
 
 /**
+ * Classe que armazena as perguntas em uma lista ligada
  * @author joão
  *
  */
 public class ListaLigada {
 	private No inicio;
 	/**
-	*Construtor
+	* Construtor da lista ligada
 	*/
 	public ListaLigada(){
 		inicio = null;
 	}
 	/**
-	*Metodo que verifica se a lista esta vazia
-	*@return se lista esta vazia retorna true
+	* Metodo que verifica se a lista esta vazia
+	* @return se lista esta vazia retorna true
 	*        caso contrario false 
 	*/
 	public boolean vazia(){
@@ -25,28 +26,20 @@ public class ListaLigada {
 	}
 	
 	/**
-	Metodo que adiciona um no com o novo elemento
-	no inicio da lista
-	@param valor e o novo elemento
+	* Método que adiciona um no com o novo elemento
+	* no inicio da lista
+	* @param valor e o novo elemento
 	*/
 	public void adicionaInicio(Perguntas valor){
 	    No novo = new No(valor);
 		 novo.prox = inicio;
 		 inicio = novo;
 	}
-	
-	 public String mostra(){
-	     if(vazia())
-	         return "Não há elementos na lista";
-	     String resp="";
-	     No aux=inicio;
-	     while (aux != null){
-	         resp= resp+" "+aux.dados;
-	         aux=aux.prox;
-	     }
-	     return resp;
-	 }
 	 
+	 /**
+	 * Método que remove um elemento do final da lista
+	 * @return elemento removido
+	 */
 	 public Perguntas removeFinal(){
 		    Perguntas r=null;
 			 if (vazia())
