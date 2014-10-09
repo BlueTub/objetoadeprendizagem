@@ -11,9 +11,11 @@ public class AnimaçaoPilha extends Thread{
 	private static int y = 24;
 	private int x = 8;
 	private static boolean AddRm;
+	private JButton btnAcao;
 	
-	public AnimaçaoPilha(JLabel lbl_valor){
+	public AnimaçaoPilha(JLabel lbl_valor,JButton btnAcao){
 		this.lbl_valor = lbl_valor;
+		this.btnAcao=btnAcao;
 		}
 	/**
 	 * Metodo que chama a animaçao
@@ -55,5 +57,6 @@ public class AnimaçaoPilha extends Thread{
 			}
 		}
 		y -= 4;
+		btnAcao.setEnabled(true);
 	}
 }
