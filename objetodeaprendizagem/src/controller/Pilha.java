@@ -1,19 +1,19 @@
 package controller;
 
 /**
- * Classe para manipulcao das respostas atraves de uma Pilha.
+ * Classe para manipulcao das respostas certas atraves de uma Pilha.
  * @author Pedro
  *
  */
 public class Pilha {
 
-	private String dados[];
+	private int dados[];
 	private int topo;
 	/**
 	 * Construtor para classe.
 	 */
 	public Pilha(){
-		dados = new String[5];
+		dados = new int[5];
 		topo = -1;
 	}
 	/**
@@ -34,7 +34,7 @@ public class Pilha {
 	 * Metodo para colocar um elemento no topo da Pilha.
 	 * @param e recebe o valor a ser empilhado.
 	 */
-	public void empilha(String e){
+	public void empilha(int e){
 		if(cheia()){
 			System.out.println("Pilha cheia");
 		}else{
@@ -46,8 +46,8 @@ public class Pilha {
 	 * Metodo para tirar um elemento do topo da Pilha.
 	 * @return o elemento removido do topo.
 	 */
-	public String desempilha(){
-		String resp = null;
+	public int desempilha(){
+		int resp = 0;
 		if(vazia()){
 			System.out.println("Pilha vazia");
 		}else{			
@@ -62,11 +62,13 @@ public class Pilha {
 	 */
 	public String mostra(){
 		String resp = "";
-		
-		for (int i = 0; i <= topo; i++) {
-			resp = resp + "" + dados[i];
+		if(vazia()){
+			System.out.println("vazia...");
+		} else {		
+			for (int i = 0; i <= topo; i++) {
+				resp = resp + "" + dados[i];
+			}
 		}
-		
 		return resp;
 	}
 	
