@@ -4,6 +4,7 @@
 package controller;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -44,5 +45,9 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    resposta3.setText(printar[3]);
 	    resposta4.setText(printar[4]);
 	    resposta5.setText(printar[5]);
+		
+		
+			
+			
 	}
 }
