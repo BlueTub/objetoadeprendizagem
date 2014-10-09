@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
+ * Classe que tratara dos objetos da classe JF_Perguntas
  * @author joão
  * @version 08/10
  */
@@ -21,6 +22,15 @@ public class ObjetosPerguntas {
  
  private LerPerguntas arquivo = new LerPerguntas();
  
+ /**
+  * Construtor da classe 
+  * @param enunciado Recebe a label com o enunciado da pergunta
+  * @param resposta1 Recebe o JradioButton da primeira resposta
+  * @param resposta2 Recebe o JradioButton da segunda resposta
+  * @param resposta3 Recebe o JradioButton da terceira resposta
+  * @param resposta4 Recebe o JradioButton da quarta resposta
+  * @param resposta5 Recebe o JradioButton da quinta resposta
+  */
 public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 		JRadioButton resposta2, JRadioButton resposta3, JRadioButton resposta4,
 		JRadioButton resposta5) {
