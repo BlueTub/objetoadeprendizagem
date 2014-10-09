@@ -24,7 +24,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import java.awt.Window.Type;
+
+
 
 public class Tela_Pilha extends JFrame {
 
@@ -83,6 +89,16 @@ public class Tela_Pilha extends JFrame {
 		menuBar.add(mnArquivo);
 		
 		JMenuItem mntmMenuPrincipal = new JMenuItem("Menu Principal");
+		mntmMenuPrincipal.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Tela_Pilha.this.dispose();
+				final frm_principal tela = new frm_principal();
+			
+				//tela.setVisible(true);//AQUI QUE ESSA PORRA DA ERRO !!!!
+			}
+		});
+		
 		mntmMenuPrincipal.setAction(actionPrincipal);
 		mnArquivo.add(mntmMenuPrincipal);
 		
@@ -209,7 +225,8 @@ public class Tela_Pilha extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				a = addElemento(a);
+				
+				a = addElemento(a,btnAçao);
 				
 				//btnIniciar.setText("Remover");
 				
@@ -223,6 +240,7 @@ public class Tela_Pilha extends JFrame {
 			putValue(SHORT_DESCRIPTION, "Voltar ao Menu Principal");
 		}
 		public void actionPerformed(ActionEvent e) {
+
 			Tela_Pilha.this.dispose();
 			frm_principal prin = new frm_principal();
 			//prin.setVisible(true);
@@ -239,33 +257,34 @@ public class Tela_Pilha extends JFrame {
 		}
 	}
 	
-	public int addElemento(int a){
+	public int addElemento(int a,JButton btnAção){
+		btnAção.setEnabled(false);
 		if (a == 0) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor10);
+			Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 1) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor20);
+			Thread t1 = new AnimaçaoPilha(lbl_valor20,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 2) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor30);
+			Thread t1 = new AnimaçaoPilha(lbl_valor30,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 3) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor40);
+			Thread t1 = new AnimaçaoPilha(lbl_valor40,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 4) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor50);
+			Thread t1 = new AnimaçaoPilha(lbl_valor50,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 5) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor60);
+			Thread t1 = new AnimaçaoPilha(lbl_valor60,btnAção);
 			t1.start();
 			a++;
 		}else if (a == 6) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor70);
+			Thread t1 = new AnimaçaoPilha(lbl_valor70,btnAção);
 			t1.start();
 			a++;
 		}
@@ -276,3 +295,4 @@ public class Tela_Pilha extends JFrame {
 	
 	
 }
+
