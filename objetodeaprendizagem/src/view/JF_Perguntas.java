@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -11,11 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
-import controller.LerPerguntas;
 import controller.ObjetosPerguntas;
-import controller.Perguntas;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class JF_Perguntas extends JFrame {
 
@@ -96,9 +94,11 @@ public class JF_Perguntas extends JFrame {
 		final ObjetosPerguntas muda;
 		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5);
 		muda.AlterarTela();
+	
 		btnProximo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(muda.valida()){
+				
 				muda.AlterarTela();
 				grupo.clearSelection();
 				}else{
