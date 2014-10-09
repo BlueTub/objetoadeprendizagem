@@ -32,7 +32,9 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	this.resposta5 = resposta5;
 	arquivo.leArquivos();
 }
- 
+ /**
+  * Método que altera o conteúdo a partir dos dados da lista ligada
+  */
 	public void AlterarTela(){
 		String []printar = new String[5];
 		Perguntas p=new Perguntas(null);
@@ -52,6 +54,32 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 			
 	}
 	
+	/**
+	 * Método para verificar qual jRadioButton foi selecionado
+	 */
+	public void Selecao(){
+		int resp;
+		if(resposta1.isSelected()){
+			resp=1;
+		}
+		if(resposta2.isSelected()){
+			resp=2;
+		}
+		if(resposta3.isSelected()){
+			resp=3;
+		}
+		if(resposta4.isSelected()){
+			resp=4;
+		}
+		if(resposta5.isSelected()){
+			resp=5;
+		}
+	}
+	
+	/**
+	 * Método para válidar se algum jRadioButton foi selecionado
+	 * @return true Se algum radio button for selecionado, caso contrario false
+	 */
 	public boolean valida(){
 		if((resposta1.isSelected()||resposta2.isSelected()||resposta3.isSelected()||resposta4.isSelected()||resposta5.isSelected())){
 			return true;
