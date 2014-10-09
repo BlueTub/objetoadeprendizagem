@@ -50,6 +50,7 @@ public class Tela_Pilha extends JFrame {
 				}
 			}
 		});
+		new frm_principal();
 	}
 
 	/**
@@ -145,13 +146,14 @@ public class Tela_Pilha extends JFrame {
 	}
 	private class MenuPrincipal extends AbstractAction {
 		public MenuPrincipal() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
+			putValue(NAME, "Menu Principal");
+			putValue(SHORT_DESCRIPTION, "Voltar ao Menu Principal");
 		}
 		public void actionPerformed(ActionEvent e) {
-			frm_principal principal = new frm_principal();
 			Tela_Pilha.this.dispose();
-			
+			frm_principal principal = new frm_principal();
+			principal.setVisible(true); //AQUI QUE ESSA PORRA DA ERRO !!!!
 		}
+		
 	}
 }
