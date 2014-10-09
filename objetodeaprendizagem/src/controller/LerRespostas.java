@@ -11,7 +11,7 @@ public class LerRespostas {
 		
 		public Pilha p1 = new Pilha();
 		
-		public void leArquivos() throws FileNotFoundException{
+		public void leArquivos() {
 			StringBuffer sbDir=new StringBuffer();
 			sbDir.append("src");
 			sbDir.append(File.separator);
@@ -21,7 +21,7 @@ public class LerRespostas {
 			File dir= new File(sbDir.toString());
 			
 			if(dir.exists()){
-				String nomeArquivo="teste.txt";
+				String nomeArquivo="respostasPilha.txt";
 				File arquivo = new File(sbDir.toString(),nomeArquivo);
 				
 				if(arquivo.exists()){
@@ -29,23 +29,27 @@ public class LerRespostas {
 						FileInputStream abreArquivo= new FileInputStream(arquivo);
 						InputStreamReader leFluxo=new InputStreamReader(abreArquivo);
 						BufferedReader buffer= new BufferedReader(leFluxo);
-						String linha = buffer.readLine();
-						RespostasPilha dados;
+
+						try{
+							String linha = buffer.readLine();
+							RespostasPilha dados;
 							
-						while(linha!=null){							
-							String s[]=linha.split("\\*");
-							dados = new RespostasPilha(s);
-							p1.empilha(dados);
-							linha=buffer.readLine();			
+							while(linha!=null){							
+								String s[]=linha.split("\\*");
+								dados = new RespostasPilha(s);
+								p1.empilha(dados.getResp());
+								linha=buffer.readLine();			
 						    }
-						buffer.close();
-						leFluxo.close();
-						abreArquivo.close();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
+								System.out.println(p1.mostra());						
+						
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+					} catch (FileNotFoundException e) {
+					e.printStackTrace();
 					}
 				}
 			}
 		}
+	}
 
