@@ -6,11 +6,17 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * Classe para ler as respostas corretas no arquivo
+ * @author Pedro
+ *
+ */
 public class LerRespostas {
 		
 		public Pilha p1 = new Pilha();
-		
+		/**
+		 * Metodo para pegar achar o arquivo, pegar e jogar na Pilha seus elementos.
+		 */
 		public void leArquivos() {
 			StringBuffer sbDir=new StringBuffer();
 			sbDir.append("src");
@@ -30,21 +36,23 @@ public class LerRespostas {
 						InputStreamReader leFluxo=new InputStreamReader(abreArquivo);
 						BufferedReader buffer= new BufferedReader(leFluxo);
 
-						try{
-							String linha = buffer.readLine();
-							
-							while(linha!=null){							
-								p1.empilha(linha);
-								linha=buffer.readLine();			
-						    }
-							System.out.println(p1.desempilha());						
+						String linha = buffer.readLine();
+						int numero;
 						
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-					} catch (FileNotFoundException e) {
-					e.printStackTrace();
-					}
+						
+						while(linha!=null){	
+							numero = Integer.parseInt(linha);
+							p1.empilha(numero);
+							linha=buffer.readLine();			
+					    }
+						buffer.close();
+						leFluxo.close();
+						abreArquivo.close();
+						System.out.println(p1.desempilha());						
+						
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
 				}
 			}
 		}
