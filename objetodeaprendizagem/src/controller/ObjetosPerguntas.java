@@ -30,14 +30,16 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	this.resposta3 = resposta3;
 	this.resposta4 = resposta4;
 	this.resposta5 = resposta5;
+	arquivo.leArquivos();
 }
  
 	public void AlterarTela(){
 		String []printar=new String[5];
 		Perguntas p=new Perguntas(null);
 
-	    arquivo.leArquivos();
+	    
 	    p=(arquivo.ll1.removeFinal());
+	    try{
 	    printar=p.getRespostas();
 	    enunciado.setText(printar[0]);
 	    resposta1.setText(printar[1]);
@@ -45,7 +47,9 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    resposta3.setText(printar[3]);
 	    resposta4.setText(printar[4]);
 	    resposta5.setText(printar[5]);
-		
+	    }catch(NullPointerException e){
+	    	JOptionPane.showMessageDialog(null, "Fim do questionário");
+	    }
 		
 			
 			
