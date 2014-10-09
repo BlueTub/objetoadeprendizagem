@@ -30,14 +30,6 @@ public class Perguntas {
 		return respostas;
 	}
 
-	@Override
-	public String toString() {
-		return  respostas[0]+ "\n"+ 
-				respostas[1]+ "\n"+
-				respostas[2]+ "\n"+
-				respostas[3]+ "\n";
-	}
-
 	/**
 	 * Método modificador para o atributo respotas
 	 * @param respostas respostas da perguntas
