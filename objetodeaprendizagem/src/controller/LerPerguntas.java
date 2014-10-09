@@ -45,7 +45,6 @@ public class LerPerguntas {
 							ll1.adicionaInicio(dados);
 							linha=buffer.readLine();			
 						}
-					System.out.println(ll1.mostra());
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
