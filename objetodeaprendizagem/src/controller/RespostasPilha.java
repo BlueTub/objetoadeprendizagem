@@ -6,25 +6,25 @@ package controller;
  */
 public class RespostasPilha {
 
-	private String resp;
+	private String[] resp;
 	/**
 	 * Construtor da classe.
 	 */
-	public RespostasPilha() {
-		this.resp = null;
+	public RespostasPilha(String[] e) {
+		this.resp = e;
 	}
 	/**
 	 * Metodo para pegar um valor.
 	 * @return valor da pergunta
 	 */
-	public String getResp() {
+	public String[] getResp() {
 		return resp;
 	}
 	/**
 	 * Metodo para colocar um valor.
 	 * @param resp valor para colocar.
 	 */
-	public void setResp(String resp) {
+	public void setResp(String[] resp) {
 		this.resp = resp;
 	}
 	
