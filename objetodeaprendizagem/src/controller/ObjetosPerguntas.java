@@ -49,9 +49,15 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    resposta5.setText(printar[5]);
 	    }catch(NullPointerException e){
 	    	JOptionPane.showMessageDialog(null, "Fim do questionário");
-	    }
-		
-			
+	    }	
 			
 	}
+	
+	public boolean valida(){
+		if((resposta1.isSelected()||resposta2.isSelected()||resposta3.isSelected()||resposta4.isSelected()||resposta5.isSelected())){
+			return true;
+		}
+		return false;
+	}
+
 }
