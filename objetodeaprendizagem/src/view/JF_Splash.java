@@ -51,7 +51,7 @@ public class JF_Splash extends JFrame {
             }  
         }
         JF_Splash.this.dispose();
-        Tela tela=new Tela();
+        Tela_Pilha tela=new Tela_Pilha();
         tela.setVisible(true);
        }   
        
