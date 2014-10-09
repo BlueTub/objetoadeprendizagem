@@ -73,14 +73,14 @@ public class JF_Perguntas extends JFrame {
 		rdbtnPergunta5.setBounds(6, 256, 559, 23);
 		painel.add(rdbtnPergunta5);
 		
-		ButtonGroup grupo = new ButtonGroup(); 
+		final ButtonGroup grupo = new ButtonGroup(); 
 		grupo.add(rdbtnPergunta1);
 		grupo.add(rdbtnPergunta2);
 		grupo.add(rdbtnPergunta3);
 		grupo.add(rdbtnPergunta4);
 		grupo.add(rdbtnPergunta5);
 		
-		final JLabel lblEnunciado = new JLabel("enunciado");
+		JLabel lblEnunciado = new JLabel("enunciado");
 		lblEnunciado.setBounds(6, 25, 555, 49);
 		painel.add(lblEnunciado);
 		
@@ -100,6 +100,7 @@ public class JF_Perguntas extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				if(muda.valida()){
 				muda.AlterarTela();
+				grupo.clearSelection();
 				}else{
 				JOptionPane.showMessageDialog(null, "Selecione uma opção","Opção não selecionada",JOptionPane.ERROR_MESSAGE);
 				}
