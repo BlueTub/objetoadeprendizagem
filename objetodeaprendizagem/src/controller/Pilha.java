@@ -7,13 +7,13 @@ package controller;
  */
 public class Pilha {
 
-	private RespostasPilha dados[];
+	private String dados[];
 	private int topo;
 	/**
 	 * Construtor para classe.
 	 */
 	public Pilha(){
-		dados = new RespostasPilha[5];
+		dados = new String[5];
 		topo = -1;
 	}
 	/**
@@ -34,7 +34,7 @@ public class Pilha {
 	 * Metodo para colocar um elemento no topo da Pilha.
 	 * @param e recebe o valor a ser empilhado.
 	 */
-	public void empilha(RespostasPilha e){
+	public void empilha(String e){
 		if(cheia()){
 			System.out.println("Pilha cheia");
 		}else{
@@ -46,8 +46,8 @@ public class Pilha {
 	 * Metodo para tirar um elemento do topo da Pilha.
 	 * @return o elemento removido do topo.
 	 */
-	public RespostasPilha desempilha(){
-		RespostasPilha resp = null;
+	public String desempilha(){
+		String resp = null;
 		if(vazia()){
 			System.out.println("Pilha vazia");
 		}else{			

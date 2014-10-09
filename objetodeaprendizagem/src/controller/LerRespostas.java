@@ -32,15 +32,12 @@ public class LerRespostas {
 
 						try{
 							String linha = buffer.readLine();
-							RespostasPilha dados;
 							
 							while(linha!=null){							
-								String s[]=linha.split("\\*");
-								dados = new RespostasPilha(s);
-								p1.empilha(dados.getResp());
+								p1.empilha(linha);
 								linha=buffer.readLine();			
 						    }
-								System.out.println(p1.mostra());						
+							System.out.println(p1.desempilha());						
 						
 							} catch (IOException e) {
 								e.printStackTrace();
