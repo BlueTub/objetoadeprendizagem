@@ -11,7 +11,10 @@ import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import controller.LerPerguntas;
+import controller.ObjetosPerguntas;
 import controller.Perguntas;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JF_Perguntas extends JFrame {
 
@@ -81,6 +84,7 @@ public class JF_Perguntas extends JFrame {
 		painel.add(lblEnunciado);
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
+		
 		btnProximo.setBounds(440, 315, 89, 23);
 		contentPane.add(btnProximo);
 		
@@ -88,21 +92,14 @@ public class JF_Perguntas extends JFrame {
 		btnVoltar.setBounds(20, 315, 89, 23);
 		contentPane.add(btnVoltar);
 	     
-		String []printar=new String[5];
-		Perguntas p=new Perguntas(null);
-		LerPerguntas arquivo=new LerPerguntas();
-	    arquivo.leArquivos();
-	    p=(arquivo.ll1.removeFinal());
-	    printar=p.getRespostas();
-	    lblEnunciado.setText(printar[0]);
-	    rdbtnPergunta1.setText(printar[1]);
-	    rdbtnPergunta2.setText(printar[2]);
-	    rdbtnPergunta3.setText(printar[3]);
-	    rdbtnPergunta4.setText(printar[4]);
-	    rdbtnPergunta5.setText(printar[5]);
+		final ObjetosPerguntas muda;
+		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5);
+		muda.AlterarTela();
+		btnProximo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				muda.AlterarTela();
+			}
+		});
 	}
 	
-	public void teste(){
-
-	}
 }
