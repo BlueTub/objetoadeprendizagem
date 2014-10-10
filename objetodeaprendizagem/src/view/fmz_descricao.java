@@ -10,8 +10,14 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+
+import controller.Descricao_c;
+
+import Entity.Descricao_e;
 
 public class fmz_descricao extends JFrame {
 	/**
@@ -21,8 +27,15 @@ public class fmz_descricao extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	
+	
+	//TODO está variavel deve receber um parametro de 0 a 2 do formulario principal.
+	int objeto =0;
+	public static void main(String[] args) throws IOException {
+		
+		Carregatxt();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -38,6 +51,19 @@ public class fmz_descricao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	public static Descricao_e[] Carregatxt() throws IOException{
+        Descricao_e[] descricao = new Descricao_e[3];
+        for (int i = 0; i < 3; i++) {
+            descricao[i] = new Descricao_e();
+        }
+        
+        Descricao_c metodos = new Descricao_c();
+        metodos.le(descricao);
+        metodos.TestaTexto(descricao);
+        return descricao;
+	}
+	
 	public fmz_descricao() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 569, 359);
@@ -51,26 +77,69 @@ public class fmz_descricao extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JTextPane txtpnTextoAki = new JTextPane();
-		txtpnTextoAki.setText("Texto aki :)");
-		txtpnTextoAki.setBounds(10, 30, 447, 142);
-		panel.add(txtpnTextoAki);
+		final JTextPane txt_texto = new JTextPane();
+		txt_texto.setText("Texto aki :)");
+		txt_texto.setBounds(10, 30, 447, 142);
+		panel.add(txt_texto);
 		
 		JButton btn_proximo = new JButton("Proximo");
 		btn_proximo.setBounds(368, 181, 89, 23);
 		panel.add(btn_proximo);
 		
-		JButton btnNewButton = new JButton("Descri\u00E7\u00E3o");
-		btnNewButton.setBounds(10, 11, 89, 23);
-		panel.add(btnNewButton);
+		JButton btn_descricao = new JButton("Descri\u00E7\u00E3o");
+		btn_descricao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+				String texto= descricao[objeto].descricao_int;
+				txt_texto.setText(texto);							
+				
+			}
+		});
+		btn_descricao.setBounds(10, 11, 89, 23);
+		panel.add(btn_descricao);
 		
-		JButton btnNewButton_1 = new JButton("Caracteristicas");
-		btnNewButton_1.setBounds(98, 11, 110, 23);
-		panel.add(btnNewButton_1);
+		JButton btn_caract = new JButton("Caracteristicas");
+		btn_caract.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+				String texto= descricao[objeto].caract;
+				txt_texto.setText(texto);							
+				
+			
+			}
+		});
+		btn_caract.setBounds(98, 11, 110, 23);
+		panel.add(btn_caract);
 		
-		JButton btnNewButton_2 = new JButton("Uso");
-		btnNewButton_2.setBounds(208, 11, 89, 23);
-		panel.add(btnNewButton_2);
+		JButton btn_uso = new JButton("Uso");
+		btn_uso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+				String texto= descricao[objeto].uso;
+				txt_texto.setText(texto);											
+			
+			}
+		});
+		btn_uso.setBounds(208, 11, 89, 23);
+		panel.add(btn_uso);
 		
 		JButton btnvoltar = new JButton("Voltar");
 		btnvoltar.addActionListener(new ActionListener() {
