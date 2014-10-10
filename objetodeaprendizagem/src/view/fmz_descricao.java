@@ -141,6 +141,10 @@ public class fmz_descricao extends JFrame {
 		btn_uso.setBounds(208, 11, 89, 23);
 		panel.add(btn_uso);
 		
+		JButton btnDificuldade = new JButton("Dificuldade");
+		btnDificuldade.setBounds(296, 11, 89, 23);
+		panel.add(btnDificuldade);
+		
 		JButton btnvoltar = new JButton("Voltar");
 		btnvoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
