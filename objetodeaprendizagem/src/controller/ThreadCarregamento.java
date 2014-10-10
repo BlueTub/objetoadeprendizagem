@@ -38,6 +38,7 @@ public class ThreadCarregamento extends Thread{
 	    }
 	    /**
 	     * Método para carregar a barra
+	     * @param e pontuacao feita pelo usuario
 	     */
 	    public void Carrega(int e){
 	        for(int i=0;i<=100;i++){
