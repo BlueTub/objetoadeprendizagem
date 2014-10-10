@@ -14,8 +14,9 @@ import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import controller.ObjetosPerguntas;
+import controller.Telas;
 
-public class JF_Perguntas extends JFrame {
+public class JF_Perguntas extends Telas {
 
 	private JPanel contentPane;
 
@@ -45,6 +46,10 @@ public class JF_Perguntas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		centralizeFrame();
+		iconeBarra();
+		Estilo();
 		
 		JPanel painel = new JPanel();
 		painel.setBounds(10, 11, 571, 286);
