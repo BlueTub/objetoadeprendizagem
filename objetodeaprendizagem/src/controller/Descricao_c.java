@@ -12,12 +12,21 @@ public class Descricao_c {
 	 */
 	public void le(Descricao_e[] desc) throws IOException {
 
-		String fileName = "Descricao.txt";
+		String fileName = "src\\Arquivos\\Descricao.txt"; //seleciona o arquivo no diretorio
 		BufferedReader ler = new BufferedReader(new FileReader(fileName));
-		desc[0].descricao_res ="";
+		for(int i=0; i<3; i++){                          //carrega 3 objetos com seus respectivos dados
+			desc[i].descricao_int = ler.readLine();
+			desc[i].descricao_res = ler.readLine();
+			desc[i].caract = ler.readLine();
+			desc[i].uso= ler.readLine();
+		}
+		ler.close();                                      //fecha o buffer
 
-		ler.close();
-
+	}
+	public void TestaTexto(Descricao_e[] descricao){ //imprimi o conteudo de todos objetos no console
+		for(int i=0; i<3;i++){
+	        System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso);
+		}
 	}
 
 }

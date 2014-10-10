@@ -10,6 +10,8 @@ public class MaeJoana {
 	 * @author Hury
 	 * @throws IOException 
 	 */
+	
+	//Classe de testes favor não apagar
 	public static void main(String[] args) throws IOException {
         Descricao_e[] descricao = new Descricao_e[3];
         for (int i = 0; i < 3; i++) {
@@ -19,8 +21,9 @@ public class MaeJoana {
         Descricao_c metodos = new Descricao_c();
         
         metodos.le(descricao);
+        metodos.TestaTexto(descricao);
         
-        System.out.println(descricao[0].descricao_res);
+
 
 	}
 
