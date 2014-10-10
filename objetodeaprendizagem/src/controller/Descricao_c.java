@@ -19,13 +19,14 @@ public class Descricao_c {
 			desc[i].descricao_res = ler.readLine();
 			desc[i].caract = ler.readLine();
 			desc[i].uso= ler.readLine();
+			desc[i].dificuldade= ler.readLine();
 		}
 		ler.close();                                      //fecha o buffer
 
 	}
 	public void TestaTexto(Descricao_e[] descricao){ //imprimi o conteudo de todos objetos no console
 		for(int i=0; i<3;i++){
-	        System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso);
+	        System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso+"\n"+descricao[i].dificuldade);
 		}
 	}
 

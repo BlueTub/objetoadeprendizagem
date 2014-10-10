@@ -2,11 +2,14 @@ Descrição:	PILHA é um tipo de lista linear em que todas as inserções, remoções s
 Descrição resumida:	A pilha é uma das estruturas de dados mais úteis em computação, sendo usada na solução de vários problemas clássicos na área.
 Caracteristica:	Uma pilha é denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sai).Isso significa que o primeiro elemento a entra, será o ultimo a sair.\n	Imagine uma pilha de pratos onde, você queria pegar o primeiro prato(o que está embaixo), para fazer isso você precisa retirar todos aqueles que estão acima dele.
 Uso:	A pilha é utilizada para validação de expressões aritméticas.
+Dificuldade: Pilha
 Descrição: FILA
 Descrição resumida: FILA
 Caracteristica: FILA
 Uso: FILA
+Dificuldade:Fila
 Descrição: LISTA lIGADA
 Descrição resumida: LISTA lIGADA
 Caracteristica: LISTA lIGADA
 Uso: LISTA lIGADA
+Dificuldade:Lista Ligada

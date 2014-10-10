@@ -84,8 +84,9 @@ public class frm_principal extends JFrame {
 	
 	private void initialize() {
 		frame = new JFrame();
+		frame.setBackground(UIManager.getColor("InternalFrame.inactiveTitleGradient"));
 		frame.getContentPane().setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		frame.setBounds(100, 100, 609, 475);
+		frame.setBounds(100, 100, 628, 499);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -104,7 +105,7 @@ public class frm_principal extends JFrame {
 		
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
 		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lbl_titulo.setBounds(250, 67, 277, 14);
+		lbl_titulo.setBounds(263, 68, 277, 14);
 		frame.getContentPane().add(lbl_titulo);
 		
 		final JTextPane txt_descricao = new JTextPane();
@@ -158,12 +159,12 @@ public class frm_principal extends JFrame {
 		
 		JLabel lblSelecioneUmObjeto = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
 		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.BOLD, 14));
-		lblSelecioneUmObjeto.setBounds(10, 42, 504, 14);
+		lblSelecioneUmObjeto.setBounds(57, 38, 504, 14);
 		frame.getContentPane().add(lblSelecioneUmObjeto);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		btnNewButton.setBounds(555, 0, 38, 40);
+		btnNewButton.setBounds(574, 0, 38, 40);
 		frame.getContentPane().add(btnNewButton);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
