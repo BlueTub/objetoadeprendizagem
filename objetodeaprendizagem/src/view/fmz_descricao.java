@@ -14,7 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class fmz_descricao extends JFrame {
-
+	/**
+	 * @author Hury
+	 */
 	private JPanel contentPane;
 
 	/**
