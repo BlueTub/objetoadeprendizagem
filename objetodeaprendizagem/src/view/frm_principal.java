@@ -11,6 +11,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.Panel;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import java.awt.Font;
+import java.awt.Color;
 
 public class frm_principal extends JFrame {
 
@@ -44,13 +47,18 @@ public class frm_principal extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(135, 206, 235));
 		frame.setBounds(100, 100, 827, 478);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btn_inicia = new JButton("New button");
-		btn_inicia.setBounds(356, 23, 89, 40);
-		frame.getContentPane().add(btn_inicia);
+		JButton btn_iniciar = new JButton("Iniciar");
+		btn_iniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btn_iniciar.setBounds(452, 266, 89, 40);
+		frame.getContentPane().add(btn_iniciar);
 		
 		Panel panel = new Panel();
 		panel.setBounds(30, 111, 180, 149);
@@ -73,9 +81,19 @@ public class frm_principal extends JFrame {
 		lblNewLabel.setBounds(294, 111, 277, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblDescricaoDescricao = new JLabel("Descricao DescricaoDescricao DescricaoDescricao DescricaoDescricao DescricaoDescricao DescricaoDescricao Descrica \\n o");
-		lblDescricaoDescricao.setBounds(294, 149, 263, 74);
-		frame.getContentPane().add(lblDescricaoDescricao);
+		JTextPane txt_descricao = new JTextPane();
+		txt_descricao.setText("descri\u00E7\u00E3o aqui");
+		txt_descricao.setBounds(289, 144, 222, 101);
+		frame.getContentPane().add(txt_descricao);
+		
+		JLabel lblSelecioneUmObjeto = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
+		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblSelecioneUmObjeto.setBounds(162, 43, 473, 14);
+		frame.getContentPane().add(lblSelecioneUmObjeto);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(686, 64, 89, 23);
+		frame.getContentPane().add(btnNewButton);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
