@@ -11,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
 import controller.AnimaçaoPilha;
+import controller.Telas;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +34,7 @@ import java.awt.Window.Type;
 import view.*;
 
 
-public class Tela_Pilha extends JFrame {
+public class Tela_Pilha extends Telas {
 
 	private JPanel contentPane;
 	private JTextField tf0;
@@ -82,6 +84,11 @@ public class Tela_Pilha extends JFrame {
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 398);
+		
+		
+		centralizeFrame();
+		iconeBarra();
+		Estilo();
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -254,8 +261,8 @@ public class Tela_Pilha extends JFrame {
 		}
 		public void actionPerformed(ActionEvent e) {
 			Tela_Pilha.this.dispose();
-			JF_Perguntas p = new JF_Perguntas();
-			p.setVisible(true);
+			frm_principal ok=new frm_principal();
+			ok.setVisible(true);
 		}
 	}
 }
