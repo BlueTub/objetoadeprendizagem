@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Component;
 
 import controller.Telas;
+import controller.ThreadCarregamento;
 
 public class JF_Pontuacao extends Telas {
 
@@ -72,5 +73,8 @@ public class JF_Pontuacao extends Telas {
 		lblDica.setBounds(265, 259, 46, 14);
 		painel.add(lblDica);
 		lblDica.setVisible(false);
+		
+		Thread t = new ThreadCarregamento(barra,lblDica,lblDica,lblPontucao);
+		t.start();
 	}
 }
