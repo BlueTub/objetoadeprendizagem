@@ -18,7 +18,9 @@ import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 
 public class frm_principal extends JFrame {
-
+	/**
+	 * @author Hury
+	 */
 	private JFrame frame;
 
 	/**

@@ -12,7 +12,9 @@ import javax.swing.JButton;
 import java.awt.SystemColor;
 
 public class fmz_sobre {
-
+	/**
+	 * @author Hury
+	 */
 	private JFrame frmSobre;
 
 	/**

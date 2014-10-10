@@ -8,7 +8,9 @@ private String uso;
 
 
 	public Descricao_e(){
-		
+		/**
+		 * @author Hury
+		 */
 	}
 	
     public String getDescricao_res() {
