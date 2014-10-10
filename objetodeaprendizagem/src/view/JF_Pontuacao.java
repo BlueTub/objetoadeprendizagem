@@ -70,11 +70,11 @@ public class JF_Pontuacao extends Telas {
 		lblPontucao.setVisible(false);
 		
 		JLabel lblDica = new JLabel("dica");
-		lblDica.setBounds(265, 259, 46, 14);
+		lblDica.setBounds(233, 259, 166, 14);
 		painel.add(lblDica);
 		lblDica.setVisible(false);
 		
-		Thread t = new ThreadCarregamento(barra,lblDica,lblDica,lblPontucao);
+		Thread t = new ThreadCarregamento(barra,lblDica,lblPontucao);
 		t.start();
 	}
 }
