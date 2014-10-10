@@ -58,12 +58,10 @@ public class ThreadCarregamento extends Thread{
 	            }  
 	        }
 	        
-	        
 	        String resp = Integer.toString(e);
 	        pontuacao.setText(resp);
 	        pontuacao.setVisible(true);
-	        
-	    
+	        	    
 	    }
 	    /**
 	     * Metodo para gerar a pontuacao das perguntas e pegar qual perguntas ele errou.
