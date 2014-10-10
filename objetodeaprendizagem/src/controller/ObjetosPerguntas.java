@@ -19,8 +19,10 @@ public class ObjetosPerguntas {
  private JRadioButton resposta3;
  private JRadioButton resposta4;
  private JRadioButton resposta5;
- 
+
  private LerPerguntas arquivo = new LerPerguntas();
+ 
+ public Fila fila=new Fila();
  
  /**
   * Construtor da classe 
@@ -66,9 +68,10 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	
 	/**
 	 * Método para verificar qual jRadioButton foi selecionado
+	 * e adicionar a fila
 	 */
 	public void Selecao(){
-		int resp;
+		int resp = 0;
 		if(resposta1.isSelected()){
 			resp=1;
 		}
@@ -84,6 +87,7 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 		if(resposta5.isSelected()){
 			resp=5;
 		}
+		fila.adiciona(resp);
 	}
 	
 	/**
