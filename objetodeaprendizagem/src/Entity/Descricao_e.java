@@ -19,6 +19,32 @@ public class Descricao_e {
 		caract = cara;
 		uso = us;
 	}
-//TODO criar getters e setters
+	public void setUso(String uso) {
+		this.uso = uso;
+	}
+	public String getUso() {
+		return uso;
+	}
+	public void setDescricao_res(String descricao_res) {
+		this.descricao_res = descricao_res;
+	}
+	public String getDescricao_res() {
+		return descricao_res;
+	}
+	public void setDescricao_int(String descricao_int) {
+		this.descricao_int = descricao_int;
+	}
+	
+	public String getDescricao_int() {
+		return descricao_int;
+	}
+	public void setCaract(String caract) {
+		this.caract = caract;
+	}
+	public String getCaract() {
+		return caract;
+	}
+	
+
 	
 }
