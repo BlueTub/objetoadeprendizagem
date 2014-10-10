@@ -51,13 +51,26 @@ public class fmz_descricao extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(10, 28, 447, 142);
-		panel.add(textPane);
+		JTextPane txtpnTextoAki = new JTextPane();
+		txtpnTextoAki.setText("Texto aki :)");
+		txtpnTextoAki.setBounds(10, 28, 447, 142);
+		panel.add(txtpnTextoAki);
 		
 		JButton btn_proximo = new JButton("Proximo");
 		btn_proximo.setBounds(368, 181, 89, 23);
 		panel.add(btn_proximo);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(10, 11, 89, 23);
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(98, 11, 89, 23);
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("New button");
+		btnNewButton_2.setBounds(186, 11, 89, 23);
+		panel.add(btnNewButton_2);
 		
 		JButton btnvoltar = new JButton("Voltar");
 		btnvoltar.addActionListener(new ActionListener() {
