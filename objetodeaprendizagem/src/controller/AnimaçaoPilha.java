@@ -11,45 +11,30 @@ public class AnimaçaoPilha extends Thread{
 	private static int y = 24;
 	private int x = 8;
 	private static int AddRm = 0;
-	private JButton btnAcao;
-	private JButton btnReiniciar;
-	
+	private JButton btnAdicionar;
+	private JButton btnRemover;
 	/**
 	 * Construtor
 	 * @param lbl_valor Thread generalizada
 	 * @param btnAcao Botao açao
 	 */
-	public AnimaçaoPilha(JLabel lbl_valor,JButton btnAcao, JButton btnReiniciar){
+	public AnimaçaoPilha(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover){
 		this.lbl_valor = lbl_valor;
-		this.btnAcao=btnAcao;
-		this.btnReiniciar = btnReiniciar;
+		this.btnAdicionar = btnAdicionar;
+		this.btnRemover = btnRemover;
 		}
 	/**
 	 * Metodo que chama a animaçao
 	 */
 	public void run (){
-		if (AddRm < 7) {
-			AnimarAdd();
-			AddRm++;
-		}else if (AddRm < 14){
-			AnimarRm();
-			AddRm++;
-		}else{
-			setarVariaveis();
-		}
-		
-		
-	}
-	private void setarVariaveis() {
-		AddRm = 0;
-		y = 24;
-		btnAcao.setEnabled(true);
+		AnimarAdd();
 		
 	}
 	/**
 	 * metodo que inicia a animaçao que adiciona elementos
 	 */
 	public void AnimarAdd(){
+		System.out.println("Entrou");
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
@@ -72,10 +57,8 @@ public class AnimaçaoPilha extends Thread{
 			}
 		}
 		y -= 4;
-		btnAcao.setEnabled(true);
-		if (y == -4) {
-			btnAcao.setText("Remover");
-		}
+		btnAdicionar.setEnabled(true);
+		btnRemover.setEnabled(true);
 	}
 	
 	/**
@@ -104,11 +87,7 @@ public class AnimaçaoPilha extends Thread{
 		}
 		y += 4;
 		lbl_valor.setVisible(false);
-		btnAcao.setEnabled(true);
-		if (y == 24) {
-			btnAcao.setEnabled(false);
-			btnReiniciar.setVisible(true);
-		}
+		btnAdicionar.setEnabled(true);
 		
 	}
 }

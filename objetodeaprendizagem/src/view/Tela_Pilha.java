@@ -58,7 +58,12 @@ public class Tela_Pilha extends JFrame {
 	private static int z = 0;
 	private static int a = 6;
 	private static int b = 0;
-
+	private JLabel vtEmpilhado[] = new JLabel[7];
+	private JLabel vtDesempilhado[] = new JLabel[7];
+	private Thread vtIniciar[] = new Thread[7];
+	final JButton btnAdicionar;
+	final JButton btnRemover;
+	private static int cont = 1;
 	/**
 	 * Launch the application.
 	 */
@@ -152,9 +157,9 @@ public class Tela_Pilha extends JFrame {
 		
 		
 		
-		final JButton btnAçao = new JButton("Adicionar");
-		btnAçao.setBounds(275, 299, 89, 23);
-		contentPane.add(btnAçao);
+		btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setBounds(275, 299, 89, 23);
+		contentPane.add(btnAdicionar);
 
 		tf0 = new JTextField();
 		tf0.setBackground(Color.LIGHT_GRAY);
@@ -214,23 +219,9 @@ public class Tela_Pilha extends JFrame {
 		btnVoltar.setBounds(384, 299, 89, 23);
 		contentPane.add(btnVoltar);
 		
-		JButton btnRemover = new JButton("Remover");
+		btnRemover = new JButton("Remover");
 		btnRemover.setBounds(275, 260, 89, 23);
 		contentPane.add(btnRemover);
-		
-		/**
-		 * Botao reiniciar animaçao
-		 */
-		ActionListener reiniciar = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Tela_Pilha.this.dispose();
-				
-				Tela_Pilha.this.setDefaultCloseOperation(DEFAULT_CURSOR);
-				Tela_Pilha.this.setVisible(true);
-			}
-		};
 		
 		/**
 		 * Botao voltar
@@ -245,61 +236,78 @@ public class Tela_Pilha extends JFrame {
 		};
 		
 		/**
-		 * Botão ação
+		 * Botão para adicionar elementos na Pilha
 		 */
-		ActionListener açao = new ActionListener() {
+		ActionListener adicionar = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (AddRm < 7) {
-					AddRm++;
-				}else if (AddRm < 14){
-					AddRm++;
-				}else{
-					setarVariaveis();
-				}
+				addElemento(btnAdicionar,btnRemover);
 			}
 		};
-		btnAçao.addActionListener(açao);
-		btnVoltar.addActionListener(voltar);
-	}
-	
-	public void setarVariaveis(){
-		lbl_valor10.setBounds(163, 54, 29, 38);
-		lbl_valor70.setBounds(163, 58, 29, 31);
-		lbl_valor60.setBounds(163, 58, 29, 31);
-		lbl_valor50.setBounds(163, 58, 29, 31);
-		lbl_valor40.setBounds(163, 58, 29, 31);
-		lbl_valor30.setBounds(163, 58, 29, 31);
-		lbl_valor20.setBounds(163, 58, 29, 31);
-		n = 6;
-		z = 0;
-		a = 6;
-		b = 0;
-		AddRm = 0;
-	}
-	
-	public void addElemento(JButton btnAção,JButton btnReiniciar){
-		Thread vt[] = new Thread[7];
-		btnAção.setEnabled(false);
 		
-		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção,btnReiniciar);
-		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção,btnReiniciar);
-		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção,btnReiniciar);
-		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção,btnReiniciar);
-		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção,btnReiniciar);
-		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção,btnReiniciar);
-		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção,btnReiniciar);
-		vt[0] = t1;
-		vt[1] = t2;
-		vt[2] = t3;
-		vt[3] = t4;
-		vt[4] = t5;
-		vt[5] = t6;
-		vt[6] = t7;
+		/**
+		 * Botao para remover elementos da Pilha
+		 */
+		ActionListener remover = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO
+				
+			}
+		};
+		
+		btnAdicionar.addActionListener(adicionar);
+		btnVoltar.addActionListener(voltar);
+		if (cont == 1) {
+			CarregaVtDesempilhado();
+			CarregavtIniciar();
+			cont++;
+		}
 
-		for (int i = z; i < vt.length - n; i++) {
-			vt[i].start();
+	}
+	
+	public void CarregaVtDesempilhado(){
+		vtDesempilhado[0] = lbl_valor10;
+		vtDesempilhado[1] = lbl_valor20;
+		vtDesempilhado[2] = lbl_valor30;
+		vtDesempilhado[3] = lbl_valor40;
+		vtDesempilhado[4] = lbl_valor50;
+		vtDesempilhado[5] = lbl_valor60;
+		vtDesempilhado[6] = lbl_valor70;
+	}
+	
+	public void CarregavtIniciar(){
+		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAdicionar,btnRemover);
+		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAdicionar,btnRemover);
+		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAdicionar,btnRemover);
+		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAdicionar,btnRemover);
+		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAdicionar,btnRemover);
+		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAdicionar,btnRemover);
+		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAdicionar,btnRemover);
+		vtIniciar[0] = t1;
+		vtIniciar[1] = t2;
+		vtIniciar[2] = t3;
+		vtIniciar[3] = t4;
+		vtIniciar[4] = t5;
+		vtIniciar[5] = t6;
+		vtIniciar[6] = t7;
+	}
+	
+	public void addElemento(JButton btnAdicionar,JButton btnRemover){
+
+		btnAdicionar.setEnabled(false);
+		btnRemover.setEnabled(false);
+
+		for (int i = z; i < vtEmpilhado.length - n; i++) {
+			vtEmpilhado[i] = vtDesempilhado[i];
+			vtIniciar[i].start();
+		}
+		if (vtEmpilhado[6] != null) {
+			JOptionPane.showMessageDialog(null, "Pilha cheia", "Aviso",
+					JOptionPane.INFORMATION_MESSAGE);
+			btnAdicionar.setEnabled(false);
 		}
 		n -=1;
 		z +=1;
