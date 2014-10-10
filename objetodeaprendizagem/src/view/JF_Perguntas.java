@@ -101,6 +101,7 @@ public class JF_Perguntas extends JFrame {
 				muda.Selecao();
 				muda.AlterarTela();
 				grupo.clearSelection();
+	
 				}else{
 				JOptionPane.showMessageDialog(null, "Selecione uma opção","Opção não selecionada",JOptionPane.ERROR_MESSAGE);
 				}
