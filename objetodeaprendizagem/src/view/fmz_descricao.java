@@ -64,10 +64,5 @@ public class fmz_descricao extends JFrame {
 		});
 		btnvoltar.setBounds(10, 11, 89, 23);
 		contentPane.add(btnvoltar);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(fmz_descricao.class.getResource("/Imagens/background.png")));
-		lblNewLabel.setBounds(0, 0, 553, 320);
-		contentPane.add(lblNewLabel);
 	}
 }
