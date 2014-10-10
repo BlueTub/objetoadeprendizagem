@@ -9,7 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
-public class JF_Splash extends JFrame {
+import controller.Telas;;
+
+public class JF_Splash extends Telas {
 
 	private JPanel contentPane;
 
@@ -70,7 +72,11 @@ public class JF_Splash extends JFrame {
 		setContentPane(contentPane);
 		setUndecorated(true);
 		contentPane.setLayout(null);
-		this.setLocationRelativeTo(null);
+		
+		
+		centralizeFrame();
+		iconeBarra();
+		Estilo();
 		
 		JProgressBar barra = new JProgressBar();
 		barra.setFont(new Font("Tahoma", Font.PLAIN, 16));
