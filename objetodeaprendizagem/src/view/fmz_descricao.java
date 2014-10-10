@@ -10,6 +10,8 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class fmz_descricao extends JFrame {
 
@@ -62,5 +64,10 @@ public class fmz_descricao extends JFrame {
 		});
 		btnvoltar.setBounds(10, 11, 89, 23);
 		contentPane.add(btnvoltar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(fmz_descricao.class.getResource("/Imagens/background.png")));
+		lblNewLabel.setBounds(0, 0, 553, 320);
+		contentPane.add(lblNewLabel);
 	}
 }
