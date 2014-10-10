@@ -15,7 +15,6 @@ import javax.swing.JProgressBar;
 public class ThreadCarregamento extends Thread{
 	  private JProgressBar barra=new JProgressBar();
 	  private JLabel texto=new JLabel();
-	  private JLabel dica = new JLabel();
 	  private JLabel pontuacao = new JLabel();
 
 	    
@@ -24,17 +23,16 @@ public class ThreadCarregamento extends Thread{
 	   * @param barra 
 	   * @param texto
 	   */
-	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel dica,JLabel pontuacao){
+	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao){
 	        this.barra=barra;
 	        this.texto=texto;
-	        this.dica=dica;
 	        this.pontuacao=pontuacao;
 	    }
 	    
 	    @Override
 	    public void run(){
 	    	Carrega(Potuacao()); 
-	        
+	    	
 	    }
 	    /**
 	     * Método para carregar a barra
@@ -44,24 +42,28 @@ public class ThreadCarregamento extends Thread{
 	        for(int i=0;i<=100;i++){
 	            barra.setValue(i);
 	            try {
-	                Thread.sleep(18);
+	                Thread.sleep(20);
 	            } catch (InterruptedException ex) {
 	                System.out.println(ex);
 	            }
 	            if(barra.getValue()<=40){
 	                texto.setText("Carregando componentes");
+	                texto.setVisible(true);
 	            }else {
 	                if(barra.getValue()<=80){
 	                    texto.setText("Comparando respostas");
+	                    texto.setVisible(true);
 	                }else{
 	                    texto.setText("Gerando pontuação");
+	                    texto.setVisible(true);
 	                }
 	            }  
 	        }
 	        
-	        String resp = Integer.toString(e);
-	        pontuacao.setText(resp);
-	        pontuacao.setVisible(true);
+		       String pont = Integer.toString(e);
+		       pontuacao.setText(pont+"%");
+		       pontuacao.setVisible(true);
+
 	        	    
 	    }
 	    /**
@@ -82,8 +84,8 @@ public class ThreadCarregamento extends Thread{
 					resp = i;
 				}
 			}
-	    	
 	    	return pont;
+
 	    }
 	    
 
