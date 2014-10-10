@@ -14,7 +14,7 @@ public class Descricao_c {
 
 		String fileName = "Descricao.txt";
 		BufferedReader ler = new BufferedReader(new FileReader(fileName));
-		desc[0].setDescricao_res(ler.readLine());
+		desc[0].descricao_res ="";
 
 		ler.close();
 

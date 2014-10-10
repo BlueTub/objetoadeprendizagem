@@ -1,24 +1,23 @@
 package Entity;
 
 public class Descricao_e {
-private String descricao_res;
-private String descricao_int;
-private String caract;
-private String uso;
+	/**
+	 * @author Hury
+	 */
+	public String descricao_res;
+	public String descricao_int;
+	public String caract;
+	public String uso;
 
-
-	public Descricao_e(){
-		/**
-		 * @author Hury
-		 */
+	public Descricao_e() {
+		this("", "", "", "");
 	}
-	
-    public String getDescricao_res() {
-        return descricao_res;
-    }
 
-    public void setDescricao_res(String desc) {
-        this.descricao_res = desc;
-    }
-	
+	Descricao_e(String descres, String descint, String cara, String us) {
+		descricao_res = descres;
+		descricao_int = descint;
+		caract = cara;
+		uso = us;
+	}
+
 }
