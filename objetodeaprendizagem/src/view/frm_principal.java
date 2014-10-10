@@ -21,6 +21,9 @@ import controller.Descricao_c;
 
 import java.awt.SystemColor;
 import java.io.IOException;
+import javax.swing.UIManager;
+import java.awt.Component;
+import javax.swing.Box;
 
 public class frm_principal extends JFrame {
 	/**
@@ -81,7 +84,7 @@ public class frm_principal extends JFrame {
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(SystemColor.control);
+		frame.getContentPane().setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		frame.setBounds(100, 100, 609, 475);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -100,10 +103,12 @@ public class frm_principal extends JFrame {
 		panel.setLayout(null);
 		
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
-		lbl_titulo.setBounds(263, 80, 277, 14);
+		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lbl_titulo.setBounds(250, 67, 277, 14);
 		frame.getContentPane().add(lbl_titulo);
 		
 		final JTextPane txt_descricao = new JTextPane();
+		txt_descricao.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		txt_descricao.setEditable(false);
 		txt_descricao.setText("descri\u00E7\u00E3o aqui");
 		txt_descricao.setBounds(263, 111, 314, 237);
@@ -131,6 +136,7 @@ public class frm_principal extends JFrame {
 		panel.add(btn_lista);
 		
 		JButton btn_pilha = new JButton("Pilha");
+		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_pilha.setBounds(29, 11, 120, 56);
 		panel.add(btn_pilha);
 		btn_pilha.addActionListener(new ActionListener() {
@@ -151,29 +157,22 @@ public class frm_principal extends JFrame {
 
 		
 		JLabel lblSelecioneUmObjeto = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
-		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.PLAIN, 14));
-		lblSelecioneUmObjeto.setBounds(30, 42, 473, 14);
+		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.BOLD, 14));
+		lblSelecioneUmObjeto.setBounds(10, 42, 504, 14);
 		frame.getContentPane().add(lblSelecioneUmObjeto);
-		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLnaoselect.png")));
-		lblNewLabel_2.setBounds(216, 193, 38, 61);
-		frame.getContentPane().add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLsimselect.png")));
-		lblNewLabel_1.setBounds(216, 121, 38, 61);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLnaoselect.png")));
-		lblNewLabel_4.setBounds(216, 277, 38, 61);
-		frame.getContentPane().add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		btnNewButton.setBounds(545, 11, 38, 40);
+		btnNewButton.setBounds(555, 0, 38, 40);
 		frame.getContentPane().add(btnNewButton);
+		
+		Component horizontalStrut = Box.createHorizontalStrut(20);
+		horizontalStrut.setBounds(250, 93, 333, 7);
+		frame.getContentPane().add(horizontalStrut);
+		
+		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
+		horizontalStrut_1.setBounds(250, 348, 333, 14);
+		frame.getContentPane().add(horizontalStrut_1);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Descricao_e[] descricao = new Descricao_e[3];
