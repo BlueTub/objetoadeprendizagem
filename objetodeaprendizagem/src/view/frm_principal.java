@@ -50,7 +50,7 @@ public class frm_principal extends JFrame {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.control);
-		frame.setBounds(100, 100, 609, 478);
+		frame.setBounds(100, 100, 609, 475);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -59,11 +59,11 @@ public class frm_principal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btn_iniciar.setBounds(484, 321, 89, 40);
+		btn_iniciar.setBounds(488, 359, 89, 40);
 		frame.getContentPane().add(btn_iniciar);
 		
 		Panel panel = new Panel();
-		panel.setBounds(30, 111, 180, 238);
+		panel.setBounds(30, 111, 180, 251);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -72,11 +72,11 @@ public class frm_principal extends JFrame {
 		panel.add(btn_fila);
 		
 		JButton btn_lista = new JButton("Lista");
-		btn_lista.setBounds(29, 78, 120, 56);
+		btn_lista.setBounds(29, 88, 120, 56);
 		panel.add(btn_lista);
 		
 		JButton btn_pilha = new JButton("Pilha");
-		btn_pilha.setBounds(29, 145, 120, 56);
+		btn_pilha.setBounds(29, 166, 120, 56);
 		panel.add(btn_pilha);
 		
 		JLabel lblNewLabel = new JLabel("lbl_titulo");
@@ -85,22 +85,33 @@ public class frm_principal extends JFrame {
 		
 		JTextPane txt_descricao = new JTextPane();
 		txt_descricao.setText("descri\u00E7\u00E3o aqui");
-		txt_descricao.setBounds(248, 111, 329, 199);
+		txt_descricao.setBounds(263, 111, 314, 237);
 		frame.getContentPane().add(txt_descricao);
 		
 		JLabel lblSelecioneUmObjeto = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
 		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.PLAIN, 14));
-		lblSelecioneUmObjeto.setBounds(54, 34, 473, 14);
+		lblSelecioneUmObjeto.setBounds(30, 42, 473, 14);
 		frame.getContentPane().add(lblSelecioneUmObjeto);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(484, 59, 89, 23);
-		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLnaoselect.png")));
-		lblNewLabel_2.setBounds(214, 121, 38, 61);
+		lblNewLabel_2.setBounds(216, 193, 38, 61);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLsimselect.png")));
+		lblNewLabel_1.setBounds(216, 121, 38, 61);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("New label");
+		lblNewLabel_4.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/AbaLnaoselect.png")));
+		lblNewLabel_4.setBounds(216, 277, 38, 61);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
+		btnNewButton.setBounds(545, 11, 38, 40);
+		frame.getContentPane().add(btnNewButton);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
