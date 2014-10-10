@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
 import java.awt.Window.Type;
 import javax.swing.JButton;
+import java.awt.SystemColor;
 
 public class fmz_sobre {
 
@@ -42,6 +43,7 @@ public class fmz_sobre {
 	 */
 	private void initialize() {
 		frmSobre = new JFrame();
+		frmSobre.getContentPane().setBackground(SystemColor.control);
 		frmSobre.setType(Type.UTILITY);
 		frmSobre.setResizable(false);
 		frmSobre.setTitle("Sobre");
