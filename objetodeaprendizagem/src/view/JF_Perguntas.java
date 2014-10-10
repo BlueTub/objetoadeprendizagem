@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
+import controller.Fila;
 import controller.ObjetosPerguntas;
 import controller.Telas;
 
@@ -106,12 +107,11 @@ public class JF_Perguntas extends Telas {
 				muda.Selecao();
 				muda.AlterarTela();
 				grupo.clearSelection();
-	
 				}else{
 				JOptionPane.showMessageDialog(null, "Selecione uma opção","Opção não selecionada",JOptionPane.ERROR_MESSAGE);
 				}
 			}
-		});
+		});		
 		
 		
 	}
