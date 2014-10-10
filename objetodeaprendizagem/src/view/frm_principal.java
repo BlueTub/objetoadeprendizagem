@@ -12,7 +12,7 @@ import javax.swing.JMenuItem;
 import java.awt.Panel;
 import javax.swing.JLabel;
 
-public class frm_principal {
+public class frm_principal extends JFrame {
 
 	private JFrame frame;
 

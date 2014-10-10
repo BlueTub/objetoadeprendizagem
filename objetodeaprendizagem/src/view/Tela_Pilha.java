@@ -29,7 +29,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import java.awt.Window.Type;
-
+import view.*;
 
 
 public class Tela_Pilha extends JFrame {
@@ -42,8 +42,6 @@ public class Tela_Pilha extends JFrame {
 	private JTextField tf4;
 	private JTextField tf5;
 	private JMenuBar menuBar;
-	private final Action actionPrincipal = new MenuPrincipal();
-	private final Action actionSair = new sair();
 	private JTextField tf6;
 	private JLabel lbl_valor10;
 	private JLabel lbl_valor20;
@@ -54,6 +52,9 @@ public class Tela_Pilha extends JFrame {
 	private JLabel lbl_valor70;
 	public int a = 0;
 	public static boolean AddRm;
+	private final Action action = new SwingAction();
+	private static int n = 6;
+	private static int z = 0;
 
 	/**
 	 * Launch the application.
@@ -89,22 +90,8 @@ public class Tela_Pilha extends JFrame {
 		menuBar.add(mnArquivo);
 		
 		JMenuItem mntmMenuPrincipal = new JMenuItem("Menu Principal");
-		mntmMenuPrincipal.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				Tela_Pilha.this.dispose();
-				final frm_principal tela = new frm_principal();
-			
-				//tela.setVisible(true);//AQUI QUE ESSA PORRA DA ERRO !!!!
-			}
-		});
-		
-		mntmMenuPrincipal.setAction(actionPrincipal);
+		mntmMenuPrincipal.setAction(action);
 		mnArquivo.add(mntmMenuPrincipal);
-		
-		JMenuItem mntmSair = new JMenuItem("Sair");
-		mntmSair.setAction(actionSair);
-		mnArquivo.add(mntmSair);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -226,7 +213,7 @@ public class Tela_Pilha extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				a = addElemento(a,btnAçao);
+				addElemento(btnAçao);
 				
 				//btnIniciar.setText("Remover");
 				
@@ -234,65 +221,42 @@ public class Tela_Pilha extends JFrame {
 		};
 		btnAçao.addActionListener(açao);
 	}
-	private class MenuPrincipal extends AbstractAction {
-		public MenuPrincipal() {
-			putValue(NAME, "Menu Principal");
-			putValue(SHORT_DESCRIPTION, "Voltar ao Menu Principal");
-		}
-		public void actionPerformed(ActionEvent e) {
-
-			Tela_Pilha.this.dispose();
-			frm_principal prin = new frm_principal();
-			//prin.setVisible(true);
-		}
-		
-	}
-	private class sair extends AbstractAction {
-		public sair() {
-			putValue(NAME, "Sair");
-			putValue(SHORT_DESCRIPTION, "Fechar aplicação");
-		}
-		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
-		}
-	}
 	
-	public int addElemento(int a,JButton btnAção){
+	public void addElemento(JButton btnAção){
+		Thread vt[] = new Thread[7];
 		btnAção.setEnabled(false);
-		if (a == 0) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 1) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor20,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 2) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor30,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 3) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor40,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 4) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor50,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 5) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor60,btnAção);
-			t1.start();
-			a++;
-		}else if (a == 6) {
-			Thread t1 = new AnimaçaoPilha(lbl_valor70,btnAção);
-			t1.start();
-			a++;
+		
+		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção);
+		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção);
+		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção);
+		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção);
+		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção);
+		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção);
+		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção);
+		vt[0] = t1;
+		vt[1] = t2;
+		vt[2] = t3;
+		vt[3] = t4;
+		vt[4] = t5;
+		vt[5] = t6;
+		vt[6] = t7;
+
+		for (int i = z; i < vt.length - n; i++) {
+			vt[i].start();
 		}
-		return a;
+		n -=1;
+		z +=1;
 	}
-
-
-	
-	
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Menu Principal");
+			putValue(SHORT_DESCRIPTION, "Voltar ao Principal");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tela_Pilha.this.dispose();
+			JF_Perguntas p = new JF_Perguntas();
+			p.setVisible(true);
+		}
+	}
 }
 
