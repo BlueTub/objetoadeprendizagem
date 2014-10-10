@@ -15,7 +15,12 @@ import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+
+import Entity.Descricao_e;
+import controller.Descricao_c;
+
 import java.awt.SystemColor;
+import java.io.IOException;
 
 public class frm_principal extends JFrame {
 	/**
@@ -25,11 +30,17 @@ public class frm_principal extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+
+		Carregatxt();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
+
 					frm_principal window = new frm_principal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -37,6 +48,10 @@ public class frm_principal extends JFrame {
 				}
 			}
 		});
+		//code below----------------------------------
+		
+	
+		
 	}
 
 	/**
@@ -48,7 +63,22 @@ public class frm_principal extends JFrame {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws IOException 
 	 */
+	
+	public static Descricao_e[] Carregatxt() throws IOException{
+        Descricao_e[] descricao = new Descricao_e[3];
+        for (int i = 0; i < 3; i++) {
+            descricao[i] = new Descricao_e();
+        }
+        
+        Descricao_c metodos = new Descricao_c();
+        metodos.le(descricao);
+        metodos.TestaTexto(descricao);
+        return descricao;
+	}
+	
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.control);
@@ -69,26 +99,56 @@ public class frm_principal extends JFrame {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btn_fila = new JButton("Fila");
-		btn_fila.setBounds(29, 11, 120, 56);
-		panel.add(btn_fila);
+		final JLabel lbl_titulo = new JLabel("lbl_titulo");
+		lbl_titulo.setBounds(263, 80, 277, 14);
+		frame.getContentPane().add(lbl_titulo);
 		
-		JButton btn_lista = new JButton("Lista");
-		btn_lista.setBounds(29, 88, 120, 56);
-		panel.add(btn_lista);
-		
-		JButton btn_pilha = new JButton("Pilha");
-		btn_pilha.setBounds(29, 166, 120, 56);
-		panel.add(btn_pilha);
-		
-		JLabel lblNewLabel = new JLabel("lbl_titulo");
-		lblNewLabel.setBounds(263, 80, 277, 14);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JTextPane txt_descricao = new JTextPane();
+		final JTextPane txt_descricao = new JTextPane();
+		txt_descricao.setEditable(false);
 		txt_descricao.setText("descri\u00E7\u00E3o aqui");
 		txt_descricao.setBounds(263, 111, 314, 237);
 		frame.getContentPane().add(txt_descricao);
+		JButton btn_fila = new JButton("Fila");
+		btn_fila.setBounds(29, 99, 120, 56);
+		panel.add(btn_fila);
+		
+		JButton btn_lista = new JButton("Lista");
+		btn_lista.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
+				String texto= descricao[2].descricao_res;
+				txt_descricao.setText(texto);
+				lbl_titulo.setText("Lista Ligada");
+			}
+		});
+		btn_lista.setBounds(29, 184, 120, 56);
+		panel.add(btn_lista);
+		
+		JButton btn_pilha = new JButton("Pilha");
+		btn_pilha.setBounds(29, 11, 120, 56);
+		panel.add(btn_pilha);
+		btn_pilha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+				String texto= descricao[0].descricao_res;
+				txt_descricao.setText(texto);
+				lbl_titulo.setText("Pilha");
+			}
+		});
+		
+
 		
 		JLabel lblSelecioneUmObjeto = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
 		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -116,6 +176,16 @@ public class frm_principal extends JFrame {
 		frame.getContentPane().add(btnNewButton);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Descricao_e[] descricao = new Descricao_e[3];
+				try {
+					descricao=Carregatxt();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+				String texto= descricao[1].descricao_res;
+				txt_descricao.setText(texto);
+				lbl_titulo.setText("Fila");
 			}
 		});
 		
