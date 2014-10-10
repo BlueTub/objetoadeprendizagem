@@ -8,8 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JProgressBar;
 import javax.swing.JLabel;
+import java.awt.Component;
 
-public class JF_Pontuacao extends JFrame {
+import controller.Telas;
+
+public class JF_Pontuacao extends Telas {
 
 	private JPanel contentPane;
 
@@ -40,6 +43,12 @@ public class JF_Pontuacao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		iconeBarra();
+		centralizeFrame();
+		Estilo();
+		
+		
 		JPanel painel = new JPanel();
 		painel.setBounds(0, 0, 584, 373);
 		contentPane.add(painel);
@@ -50,8 +59,8 @@ public class JF_Pontuacao extends JFrame {
 		painel.add(barra);
 		
 		JLabel lblCarregando = new JLabel("carregando");
-		lblCarregando.setAutoscrolls(true);
-		lblCarregando.setBounds(265, 181, 78, 14);
+		lblCarregando.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lblCarregando.setBounds(252, 159, 179, 21);
 		painel.add(lblCarregando);
 		
 		JLabel lblPontucao = new JLabel("Pontua\u00E7\u00E3o");
