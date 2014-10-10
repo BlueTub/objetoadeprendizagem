@@ -54,6 +54,6 @@ public class Descricao_e {
 		return dificuldade;
 	}
 	
-
+//TODO Utiliza gettes e settes, tornar classe totalmente encapsulada.
 	
 }

@@ -150,7 +150,7 @@ public class fmz_descricao extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnvoltar.setBounds(10, 11, 89, 23);
+		btnvoltar.setBounds(24, 11, 89, 23);
 		contentPane.add(btnvoltar);
 	}
 }

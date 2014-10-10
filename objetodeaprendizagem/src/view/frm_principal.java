@@ -112,7 +112,7 @@ public class frm_principal extends JFrame {
 		txt_descricao.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		txt_descricao.setEditable(false);
 		txt_descricao.setText("descri\u00E7\u00E3o aqui");
-		txt_descricao.setBounds(263, 111, 314, 237);
+		txt_descricao.setBounds(263, 111, 314, 77);
 		frame.getContentPane().add(txt_descricao);
 		JButton btn_fila = new JButton("Fila");
 		btn_fila.setBounds(29, 99, 120, 56);
