@@ -252,10 +252,8 @@ public class Tela_Pilha extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (AddRm < 7) {
-					addElemento(btnAçao,btnReiniciar);
 					AddRm++;
 				}else if (AddRm < 14){
-					rmElemento(btnAçao,btnReiniciar);
 					AddRm++;
 				}else{
 					setarVariaveis();
