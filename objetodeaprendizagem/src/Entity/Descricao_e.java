@@ -19,5 +19,6 @@ public class Descricao_e {
 		caract = cara;
 		uso = us;
 	}
-
+//TODO criar getters e setters
+	
 }
