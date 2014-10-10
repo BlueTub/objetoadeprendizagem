@@ -98,7 +98,7 @@ public class JF_Perguntas extends JFrame {
 		btnProximo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(muda.valida()){
-				
+				muda.Selecao();
 				muda.AlterarTela();
 				grupo.clearSelection();
 				}else{
