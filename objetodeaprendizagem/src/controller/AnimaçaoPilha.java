@@ -12,15 +12,17 @@ public class AnimaçaoPilha extends Thread{
 	private int x = 8;
 	private static int AddRm = 0;
 	private JButton btnAcao;
+	private JButton btnReiniciar;
 	
 	/**
 	 * Construtor
 	 * @param lbl_valor Thread generalizada
 	 * @param btnAcao Botao açao
 	 */
-	public AnimaçaoPilha(JLabel lbl_valor,JButton btnAcao){
+	public AnimaçaoPilha(JLabel lbl_valor,JButton btnAcao, JButton btnReiniciar){
 		this.lbl_valor = lbl_valor;
 		this.btnAcao=btnAcao;
+		this.btnReiniciar = btnReiniciar;
 		}
 	/**
 	 * Metodo que chama a animaçao
@@ -29,10 +31,19 @@ public class AnimaçaoPilha extends Thread{
 		if (AddRm < 7) {
 			AnimarAdd();
 			AddRm++;
-		}else{
+		}else if (AddRm < 14){
 			AnimarRm();
+			AddRm++;
+		}else{
+			setarVariaveis();
 		}
 		
+		
+	}
+	private void setarVariaveis() {
+		AddRm = 0;
+		y = 24;
+		btnAcao.setEnabled(true);
 		
 	}
 	/**
@@ -77,7 +88,7 @@ public class AnimaçaoPilha extends Thread{
 			posiçao.x += 10;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(55);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -94,5 +105,10 @@ public class AnimaçaoPilha extends Thread{
 		y += 4;
 		lbl_valor.setVisible(false);
 		btnAcao.setEnabled(true);
+		if (y == 24) {
+			btnAcao.setEnabled(false);
+			btnReiniciar.setVisible(true);
+		}
+		
 	}
 }

@@ -14,6 +14,7 @@ import controller.AnimaçaoPilha;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -24,6 +25,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -208,34 +210,88 @@ public class Tela_Pilha extends JFrame {
 		tf6.setBounds(60, 57, 63, 38);
 		contentPane.add(tf6);
 		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(384, 299, 89, 23);
+		contentPane.add(btnVoltar);
 		
+		JButton btnRemover = new JButton("Remover");
+		btnRemover.setBounds(275, 260, 89, 23);
+		contentPane.add(btnRemover);
+		
+		/**
+		 * Botao reiniciar animaçao
+		 */
+		ActionListener reiniciar = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Tela_Pilha.this.dispose();
+				
+				Tela_Pilha.this.setDefaultCloseOperation(DEFAULT_CURSOR);
+				Tela_Pilha.this.setVisible(true);
+			}
+		};
+		
+		/**
+		 * Botao voltar
+		 */
+		ActionListener voltar = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//TODO
+				
+			}
+		};
+		
+		/**
+		 * Botão ação
+		 */
 		ActionListener açao = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (AddRm < 7) {
-					addElemento(btnAçao);
+					addElemento(btnAçao,btnReiniciar);
 					AddRm++;
 				}else if (AddRm < 14){
-					rmElemento(btnAçao);
+					rmElemento(btnAçao,btnReiniciar);
 					AddRm++;
+				}else{
+					setarVariaveis();
 				}
 			}
 		};
 		btnAçao.addActionListener(açao);
+		btnVoltar.addActionListener(voltar);
 	}
 	
-	public void addElemento(JButton btnAção){
+	public void setarVariaveis(){
+		lbl_valor10.setBounds(163, 54, 29, 38);
+		lbl_valor70.setBounds(163, 58, 29, 31);
+		lbl_valor60.setBounds(163, 58, 29, 31);
+		lbl_valor50.setBounds(163, 58, 29, 31);
+		lbl_valor40.setBounds(163, 58, 29, 31);
+		lbl_valor30.setBounds(163, 58, 29, 31);
+		lbl_valor20.setBounds(163, 58, 29, 31);
+		n = 6;
+		z = 0;
+		a = 6;
+		b = 0;
+		AddRm = 0;
+	}
+	
+	public void addElemento(JButton btnAção,JButton btnReiniciar){
 		Thread vt[] = new Thread[7];
 		btnAção.setEnabled(false);
 		
-		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção);
-		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção);
-		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção);
-		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção);
-		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção);
-		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção);
-		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção);
+		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção,btnReiniciar);
+		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção,btnReiniciar);
+		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção,btnReiniciar);
+		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção,btnReiniciar);
+		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção,btnReiniciar);
+		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção,btnReiniciar);
+		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção,btnReiniciar);
 		vt[0] = t1;
 		vt[1] = t2;
 		vt[2] = t3;
@@ -251,17 +307,17 @@ public class Tela_Pilha extends JFrame {
 		z +=1;
 	}
 	
-	public void rmElemento(JButton btnAção){
+	public void rmElemento(JButton btnAção,JButton btnReiniciar){
 		Thread vt[] = new Thread[7];
 		btnAção.setEnabled(false);
 		
-		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção);
-		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção);
-		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção);
-		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção);
-		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção);
-		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção);
-		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção);
+		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção,btnReiniciar);
+		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção,btnReiniciar);
+		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção,btnReiniciar);
+		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção,btnReiniciar);
+		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção,btnReiniciar);
+		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção,btnReiniciar);
+		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção,btnReiniciar);
 		vt[0] = t7;
 		vt[1] = t6;
 		vt[2] = t5;
