@@ -1,5 +1,5 @@
 package view;
-
+import controller.AnimaçaoPilha;
 
 import java.awt.EventQueue;
 import java.awt.Window;
@@ -52,18 +52,16 @@ public class Tela_Pilha extends JFrame {
 	private JLabel lbl_valor50;
 	private JLabel lbl_valor60;
 	private JLabel lbl_valor70;
-	public static int AddRm = 0;
 	private final Action action = new SwingAction();
 	private static int n = 6;
 	private static int z = 0;
-	private static int a = 6;
-	private static int b = 0;
 	private JLabel vtEmpilhado[] = new JLabel[7];
 	private JLabel vtDesempilhado[] = new JLabel[7];
 	private Thread vtIniciar[] = new Thread[7];
 	final JButton btnAdicionar;
 	final JButton btnRemover;
 	private static int cont = 1;
+	private boolean addRm;
 	/**
 	 * Launch the application.
 	 */
@@ -242,6 +240,7 @@ public class Tela_Pilha extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				addRm = true;
 				addElemento(btnAdicionar,btnRemover);
 			}
 		};
@@ -253,10 +252,10 @@ public class Tela_Pilha extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO
-				
+				rmElemento(btnAdicionar, btnRemover);
 			}
 		};
+		btnRemover.addActionListener(remover);
 		
 		btnAdicionar.addActionListener(adicionar);
 		btnVoltar.addActionListener(voltar);
@@ -279,13 +278,13 @@ public class Tela_Pilha extends JFrame {
 	}
 	
 	public void CarregavtIniciar(){
-		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAdicionar,btnRemover);
-		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAdicionar,btnRemover);
-		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAdicionar,btnRemover);
-		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAdicionar,btnRemover);
-		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAdicionar,btnRemover);
-		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAdicionar,btnRemover);
-		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAdicionar,btnRemover);
+		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAdicionar,btnRemover,addRm);
+		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAdicionar,btnRemover,addRm);
+		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAdicionar,btnRemover,addRm);
+		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAdicionar,btnRemover,addRm);
+		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAdicionar,btnRemover,addRm);
+		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAdicionar,btnRemover,addRm);
+		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAdicionar,btnRemover,addRm);
 		vtIniciar[0] = t1;
 		vtIniciar[1] = t2;
 		vtIniciar[2] = t3;
@@ -302,10 +301,11 @@ public class Tela_Pilha extends JFrame {
 
 		for (int i = z; i < vtEmpilhado.length - n; i++) {
 			vtEmpilhado[i] = vtDesempilhado[i];
+			vtDesempilhado[i] = null;
 			vtIniciar[i].start();
 		}
 		if (vtEmpilhado[6] != null) {
-			JOptionPane.showMessageDialog(null, "Pilha cheia", "Aviso",
+			JOptionPane.showMessageDialog(null, "Pilha cheia!!", "Aviso",
 					JOptionPane.INFORMATION_MESSAGE);
 			btnAdicionar.setEnabled(false);
 		}
@@ -313,31 +313,23 @@ public class Tela_Pilha extends JFrame {
 		z +=1;
 	}
 	
-	public void rmElemento(JButton btnAção,JButton btnReiniciar){
-		Thread vt[] = new Thread[7];
-		btnAção.setEnabled(false);
+	public void rmElemento(JButton btnAdicionar,JButton btnRemover){
+		btnRemover.setEnabled(false);
+		btnAdicionar.setEnabled(false);
+		addRm = false;
 		
-		Thread t7 = new AnimaçaoPilha(lbl_valor70,btnAção,btnReiniciar);
-		Thread t6 = new AnimaçaoPilha(lbl_valor60,btnAção,btnReiniciar);
-		Thread t5 = new AnimaçaoPilha(lbl_valor50,btnAção,btnReiniciar);
-		Thread t4 = new AnimaçaoPilha(lbl_valor40,btnAção,btnReiniciar);
-		Thread t3 = new AnimaçaoPilha(lbl_valor30,btnAção,btnReiniciar);
-		Thread t2 = new AnimaçaoPilha(lbl_valor20,btnAção,btnReiniciar);
-		Thread t1 = new AnimaçaoPilha(lbl_valor10,btnAção,btnReiniciar);
-		vt[0] = t7;
-		vt[1] = t6;
-		vt[2] = t5;
-		vt[3] = t4;
-		vt[4] = t3;
-		vt[5] = t2;
-		vt[6] = t1;
-		
-		
-		for (int i = b; i < vt.length - a; i++) {
-			vt[i].start();
+		for (int i = vtDesempilhado.length-1; i > 0; i--) {
+			try {
+				if (vtDesempilhado[i] == null) {
+					vtDesempilhado[i] = vtEmpilhado[i];
+					CarregavtIniciar();
+					vtIniciar[i].start();
+					i = 6;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		a -=1;
-		b +=1;
 	}
 	
 	private class SwingAction extends AbstractAction {
