@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 public class AnimaçaoPilhaAdd extends Thread{
 	
 	private JLabel lbl_valor;
-	private static int y = 24;
+	private static int y;
 	private int x = 8;
 	private JButton btnAdicionar;
 	private JButton btnRemover;
@@ -17,10 +17,11 @@ public class AnimaçaoPilhaAdd extends Thread{
 	 * @param lbl_valor Thread generalizada
 	 * @param btnAcao Botao açao
 	 */
-	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover){
+	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
+		this.y = y;
 		}
 	/**
 	 * Metodo que chama a animaçao
@@ -53,7 +54,7 @@ public class AnimaçaoPilhaAdd extends Thread{
 				e.printStackTrace();
 			}
 		}
-		y -= 4;
+		
 		btnAdicionar.setEnabled(true);
 		btnRemover.setEnabled(true);
 	}
