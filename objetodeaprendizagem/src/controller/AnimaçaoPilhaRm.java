@@ -24,8 +24,6 @@ public class AnimaçaoPilhaRm extends Thread {
 	 * Metodo que inicia a animaçao que remove elementos
 	 */
 	public void AnimarRm(){
-		System.out.println("dentro do RM");
-		
 		Rectangle posiçao = lbl_valor.getBounds();
 		
 		for (int i = 0; i < 8; i++) {
@@ -47,9 +45,14 @@ public class AnimaçaoPilhaRm extends Thread {
 				e.printStackTrace();
 			}
 		}
+		if (posiçao.y == 54) {
+			btnRemover.setEnabled(false);
+		}else{
+			btnRemover.setEnabled(true);
+		}
 		lbl_valor.setVisible(false);
 		btnAdicionar.setEnabled(true);
-		btnRemover.setEnabled(true);
+		
 	}
 
 }
