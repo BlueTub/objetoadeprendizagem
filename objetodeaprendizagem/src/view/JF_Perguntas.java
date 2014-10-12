@@ -20,7 +20,7 @@ import controller.Telas;
 public class JF_Perguntas extends Telas {
 
 	private JPanel contentPane;
-
+	public static JF_Perguntas frame;
 	/**
 	 * Launch the application.
 	 */
@@ -28,7 +28,7 @@ public class JF_Perguntas extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JF_Perguntas frame = new JF_Perguntas();
+					frame = new JF_Perguntas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
