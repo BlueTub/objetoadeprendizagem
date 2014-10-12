@@ -7,6 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
+import view.JF_Perguntas;
+import view.JF_Pontuacao;
+
 /**
  * Classe que tratara dos objetos da classe JF_Perguntas
  * @author joão
@@ -61,7 +64,11 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    resposta4.setText(printar[4]);
 	    resposta5.setText(printar[5]);
 	    }catch(NullPointerException e){
-	    	JOptionPane.showMessageDialog(null, "Fim do questionário");
+	    System.out.println("Fim do questionario");
+	    JF_Perguntas.frame.dispose();
+		 JF_Pontuacao tela=new JF_Pontuacao();
+	     tela.setVisible(true);
+	    
 	    }	
 			
 	}
