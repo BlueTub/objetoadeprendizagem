@@ -47,6 +47,11 @@ public class AnimaçaoPilhaRm extends Thread {
 				e.printStackTrace();
 			}
 		}
+		if (posiçao.y == 54) {
+			btnRemover.setEnabled(false);
+		}else{
+			btnRemover.setEnabled(true);
+		}
 		posiçao = lblTopo.getBounds();
 		for (int i = 0; i < 4; i++) {
 			posiçao.y +=10;
@@ -57,11 +62,7 @@ public class AnimaçaoPilhaRm extends Thread {
 				e.printStackTrace();
 			}
 		}
-		if (posiçao.y == 54) {
-			btnRemover.setEnabled(false);
-		}else{
-			btnRemover.setEnabled(true);
-		}
+		
 		lbl_valor.setVisible(false);
 		btnAdicionar.setEnabled(true);
 		

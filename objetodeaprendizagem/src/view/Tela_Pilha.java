@@ -1,23 +1,16 @@
 package view;
+
 import controller.AnimaçaoPilhaRm;
-
 import java.awt.EventQueue;
-import java.awt.Window;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-
 import controller.AnimaçaoPilhaAdd;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowListener;
-
 import javax.swing.JButton;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.JMenuBar;
@@ -26,14 +19,6 @@ import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import java.awt.Window.Type;
-import view.*;
-
-//PROBLEMA LÁ NO ULTIMO METODO !!!!!
 
 public class Tela_Pilha extends JFrame {
 
@@ -85,7 +70,6 @@ public class Tela_Pilha extends JFrame {
 				}
 			}
 		});
-		new frm_principal();
 	}
 
 	/**
@@ -403,7 +387,7 @@ public class Tela_Pilha extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			Tela_Pilha.this.dispose();
 			frm_principal p = new frm_principal();
-			p.setVisible(true); // <- PROBLEMA AQUI !!!!
+			//p.setVisible(true);                        // <- PROBLEMA AQUI !!!!
 		}
 	}
 }
