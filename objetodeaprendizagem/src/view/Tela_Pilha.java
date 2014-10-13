@@ -158,7 +158,7 @@ public class Tela_Pilha extends JFrame {
 		
 		
 		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(275, 299, 89, 23);
+		btnAdicionar.setBounds(330, 65, 89, 23);
 		contentPane.add(btnAdicionar);
 
 		tf0 = new JTextField();
@@ -205,7 +205,7 @@ public class Tela_Pilha extends JFrame {
 		
 		JLabel lblTitulo = new JLabel("PILHA");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 26));
-		lblTitulo.setBounds(46, 11, 96, 28);
+		lblTitulo.setBounds(53, 11, 96, 28);
 		contentPane.add(lblTitulo);
 		
 		tf6 = new JTextField();
@@ -216,12 +216,16 @@ public class Tela_Pilha extends JFrame {
 		contentPane.add(tf6);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(384, 299, 89, 23);
+		btnVoltar.setBounds(379, 299, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		btnRemover = new JButton("Remover");
-		btnRemover.setBounds(275, 260, 89, 23);
+		btnRemover.setBounds(219, 65, 89, 23);
 		contentPane.add(btnRemover);
+		
+		JButton btnQuestionrio = new JButton("Question\u00E1rio");
+		btnQuestionrio.setBounds(248, 299, 108, 23);
+		contentPane.add(btnQuestionrio);
 		
 		/**
 		 * Botao voltar
@@ -337,10 +341,6 @@ public class Tela_Pilha extends JFrame {
 	public void rmElemento(JButton btnAdicionar,JButton btnRemover){
 		btnRemover.setEnabled(false);
 		btnAdicionar.setEnabled(false);
-		
-		if (vtEmpilhado[0] == null) {
-			btnRemover.setEnabled(false);
-		}
 		
 		for (int i = vtDesempilhado.length-1; i > -1; i--) {
 				if (vtDesempilhado[i] == null) {
