@@ -9,11 +9,13 @@ public class AnimaçaoPilhaRm extends Thread {
 	private JButton btnAdicionar;
 	private JButton btnRemover;
 	private JLabel lbl_valor;
+	private JLabel lblTopo;
 	
-	public AnimaçaoPilhaRm(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover){
+	public AnimaçaoPilhaRm(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, JLabel lblTopo){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
+		this.lblTopo = lblTopo;
 	}
 	
 	public void run(){
@@ -26,7 +28,7 @@ public class AnimaçaoPilhaRm extends Thread {
 	public void AnimarRm(){
 		Rectangle posiçao = lbl_valor.getBounds();
 		
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 6; i++) {
 			posiçao.x += 10;
 			lbl_valor.setBounds(posiçao);
 			try {
@@ -42,6 +44,16 @@ public class AnimaçaoPilhaRm extends Thread {
 			try {
 				Thread.sleep(25);
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		posiçao = lblTopo.getBounds();
+		for (int i = 0; i < 4; i++) {
+			posiçao.y +=10;
+			lblTopo.setBounds(posiçao);
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}

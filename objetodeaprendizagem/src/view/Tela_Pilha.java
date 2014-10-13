@@ -64,6 +64,13 @@ public class Tela_Pilha extends JFrame {
 	final JButton btnRemover;
 	private static int cont = 1;
 	private static int y = 24;
+	private JLabel lbl1;
+	private JLabel lbl2;
+	private JLabel lbl3;
+	private JLabel lbl4;
+	private JLabel lbl5;
+	private JLabel lbl6;
+	private JLabel lblTopo;
 	/**
 	 * Launch the application.
 	 */
@@ -89,7 +96,7 @@ public class Tela_Pilha extends JFrame {
 		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 398);
+		setBounds(100, 100, 500, 386);
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -164,7 +171,7 @@ public class Tela_Pilha extends JFrame {
 		tf0 = new JTextField();
 		tf0.setBackground(Color.LIGHT_GRAY);
 		tf0.setEditable(false);
-		tf0.setBounds(60, 291, 63, 38);
+		tf0.setBounds(83, 291, 63, 38);
 		contentPane.add(tf0);
 		tf0.setColumns(10);
 		
@@ -172,51 +179,51 @@ public class Tela_Pilha extends JFrame {
 		tf1.setEditable(false);
 		tf1.setColumns(10);
 		tf1.setBackground(Color.LIGHT_GRAY);
-		tf1.setBounds(60, 252, 63, 38);
+		tf1.setBounds(83, 252, 63, 38);
 		contentPane.add(tf1);
 		
 		tf2 = new JTextField();
 		tf2.setEditable(false);
 		tf2.setColumns(10);
 		tf2.setBackground(Color.LIGHT_GRAY);
-		tf2.setBounds(60, 213, 63, 38);
+		tf2.setBounds(83, 213, 63, 38);
 		contentPane.add(tf2);
 		
 		tf3 = new JTextField();
 		tf3.setEditable(false);
 		tf3.setColumns(10);
 		tf3.setBackground(Color.LIGHT_GRAY);
-		tf3.setBounds(60, 174, 63, 38);
+		tf3.setBounds(83, 174, 63, 38);
 		contentPane.add(tf3);
 		
 		tf4 = new JTextField();
 		tf4.setEditable(false);
 		tf4.setColumns(10);
 		tf4.setBackground(Color.LIGHT_GRAY);
-		tf4.setBounds(60, 135, 63, 38);
+		tf4.setBounds(83, 135, 63, 38);
 		contentPane.add(tf4);
 		
 		tf5 = new JTextField();
 		tf5.setEditable(false);
 		tf5.setColumns(10);
 		tf5.setBackground(Color.LIGHT_GRAY);
-		tf5.setBounds(60, 96, 63, 38);
+		tf5.setBounds(83, 96, 63, 38);
 		contentPane.add(tf5);
 		
 		JLabel lblTitulo = new JLabel("PILHA");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 26));
-		lblTitulo.setBounds(53, 11, 96, 28);
+		lblTitulo.setBounds(76, 11, 96, 28);
 		contentPane.add(lblTitulo);
 		
 		tf6 = new JTextField();
 		tf6.setEditable(false);
 		tf6.setColumns(10);
 		tf6.setBackground(Color.LIGHT_GRAY);
-		tf6.setBounds(60, 57, 63, 38);
+		tf6.setBounds(83, 57, 63, 38);
 		contentPane.add(tf6);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(379, 299, 89, 23);
+		btnVoltar.setBounds(259, 299, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		btnRemover = new JButton("Remover");
@@ -224,8 +231,41 @@ public class Tela_Pilha extends JFrame {
 		contentPane.add(btnRemover);
 		
 		JButton btnQuestionrio = new JButton("Question\u00E1rio");
-		btnQuestionrio.setBounds(248, 299, 108, 23);
+		btnQuestionrio.setBounds(364, 298, 108, 23);
 		contentPane.add(btnQuestionrio);
+		
+		lblTopo = new JLabel("TOPO ->");
+		lblTopo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTopo.setBounds(10, 344, 53, 14);
+		contentPane.add(lblTopo);
+		
+		JLabel lbl0 = new JLabel("0");
+		lbl0.setBounds(64, 303, 11, 14);
+		contentPane.add(lbl0);
+		
+		lbl1 = new JLabel("1");
+		lbl1.setBounds(64, 265, 11, 14);
+		contentPane.add(lbl1);
+		
+		lbl2 = new JLabel("2");
+		lbl2.setBounds(64, 224, 11, 14);
+		contentPane.add(lbl2);
+		
+		lbl3 = new JLabel("3");
+		lbl3.setBounds(63, 185, 11, 14);
+		contentPane.add(lbl3);
+		
+		lbl4 = new JLabel("4");
+		lbl4.setBounds(63, 145, 11, 14);
+		contentPane.add(lbl4);
+		
+		lbl5 = new JLabel("5");
+		lbl5.setBounds(64, 105, 11, 14);
+		contentPane.add(lbl5);
+		
+		lbl6 = new JLabel("6");
+		lbl6.setBounds(64, 65, 11, 14);
+		contentPane.add(lbl6);
 		
 		/**
 		 * Botao voltar
@@ -266,7 +306,6 @@ public class Tela_Pilha extends JFrame {
 		btnVoltar.addActionListener(voltar);
 		if (cont == 1) {
 			CarregaVtDesempilhado();
-			CarregavtIniciarAdd();
 			cont++;
 		}
 		if (vtEmpilhado[0] == null) {
@@ -286,13 +325,13 @@ public class Tela_Pilha extends JFrame {
 	}
 	
 	public void CarregavtIniciarAdd(){
-		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y);
-		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y);
-		Thread t5 = new AnimaçaoPilhaAdd(lbl_valor50,btnAdicionar,btnRemover,y);
-		Thread t4 = new AnimaçaoPilhaAdd(lbl_valor40,btnAdicionar,btnRemover,y);
-		Thread t3 = new AnimaçaoPilhaAdd(lbl_valor30,btnAdicionar,btnRemover,y);
-		Thread t2 = new AnimaçaoPilhaAdd(lbl_valor20,btnAdicionar,btnRemover,y);
-		Thread t1 = new AnimaçaoPilhaAdd(lbl_valor10,btnAdicionar,btnRemover,y);
+		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t5 = new AnimaçaoPilhaAdd(lbl_valor50,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t4 = new AnimaçaoPilhaAdd(lbl_valor40,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t3 = new AnimaçaoPilhaAdd(lbl_valor30,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t2 = new AnimaçaoPilhaAdd(lbl_valor20,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t1 = new AnimaçaoPilhaAdd(lbl_valor10,btnAdicionar,btnRemover,y,lblTopo);
 		vtIniciarAdd[0] = t1;
 		vtIniciarAdd[1] = t2;
 		vtIniciarAdd[2] = t3;
@@ -303,13 +342,13 @@ public class Tela_Pilha extends JFrame {
 	}
 	
 	public void CarregavtIniciaRm(){
-		Thread t7 = new AnimaçaoPilhaRm(lbl_valor70,btnAdicionar,btnRemover);
-		Thread t6 = new AnimaçaoPilhaRm(lbl_valor60,btnAdicionar,btnRemover);
-		Thread t5 = new AnimaçaoPilhaRm(lbl_valor50,btnAdicionar,btnRemover);
-		Thread t4 = new AnimaçaoPilhaRm(lbl_valor40,btnAdicionar,btnRemover);
-		Thread t3 = new AnimaçaoPilhaRm(lbl_valor30,btnAdicionar,btnRemover);
-		Thread t2 = new AnimaçaoPilhaRm(lbl_valor20,btnAdicionar,btnRemover);
-		Thread t1 = new AnimaçaoPilhaRm(lbl_valor10,btnAdicionar,btnRemover);
+		Thread t7 = new AnimaçaoPilhaRm(lbl_valor70,btnAdicionar,btnRemover,lblTopo);
+		Thread t6 = new AnimaçaoPilhaRm(lbl_valor60,btnAdicionar,btnRemover,lblTopo);
+		Thread t5 = new AnimaçaoPilhaRm(lbl_valor50,btnAdicionar,btnRemover,lblTopo);
+		Thread t4 = new AnimaçaoPilhaRm(lbl_valor40,btnAdicionar,btnRemover,lblTopo);
+		Thread t3 = new AnimaçaoPilhaRm(lbl_valor30,btnAdicionar,btnRemover,lblTopo);
+		Thread t2 = new AnimaçaoPilhaRm(lbl_valor20,btnAdicionar,btnRemover,lblTopo);
+		Thread t1 = new AnimaçaoPilhaRm(lbl_valor10,btnAdicionar,btnRemover,lblTopo);
 		vtIniciarRm[0] = t1;
 		vtIniciarRm[1] = t2;
 		vtIniciarRm[2] = t3;

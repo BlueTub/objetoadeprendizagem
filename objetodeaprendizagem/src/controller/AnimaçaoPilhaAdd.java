@@ -9,19 +9,16 @@ public class AnimaçaoPilhaAdd extends Thread{
 	
 	private JLabel lbl_valor;
 	private static int y;
-	private int x = 8;
 	private JButton btnAdicionar;
 	private JButton btnRemover;
-	/**
-	 * Construtor
-	 * @param lbl_valor Thread generalizada
-	 * @param btnAcao Botao açao
-	 */
-	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y){
+	private JLabel lblTopo;
+
+	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y,JLabel lblTopo){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
 		this.y = y;
+		this.lblTopo = lblTopo;
 		}
 	/**
 	 * Metodo que chama a animaçao
@@ -45,9 +42,19 @@ public class AnimaçaoPilhaAdd extends Thread{
 				e.printStackTrace();
 			}
 		}
-		for (int i = 0; i < x; i++) {
+		for (int i = 0; i < 6; i++) {
 			posiçao.x -= 10;
 			lbl_valor.setBounds(posiçao);
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		posiçao = lblTopo.getBounds();
+		for (int i = 0; i < 4; i++) {
+			posiçao.y -=10;
+			lblTopo.setBounds(posiçao);
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
