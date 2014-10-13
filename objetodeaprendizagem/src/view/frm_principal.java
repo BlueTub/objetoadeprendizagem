@@ -25,7 +25,7 @@ import javax.swing.UIManager;
 import java.awt.Component;
 import javax.swing.Box;
 
-public class frm_principal extends JFrame {
+public class frm_principal{
 	/**
 	 * @author Hury
 	 */
