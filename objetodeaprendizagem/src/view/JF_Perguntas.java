@@ -15,6 +15,8 @@ import javax.swing.border.EmptyBorder;
 
 import controller.ObjetosPerguntas;
 import controller.Telas;
+import java.awt.Component;
+import java.awt.Font;
 
 public class JF_Perguntas extends Telas {
 
@@ -60,22 +62,27 @@ public class JF_Perguntas extends Telas {
 		painel.setLayout(null);
 		
 		JRadioButton rdbtnPergunta1 = new JRadioButton("pergunta 1");
+		rdbtnPergunta1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta1.setBounds(6, 81, 559, 23);
 		painel.add(rdbtnPergunta1);
 		
 		JRadioButton rdbtnPergunta2 = new JRadioButton("pergunta 2");
+		rdbtnPergunta2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta2.setBounds(6, 127, 559, 23);
 		painel.add(rdbtnPergunta2);
 		
 		JRadioButton rdbtnPergunta3 = new JRadioButton("pergunta 3");
+		rdbtnPergunta3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta3.setBounds(6, 172, 559, 23);
 		painel.add(rdbtnPergunta3);
 		
 		JRadioButton rdbtnPergunta4 = new JRadioButton("pergunta 4");
+		rdbtnPergunta4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta4.setBounds(6, 212, 559, 23);
 		painel.add(rdbtnPergunta4);
 		
 		JRadioButton rdbtnPergunta5 = new JRadioButton("pergunta 5");
+		rdbtnPergunta5.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta5.setBounds(6, 256, 559, 23);
 		painel.add(rdbtnPergunta5);
 		
@@ -87,6 +94,7 @@ public class JF_Perguntas extends Telas {
 		grupo.add(rdbtnPergunta5);
 		
 		JLabel lblEnunciado = new JLabel("enunciado");
+		lblEnunciado.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblEnunciado.setBounds(6, 25, 555, 49);
 		painel.add(lblEnunciado);
 		
