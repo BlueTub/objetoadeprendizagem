@@ -379,9 +379,9 @@ public class Tela_Pilha extends JFrame {
 			putValue(SHORT_DESCRIPTION, "Voltar ao Principal");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tela_Pilha.this.dispose();
-			frm_principal p = new frm_principal();
-			//p.setVisible(true);                        // <- PROBLEMA AQUI !!!!
+			dispose();
+			Frm_principal p = new Frm_principal();
+			p.setVisible(true);                        // <- PROBLEMA AQUI !!!!
 		}
 	}
 }

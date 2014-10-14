@@ -11,7 +11,7 @@ import java.awt.Window.Type;
 import javax.swing.JButton;
 import java.awt.SystemColor;
 
-public class fmz_sobre {
+public class fmz_sobre1 {
 	/**
 	 * @author Hury
 	 */
@@ -24,7 +24,7 @@ public class fmz_sobre {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					fmz_sobre window = new fmz_sobre();
+					fmz_sobre1 window = new fmz_sobre1();
 					window.frmSobre.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class fmz_sobre {
 	/**
 	 * Create the application.
 	 */
-	public fmz_sobre() {
+	public fmz_sobre1() {
 		initialize();
 	}
 
@@ -54,7 +54,7 @@ public class fmz_sobre {
 		frmSobre.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(fmz_sobre.class.getResource("/Imagens/fatec_logo.png")));
+		lblNewLabel.setIcon(new ImageIcon(fmz_sobre1.class.getResource("/Imagens/fatec_logo.png")));
 		lblNewLabel.setBounds(150, 11, 159, 67);
 		frmSobre.getContentPane().add(lblNewLabel);
 		
