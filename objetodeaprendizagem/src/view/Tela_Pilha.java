@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Color;
+
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -21,16 +23,9 @@ import javax.swing.Action;
 import javax.swing.JOptionPane;
 
 public class Tela_Pilha extends JFrame {
-
+	
 	private JPanel contentPane;
-	private JTextField tf0;
-	private JTextField tf1;
-	private JTextField tf2;
-	private JTextField tf3;
-	private JTextField tf4;
-	private JTextField tf5;
 	private JMenuBar menuBar;
-	private JTextField tf6;
 	private JLabel lbl_valor10;
 	private JLabel lbl_valor20;
 	private JLabel lbl_valor30;
@@ -48,7 +43,7 @@ public class Tela_Pilha extends JFrame {
 	final JButton btnAdicionar;
 	final JButton btnRemover;
 	private static int cont = 1;
-	private static int y = 24;
+	private static int y = 30;
 	private JLabel lbl1;
 	private JLabel lbl2;
 	private JLabel lbl3;
@@ -56,6 +51,12 @@ public class Tela_Pilha extends JFrame {
 	private JLabel lbl5;
 	private JLabel lbl6;
 	private JLabel lblTopo;
+	private JLabel lblCubo_1;
+	private JLabel lblCubo_2;
+	private JLabel lblCubo_3;
+	private JLabel lblCubo_4;
+	private JLabel lblCubo_5;
+	private JLabel lblCubo_6;
 	/**
 	 * Launch the application.
 	 */
@@ -80,7 +81,7 @@ public class Tela_Pilha extends JFrame {
 		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 386);
+		setBounds(100, 100, 546, 449);
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -98,45 +99,26 @@ public class Tela_Pilha extends JFrame {
 		
 		lbl_valor10 = new JLabel("10");
 		lbl_valor10.setVisible(false);
-		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor10.setForeground(Color.BLACK);
-		lbl_valor10.setBounds(163, 54, 29, 38);
-		contentPane.add(lbl_valor10);
 		
 		lbl_valor70 = new JLabel("70");
 		lbl_valor70.setForeground(Color.BLACK);
 		lbl_valor70.setVisible(false);
-		lbl_valor70.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor70.setBounds(163, 58, 29, 31);
-		contentPane.add(lbl_valor70);
 		
 		lbl_valor60 = new JLabel("60");
 		lbl_valor60.setForeground(Color.BLACK);
 		lbl_valor60.setVisible(false);
-		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor60.setBounds(163, 58, 29, 31);
-		contentPane.add(lbl_valor60);
 		
 		lbl_valor50 = new JLabel("50");
 		lbl_valor50.setForeground(Color.BLACK);
 		lbl_valor50.setVisible(false);
-		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor50.setBounds(163, 58, 29, 31);
-		contentPane.add(lbl_valor50);
 		
 		lbl_valor40 = new JLabel("40");
 		lbl_valor40.setForeground(Color.BLACK);
 		lbl_valor40.setVisible(false);
-		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor40.setBounds(163, 58, 29, 31);
-		contentPane.add(lbl_valor40);
 		
 		lbl_valor30 = new JLabel("30");
 		lbl_valor30.setForeground(Color.BLACK);
 		lbl_valor30.setVisible(false);
-		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor30.setBounds(163, 58, 29, 31);
-		contentPane.add(lbl_valor30);
 		
 		lbl_valor20 = new JLabel("20");
 		lbl_valor20.setForeground(Color.BLACK);
@@ -144,112 +126,124 @@ public class Tela_Pilha extends JFrame {
 		lbl_valor20.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor20.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor20);
+		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor30.setBounds(163, 58, 29, 31);
+		contentPane.add(lbl_valor30);
+		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor40.setBounds(163, 58, 29, 31);
+		contentPane.add(lbl_valor40);
+		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor50.setBounds(163, 58, 29, 31);
+		contentPane.add(lbl_valor50);
+		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor60.setBounds(163, 58, 29, 31);
+		contentPane.add(lbl_valor60);
+		lbl_valor70.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor70.setBounds(163, 58, 29, 31);
+		contentPane.add(lbl_valor70);
+		
+		
+		
+		
+		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor10.setForeground(Color.BLACK);
+		lbl_valor10.setBounds(163, 54, 29, 38);
+		contentPane.add(lbl_valor10);
+		
+		lblCubo_6 = new JLabel("");
+		lblCubo_6.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_6.setBounds(76, 39, 65, 67);
+		contentPane.add(lblCubo_6);
+		
+		lblCubo_5 = new JLabel("");
+		lblCubo_5.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_5.setBounds(76, 89, 65, 67);
+		contentPane.add(lblCubo_5);
+		
+		lblCubo_4 = new JLabel("");
+		lblCubo_4.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_4.setBounds(76, 138, 65, 67);
+		contentPane.add(lblCubo_4);
+		
+		lblCubo_3 = new JLabel("");
+		lblCubo_3.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_3.setBounds(76, 187, 65, 67);
+		contentPane.add(lblCubo_3);
+		
+		lblCubo_2 = new JLabel("");
+		lblCubo_2.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_2.setBounds(76, 236, 65, 67);
+		contentPane.add(lblCubo_2);
+		
+		lblCubo_1 = new JLabel("");
+		lblCubo_1.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_1.setBounds(76, 285, 65, 67);
+		contentPane.add(lblCubo_1);
 		
 		
 		
 		
 		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(330, 65, 89, 23);
+		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAdicionar.setBounds(226, 54, 108, 41);
 		contentPane.add(btnAdicionar);
-
-		tf0 = new JTextField();
-		tf0.setBackground(Color.LIGHT_GRAY);
-		tf0.setEditable(false);
-		tf0.setBounds(83, 291, 63, 38);
-		contentPane.add(tf0);
-		tf0.setColumns(10);
-		
-		tf1 = new JTextField();
-		tf1.setEditable(false);
-		tf1.setColumns(10);
-		tf1.setBackground(Color.LIGHT_GRAY);
-		tf1.setBounds(83, 252, 63, 38);
-		contentPane.add(tf1);
-		
-		tf2 = new JTextField();
-		tf2.setEditable(false);
-		tf2.setColumns(10);
-		tf2.setBackground(Color.LIGHT_GRAY);
-		tf2.setBounds(83, 213, 63, 38);
-		contentPane.add(tf2);
-		
-		tf3 = new JTextField();
-		tf3.setEditable(false);
-		tf3.setColumns(10);
-		tf3.setBackground(Color.LIGHT_GRAY);
-		tf3.setBounds(83, 174, 63, 38);
-		contentPane.add(tf3);
-		
-		tf4 = new JTextField();
-		tf4.setEditable(false);
-		tf4.setColumns(10);
-		tf4.setBackground(Color.LIGHT_GRAY);
-		tf4.setBounds(83, 135, 63, 38);
-		contentPane.add(tf4);
-		
-		tf5 = new JTextField();
-		tf5.setEditable(false);
-		tf5.setColumns(10);
-		tf5.setBackground(Color.LIGHT_GRAY);
-		tf5.setBounds(83, 96, 63, 38);
-		contentPane.add(tf5);
 		
 		JLabel lblTitulo = new JLabel("PILHA");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 26));
-		lblTitulo.setBounds(76, 11, 96, 28);
+		lblTitulo.setBounds(64, 11, 96, 28);
 		contentPane.add(lblTitulo);
 		
-		tf6 = new JTextField();
-		tf6.setEditable(false);
-		tf6.setColumns(10);
-		tf6.setBackground(Color.LIGHT_GRAY);
-		tf6.setBounds(83, 57, 63, 38);
-		contentPane.add(tf6);
-		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(259, 299, 89, 23);
+		btnVoltar.setBounds(280, 361, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		btnRemover = new JButton("Remover");
-		btnRemover.setBounds(219, 65, 89, 23);
+		btnRemover.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRemover.setBounds(226, 125, 108, 41);
 		contentPane.add(btnRemover);
 		
-		JButton btnQuestionrio = new JButton("Question\u00E1rio");
-		btnQuestionrio.setBounds(364, 298, 108, 23);
-		contentPane.add(btnQuestionrio);
+		JButton btnQuestionario = new JButton("Question\u00E1rio");
+		btnQuestionario.setBounds(395, 361, 108, 23);
+		contentPane.add(btnQuestionario);
 		
 		lblTopo = new JLabel("TOPO ->");
 		lblTopo.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblTopo.setBounds(10, 344, 53, 14);
+		lblTopo.setBounds(10, 413, 53, 14);
 		contentPane.add(lblTopo);
 		
 		JLabel lbl0 = new JLabel("0");
-		lbl0.setBounds(64, 303, 11, 14);
+		lbl0.setBounds(64, 365, 11, 14);
 		contentPane.add(lbl0);
 		
 		lbl1 = new JLabel("1");
-		lbl1.setBounds(64, 265, 11, 14);
+		lbl1.setBounds(64, 317, 11, 14);
 		contentPane.add(lbl1);
 		
 		lbl2 = new JLabel("2");
-		lbl2.setBounds(64, 224, 11, 14);
+		lbl2.setBounds(64, 269, 11, 14);
 		contentPane.add(lbl2);
 		
 		lbl3 = new JLabel("3");
-		lbl3.setBounds(63, 185, 11, 14);
+		lbl3.setBounds(64, 221, 11, 14);
 		contentPane.add(lbl3);
 		
 		lbl4 = new JLabel("4");
-		lbl4.setBounds(63, 145, 11, 14);
+		lbl4.setBounds(64, 173, 11, 14);
 		contentPane.add(lbl4);
 		
 		lbl5 = new JLabel("5");
-		lbl5.setBounds(64, 105, 11, 14);
+		lbl5.setBounds(64, 125, 11, 14);
 		contentPane.add(lbl5);
 		
 		lbl6 = new JLabel("6");
-		lbl6.setBounds(64, 65, 11, 14);
+		lbl6.setBounds(64, 77, 11, 14);
 		contentPane.add(lbl6);
+		
+		JLabel lblCubo0 = new JLabel("");
+		lblCubo0.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo0.setBounds(76, 334, 65, 67);
+		contentPane.add(lblCubo0);
+		
 		
 		/**
 		 * Botao voltar
@@ -351,7 +345,7 @@ public class Tela_Pilha extends JFrame {
 			vtDesempilhado[i] = null;
 			vtIniciarAdd[i].start();
 		}
-		y -= 4;
+		y -= 5;
 		if (vtEmpilhado[6] != null) {
 			JOptionPane.showMessageDialog(null, "Pilha cheia!!", "Aviso",
 					JOptionPane.INFORMATION_MESSAGE);
@@ -374,7 +368,7 @@ public class Tela_Pilha extends JFrame {
 					i = -1;
 					z-=1;
 					n+=1;
-					y += 4;
+					y += 5;
 				}
 		}
 	}

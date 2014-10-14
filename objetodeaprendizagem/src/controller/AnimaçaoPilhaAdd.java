@@ -37,23 +37,23 @@ public class AnimaçaoPilhaAdd extends Thread{
 			posiçao.y += 10;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(10);
+				Thread.sleep(45);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		for (int i = 0; i < 6; i++) {
-			posiçao.x -= 10;
+		for (int i = 0; i < 7; i++) {
+			posiçao.x -= 10.5;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(10);
+				Thread.sleep(40);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		posiçao = lblTopo.getBounds();
-		for (int i = 0; i < 4; i++) {
-			posiçao.y -=10;
+		for (int i = 0; i < 6; i++) {
+			posiçao.y -=8;
 			lblTopo.setBounds(posiçao);
 			try {
 				Thread.sleep(10);
