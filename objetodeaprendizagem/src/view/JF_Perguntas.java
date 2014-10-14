@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
-import controller.Fila;
 import controller.ObjetosPerguntas;
 import controller.Telas;
 
@@ -89,11 +88,20 @@ public class JF_Perguntas extends Telas {
 		painel.add(lblEnunciado);
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
+		btnProximo.setMnemonic('p');
 		
 		btnProximo.setBounds(440, 315, 89, 23);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Tela_Pilha tela=new Tela_Pilha();
+				tela.setVisible(true);
+				JF_Perguntas.this.dispose();
+			}
+		});
+		btnVoltar.setMnemonic('v');
 		btnVoltar.setBounds(20, 315, 89, 23);
 		contentPane.add(btnVoltar);
 	     
