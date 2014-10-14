@@ -69,6 +69,8 @@ public class Frm_principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		
 		
 		Panel panel = new Panel();
 		panel.setLayout(null);
@@ -108,6 +110,8 @@ public class Frm_principal extends JFrame {
 		JButton btn_inicia = new JButton("Iniciar");
 		btn_inicia.setBounds(514, 368, 89, 40);
 		contentPane.add(btn_inicia);
+		lbl_titulo.setVisible(false);
+		txt_descricao.setVisible(false);
 		
 		JButton btn_pilha = new JButton("Pilha");
 		btn_pilha.addActionListener(new ActionListener() {
@@ -122,6 +126,8 @@ public class Frm_principal extends JFrame {
 				String texto= descricao[0].descricao_res;
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Pilha");
+				lbl_titulo.setVisible(true);
+				txt_descricao.setVisible(true);
 			}
 		});
 		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -129,6 +135,7 @@ public class Frm_principal extends JFrame {
 		panel.add(btn_pilha);
 		
 		JButton btn_fila = new JButton("Fila");
+		btn_fila.setEnabled(false);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -141,12 +148,15 @@ public class Frm_principal extends JFrame {
 				String texto= descricao[1].descricao_res;
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Fila");
+				lbl_titulo.setVisible(true);
+				txt_descricao.setVisible(true);
 			}
 		});
 		btn_fila.setBounds(29, 99, 120, 56);
 		panel.add(btn_fila);
 		
 		JButton btn_lista = new JButton("Lista");
+		btn_lista.setEnabled(false);
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -159,6 +169,8 @@ public class Frm_principal extends JFrame {
 				String texto= descricao[2].descricao_res;
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Lista Ligada");
+				lbl_titulo.setVisible(true);
+				txt_descricao.setVisible(true);
 			}
 		});
 		btn_lista.setBounds(29, 184, 120, 56);
