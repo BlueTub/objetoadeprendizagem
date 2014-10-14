@@ -1,22 +1,26 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JProgressBar;
-import javax.swing.JLabel;
 import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import controller.Fila;
 import controller.Telas;
 import controller.ThreadCarregamento;
 
 public class JF_Pontuacao extends Telas {
 
 	private JPanel contentPane;
-
+	private static Fila fila;
 	/**
 	 * Launch the application.
 	 */
@@ -24,7 +28,7 @@ public class JF_Pontuacao extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JF_Pontuacao frame = new JF_Pontuacao();
+					JF_Pontuacao frame = new JF_Pontuacao(fila);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +40,8 @@ public class JF_Pontuacao extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	public JF_Pontuacao() {
+	public JF_Pontuacao(Fila fila) {
+		this.fila=fila;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 402);
 		contentPane = new JPanel();
@@ -60,21 +65,30 @@ public class JF_Pontuacao extends Telas {
 		painel.add(barra);
 		
 		JLabel lblCarregando = new JLabel("carregando");
+		lblCarregando.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCarregando.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblCarregando.setBounds(252, 159, 179, 21);
+		lblCarregando.setBounds(10, 159, 564, 21);
 		painel.add(lblCarregando);
 		
 		JLabel lblPontucao = new JLabel("Pontua\u00E7\u00E3o");
-		lblPontucao.setBounds(261, 220, 116, 14);
-		painel.add(lblPontucao);
+		lblPontucao.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPontucao.setBounds(10, 220, 564, 14);
 		lblPontucao.setVisible(false);
+		painel.add(lblPontucao);
 		
-		JLabel lblDica = new JLabel("dica");
-		lblDica.setBounds(233, 259, 166, 14);
-		painel.add(lblDica);
-		lblDica.setVisible(false);
+		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila);
 		
-		Thread t = new ThreadCarregamento(barra,lblDica,lblPontucao);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_principal tela=new frm_principal();
+				tela.setVisible(true);
+				JF_Pontuacao.this.dispose();
+			}
+		});
+		btnVoltar.setMnemonic('v');
+		btnVoltar.setBounds(10, 315, 89, 23);
+		painel.add(btnVoltar);
 		t.start();
 	}
 }
