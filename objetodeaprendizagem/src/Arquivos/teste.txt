@@ -1,5 +1,0 @@
-Qual seu nome?*João*Andre*Gustavo*Pedro*Javanilson
-Qual a sua idade?*19*18*21*20*2
-Qual sua banda favorita?*molejo*The Beatles*calypson*restart*outro
-Qual sua série favorita?*TWD*Game of Thrones*Breaking Bad*The 100*Dr.house
-ASSINALE A VERDADEIRA*qual é a verdadeira*nenhuma verdadeira*todas acima*todas abaixo*nenhuma falsa

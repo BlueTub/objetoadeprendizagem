@@ -31,7 +31,7 @@ public class LerPerguntas {
 		File dir= new File(sbDir.toString());
 		
 		if(dir.exists()){
-			String nomeArquivo="teste.txt";
+			String nomeArquivo="Perguntas.txt";
 			File arquivo = new File(sbDir.toString(),nomeArquivo);
 			
 			if(arquivo.exists()){

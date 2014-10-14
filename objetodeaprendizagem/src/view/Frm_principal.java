@@ -160,7 +160,7 @@ public class Frm_principal extends Telas {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}	
-				String texto= descricao[1].descricao_res;
+				String texto= descricao[1].getDescricao_res();
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Fila");
 				lbl_titulo.setVisible(true);
