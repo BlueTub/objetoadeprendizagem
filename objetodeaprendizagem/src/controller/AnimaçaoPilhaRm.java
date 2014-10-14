@@ -28,11 +28,11 @@ public class AnimaçaoPilhaRm extends Thread {
 	public void AnimarRm(){
 		Rectangle posiçao = lbl_valor.getBounds();
 		
-		for (int i = 0; i < 6; i++) {
-			posiçao.x += 10;
+		for (int i = 0; i < 7; i++) {
+			posiçao.x += 11;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(50);
+				Thread.sleep(40);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -42,7 +42,7 @@ public class AnimaçaoPilhaRm extends Thread {
 			posiçao.y -= 10;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(25);
+				Thread.sleep(45);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -53,8 +53,8 @@ public class AnimaçaoPilhaRm extends Thread {
 			btnRemover.setEnabled(true);
 		}
 		posiçao = lblTopo.getBounds();
-		for (int i = 0; i < 4; i++) {
-			posiçao.y +=10;
+		for (int i = 0; i < 6; i++) {
+			posiçao.y +=8;
 			lblTopo.setBounds(posiçao);
 			try {
 				Thread.sleep(10);
