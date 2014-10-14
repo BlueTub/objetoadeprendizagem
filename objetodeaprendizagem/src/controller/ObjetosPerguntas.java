@@ -4,7 +4,6 @@
 package controller;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 import view.JF_Perguntas;
@@ -25,8 +24,7 @@ public class ObjetosPerguntas {
 
  private LerPerguntas arquivo = new LerPerguntas();
  
- public Fila fila=new Fila();
- 
+ private Fila fila = new Fila(); 
  /**
   * Construtor da classe 
   * @param enunciado Recebe a label com o enunciado da pergunta
@@ -66,8 +64,8 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    }catch(NullPointerException e){
 	    System.out.println("Fim do questionario");
 	    JF_Perguntas.frame.dispose();
-		 JF_Pontuacao tela=new JF_Pontuacao();
-	     tela.setVisible(true);
+		JF_Pontuacao tela=new JF_Pontuacao(fila);
+	    tela.setVisible(true);
 	    
 	    }	
 			
