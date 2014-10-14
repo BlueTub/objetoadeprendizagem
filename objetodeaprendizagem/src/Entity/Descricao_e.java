@@ -4,11 +4,11 @@ public class Descricao_e {
 	/**
 	 * @author Hury
 	 */
-	public String descricao_res;
-	public String descricao_int;
-	public String caract;
-	public String uso;
-	public String dificuldade;
+	private String descricao_res;
+	private String descricao_int;
+	private String caract;
+	private String uso;
+	private String dificuldade;
 	
 
 	public Descricao_e() {
