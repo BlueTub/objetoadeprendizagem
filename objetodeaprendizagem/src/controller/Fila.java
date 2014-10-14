@@ -48,9 +48,9 @@ public class Fila {
 	public int remove(){
 		int resp = 0;
 		if(vazia()){
-			System.out.println("vazia...");
+			System.out.println("fila vazia");
 		} else {
-			resp = dado[tamanho];
+			resp = dado[tamanho-1];
 			tamanho--;
 		}
 		return resp;
@@ -62,7 +62,7 @@ public class Fila {
 	public String mostra(){
 		String resp = "";
 		if(vazia()){
-			System.out.println("vazia..");
+			System.out.println("vazia no mostra..");
 		} else {
 			for (int i = 0; i < tamanho; i++) {
 				resp = resp + "" + dado[i];
