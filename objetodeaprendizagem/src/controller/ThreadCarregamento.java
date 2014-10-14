@@ -91,7 +91,7 @@ public class ThreadCarregamento extends Thread{
 		     pontuacao.setVisible(true);
 		     pontuacao.setBounds(10, 85, 564, 63);
 		     if(pont>=60){
-		    	 texto.setText("Parabéns você conseguio!");
+		    	 texto.setText("Parabéns você atingiu a meta!");
 		     }else{
 		    	 texto.setText("Recomendamos que você volte e estude mais");
 		     }
