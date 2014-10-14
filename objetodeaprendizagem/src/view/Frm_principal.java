@@ -20,10 +20,12 @@ import javax.swing.JTextPane;
 import javax.swing.UIManager;
 
 import controller.Descricao_c;
+import controller.Telas;
 
 import Entity.Descricao_e;
+import java.awt.SystemColor;
 
-public class Frm_principal extends JFrame {
+public class Frm_principal extends Telas {
 
 	private JPanel contentPane;
 
@@ -63,14 +65,18 @@ public class Frm_principal extends JFrame {
 	}
 	
 	public Frm_principal() {
+		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 478);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.inactiveCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		
+		centralizeFrame();
+		Estilo();
+		iconeBarra();
 		
 		Panel panel = new Panel();
 		panel.setLayout(null);
@@ -108,6 +114,15 @@ public class Frm_principal extends JFrame {
 		contentPane.add(horizontalStrut_1);
 		
 		JButton btn_inicia = new JButton("Iniciar");
+		btn_inicia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				Frm_descricao tela= new Frm_descricao();
+				tela.setVisible(true);
+				dispose();
+				
+			}
+		});
 		btn_inicia.setBounds(514, 368, 89, 40);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
@@ -120,7 +135,6 @@ public class Frm_principal extends JFrame {
 				try {
 					descricao=Carregatxt();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}	
 				String texto= descricao[0].descricao_res;
@@ -130,12 +144,13 @@ public class Frm_principal extends JFrame {
 				txt_descricao.setVisible(true);
 			}
 		});
+
+		
 		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_pilha.setBounds(29, 11, 120, 56);
 		panel.add(btn_pilha);
 		
 		JButton btn_fila = new JButton("Fila");
-		btn_fila.setEnabled(false);
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -156,7 +171,6 @@ public class Frm_principal extends JFrame {
 		panel.add(btn_fila);
 		
 		JButton btn_lista = new JButton("Lista");
-		btn_lista.setEnabled(false);
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];

@@ -53,7 +53,7 @@ public class JF_Splash extends Telas {
             }  
         }
         JF_Splash.this.dispose();
-        Tela_Pilha tela=new Tela_Pilha();
+        Frm_principal tela=new Frm_principal();
         tela.setVisible(true);
        }   
        
