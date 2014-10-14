@@ -95,7 +95,7 @@ public class JF_Perguntas extends Telas {
 		
 		JLabel lblEnunciado = new JLabel("enunciado");
 		lblEnunciado.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEnunciado.setBounds(6, 25, 555, 49);
+		lblEnunciado.setBounds(6, 0, 565, 85);
 		painel.add(lblEnunciado);
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
@@ -107,9 +107,13 @@ public class JF_Perguntas extends Telas {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+			int resp;
+			resp=JOptionPane.showConfirmDialog(null, "Deseja realmente voltar a animação","Voltar a animação",0,1);	
+				if(resp==0){
 				Tela_Pilha tela=new Tela_Pilha();
 				tela.setVisible(true);
 				JF_Perguntas.this.dispose();
+				}
 			}
 		});
 		btnVoltar.setMnemonic('v');
