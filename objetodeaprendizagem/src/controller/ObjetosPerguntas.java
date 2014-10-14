@@ -6,9 +6,6 @@ package controller;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
-import view.JF_Perguntas;
-import view.JF_Pontuacao;
-
 /**
  * Classe que tratara dos objetos da classe JF_Perguntas
  * @author joão
@@ -22,9 +19,9 @@ public class ObjetosPerguntas {
  private JRadioButton resposta4;
  private JRadioButton resposta5;
 
- private LerPerguntas arquivo = new LerPerguntas();
+ public LerPerguntas arquivo = new LerPerguntas();
  
- private Fila fila = new Fila(); 
+ public Fila fila = new Fila(); 
  /**
   * Construtor da classe 
   * @param enunciado Recebe a label com o enunciado da pergunta
@@ -61,12 +58,8 @@ public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 	    resposta3.setText(printar[3]);
 	    resposta4.setText(printar[4]);
 	    resposta5.setText(printar[5]);
-	    }catch(NullPointerException e){
-	    System.out.println("Fim do questionario");
-	    JF_Perguntas.frame.dispose();
-		JF_Pontuacao tela=new JF_Pontuacao(fila);
-	    tela.setVisible(true);
-	    
+	    }catch(NullPointerException e){  
+	    	System.out.println("Fim do questionario");
 	    }	
 			
 	}
