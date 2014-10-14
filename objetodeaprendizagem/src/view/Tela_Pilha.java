@@ -21,6 +21,7 @@ import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
+import controller.Telas;
 
 public class Tela_Pilha extends JFrame {
 	
@@ -82,6 +83,10 @@ public class Tela_Pilha extends JFrame {
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 449);
+		
+		//centralizeFrame();
+		///iconeBarra();
+		//Estilo();
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -278,8 +283,21 @@ public class Tela_Pilha extends JFrame {
 				rmElemento(btnAdicionar, btnRemover);
 			}
 		};
-		btnRemover.addActionListener(remover);
+		/**
+		 * Botao para ir para o questionario
+		 */
+		ActionListener questionario = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JF_Perguntas p = new JF_Perguntas();
+				p.setVisible(true);
+				Tela_Pilha.this.dispose();
+			}
+		};
 		
+		btnQuestionario.addActionListener(questionario);
+		btnRemover.addActionListener(remover);
 		btnAdicionar.addActionListener(adicionar);
 		btnVoltar.addActionListener(voltar);
 		if (cont == 1) {
@@ -289,7 +307,11 @@ public class Tela_Pilha extends JFrame {
 		if (vtEmpilhado[0] == null) {
 			btnRemover.setEnabled(false);
 		}
-
+		
+		
+		
+		
+		
 	}
 	
 	public void CarregaVtDesempilhado(){
