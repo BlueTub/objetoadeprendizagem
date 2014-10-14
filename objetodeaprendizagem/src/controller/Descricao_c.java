@@ -17,16 +17,16 @@ public class Descricao_c {
 		for(int i=0; i<3; i++){                          //carrega 3 objetos com seus respectivos dados
 			desc[i].setDescricao_int(ler.readLine());						
 			desc[i].setDescricao_res(ler.readLine()) ;
-			desc[i].caract = ler.readLine();
-			desc[i].uso= ler.readLine();
-			desc[i].dificuldade= ler.readLine();
+			desc[i].setCaract(ler.readLine()) ;
+			desc[i].setUso(ler.readLine());
+			desc[i].setDificult(ler.readLine()) ;
 		}
 		ler.close();                                      //fecha o buffer
 
 	}
 	public void TestaTexto(Descricao_e[] descricao){ //imprimi o conteudo de todos objetos no console
 		for(int i=0; i<3;i++){
-	        System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso+"\n"+descricao[i].dificuldade);
+	        //System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso+"\n"+descricao[i].dificuldade);
 		}
 	}
 
