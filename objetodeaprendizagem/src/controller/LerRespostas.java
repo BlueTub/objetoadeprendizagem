@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 public class LerRespostas {
 		
 		public Pilha p1 = new Pilha();
+
 		/**
 		 * Metodo para pegar achar o arquivo, pegar e jogar na Pilha seus elementos.
 		 */
@@ -42,12 +43,11 @@ public class LerRespostas {
 						while(linha!=null){	
 							numero = Integer.parseInt(linha);
 							p1.empilha(numero);
-							linha=buffer.readLine();			
+							linha=buffer.readLine();
 					    }
 						buffer.close();
 						leFluxo.close();
 						abreArquivo.close();
-						System.out.println(p1.desempilha());						
 						
 						} catch (IOException e) {
 							e.printStackTrace();
