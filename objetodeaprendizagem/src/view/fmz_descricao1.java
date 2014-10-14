@@ -19,7 +19,7 @@ import controller.Descricao_c;
 
 import Entity.Descricao_e;
 
-public class fmz_descricao extends JFrame {
+public class fmz_descricao1 extends JFrame {
 	/**
 	 * @author Hury
 	 */
@@ -39,7 +39,7 @@ public class fmz_descricao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					fmz_descricao frame = new fmz_descricao();
+					fmz_descricao1 frame = new fmz_descricao1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -64,7 +64,7 @@ public class fmz_descricao extends JFrame {
         return descricao;
 	}
 	
-	public fmz_descricao() {
+	public fmz_descricao1() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 569, 359);
 		contentPane = new JPanel();

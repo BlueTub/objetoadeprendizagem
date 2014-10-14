@@ -81,7 +81,7 @@ public class JF_Pontuacao extends Telas {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frm_principal tela=new frm_principal();
+				frm_principal1 tela=new frm_principal1();
 				tela.setVisible(true);
 				JF_Pontuacao.this.dispose();
 			}
