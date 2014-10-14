@@ -19,7 +19,6 @@ import controller.Telas;
 public class JF_Perguntas extends Telas {
 
 	private JPanel contentPane;
-	public static JF_Perguntas frame;
 	/**
 	 * Launch the application.
 	 */
@@ -27,7 +26,7 @@ public class JF_Perguntas extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new JF_Perguntas();
+					JF_Perguntas frame = new JF_Perguntas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,6 +39,10 @@ public class JF_Perguntas extends Telas {
 	 * Create the frame.
 	 */
 	public JF_Perguntas() {
+		Initialize();		
+	}
+	
+	public void Initialize(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 607, 402);
 		contentPane = new JPanel();
@@ -112,16 +115,23 @@ public class JF_Perguntas extends Telas {
 		btnProximo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(muda.valida()){
-				muda.Selecao();
-				muda.AlterarTela();
-				grupo.clearSelection();
+					muda.Selecao();
+					if(!(muda.arquivo.ll1.vazia())){
+					
+					muda.AlterarTela();
+					grupo.clearSelection();
+					}else{
+						JF_Perguntas.this.dispose();
+						JF_Pontuacao tela=new JF_Pontuacao(muda.fila);
+					    tela.setVisible(true);
+						
+					}
+						
 				}else{
 				JOptionPane.showMessageDialog(null, "Selecione uma opção","Opção não selecionada",JOptionPane.ERROR_MESSAGE);
 				}
 			}
-		});		
-		
-		
+		});
 	}
 	
 }
