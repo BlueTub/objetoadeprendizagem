@@ -63,8 +63,7 @@ public class ThreadCarregamento extends Thread{
 	            }  
 	        }
 	           barra.setVisible(false);
-	           texto.setVisible(false);
-		       Potuacao();
+	           Potuacao();
 	        	    
 	    }
 	    /**

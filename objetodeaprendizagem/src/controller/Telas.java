@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
 
+
 /**
  * Classe que herda de jFrame e contem os metodos de aparencia do frame
  * @author joão
