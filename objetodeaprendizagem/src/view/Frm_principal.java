@@ -137,7 +137,7 @@ public class Frm_principal extends Telas {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}	
-				String texto= descricao[0].descricao_res;
+				String texto= descricao[0].getDescricao_res();
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Pilha");
 				lbl_titulo.setVisible(true);
@@ -180,7 +180,7 @@ public class Frm_principal extends Telas {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}	
-				String texto= descricao[2].descricao_res;
+				String texto= descricao[2].getDescricao_res();
 				txt_descricao.setText(texto);
 				lbl_titulo.setText("Lista Ligada");
 				lbl_titulo.setVisible(true);
