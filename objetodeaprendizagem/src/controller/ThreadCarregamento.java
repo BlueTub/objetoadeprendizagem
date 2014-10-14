@@ -16,33 +16,36 @@ public class ThreadCarregamento extends Thread{
 	  private JProgressBar barra=new JProgressBar();
 	  private JLabel texto=new JLabel();
 	  private JLabel pontuacao = new JLabel();
-
+	  private Fila f=new Fila();
+	  private static int pont = 0;
 	    
 	  /**
 	   * Construtor 
 	   * @param barra 
 	   * @param texto
+	 * @param fila 
 	   */
-	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao){
+	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f){
 	        this.barra=barra;
 	        this.texto=texto;
 	        this.pontuacao=pontuacao;
+	        this.f=f;
 	    }
 	    
 	    @Override
 	    public void run(){
-	    	Carrega(Potuacao()); 
-	    	
+	    	Carrega(); 
+	    	Potuacao();
 	    }
 	    /**
 	     * Método para carregar a barra
 	     * @param e pontuacao feita pelo usuario
 	     */
-	    public void Carrega(int e){
+	    public void Carrega(){
 	        for(int i=0;i<=100;i++){
 	            barra.setValue(i);
 	            try {
-	                Thread.sleep(20);
+	                Thread.sleep(35);
 	            } catch (InterruptedException ex) {
 	                System.out.println(ex);
 	            }
@@ -59,34 +62,41 @@ public class ThreadCarregamento extends Thread{
 	                }
 	            }  
 	        }
-	        
-		       String pont = Integer.toString(e);
-		       pontuacao.setText(pont+"%");
-		       pontuacao.setVisible(true);
-
+	           barra.setVisible(false);
+	           texto.setVisible(false);
+		       Potuacao();
 	        	    
 	    }
 	    /**
 	     * Metodo para gerar a pontuacao das perguntas e pegar qual perguntas ele errou.
 	     * @return pontuacao.
 	     */
-	    public int Potuacao(){
-	    	Fila f = new Fila();
-	    	Pilha p = new Pilha();
-	    	int pont = 0;
-	    	int resp = 0;
+	    public void Potuacao(){
+	    	LerRespostas ler=new LerRespostas();
+	    	ler.leArquivos();
 	    	
-	    	for (int i = 0; i < 5; i++) {
-				if(p.desempilha() == f.remove()){
-					pont = pont + 20;
-					resp = i;//para dar a dica e saber ql a resposta foi errada
-				} else {
-					resp = i;
-				}
-			}
-	    	return pont;
-
+	    		while(!f.vazia()){
+	    		int usuario=f.remove();
+	    		System.out.println("usuario "+usuario);
+	    		int certas=ler.p1.desempilha();
+	     		System.out.println("certas "+certas);
+	     			if(certas==usuario){
+	    			pont+=20;
+	     			}
+	    		}
+				
+			
+	    	 String string = Integer.toString(pont);
+		     pontuacao.setText("Sua pontuação foi de: "+string+"%");
+		     pontuacao.setVisible(true);
+		     pontuacao.setBounds(10, 85, 564, 63);
+		     if(pont>=60){
+		    	 texto.setText("Parabéns você conseguio!");
+		     }else{
+		    	 texto.setText("Recomendamos que você volte e estude mais");
+		     }
+		     texto.setVisible(true);
+		     
 	    }
-	    
 
 }
