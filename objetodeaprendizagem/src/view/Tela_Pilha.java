@@ -11,9 +11,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.Color;
-
 import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -23,7 +21,7 @@ import javax.swing.Action;
 import javax.swing.JOptionPane;
 import controller.Telas;
 
-public class Tela_Pilha extends JFrame {
+public class Tela_Pilha extends Telas {
 	
 	private JPanel contentPane;
 	private JMenuBar menuBar;
@@ -84,9 +82,10 @@ public class Tela_Pilha extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 449);
 		
-		//centralizeFrame();
-		///iconeBarra();
-		//Estilo();
+		//Metodos para padronizaçao das Telas
+		centralizeFrame();
+		iconeBarra();
+		Estilo();
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -147,9 +146,6 @@ public class Tela_Pilha extends JFrame {
 		lbl_valor70.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor70);
 		
-		
-		
-		
 		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor10.setForeground(Color.BLACK);
 		lbl_valor10.setBounds(163, 54, 29, 38);
@@ -184,9 +180,6 @@ public class Tela_Pilha extends JFrame {
 		lblCubo_1.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_1.setBounds(76, 285, 65, 67);
 		contentPane.add(lblCubo_1);
-		
-		
-		
 		
 		btnAdicionar = new JButton("Adicionar");
 		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -292,7 +285,7 @@ public class Tela_Pilha extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				JF_Perguntas p = new JF_Perguntas();
 				p.setVisible(true);
-				Tela_Pilha.this.dispose();
+				dispose();
 			}
 		};
 		
@@ -307,11 +300,6 @@ public class Tela_Pilha extends JFrame {
 		if (vtEmpilhado[0] == null) {
 			btnRemover.setEnabled(false);
 		}
-		
-		
-		
-		
-		
 	}
 	
 	public void CarregaVtDesempilhado(){
@@ -403,7 +391,7 @@ public class Tela_Pilha extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			dispose();
 			Frm_principal p = new Frm_principal();
-			p.setVisible(true);                        // <- PROBLEMA AQUI !!!!
+			p.setVisible(true);
 		}
 	}
 }
