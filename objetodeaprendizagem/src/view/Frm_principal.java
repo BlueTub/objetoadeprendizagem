@@ -24,6 +24,7 @@ import controller.Telas;
 
 import Entity.Descricao_e;
 import java.awt.SystemColor;
+import javax.swing.ImageIcon;
 
 public class Frm_principal extends Telas {
 
@@ -95,6 +96,7 @@ public class Frm_principal extends Telas {
 		contentPane.add(lbl_titulo);
 		
 		JButton button_3 = new JButton("");
+		button_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
 		button_3.setBounds(600, 2, 38, 40);
 		contentPane.add(button_3);
 		
