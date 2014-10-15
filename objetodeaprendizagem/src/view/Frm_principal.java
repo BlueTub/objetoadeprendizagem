@@ -68,7 +68,7 @@ public class Frm_principal extends Telas {
 	public Frm_principal() {
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 664, 478);
+		setBounds(100, 100, 664, 403);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.inactiveCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,7 +81,7 @@ public class Frm_principal extends Telas {
 		
 		Panel panel = new Panel();
 		panel.setLayout(null);
-		panel.setBounds(36, 103, 180, 251);
+		panel.setBounds(40, 64, 180, 251);
 		contentPane.add(panel);
 		
 		
@@ -97,7 +97,7 @@ public class Frm_principal extends Telas {
 		
 		JButton button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		button_3.setBounds(600, 2, 38, 40);
+		button_3.setBounds(600, 25, 38, 40);
 		contentPane.add(button_3);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
@@ -105,17 +105,18 @@ public class Frm_principal extends Telas {
 		contentPane.add(horizontalStrut);
 		
 		final JTextPane txt_descricao = new JTextPane();
+		txt_descricao.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txt_descricao.setText("descri\u00E7\u00E3o aqui");
 		txt_descricao.setEditable(false);
 		txt_descricao.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		txt_descricao.setBounds(276, 131, 314, 77);
+		txt_descricao.setBounds(276, 113, 314, 125);
 		contentPane.add(txt_descricao);
 		
 		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
-		horizontalStrut_1.setBounds(276, 321, 333, 14);
+		horizontalStrut_1.setBounds(276, 260, 333, 14);
 		contentPane.add(horizontalStrut_1);
 		
-		JButton btn_inicia = new JButton("Iniciar");
+		JButton btn_inicia = new JButton(">>");
 		btn_inicia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -125,7 +126,7 @@ public class Frm_principal extends Telas {
 				
 			}
 		});
-		btn_inicia.setBounds(514, 368, 89, 40);
+		btn_inicia.setBounds(511, 299, 89, 40);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
@@ -149,7 +150,7 @@ public class Frm_principal extends Telas {
 
 		
 		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btn_pilha.setBounds(29, 11, 120, 56);
+		btn_pilha.setBounds(29, 32, 120, 56);
 		panel.add(btn_pilha);
 		
 		JButton btn_fila = new JButton("Fila");
@@ -189,8 +190,17 @@ public class Frm_principal extends Telas {
 				txt_descricao.setVisible(true);
 			}
 		});
-		btn_lista.setBounds(29, 184, 120, 56);
+		btn_lista.setBounds(29, 166, 120, 56);
 		panel.add(btn_lista);
+		
+		JLabel lblNewLabel = new JLabel("Selecione");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel.setBounds(60, 7, 67, 14);
+		panel.add(lblNewLabel);
+		
+		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
+		lblMostrarMaisDetalhes.setBounds(504, 339, 105, 14);
+		contentPane.add(lblMostrarMaisDetalhes);
 		
 		
 		
