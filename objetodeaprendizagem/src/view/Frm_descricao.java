@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextPane;
 
 import controller.Descricao_c;
+import controller.Telas;
 
 import Entity.Descricao_e;
 
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.awt.SystemColor;
 import java.awt.Font;
 
-public class Frm_descricao extends JFrame {
+public class Frm_descricao extends Telas {
 
 	private JPanel contentPane;
 
@@ -73,6 +74,10 @@ public class Frm_descricao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		centralizeFrame();
+		Estilo();
+		iconeBarra();
 		
 		JButton btn_volta = new JButton("<<");
 		btn_volta.addActionListener(new ActionListener() {
