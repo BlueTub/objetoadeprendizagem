@@ -181,6 +181,12 @@ public class Tela_Pilha extends Telas {
 		lblCubo_1.setBounds(76, 285, 65, 67);
 		contentPane.add(lblCubo_1);
 		
+		
+		JLabel lblCubo0 = new JLabel("");
+		lblCubo0.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo0.setBounds(76, 334, 65, 67);
+		contentPane.add(lblCubo0);
+		
 		btnAdicionar = new JButton("Adicionar");
 		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAdicionar.setBounds(226, 54, 108, 41);
@@ -237,14 +243,8 @@ public class Tela_Pilha extends Telas {
 		lbl6.setBounds(64, 77, 11, 14);
 		contentPane.add(lbl6);
 		
-		JLabel lblCubo0 = new JLabel("");
-		lblCubo0.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
-		lblCubo0.setBounds(76, 334, 65, 67);
-		contentPane.add(lblCubo0);
-		
-		
 		/**
-		 * Botao voltar
+		 * Botao voltar para a explicaçao da Pilha
 		 */
 		ActionListener voltar = new ActionListener() {
 			
@@ -293,6 +293,7 @@ public class Tela_Pilha extends Telas {
 		btnRemover.addActionListener(remover);
 		btnAdicionar.addActionListener(adicionar);
 		btnVoltar.addActionListener(voltar);
+		
 		if (cont == 1) {
 			CarregaVtDesempilhado();
 			cont++;
@@ -302,6 +303,10 @@ public class Tela_Pilha extends Telas {
 		}
 	}
 	
+	/**
+	 * Metodo para carregar o vetor que armazena as JLabels dos elementos
+	 * que entrarao na Pilha
+	 */
 	public void CarregaVtDesempilhado(){
 		vtDesempilhado[0] = lbl_valor10;
 		vtDesempilhado[1] = lbl_valor20;
@@ -312,6 +317,10 @@ public class Tela_Pilha extends Telas {
 		vtDesempilhado[6] = lbl_valor70;
 	}
 	
+	/**
+	 * Metodo que carrega o vetor com Threads, chamando uma classe 
+	 * para adicionar elementos na Pilha
+	 */
 	public void CarregavtIniciarAdd(){
 		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo);
 		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo);
@@ -329,6 +338,10 @@ public class Tela_Pilha extends Telas {
 		vtIniciarAdd[6] = t7;
 	}
 	
+	/**
+	 * Metodo que carrega o vetor com Threads, chamando uma classe
+	 * para remover os elementos da Pilha
+	 */
 	public void CarregavtIniciaRm(){
 		Thread t7 = new AnimaçaoPilhaRm(lbl_valor70,btnAdicionar,btnRemover,lblTopo);
 		Thread t6 = new AnimaçaoPilhaRm(lbl_valor60,btnAdicionar,btnRemover,lblTopo);
@@ -346,6 +359,11 @@ public class Tela_Pilha extends Telas {
 		vtIniciarRm[6] = t7;
 	}
 	
+	/**
+	 * Metodo para chamar a Thread que sera executada na animaçao de adicionar elementos
+	 * @param btnAdicionar ficara false quando a animaçao estiver em execuçao
+	 * @param btnRemover ficara false quando a animaçao estiver em execuçao
+	 */ 
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
@@ -365,6 +383,11 @@ public class Tela_Pilha extends Telas {
 		z +=1;
 	}
 	
+	/**
+	 * Metodo para chamar a Thread que sera executada na animaçao de remover elementos
+	 * @param btnAdicionar ficara false quando a animaçao estiver em execuçao
+	 * @param btnRemover ficara false quando a animaçao estiver em execuçao
+	 */
 	public void rmElemento(JButton btnAdicionar,JButton btnRemover){
 		btnRemover.setEnabled(false);
 		btnAdicionar.setEnabled(false);
@@ -382,7 +405,6 @@ public class Tela_Pilha extends Telas {
 				}
 		}
 	}
-	
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Menu Principal");
