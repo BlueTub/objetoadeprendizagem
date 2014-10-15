@@ -75,7 +75,7 @@ public class ThreadCarregamento extends Thread{
 	    	ler.leArquivos();
 	    	
 	    		while(!f.vazia()){
-	    		int usuario=f.removeInicio();
+	    		int usuario=f.remove();
 	    		System.out.println("usuario "+usuario);
 	    		int certas=ler.p1.desempilha();
 	     		System.out.println("certas "+certas);
