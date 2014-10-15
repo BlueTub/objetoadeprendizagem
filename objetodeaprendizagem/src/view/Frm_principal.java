@@ -34,6 +34,7 @@ public class Frm_principal extends Telas {
 	 * Launch the application.
 	 * @throws IOException 
 	 */
+	int objeto =0;
 	public static void main(String[] args) throws IOException {
 		Carregatxt();
 		
@@ -61,11 +62,12 @@ public class Frm_principal extends Telas {
         
         Descricao_c metodos = new Descricao_c();
         metodos.le(descricao);
-        metodos.TestaTexto(descricao);
+     //   metodos.TestaTexto(descricao);
         return descricao;
 	}
 	
 	public Frm_principal() {
+
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 403);
@@ -122,6 +124,7 @@ public class Frm_principal extends Telas {
 				
 				Frm_descricao tela= new Frm_descricao();
 				tela.setVisible(true);
+				tela.setObjeto(objeto); //informa ao novo frm qual o objeto em questão (0= pilha, 1=fila,2=lista ligada)
 				dispose();
 				
 			}
@@ -130,6 +133,7 @@ public class Frm_principal extends Telas {
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
+		
 		
 		JButton btn_pilha = new JButton("Pilha");
 		btn_pilha.addActionListener(new ActionListener() {
@@ -145,6 +149,7 @@ public class Frm_principal extends Telas {
 				lbl_titulo.setText("Pilha");
 				lbl_titulo.setVisible(true);
 				txt_descricao.setVisible(true);
+				objeto=0;
 			}
 		});
 
@@ -168,6 +173,7 @@ public class Frm_principal extends Telas {
 				lbl_titulo.setText("Fila");
 				lbl_titulo.setVisible(true);
 				txt_descricao.setVisible(true);
+				objeto=1;
 			}
 		});
 		btn_fila.setBounds(29, 99, 120, 56);
@@ -188,6 +194,7 @@ public class Frm_principal extends Telas {
 				lbl_titulo.setText("Lista Ligada");
 				lbl_titulo.setVisible(true);
 				txt_descricao.setVisible(true);
+				objeto=2;
 			}
 		});
 		btn_lista.setBounds(29, 166, 120, 56);
@@ -200,9 +207,19 @@ public class Frm_principal extends Telas {
 		
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setBounds(504, 339, 105, 14);
-		contentPane.add(lblMostrarMaisDetalhes);
+		contentPane.add(lblMostrarMaisDetalhes);	
 		
-		
-		
+	}
+	
+	public void iniciaBotao(int objet){
+		Descricao_e[] descricao = new Descricao_e[3];
+		try {
+			descricao=Carregatxt();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}	
+		String texto= descricao[2].getDescricao_res();
+
 	}
 }

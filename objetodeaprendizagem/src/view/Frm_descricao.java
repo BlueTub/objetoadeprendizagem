@@ -38,6 +38,7 @@ public class Frm_descricao extends JFrame {
 				try {
 					Frm_descricao frame = new Frm_descricao();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,6 +49,9 @@ public class Frm_descricao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public void setObjeto(int objeto){
+		this.objeto=objeto;
+	}
 	
 	public static Descricao_e[] Carregatxt() throws IOException{
         Descricao_e[] descricao = new Descricao_e[3];
@@ -71,6 +75,13 @@ public class Frm_descricao extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btn_volta = new JButton("<<");
+		btn_volta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frm_principal tela = new Frm_principal();
+				tela.setVisible(true);
+				dispose();
+			}
+		});
 		btn_volta.setBounds(50, 309, 89, 40);
 		contentPane.add(btn_volta);
 		
@@ -175,5 +186,7 @@ public class Frm_descricao extends JFrame {
 				dispose();
 			}
 		});
+		
+		
 	}
 }
