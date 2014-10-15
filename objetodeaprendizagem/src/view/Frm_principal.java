@@ -68,6 +68,11 @@ public class Frm_principal extends Telas {
 	
 	public Frm_principal() {
 
+      inicializa();
+
+	}
+	
+	public void inicializa(){
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 403);
@@ -99,7 +104,7 @@ public class Frm_principal extends Telas {
 		
 		JButton button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		button_3.setBounds(600, 25, 38, 40);
+		button_3.setBounds(600, 11, 38, 40);
 		contentPane.add(button_3);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
@@ -126,6 +131,7 @@ public class Frm_principal extends Telas {
 				tela.setVisible(true);
 				tela.setObjeto(objeto); //informa ao novo frm qual o objeto em questão (0= pilha, 1=fila,2=lista ligada)
 				dispose();
+				
 				
 			}
 		});
@@ -207,19 +213,12 @@ public class Frm_principal extends Telas {
 		
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setBounds(504, 339, 105, 14);
-		contentPane.add(lblMostrarMaisDetalhes);	
+		contentPane.add(lblMostrarMaisDetalhes);
+		
+		
+		btn_pilha.doClick();
 		
 	}
 	
-	public void iniciaBotao(int objet){
-		Descricao_e[] descricao = new Descricao_e[3];
-		try {
-			descricao=Carregatxt();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}	
-		String texto= descricao[2].getDescricao_res();
 
-	}
 }
