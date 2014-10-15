@@ -41,20 +41,7 @@ public class Fila {
 			tamanho++;
 		}
 	}
-	/**
-	 * Metodo para retornar um elemento da Fila
-	 * @return elemento removido
-	 */
-	public int remove(){
-		int resp = 0;
-		if(vazia()){
-			System.out.println("fila vazia");
-		} else {
-			resp = dado[tamanho-1];
-			tamanho--;
-		}
-		return resp;
-	}
+
 	/**
 	 * Metodo para mostrar todos elementos da Fila
 	 * @return elementos da Fila
