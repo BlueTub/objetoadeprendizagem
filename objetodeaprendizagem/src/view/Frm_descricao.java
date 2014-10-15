@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.awt.SystemColor;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class Frm_descricao extends Telas {
 
@@ -189,6 +190,11 @@ public class Frm_descricao extends Telas {
 		lblNavegueEntreAs.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNavegueEntreAs.setBounds(50, 39, 299, 14);
 		contentPane.add(lblNavegueEntreAs);
+		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 576, 385);
+		contentPane.add(lbl_fundo);
 		btn_prox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Tela_Pilha tela = new Tela_Pilha();

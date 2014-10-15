@@ -56,6 +56,7 @@ public class Tela_Pilha extends Telas {
 	private JLabel lblCubo_4;
 	private JLabel lblCubo_5;
 	private JLabel lblCubo_6;
+	private JLabel lbl_fundo;
 	/**
 	 * Launch the application.
 	 */
@@ -242,6 +243,11 @@ public class Tela_Pilha extends Telas {
 		lbl6 = new JLabel("6");
 		lbl6.setBounds(64, 77, 11, 14);
 		contentPane.add(lbl6);
+		
+		lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 540, 399);
+		contentPane.add(lbl_fundo);
 		
 		/**
 		 * Botao voltar para a explicaçao da Pilha

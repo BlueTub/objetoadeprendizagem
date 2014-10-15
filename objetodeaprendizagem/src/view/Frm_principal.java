@@ -1,7 +1,7 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,6 +16,7 @@ import java.awt.Component;
 import java.io.IOException;
 
 import javax.swing.Box;
+
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 
@@ -29,11 +30,14 @@ import javax.swing.ImageIcon;
 public class Frm_principal extends Telas {
 
 	private JPanel contentPane;
+	
+	
 
 	/**
 	 * Launch the application.
 	 * @throws IOException 
 	 */
+
 	int objeto =0;
 	public static void main(String[] args) throws IOException {
 		Carregatxt();
@@ -50,9 +54,10 @@ public class Frm_principal extends Telas {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+/** 
+ * Carrega
+ * @throws IOException
+ */
 	
 	public static Descricao_e[] Carregatxt() throws IOException{
         Descricao_e[] descricao = new Descricao_e[3];
@@ -66,9 +71,17 @@ public class Frm_principal extends Telas {
         return descricao;
 	}
 	
+	
+	/**
+	 * Create the frame.
+	 */
+	
+  
+ 
 	public Frm_principal() {
 
       inicializa();
+       
 
 	}
 	
@@ -91,7 +104,8 @@ public class Frm_principal extends Telas {
 		panel.setBounds(40, 64, 180, 251);
 		contentPane.add(panel);
 		
-		
+	      
+	      
 		JLabel label = new JLabel("Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
 		label.setFont(new Font("Arial", Font.BOLD, 14));
 		label.setBounds(52, 28, 504, 14);
@@ -215,10 +229,13 @@ public class Frm_principal extends Telas {
 		lblMostrarMaisDetalhes.setBounds(504, 339, 105, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
 		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 648, 364);
+		contentPane.add(lbl_fundo);
+		
 		
 		btn_pilha.doClick();
 		
 	}
-	
-
 }
