@@ -270,6 +270,11 @@ public class Frm_principal extends Telas {
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
+		JLabel lblConfig = new JLabel("Config");
+		lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblConfig.setBounds(610, 68, 46, 14);
+		contentPane.add(lblConfig);
+		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 658, 374);
