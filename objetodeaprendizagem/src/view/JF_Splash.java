@@ -9,7 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
-import controller.Telas;;
+import controller.Telas;
+import javax.swing.ImageIcon;;
 
 public class JF_Splash extends Telas {
 
@@ -92,6 +93,11 @@ public class JF_Splash extends Telas {
 		contentPane.add(lbltexto);
 		
 		Carrega(barra, lbltexto);
+		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(JF_Splash.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 450, 300);
+		contentPane.add(lbl_fundo);
 	}
 	
 }

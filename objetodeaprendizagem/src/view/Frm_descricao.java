@@ -202,8 +202,7 @@ public class Frm_descricao extends Telas {
 				dispose();
 			}
 		});
-btn_caract.doClick();
-btn_descricao.doClick();
+
 	}
 
 }
