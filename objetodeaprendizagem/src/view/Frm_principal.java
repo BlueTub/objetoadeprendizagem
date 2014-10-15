@@ -101,6 +101,7 @@ public class Frm_principal extends Telas {
 		iconeBarra();
 		
 		Panel panel = new Panel();
+		panel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
 		panel.setBounds(40, 64, 180, 251);
 		contentPane.add(panel);
@@ -142,9 +143,8 @@ public class Frm_principal extends Telas {
 		btn_inicia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Frm_descricao tela= new Frm_descricao();
-				tela.setVisible(true);
-				tela.setObjeto(objeto); //informa ao novo frm qual o objeto em questão (0= pilha, 1=fila,2=lista ligada)
+				Frm_descricao tela= new Frm_descricao(objeto);
+				tela.setVisible(true);		
 				dispose();
 				
 				

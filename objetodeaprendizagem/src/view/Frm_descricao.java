@@ -30,7 +30,7 @@ public class Frm_descricao extends Telas {
 	 * Launch the application.
 	 */
 	
-	//TODO está variavel deve receber um parametro de 0 a 2 do formulario principal.
+	static //TODO está variavel deve receber um parametro de 0 a 2 do formulario principal.
 	int objeto =0;
 	public static void main(String[] args) throws IOException {
 		
@@ -38,7 +38,7 @@ public class Frm_descricao extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frm_descricao frame = new Frm_descricao();
+					Frm_descricao frame = new Frm_descricao(objeto);
 					frame.setVisible(true);
 					
 				} catch (Exception e) {
@@ -63,10 +63,13 @@ public class Frm_descricao extends Telas {
         
         Descricao_c metodos = new Descricao_c();
         metodos.le(descricao);
-        metodos.TestaTexto(descricao);
+       // metodos.TestaTexto(descricao);
         return descricao;
 	}
-	public Frm_descricao() {
+	
+	public Frm_descricao(int obj) {
+		
+		setObjeto(obj); //informa ao novo frm qual o objeto em questão (0= pilha, 1=fila,2=lista ligada)
 		
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,6 +95,11 @@ public class Frm_descricao extends Telas {
 		btn_volta.setBounds(50, 309, 89, 40);
 		contentPane.add(btn_volta);
 		
+		final JLabel lbl_titulo = new JLabel("lbl_titulo");
+		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_titulo.setBounds(238, 11, 167, 28);
+		contentPane.add(lbl_titulo);
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBounds(50, 68, 467, 215);
@@ -115,13 +123,26 @@ public class Frm_descricao extends Telas {
 				String texto= "";
 				texto=descricao[objeto].getDescricao_int();
 				txt_texto.setText(texto);	
+				switch (objeto) {
+				case 0:
+					lbl_titulo.setText("Pilha");
+					break;
+				case 1:
+					lbl_titulo.setText("Fila");
+					break;
+				case 2:
+					lbl_titulo.setText("Lista Ligada");
+					break;
+				default:
+					break;
+				}
 			}
 		});
 		
+		btn_descricao.doClick();
+				
 		btn_descricao.setBounds(10, 11, 89, 23);
 		panel.add(btn_descricao);
-		
-		
 		
 		JButton btn_caract = new JButton("Caracteristicas");
 		btn_caract.addActionListener(new ActionListener() {
@@ -188,8 +209,9 @@ public class Frm_descricao extends Telas {
 		
 		JLabel lblNavegueEntreAs = new JLabel("Navegue entre as abas para conhecer mais");
 		lblNavegueEntreAs.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNavegueEntreAs.setBounds(50, 39, 299, 14);
+		lblNavegueEntreAs.setBounds(50, 50, 299, 14);
 		contentPane.add(lblNavegueEntreAs);
+		
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/BackGround.png")));
