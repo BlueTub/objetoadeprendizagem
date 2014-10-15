@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,8 +16,6 @@ import javax.swing.border.EmptyBorder;
 
 import controller.ObjetosPerguntas;
 import controller.Telas;
-import java.awt.Component;
-import java.awt.Font;
 
 public class JF_Perguntas extends Telas {
 
@@ -108,9 +107,9 @@ public class JF_Perguntas extends Telas {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			int resp;
-			resp=JOptionPane.showConfirmDialog(null, "Deseja realmente voltar a animação","Voltar a animação",0,1);	
+			resp=JOptionPane.showConfirmDialog(null, "Deseja realmente voltar para a descrição","Voltar a descrição",0,1);	
 				if(resp==0){
-				Tela_Pilha tela=new Tela_Pilha();
+			    Frm_descricao tela=new Frm_descricao();
 				tela.setVisible(true);
 				JF_Perguntas.this.dispose();
 				}
