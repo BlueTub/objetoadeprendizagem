@@ -175,7 +175,7 @@ public class Frm_descricao extends Telas {
 		panel.add(btn_dificuldade);
 		
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
-		lblRetornarAoMenu.setBounds(30, 360, 139, 14);
+		lblRetornarAoMenu.setBounds(30, 360, 161, 14);
 		contentPane.add(lblRetornarAoMenu);
 		
 		JButton btn_prox = new JButton(">>");
@@ -183,7 +183,7 @@ public class Frm_descricao extends Telas {
 		contentPane.add(btn_prox);
 		
 		JLabel lblProseguirParaA = new JLabel("Proseguir para a anima\u00E7\u00E3o interativa");
-		lblProseguirParaA.setBounds(390, 360, 176, 14);
+		lblProseguirParaA.setBounds(361, 360, 205, 14);
 		contentPane.add(lblProseguirParaA);
 		
 		JLabel lblNavegueEntreAs = new JLabel("Navegue entre as abas para conhecer mais");
