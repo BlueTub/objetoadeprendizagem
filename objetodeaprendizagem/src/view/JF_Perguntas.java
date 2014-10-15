@@ -18,6 +18,7 @@ import controller.ObjetosPerguntas;
 import controller.Telas;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import javax.swing.UIManager;
 
 public class JF_Perguntas extends Telas {
 
@@ -58,32 +59,37 @@ public class JF_Perguntas extends Telas {
 		Estilo();
 		
 		JPanel painel = new JPanel();
-		painel.setBackground(new Color(204, 204, 204));
+		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		painel.setBounds(10, 11, 571, 286);
 		contentPane.add(painel);
 		painel.setLayout(null);
 		
 		JRadioButton rdbtnPergunta1 = new JRadioButton("pergunta 1");
+		rdbtnPergunta1.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta1.setBounds(6, 81, 559, 23);
 		painel.add(rdbtnPergunta1);
 		
 		JRadioButton rdbtnPergunta2 = new JRadioButton("pergunta 2");
+		rdbtnPergunta2.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta2.setBounds(6, 127, 559, 23);
 		painel.add(rdbtnPergunta2);
 		
 		JRadioButton rdbtnPergunta3 = new JRadioButton("pergunta 3");
+		rdbtnPergunta3.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta3.setBounds(6, 172, 559, 23);
 		painel.add(rdbtnPergunta3);
 		
 		JRadioButton rdbtnPergunta4 = new JRadioButton("pergunta 4");
+		rdbtnPergunta4.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta4.setBounds(6, 212, 559, 23);
 		painel.add(rdbtnPergunta4);
 		
 		JRadioButton rdbtnPergunta5 = new JRadioButton("pergunta 5");
+		rdbtnPergunta5.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta5.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbtnPergunta5.setBounds(6, 256, 559, 23);
 		painel.add(rdbtnPergunta5);

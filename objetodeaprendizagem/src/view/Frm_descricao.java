@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 public class Frm_descricao extends Telas {
 
@@ -96,11 +97,12 @@ public class Frm_descricao extends Telas {
 		contentPane.add(btn_volta);
 		
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
-		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_titulo.setBounds(238, 11, 167, 28);
+		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lbl_titulo.setBounds(248, 11, 167, 28);
 		contentPane.add(lbl_titulo);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
 		panel.setBounds(50, 68, 467, 215);
 		contentPane.add(panel);
