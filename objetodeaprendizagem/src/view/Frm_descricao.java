@@ -106,7 +106,7 @@ public class Frm_descricao extends Telas {
 		contentPane.add(panel);
 		
 		final JTextPane txt_texto = new JTextPane();
-		txt_texto.setText("Clique em Descrição para ver a Descrição \nClique em Caracteristicas para ver as caracteristicas \nClique em Uso para ver o uso \nClique em Dificuldade para ver a dificuldade" );
+		txt_texto.setText("txt_texto" );
 		txt_texto.setBounds(10, 30, 447, 142);
 		panel.add(txt_texto);
 		
@@ -209,7 +209,7 @@ public class Frm_descricao extends Telas {
 		
 		JLabel lblNavegueEntreAs = new JLabel("Navegue entre as abas para conhecer mais");
 		lblNavegueEntreAs.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNavegueEntreAs.setBounds(50, 50, 299, 14);
+		lblNavegueEntreAs.setBounds(50, 39, 299, 28);
 		contentPane.add(lblNavegueEntreAs);
 		
 		
