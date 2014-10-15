@@ -26,6 +26,7 @@ import controller.Telas;
 import Entity.Descricao_e;
 import java.awt.SystemColor;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class Frm_principal extends Telas {
 
@@ -149,7 +150,7 @@ public class Frm_principal extends Telas {
 				
 			}
 		});
-		btn_inicia.setBounds(511, 299, 89, 40);
+		btn_inicia.setBounds(515, 299, 83, 40);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
@@ -179,6 +180,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_pilha);
 		
 		JButton btn_fila = new JButton("Fila");
+		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -200,6 +202,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_fila);
 		
 		JButton btn_lista = new JButton("Lista");
+		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -226,7 +229,7 @@ public class Frm_principal extends Telas {
 		panel.add(lblNewLabel);
 		
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
-		lblMostrarMaisDetalhes.setBounds(504, 339, 105, 14);
+		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
 		
 		JLabel lbl_fundo = new JLabel("");

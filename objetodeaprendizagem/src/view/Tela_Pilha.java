@@ -57,6 +57,8 @@ public class Tela_Pilha extends Telas {
 	private JLabel lblCubo_5;
 	private JLabel lblCubo_6;
 	private JLabel lbl_fundo;
+	private JLabel lblAdicioneUmElemento;
+	private JLabel lblRemovaUmElemento;
 	/**
 	 * Launch the application.
 	 */
@@ -199,7 +201,7 @@ public class Tela_Pilha extends Telas {
 		contentPane.add(lblTitulo);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(280, 361, 89, 23);
+		btnVoltar.setBounds(280, 346, 89, 38);
 		contentPane.add(btnVoltar);
 		
 		btnRemover = new JButton("Remover");
@@ -208,7 +210,7 @@ public class Tela_Pilha extends Telas {
 		contentPane.add(btnRemover);
 		
 		JButton btnQuestionario = new JButton("Question\u00E1rio");
-		btnQuestionario.setBounds(395, 361, 108, 23);
+		btnQuestionario.setBounds(391, 346, 108, 38);
 		contentPane.add(btnQuestionario);
 		
 		lblTopo = new JLabel("TOPO ->");
@@ -243,6 +245,14 @@ public class Tela_Pilha extends Telas {
 		lbl6 = new JLabel("6");
 		lbl6.setBounds(64, 77, 11, 14);
 		contentPane.add(lbl6);
+		
+		lblAdicioneUmElemento = new JLabel("Adicione um elemento");
+		lblAdicioneUmElemento.setBounds(226, 39, 129, 14);
+		contentPane.add(lblAdicioneUmElemento);
+		
+		lblRemovaUmElemento = new JLabel("Remova um elemento");
+		lblRemovaUmElemento.setBounds(226, 106, 129, 14);
+		contentPane.add(lblRemovaUmElemento);
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/BackGround.png")));
