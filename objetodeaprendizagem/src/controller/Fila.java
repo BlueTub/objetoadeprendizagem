@@ -62,7 +62,7 @@ public class Fila {
      * método que remove o primeiro elemento de um fila
      * @return elemento removido
      */
-    public int removeInicio(){
+    public int remove(){
         int resp=0;
         if (vazia()){
             System.out.println("ERRO! Lista Vazia");
