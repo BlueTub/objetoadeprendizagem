@@ -81,6 +81,13 @@ public class Frm_descricao extends JFrame {
 		panel.add(txt_texto);
 		
 		JButton button_1 = new JButton("Proximo");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tela_Pilha tela = new Tela_Pilha();
+				tela.setVisible(true);
+				dispose();
+			}
+		});
 		button_1.setBounds(368, 181, 89, 23);
 		panel.add(button_1);
 		
