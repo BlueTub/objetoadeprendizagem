@@ -27,6 +27,9 @@ import Entity.Descricao_e;
 import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class Frm_principal extends Telas {
 
@@ -122,7 +125,7 @@ public class Frm_principal extends Telas {
 		
 		JButton button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		button_3.setBounds(600, 11, 38, 40);
+		button_3.setBounds(610, 25, 38, 40);
 		contentPane.add(button_3);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
@@ -238,6 +241,34 @@ public class Frm_principal extends Telas {
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 658, 21);
+		contentPane.add(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("File");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Fechar");
+		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		JMenu mnNewMenu_1 = new JMenu("Help");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Manual");
+		mnNewMenu_1.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Sobre");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frm_sobre tela = new Frm_sobre();
+				tela.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
