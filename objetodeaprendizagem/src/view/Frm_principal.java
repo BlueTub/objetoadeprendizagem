@@ -123,10 +123,16 @@ public class Frm_principal extends Telas {
 		lbl_titulo.setBounds(276, 66, 277, 14);
 		contentPane.add(lbl_titulo);
 		
-		JButton button_3 = new JButton("");
-		button_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
-		button_3.setBounds(610, 25, 38, 40);
-		contentPane.add(button_3);
+		JButton btn_config = new JButton("");
+		btn_config.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frm_config telaconfig = new Frm_config();
+				telaconfig.setVisible(true);
+			}
+		});
+		btn_config.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
+		btn_config.setBounds(610, 25, 38, 40);
+		contentPane.add(btn_config);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		horizontalStrut.setBounds(276, 91, 333, 7);
