@@ -80,6 +80,8 @@ public class Frm_principal extends Telas {
   
  
 	public Frm_principal() {
+		setResizable(false);
+		setTitle("Principal");
 
       inicializa();
        
@@ -129,7 +131,7 @@ public class Frm_principal extends Telas {
 		
 		final JTextPane txt_descricao = new JTextPane();
 		txt_descricao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txt_descricao.setText("descri\u00E7\u00E3o aqui");
+		txt_descricao.setText("txt_descricao");
 		txt_descricao.setEditable(false);
 		txt_descricao.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		txt_descricao.setBounds(276, 113, 314, 125);
@@ -140,6 +142,9 @@ public class Frm_principal extends Telas {
 		contentPane.add(horizontalStrut_1);
 		
 		JButton btn_inicia = new JButton(">>");
+		btn_inicia.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/btn_select.fw.png")));
+		btn_inicia.setToolTipText("Abre a tela de descri\u00E7\u00F5es onde ir\u00E1 ser apresentado mais detalhes sobre o objeto.");
 		btn_inicia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -157,6 +162,7 @@ public class Frm_principal extends Telas {
 		
 		
 		JButton btn_pilha = new JButton("Pilha");
+		btn_pilha.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/btn_select.png")));
 		btn_pilha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -180,6 +186,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_pilha);
 		
 		JButton btn_fila = new JButton("Fila");
+		btn_fila.setEnabled(false);
 		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -202,6 +209,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_fila);
 		
 		JButton btn_lista = new JButton("Lista");
+		btn_lista.setEnabled(false);
 		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -234,7 +242,7 @@ public class Frm_principal extends Telas {
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 648, 364);
+		lbl_fundo.setBounds(0, 0, 658, 374);
 		contentPane.add(lbl_fundo);
 		
 		
