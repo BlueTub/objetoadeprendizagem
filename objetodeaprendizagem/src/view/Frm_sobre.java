@@ -11,10 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.JButton;
+
+import controller.Telas;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Frm_sobre extends JFrame {
+public class Frm_sobre extends Telas {
 
 	private JPanel contentPane;
 
