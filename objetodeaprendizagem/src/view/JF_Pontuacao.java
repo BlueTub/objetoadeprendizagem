@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 import controller.Fila;
 import controller.Telas;
 import controller.ThreadCarregamento;
+import javax.swing.ImageIcon;
 
 public class JF_Pontuacao extends Telas {
 
@@ -41,9 +42,10 @@ public class JF_Pontuacao extends Telas {
 	 * Create the frame.
 	 */
 	public JF_Pontuacao(Fila fila) {
+		setResizable(false);
 		this.fila=fila;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 402);
+		setBounds(100, 100, 590, 402);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -89,6 +91,11 @@ public class JF_Pontuacao extends Telas {
 		btnVoltar.setMnemonic('v');
 		btnVoltar.setBounds(10, 315, 89, 23);
 		painel.add(btnVoltar);
+		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(JF_Pontuacao.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 595, 373);
+		painel.add(lbl_fundo);
 		t.start();
 	}
 }
