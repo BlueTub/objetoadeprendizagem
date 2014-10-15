@@ -66,6 +66,7 @@ public class Frm_descricao extends Telas {
         return descricao;
 	}
 	public Frm_descricao() {
+		
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 592, 424);
@@ -110,12 +111,16 @@ public class Frm_descricao extends Telas {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}	
-				String texto= descricao[objeto].getDescricao_int();
+				String texto= "";
+				texto=descricao[objeto].getDescricao_int();
 				txt_texto.setText(texto);	
 			}
 		});
+		
 		btn_descricao.setBounds(10, 11, 89, 23);
 		panel.add(btn_descricao);
+		
+		
 		
 		JButton btn_caract = new JButton("Caracteristicas");
 		btn_caract.addActionListener(new ActionListener() {
@@ -165,7 +170,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);	
 			}
 		});
-		btn_dificuldade.setBounds(296, 11, 89, 23);
+		btn_dificuldade.setBounds(296, 11, 99, 23);
 		panel.add(btn_dificuldade);
 		
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
@@ -191,7 +196,8 @@ public class Frm_descricao extends Telas {
 				dispose();
 			}
 		});
-		
-		
+btn_caract.doClick();
+btn_descricao.doClick();
 	}
+
 }
