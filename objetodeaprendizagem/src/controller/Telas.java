@@ -1,9 +1,9 @@
 package controller;
 
+
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -49,5 +49,6 @@ public abstract class Telas extends JFrame {
 				e2.printStackTrace();
 			}
 	  }
+	  
 
 }
