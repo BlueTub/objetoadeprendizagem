@@ -112,7 +112,8 @@ public class JF_Perguntas extends Telas {
 			int resp;
 			resp=JOptionPane.showConfirmDialog(null, "Deseja realmente voltar para a descrição","Voltar a descrição",0,1);	
 				if(resp==0){
-			    Frm_descricao tela=new Frm_descricao();
+					int obj=0;
+			    Frm_descricao tela=new Frm_descricao(obj);
 				tela.setVisible(true);
 				JF_Perguntas.this.dispose();
 				}
