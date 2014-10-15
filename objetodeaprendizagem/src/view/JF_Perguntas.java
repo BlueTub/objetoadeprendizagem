@@ -16,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 
 import controller.ObjetosPerguntas;
 import controller.Telas;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class JF_Perguntas extends Telas {
 
@@ -56,6 +58,7 @@ public class JF_Perguntas extends Telas {
 		Estilo();
 		
 		JPanel painel = new JPanel();
+		painel.setBackground(new Color(204, 204, 204));
 		painel.setBounds(10, 11, 571, 286);
 		contentPane.add(painel);
 		painel.setLayout(null);
@@ -121,6 +124,11 @@ public class JF_Perguntas extends Telas {
 	     
 		final ObjetosPerguntas muda;
 		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5);
+		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(JF_Perguntas.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 591, 363);
+		contentPane.add(lbl_fundo);
 		muda.AlterarTela();
 	
 		btnProximo.addActionListener(new ActionListener() {
