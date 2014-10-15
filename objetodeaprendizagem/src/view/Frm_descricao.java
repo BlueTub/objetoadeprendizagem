@@ -91,7 +91,7 @@ public class Frm_descricao extends JFrame {
 		contentPane.add(panel);
 		
 		final JTextPane txt_texto = new JTextPane();
-		txt_texto.setText("Texto aki :)");
+		txt_texto.setText("Clique em Descrição para ver a Descrição \nClique em Caracteristicas para ver as caracteristicas \nClique em Uso para ver o uso \nClique em Dificuldade para ver a dificuldade" );
 		txt_texto.setBounds(10, 30, 447, 142);
 		panel.add(txt_texto);
 		
