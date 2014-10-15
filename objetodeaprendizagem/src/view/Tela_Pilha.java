@@ -59,6 +59,7 @@ public class Tela_Pilha extends Telas {
 	private JLabel lbl_fundo;
 	private JLabel lblAdicioneUmElemento;
 	private JLabel lblRemovaUmElemento;
+	private JLabel lblFuncionamentoDeUma;
 	/**
 	 * Launch the application.
 	 */
@@ -253,6 +254,10 @@ public class Tela_Pilha extends Telas {
 		lblRemovaUmElemento = new JLabel("Remova um elemento");
 		lblRemovaUmElemento.setBounds(226, 106, 129, 14);
 		contentPane.add(lblRemovaUmElemento);
+		
+		lblFuncionamentoDeUma = new JLabel("Funcionamento de uma pilha");
+		lblFuncionamentoDeUma.setBounds(223, 11, 241, 14);
+		contentPane.add(lblFuncionamentoDeUma);
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/BackGround.png")));
