@@ -37,7 +37,7 @@ public class AnimaçaoPilhaAdd extends Thread{
 			posiçao.y += 10;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(45);
+				Thread.sleep(35);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -46,7 +46,7 @@ public class AnimaçaoPilhaAdd extends Thread{
 			posiçao.x -= 10.5;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(40);
+				Thread.sleep(35);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

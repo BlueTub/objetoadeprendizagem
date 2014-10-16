@@ -107,26 +107,10 @@ public class Tela_Pilha extends Telas {
 		
 		lbl_valor10 = new JLabel("10");
 		lbl_valor10.setVisible(false);
-		
-		lbl_valor70 = new JLabel("70");
-		lbl_valor70.setForeground(Color.BLACK);
-		lbl_valor70.setVisible(false);
-		
-		lbl_valor60 = new JLabel("60");
-		lbl_valor60.setForeground(Color.BLACK);
-		lbl_valor60.setVisible(false);
-		
-		lbl_valor50 = new JLabel("50");
-		lbl_valor50.setForeground(Color.BLACK);
-		lbl_valor50.setVisible(false);
-		
-		lbl_valor40 = new JLabel("40");
-		lbl_valor40.setForeground(Color.BLACK);
-		lbl_valor40.setVisible(false);
-		
-		lbl_valor30 = new JLabel("30");
-		lbl_valor30.setForeground(Color.BLACK);
-		lbl_valor30.setVisible(false);
+		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor10.setForeground(Color.BLACK);
+		lbl_valor10.setBounds(163, 54, 29, 38);
+		contentPane.add(lbl_valor10);
 		
 		lbl_valor20 = new JLabel("20");
 		lbl_valor20.setForeground(Color.BLACK);
@@ -135,30 +119,40 @@ public class Tela_Pilha extends Telas {
 		lbl_valor20.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor20);
 		
+		lbl_valor30 = new JLabel("30");
+		lbl_valor30.setForeground(Color.BLACK);
+		lbl_valor30.setVisible(false);
 		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor30.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor30);
 		
+		lbl_valor40 = new JLabel("40");
+		lbl_valor40.setForeground(Color.BLACK);
+		lbl_valor40.setVisible(false);
 		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor40.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor40);
 		
+		lbl_valor50 = new JLabel("50");
+		lbl_valor50.setForeground(Color.BLACK);
+		lbl_valor50.setVisible(false);
 		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor50.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor50);
 		
+		lbl_valor60 = new JLabel("60");
+		lbl_valor60.setForeground(Color.BLACK);
+		lbl_valor60.setVisible(false);
 		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor60.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor60);
 		
+		lbl_valor70 = new JLabel("70");
+		lbl_valor70.setForeground(Color.BLACK);
+		lbl_valor70.setVisible(false);
 		lbl_valor70.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor70.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor70);
-		
-		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor10.setForeground(Color.BLACK);
-		lbl_valor10.setBounds(163, 54, 29, 38);
-		contentPane.add(lbl_valor10);
 		
 		lblCubo_6 = new JLabel("");
 		lblCubo_6.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
@@ -260,8 +254,10 @@ public class Tela_Pilha extends Telas {
 		lblRemovaUmElemento.setBounds(226, 106, 129, 14);
 		contentPane.add(lblRemovaUmElemento);
 		
-		lblFuncionamentoDeUma = new JLabel("Funcionamento de uma pilha");
-		lblFuncionamentoDeUma.setBounds(223, 11, 241, 14);
+		lblFuncionamentoDeUma = new JLabel("Funcionamento de uma Pilha");
+		lblFuncionamentoDeUma.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblFuncionamentoDeUma.setForeground(Color.BLACK);
+		lblFuncionamentoDeUma.setBounds(258, 11, 241, 14);
 		contentPane.add(lblFuncionamentoDeUma);
 		
 		lbl_fundo = new JLabel("");
@@ -276,7 +272,8 @@ public class Tela_Pilha extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//TODO
+				dispose();
+				new Frm_descricao(0).setVisible(true);
 				
 			}
 		};

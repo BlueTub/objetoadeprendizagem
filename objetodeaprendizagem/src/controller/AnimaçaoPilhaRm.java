@@ -32,7 +32,7 @@ public class AnimaçaoPilhaRm extends Thread {
 			posiçao.x += 11;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(40);
+				Thread.sleep(35);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -42,7 +42,7 @@ public class AnimaçaoPilhaRm extends Thread {
 			posiçao.y -= 10;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(45);
+				Thread.sleep(35);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
