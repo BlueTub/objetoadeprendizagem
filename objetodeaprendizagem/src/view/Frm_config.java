@@ -54,7 +54,8 @@ public class Frm_config extends Telas {
 		contentPane.setLayout(null);
 		
 		JLabel lblTamanhoDaLetra = new JLabel("Tamanho da Letra");
-		lblTamanhoDaLetra.setBounds(24, 41, 128, 14);
+		lblTamanhoDaLetra.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblTamanhoDaLetra.setBounds(24, 41, 155, 14);
 		contentPane.add(lblTamanhoDaLetra);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("");
@@ -71,12 +72,12 @@ public class Frm_config extends Telas {
 		contentPane.add(rdbtnNewRadioButton_2);
 		
 		JLabel lblPequeno = new JLabel("Pequeno");
-		lblPequeno.setBounds(59, 82, 46, 14);
+		lblPequeno.setBounds(59, 82, 65, 14);
 		contentPane.add(lblPequeno);
 		
 		JLabel lblNewLabel = new JLabel("M\u00E9dio");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel.setBounds(59, 108, 46, 14);
+		lblNewLabel.setBounds(59, 108, 65, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Grande");
@@ -88,13 +89,13 @@ public class Frm_config extends Telas {
 		verticalStrut.setBounds(52, 66, 11, 106);
 		contentPane.add(verticalStrut);
 		
-		JButton btnVoutar = new JButton("Voutar");
+		JButton btnVoutar = new JButton("Voltar");
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnVoutar.setBounds(363, 284, 89, 36);
+		btnVoutar.setBounds(251, 284, 89, 36);
 		contentPane.add(btnVoutar);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
@@ -102,11 +103,11 @@ public class Frm_config extends Telas {
 		contentPane.add(chckbxNewCheckBox);
 		
 		JButton btnAplicar = new JButton("Aplicar");
-		btnAplicar.setBounds(256, 284, 89, 36);
+		btnAplicar.setBounds(364, 284, 89, 36);
 		contentPane.add(btnAplicar);
 		
 		JButton btnRestaurarPadres = new JButton("Restaurar Padr\u00F5es");
-		btnRestaurarPadres.setBounds(24, 284, 128, 36);
+		btnRestaurarPadres.setBounds(24, 284, 155, 36);
 		contentPane.add(btnRestaurarPadres);
 		
 		JComboBox comboBox = new JComboBox();
