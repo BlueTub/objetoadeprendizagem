@@ -13,11 +13,15 @@ import javax.swing.JRadioButton;
 import java.awt.Font;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+
+import sun.management.jdp.JdpGenericPacket;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -70,6 +74,11 @@ public class Frm_config extends Telas {
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("");
 		rdbtnNewRadioButton_2.setBounds(24, 138, 29, 23);
 		contentPane.add(rdbtnNewRadioButton_2);
+		
+		ButtonGroup grupo=new ButtonGroup();
+		grupo.add(rdbtnNewRadioButton);
+		grupo.add(rdbtnNewRadioButton_1);
+		grupo.add(rdbtnNewRadioButton_2);
 		
 		JLabel lblPequeno = new JLabel("Pequeno");
 		lblPequeno.setBounds(59, 82, 65, 14);
