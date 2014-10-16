@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
 import controller.Descricao_c;
@@ -141,8 +142,12 @@ public class Frm_descricao extends Telas {
 				}
 			}
 		});
+		try {
+			btn_descricao.doClick();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Não foi possivel carregar 'Descricao.txt'");
+		}
 		
-		btn_descricao.doClick();
 				
 		btn_descricao.setBounds(10, 11, 89, 23);
 		panel.add(btn_descricao);
