@@ -134,18 +134,23 @@ public class Tela_Pilha extends Telas {
 		lbl_valor20.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor20.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor20);
+		
 		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor30.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor30);
+		
 		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor40.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor40);
+		
 		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor50.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor50);
+		
 		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor60.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor60);
+		
 		lbl_valor70.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor70.setBounds(163, 58, 29, 31);
 		contentPane.add(lbl_valor70);
