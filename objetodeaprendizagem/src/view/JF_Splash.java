@@ -10,7 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 import controller.Telas;
-import javax.swing.ImageIcon;;
+import javax.swing.ImageIcon;
+import java.awt.Color;;
 
 public class JF_Splash extends Telas {
 
@@ -81,9 +82,10 @@ public class JF_Splash extends Telas {
 		
 		JProgressBar barra = new JProgressBar();
 		barra.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		barra.setForeground(SystemColor.textHighlight);
+		barra.setForeground(Color.DARK_GRAY);
 		barra.setStringPainted(true);
 		barra.setBounds(10, 119, 430, 42);
+		
 		contentPane.add(barra);
 		
 		
@@ -94,10 +96,14 @@ public class JF_Splash extends Telas {
 		
 		Carrega(barra, lbltexto);
 		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(JF_Splash.class.getResource("/Imagens/icon.png")));
+		label.setBounds(198, 23, 68, 66);
+		contentPane.add(label);
+		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(JF_Splash.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 450, 300);
 		contentPane.add(lbl_fundo);
 	}
-	
 }

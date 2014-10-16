@@ -43,6 +43,7 @@ public class JF_Perguntas extends Telas {
 	 * Create the frame.
 	 */
 	public JF_Perguntas() {
+		setTitle("Perguntas");
 		setResizable(false);
 		Initialize();		
 	}
@@ -110,7 +111,7 @@ public class JF_Perguntas extends Telas {
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
 		btnProximo.setMnemonic('p');
 		
-		btnProximo.setBounds(440, 315, 89, 23);
+		btnProximo.setBounds(463, 308, 89, 30);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -127,7 +128,7 @@ public class JF_Perguntas extends Telas {
 			}
 		});
 		btnVoltar.setMnemonic('v');
-		btnVoltar.setBounds(20, 315, 89, 23);
+		btnVoltar.setBounds(53, 308, 89, 30);
 		contentPane.add(btnVoltar);
 	     
 		final ObjetosPerguntas muda;
@@ -135,7 +136,7 @@ public class JF_Perguntas extends Telas {
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(JF_Perguntas.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 591, 363);
+		lbl_fundo.setBounds(0, 0, 601, 373);
 		contentPane.add(lbl_fundo);
 		muda.AlterarTela();
 	

@@ -218,7 +218,7 @@ public class Frm_descricao extends Telas {
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 576, 385);
+		lbl_fundo.setBounds(0, 0, 586, 395);
 		contentPane.add(lbl_fundo);
 		btn_prox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
