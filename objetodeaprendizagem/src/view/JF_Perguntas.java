@@ -43,6 +43,7 @@ public class JF_Perguntas extends Telas {
 	 * Create the frame.
 	 */
 	public JF_Perguntas() {
+		setResizable(false);
 		Initialize();		
 	}
 	

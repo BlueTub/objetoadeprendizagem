@@ -80,7 +80,6 @@ public class Tela_Pilha extends Telas {
 	 * Create the frame.
 	 */
 	public Tela_Pilha() {
-		setType(Type.UTILITY);
 		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

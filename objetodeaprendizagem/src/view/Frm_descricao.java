@@ -69,6 +69,7 @@ public class Frm_descricao extends Telas {
 	}
 	
 	public Frm_descricao(int obj) {
+		setResizable(false);
 		
 		setObjeto(obj); //informa ao novo frm qual o objeto em questão (0= pilha, 1=fila,2=lista ligada)
 		
