@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controller.Configuracao;
 import controller.Telas;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -13,11 +14,13 @@ import java.awt.Font;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -31,6 +34,9 @@ import java.awt.event.ActionEvent;
 @SuppressWarnings("serial")
 public class Frm_config extends Telas {
 
+	JRadioButton rdbtnnpequeno;
+	JRadioButton rdbtnmedio;
+	JRadioButton rdbtngrande;
 	// TODO Formulario em programação
 
 	private JPanel contentPane;
@@ -62,29 +68,41 @@ public class Frm_config extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		final JComboBox cbestilo = new JComboBox();
+		cbestilo.setBounds(234, 192, 155, 20);
+		contentPane.add(cbestilo);
+		cbestilo.setModel(new DefaultComboBoxModel(new String[]{
+				"Metal","Nimbus","CDE/Motif","Windows","Windows classic"
+		}
+		));
+		cbestilo.setSelectedIndex(1);
+		JLabel lblEstilo = new JLabel("Estilo");
+		lblEstilo.setBounds(234, 169, 46, 14);
+		contentPane.add(lblEstilo);
 
 		JLabel lblTamanhoDaLetra = new JLabel("Tamanho da Letra");
 		lblTamanhoDaLetra.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTamanhoDaLetra.setBounds(24, 41, 155, 14);
 		contentPane.add(lblTamanhoDaLetra);
 
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("");
-		rdbtnNewRadioButton.setSelected(true);
-		rdbtnNewRadioButton.setBounds(24, 82, 29, 23);
-		contentPane.add(rdbtnNewRadioButton);
+		rdbtnnpequeno = new JRadioButton("");
+		rdbtnnpequeno.setSelected(true);
+		rdbtnnpequeno.setBounds(24, 82, 29, 23);
+		contentPane.add(rdbtnnpequeno);
 
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("");
-		rdbtnNewRadioButton_1.setBounds(24, 108, 29, 23);
-		contentPane.add(rdbtnNewRadioButton_1);
+		rdbtnmedio = new JRadioButton("");
+		rdbtnmedio.setBounds(24, 108, 29, 23);
+		contentPane.add(rdbtnmedio);
 
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("");
-		rdbtnNewRadioButton_2.setBounds(24, 138, 29, 23);
-		contentPane.add(rdbtnNewRadioButton_2);
+		rdbtngrande = new JRadioButton("");
+		rdbtngrande.setBounds(24, 138, 29, 23);
+		contentPane.add(rdbtngrande);
 
 		ButtonGroup grupo = new ButtonGroup();
-		grupo.add(rdbtnNewRadioButton);
-		grupo.add(rdbtnNewRadioButton_1);
-		grupo.add(rdbtnNewRadioButton_2);
+		grupo.add(rdbtnnpequeno);
+		grupo.add(rdbtnmedio);
+		grupo.add(rdbtngrande);
 
 		JLabel lblPequeno = new JLabel("Pequeno");
 		lblPequeno.setBounds(59, 82, 65, 14);
@@ -114,10 +132,20 @@ public class Frm_config extends Telas {
 		contentPane.add(btnVoutar);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
-		chckbxNewCheckBox.setBounds(234, 78, 155, 23);
+		chckbxNewCheckBox.setBounds(234, 66, 155, 23);
 		contentPane.add(chckbxNewCheckBox);
 
 		JButton btnAplicar = new JButton("Aplicar");
+		btnAplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int resp;
+				resp=JOptionPane.showConfirmDialog(null, "Deseja realmente alterar o estilo","Alteração de estilo",0,1);	
+				if(resp==0){
+					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte());
+					config.geraArquivo();
+				}
+			}
+		});
 		btnAplicar.setBounds(364, 284, 89, 36);
 		contentPane.add(btnAplicar);
 
@@ -128,11 +156,11 @@ public class Frm_config extends Telas {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {
 				"Portugu\u00EAs - BR", "English" }));
-		comboBox.setBounds(234, 166, 155, 20);
+		comboBox.setBounds(234, 138, 155, 20);
 		contentPane.add(comboBox);
 
 		JLabel lblNewLabel_2 = new JLabel("Linguagem");
-		lblNewLabel_2.setBounds(234, 138, 89, 14);
+		lblNewLabel_2.setBounds(234, 108, 89, 14);
 		contentPane.add(lblNewLabel_2);
 
 		JLabel lbl_fundo = new JLabel("");
@@ -140,5 +168,19 @@ public class Frm_config extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 487, 341);
 		contentPane.add(lbl_fundo);
+	}
+	
+	public int SelecaoFonte(){
+		int Fonte;
+		if(rdbtnnpequeno.isSelected()){
+			Fonte= 12;
+		}else{
+			if(rdbtnmedio.isSelected()){
+				Fonte=14;
+			}else{
+				Fonte=16;
+			}
+		}
+		return Fonte;
 	}
 }
