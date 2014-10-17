@@ -128,6 +128,8 @@ public class Frm_config extends Telas {
 		JButton btnVoutar = new JButton("Voltar");
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Frm_principal tela=new Frm_principal();
+				tela.setVisible(true);
 				dispose();
 			}
 		});
