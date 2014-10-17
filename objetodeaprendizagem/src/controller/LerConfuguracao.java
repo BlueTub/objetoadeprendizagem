@@ -17,8 +17,12 @@ import Entity.Configuracao_e;
  */
 public class LerConfuguracao {
 	
-	
-	public void le(Configuracao_e dados) throws IOException {
+	/**
+	 * Método para ler a configuração 
+	 * @param dados recebe dados
+	 * @throws IOException caso não encontre o arquivo
+	 */
+	public void ler(Configuracao_e dados) throws IOException {
 
 		StringBuffer sbDir=new StringBuffer();
 		sbDir.append("src");
@@ -29,8 +33,7 @@ public class LerConfuguracao {
 		File dir= new File(sbDir.toString());
 		
 		if(dir.exists()){
-			sbDir.append("Config.txt");
-			
+		sbDir.append("Config.txt");
 		BufferedReader ler = new BufferedReader(new FileReader(sbDir.toString()));
 		dados.setFonte(Integer.parseInt(ler.readLine()));
 		dados.setLook(ler.readLine());
