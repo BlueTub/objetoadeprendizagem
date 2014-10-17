@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,7 +54,6 @@ public class Frm_Pontuacao extends Telas {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
 		iconeBarra();
 		centralizeFrame();
 		Estilo();
@@ -80,20 +80,26 @@ public class Frm_Pontuacao extends Telas {
 		lblPontucao.setVisible(false);
 		painel.add(lblPontucao);
 		
-		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila);
+		final Cursor cursor=Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR);
 		
-		JButton btnVoltar = new JButton("Voltar");
+		
+		
+		
+		final JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!(btnVoltar.getCursor()==cursor)){
 				Frm_principal tela=new Frm_principal();
 				tela.setVisible(true);
 				Frm_Pontuacao.this.dispose();
+				}
 			}
 		});
 		btnVoltar.setMnemonic('v');
 		btnVoltar.setBounds(10, 315, 89, 23);
 		painel.add(btnVoltar);
-		
+		btnVoltar.setCursor(cursor);
+		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila,cursor,btnVoltar);
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Pontuacao.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 595, 373);
