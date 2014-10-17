@@ -19,6 +19,9 @@ import javax.swing.UIManager.LookAndFeelInfo;
 public abstract class Telas extends JFrame {
 	protected static String look="javax.swing.plaf.nimbus.NimbusLookAndFeel";
 	
+	/**
+	 * Método que altera o icone das telas
+	 */
 	public void iconeBarra(){
 	     BufferedImage image = null;  
 	        try {  
@@ -30,10 +33,9 @@ public abstract class Telas extends JFrame {
 	        this.setIconImage(image);
 	}
 	
-	public void AlterarLook(String look){
-		this.look=look;
-	}
-	
+	/**
+	 * Método para centralizar as telas no centro
+	 */
 	  public void centralizeFrame(){
 	        int x,y;
 	        Rectangle scr=this.getGraphicsConfiguration().getBounds();
@@ -44,7 +46,7 @@ public abstract class Telas extends JFrame {
 	    }
 	  
 	 /**
-	  * Metodo que seta o estilo de todas as telas
+	  * Método que seta o estilo de todas as telas
 	  */
 	  public void Estilo(){		  
 		  try {
