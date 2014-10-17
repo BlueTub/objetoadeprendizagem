@@ -33,7 +33,7 @@ public class Frm_descricao extends Telas {
 	 */
 
 	static// TODO está variavel deve receber um parametro de 0 a 2 do formulario
-			// principal.
+	// principal.
 	int objeto = 0;
 
 	public static void main(String[] args) throws IOException {
@@ -57,7 +57,7 @@ public class Frm_descricao extends Telas {
 	 * 
 	 * @param objeto
 	 */
-	
+
 	@SuppressWarnings("static-access")
 	public void setObjeto(int objeto) {
 		this.objeto = objeto;
@@ -83,7 +83,7 @@ public class Frm_descricao extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	
+
 	public Frm_descricao(int obj) {
 		setResizable(false);
 
@@ -160,8 +160,8 @@ public class Frm_descricao extends Telas {
 				}
 			}
 		});
-		
-		//clica no botão para inicializar o textpanel com conteudo
+
+		// clica no botão para inicializar o textpanel com conteudo
 		try {
 			btn_descricao.doClick();
 		} catch (Exception e) {
@@ -249,9 +249,30 @@ public class Frm_descricao extends Telas {
 		contentPane.add(lbl_fundo);
 		btn_prox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tela_Pilha tela = new Tela_Pilha();
-				tela.setVisible(true);
-				dispose();
+
+				switch (objeto) {
+				case 0:
+					Tela_Pilha telapilha = new Tela_Pilha();
+					telapilha.setVisible(true);
+					dispose();
+					break;
+				case 1:
+					Frm_animaFila telafila = new Frm_animaFila(objeto);
+					telafila.setVisible(true);
+					dispose();
+					break;
+				case 2:
+					Frm_animaLista telalista = new Frm_animaLista(objeto);
+					telalista.setVisible(true);
+					dispose();
+
+					break;
+				default:
+					JOptionPane.showMessageDialog(null,
+							"Ocorreu um erro interno" + objeto);
+					break;
+				}
+
 			}
 		});
 
