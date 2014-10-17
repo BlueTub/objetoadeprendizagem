@@ -10,7 +10,6 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 //import javax.swing.UnsupportedLookAndFeelException;
 
-
 /**
  * Classe que herda de jFrame e contem os metodos de aparencia do frame
  * @author joão
@@ -18,7 +17,6 @@ import javax.swing.UIManager.LookAndFeelInfo;
  */
 @SuppressWarnings("serial")
 public abstract class Telas extends JFrame {
-	
 	public void iconeBarra(){
 	     BufferedImage image = null;  
 	        try {  
@@ -44,15 +42,14 @@ public abstract class Telas extends JFrame {
 	  public void Estilo(){
 		  
 		  try {
-			    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-			        if ("Nimbus".equals(info.getName())) {
-			            UIManager.setLookAndFeel(info.getClassName());
-			            break;
-			        }
-			    }
+//			  for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+//				  if ("Nimbus".equals(info.getName())) {
+//			         UIManager.setLookAndFeel(info.getClassName());
+//			        break;
+//				  }
+			 UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
 			} catch (Exception e) {
-			    // If Nimbus is not available, you can set the GUI to another look and feel.
-				//TODO
+				System.out.println(e);
 			}
 		  
 		  /*
