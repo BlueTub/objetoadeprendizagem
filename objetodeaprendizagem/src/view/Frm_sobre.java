@@ -24,6 +24,7 @@ public class Frm_sobre extends Telas {
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,6 +50,10 @@ public class Frm_sobre extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		centralizeFrame();
+		Estilo();
+		iconeBarra();
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Frm_sobre.class.getResource("/Imagens/fatec_logo.png")));
