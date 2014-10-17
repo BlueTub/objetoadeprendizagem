@@ -17,6 +17,8 @@ import javax.swing.UIManager.LookAndFeelInfo;
  */
 @SuppressWarnings("serial")
 public abstract class Telas extends JFrame {
+	protected static String look="javax.swing.plaf.nimbus.NimbusLookAndFeel";
+	
 	public void iconeBarra(){
 	     BufferedImage image = null;  
 	        try {  
@@ -26,6 +28,10 @@ public abstract class Telas extends JFrame {
 	            e.printStackTrace();  
 	        }  
 	        this.setIconImage(image);
+	}
+	
+	public void AlterarLook(String look){
+		this.look=look;
 	}
 	
 	  public void centralizeFrame(){
@@ -47,7 +53,8 @@ public abstract class Telas extends JFrame {
 //			         UIManager.setLookAndFeel(info.getClassName());
 //			        break;
 //				  }
-			 UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+			 UIManager.setLookAndFeel(look);
+			 javax.swing.SwingUtilities.updateComponentTreeUI( this );
 			} catch (Exception e) {
 				System.out.println(e);
 			}
