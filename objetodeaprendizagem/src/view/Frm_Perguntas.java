@@ -110,11 +110,12 @@ public class Frm_Perguntas extends Telas {
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
 		btnProximo.setMnemonic('p');
-		
+		btnProximo.setToolTipText("Avançar para próxima pergunta");
 		btnProximo.setBounds(463, 308, 89, 30);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setToolTipText("Voltar para a descrição");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			int resp;
