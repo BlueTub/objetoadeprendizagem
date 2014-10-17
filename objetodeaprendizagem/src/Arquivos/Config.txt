@@ -1,2 +1,2 @@
 12
-com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel
+com.sun.java.swing.plaf.windows.WindowsLookAndFeel
