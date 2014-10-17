@@ -21,6 +21,7 @@ import javax.swing.Action;
 import javax.swing.JOptionPane;
 import controller.Telas;
 
+@SuppressWarnings("serial")
 public class Tela_Pilha extends Telas {
 	
 	private JPanel contentPane;

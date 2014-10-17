@@ -13,6 +13,7 @@ public class AnimaçaoPilhaAdd extends Thread{
 	private JButton btnRemover;
 	private JLabel lblTopo;
 
+	@SuppressWarnings("static-access")
 	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y,JLabel lblTopo){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
@@ -20,6 +21,7 @@ public class AnimaçaoPilhaAdd extends Thread{
 		this.y = y;
 		this.lblTopo = lblTopo;
 		}
+	
 	/**
 	 * Metodo que chama a animaçao
 	 */

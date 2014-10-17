@@ -17,9 +17,9 @@ import javax.swing.border.EmptyBorder;
 import controller.ObjetosPerguntas;
 import controller.Telas;
 import javax.swing.ImageIcon;
-import java.awt.Color;
 import javax.swing.UIManager;
 
+@SuppressWarnings("serial")
 public class JF_Perguntas extends Telas {
 
 	private JPanel contentPane;

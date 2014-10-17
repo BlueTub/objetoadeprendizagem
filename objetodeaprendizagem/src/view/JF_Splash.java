@@ -2,8 +2,6 @@ package view;
 
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.SystemColor;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -16,8 +14,13 @@ import java.awt.Color;
 
 ;
 
+@SuppressWarnings("serial")
 public class JF_Splash extends Telas {
 
+	/**
+	 * 
+	 */
+	
 	private JPanel contentPane;
 
 	/**
@@ -35,7 +38,11 @@ public class JF_Splash extends Telas {
 			}
 		});
 	}
-
+/**
+ * Carrega a progress Bar
+ * @param barra
+ * @param lbltexto
+ */
 	public void Carrega(final JProgressBar barra, final JLabel lbltexto) {
 		new Thread() {
 

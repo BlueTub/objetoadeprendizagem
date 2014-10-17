@@ -18,6 +18,7 @@ import controller.Telas;
 import controller.ThreadCarregamento;
 import javax.swing.ImageIcon;
 
+@SuppressWarnings("serial")
 public class JF_Pontuacao extends Telas {
 
 	private JPanel contentPane;
@@ -41,6 +42,7 @@ public class JF_Pontuacao extends Telas {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings("static-access")
 	public JF_Pontuacao(Fila fila) {
 		setResizable(false);
 		this.fila=fila;
