@@ -127,6 +127,7 @@ public class Frm_descricao extends Telas {
 		contentPane.add(panel);
 
 		final JTextPane txt_texto = new JTextPane();
+		txt_texto.setEditable(false);
 		txt_texto.setText("txt_texto");
 		txt_texto.setBounds(10, 30, 447, 142);
 		panel.add(txt_texto);
