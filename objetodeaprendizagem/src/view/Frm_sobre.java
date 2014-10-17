@@ -30,6 +30,7 @@ public class Frm_sobre extends Telas {
 				try {
 					Frm_sobre frame = new Frm_sobre();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,7 +43,7 @@ public class Frm_sobre extends Telas {
 	 */
 	public Frm_sobre() {
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 421);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
