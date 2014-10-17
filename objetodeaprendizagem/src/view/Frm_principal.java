@@ -124,6 +124,7 @@ public class Frm_principal extends Telas {
 		JButton btn_config = new JButton("");
 		btn_config.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				Frm_config telaconfig = new Frm_config();
 				telaconfig.setVisible(true);
 			}

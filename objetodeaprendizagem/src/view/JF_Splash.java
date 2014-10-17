@@ -8,9 +8,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
+import Entity.Configuracao_e;
+import controller.LerConfuguracao;
 import controller.Telas;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import java.io.IOException;
 
 ;
 
@@ -89,7 +92,16 @@ public class JF_Splash extends Telas {
 		setContentPane(contentPane);
 		setUndecorated(true);
 		contentPane.setLayout(null);
-
+		
+		Configuracao_e dados=new Configuracao_e();
+		LerConfuguracao ler=new LerConfuguracao();
+		try {
+			ler.le(dados);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		look=dados.getLook();
+		
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
