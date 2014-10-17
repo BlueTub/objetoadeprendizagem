@@ -1,32 +1,30 @@
 package view;
 
+import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.swing.Box;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import Entity.Configuracao_e;
 import controller.Configuracao;
 import controller.LerConfuguracao;
 import controller.Telas;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import java.awt.Font;
-import java.awt.Component;
-import javax.swing.Box;
-import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
 
 /**
  * 
@@ -40,7 +38,6 @@ public class Frm_config extends Telas {
 	JRadioButton rdbtnnpequeno;
 	JRadioButton rdbtnmedio;
 	JRadioButton rdbtngrande;
-	// TODO Formulario em programação
 
 	private JPanel contentPane;
 
@@ -71,6 +68,7 @@ public class Frm_config extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		centralizeFrame();
 		
 		final JComboBox cbestilo = new JComboBox();
 		cbestilo.setBounds(234, 192, 155, 20);
