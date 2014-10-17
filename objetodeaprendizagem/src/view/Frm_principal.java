@@ -154,8 +154,7 @@ public class Frm_principal extends Telas {
 
 		JButton btn_inicia = new JButton(">>");
 		btn_inicia.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class
-				.getResource("/Imagens/btn_select.fw.png")));
+		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/btn_select.fw.png")));
 		btn_inicia
 				.setToolTipText("Abre a tela de descri\u00E7\u00F5es onde ir\u00E1 ser apresentado mais detalhes sobre o objeto.");
 		btn_inicia.addActionListener(new ActionListener() {
