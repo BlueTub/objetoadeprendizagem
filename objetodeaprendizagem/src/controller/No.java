@@ -3,6 +3,8 @@
  */
 package controller;
 
+import Entity.Perguntas;
+
 /**
  * Classe que controla o no de elementos
  * @author joão

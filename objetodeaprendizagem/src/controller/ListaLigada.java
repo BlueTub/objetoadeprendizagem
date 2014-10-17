@@ -3,6 +3,8 @@
  */
 package controller;
 
+import Entity.Perguntas;
+
 /**
  * Classe que armazena as perguntas em uma lista ligada
  * @author joão
