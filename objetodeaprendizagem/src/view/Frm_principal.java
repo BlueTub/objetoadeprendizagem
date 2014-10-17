@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Desktop;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Component;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.Box;
@@ -19,6 +21,7 @@ import javax.swing.Box;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 
+import controller.AbreDoc;
 import controller.Descricao_c;
 import controller.Telas;
 
@@ -35,9 +38,8 @@ public class Frm_principal extends Telas {
 
 	private JPanel contentPane;
 
-
-
-	int objeto = 0; // variavel que controla qual objeto de aprendizado sera trabalhado
+	int objeto = 0; // variavel que controla qual objeto de aprendizado sera
+					// trabalhado
 
 	public static void main(String[] args) throws IOException {
 		Carregatxt();
@@ -193,7 +195,6 @@ public class Frm_principal extends Telas {
 		panel.add(btn_pilha);
 
 		JButton btn_fila = new JButton("Fila");
-		btn_fila.setEnabled(false);
 		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -216,7 +217,6 @@ public class Frm_principal extends Telas {
 		panel.add(btn_fila);
 
 		JButton btn_lista = new JButton("Lista");
-		btn_lista.setEnabled(false);
 		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -269,6 +269,14 @@ public class Frm_principal extends Telas {
 		menuBar.add(mnNewMenu_1);
 
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Manual");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				AbreDoc doc = new AbreDoc();
+				doc.AbreManual();
+			}
+
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_1);
 
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Sobre");
