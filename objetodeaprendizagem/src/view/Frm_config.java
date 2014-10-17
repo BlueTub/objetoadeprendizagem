@@ -6,7 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Entity.Configuracao_e;
 import controller.Configuracao;
+import controller.LerConfuguracao;
 import controller.Telas;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -24,6 +26,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 /**
  * 
@@ -144,6 +147,15 @@ public class Frm_config extends Telas {
 					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte());
 					config.geraArquivo();
 				}
+				Configuracao_e dados=new Configuracao_e();
+				LerConfuguracao ler=new LerConfuguracao();
+			    try {
+					ler.le(dados);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			    look=dados.getLook();
+			    Estilo();
 			}
 		});
 		btnAplicar.setBounds(364, 284, 89, 36);
