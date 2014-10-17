@@ -7,8 +7,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-//import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Classe que herda de jFrame e contem os metodos de aparencia do frame
