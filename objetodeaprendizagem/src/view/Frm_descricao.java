@@ -169,7 +169,7 @@ public class Frm_descricao extends Telas {
 					"Não foi possivel carregar 'Descricao.txt'");
 		}
 
-		btn_descricao.setBounds(10, 11, 89, 23);
+		btn_descricao.setBounds(10, 11, 110, 23);
 		panel.add(btn_descricao);
 
 		JButton btn_caract = new JButton("Caracteristicas");
@@ -186,7 +186,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_caract.setBounds(98, 11, 110, 23);
+		btn_caract.setBounds(119, 11, 130, 23);
 		panel.add(btn_caract);
 
 		JButton btn_uso = new JButton("Uso");
@@ -203,7 +203,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_uso.setBounds(208, 11, 89, 23);
+		btn_uso.setBounds(248, 11, 89, 23);
 		panel.add(btn_uso);
 
 		JButton btn_dificuldade = new JButton("Dificuldade");
@@ -220,7 +220,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_dificuldade.setBounds(296, 11, 99, 23);
+		btn_dificuldade.setBounds(334, 11, 110, 23);
 		panel.add(btn_dificuldade);
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");

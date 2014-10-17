@@ -123,7 +123,7 @@ public class Frm_config extends Telas {
 		verticalStrut.setBounds(52, 66, 11, 106);
 		contentPane.add(verticalStrut);
 
-		JButton btnVoutar = new JButton("Voltar");
+		JButton btnVoutar = new JButton("OK");
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frm_principal tela=new Frm_principal();
