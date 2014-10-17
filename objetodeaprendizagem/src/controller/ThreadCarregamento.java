@@ -76,17 +76,18 @@ public class ThreadCarregamento extends Thread{
 	    	
 	    		while(!f.vazia()){
 	    		int usuario=f.remove();
-	    		System.out.println("usuario "+usuario);
 	    		int certas=ler.p1.desempilha();
-	     		System.out.println("certas "+certas);
 	     			if(certas==usuario){
 	    			pont+=20;
 	     			}
 	    		}
 				
 			
-	    	 String string = Integer.toString(pont);
-		     pontuacao.setText("Sua pontuação foi de: "+string+"%");
+	    	 StringBuffer sb=new StringBuffer();
+	    	 sb.append("Sua pontuação foi de: ");
+	    	 sb.append(pont);
+	    	 sb.append("%");
+		     pontuacao.setText(sb.toString());
 		     pontuacao.setVisible(true);
 		     pontuacao.setBounds(10, 85, 564, 63);
 		     if(pont>=60){
