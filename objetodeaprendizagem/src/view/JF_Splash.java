@@ -96,7 +96,7 @@ public class JF_Splash extends Telas {
 		Configuracao_e dados=new Configuracao_e();
 		LerConfuguracao ler=new LerConfuguracao();
 		try {
-			ler.le(dados);
+			ler.ler(dados);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
