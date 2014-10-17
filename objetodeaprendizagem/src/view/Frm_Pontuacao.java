@@ -19,7 +19,7 @@ import controller.ThreadCarregamento;
 import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
-public class JF_Pontuacao extends Telas {
+public class Frm_Pontuacao extends Telas {
 
 	private JPanel contentPane;
 	private static Fila fila;
@@ -30,7 +30,7 @@ public class JF_Pontuacao extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JF_Pontuacao frame = new JF_Pontuacao(fila);
+					Frm_Pontuacao frame = new Frm_Pontuacao(fila);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class JF_Pontuacao extends Telas {
 	 * Create the frame.
 	 */
 	@SuppressWarnings("static-access")
-	public JF_Pontuacao(Fila fila) {
+	public Frm_Pontuacao(Fila fila) {
 		setResizable(false);
 		this.fila=fila;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,7 +87,7 @@ public class JF_Pontuacao extends Telas {
 			public void actionPerformed(ActionEvent e) {
 				Frm_principal tela=new Frm_principal();
 				tela.setVisible(true);
-				JF_Pontuacao.this.dispose();
+				Frm_Pontuacao.this.dispose();
 			}
 		});
 		btnVoltar.setMnemonic('v');
@@ -95,7 +95,7 @@ public class JF_Pontuacao extends Telas {
 		painel.add(btnVoltar);
 		
 		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(JF_Pontuacao.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setIcon(new ImageIcon(Frm_Pontuacao.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 595, 373);
 		painel.add(lbl_fundo);
 		t.start();

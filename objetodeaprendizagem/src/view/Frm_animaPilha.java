@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 import controller.Telas;
 
 @SuppressWarnings("serial")
-public class Tela_Pilha extends Telas {
+public class Frm_animaPilha extends Telas {
 	
 	private JPanel contentPane;
 	private JMenuBar menuBar;
@@ -68,7 +68,7 @@ public class Tela_Pilha extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tela_Pilha frame = new Tela_Pilha();
+					Frm_animaPilha frame = new Frm_animaPilha();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -80,7 +80,7 @@ public class Tela_Pilha extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	public Tela_Pilha() {
+	public Frm_animaPilha() {
 		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -155,38 +155,38 @@ public class Tela_Pilha extends Telas {
 		contentPane.add(lbl_valor70);
 		
 		lblCubo_6 = new JLabel("");
-		lblCubo_6.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_6.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_6.setBounds(76, 39, 65, 67);
 		contentPane.add(lblCubo_6);
 		
 		lblCubo_5 = new JLabel("");
-		lblCubo_5.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_5.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_5.setBounds(76, 89, 65, 67);
 		contentPane.add(lblCubo_5);
 		
 		lblCubo_4 = new JLabel("");
-		lblCubo_4.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_4.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_4.setBounds(76, 138, 65, 67);
 		contentPane.add(lblCubo_4);
 		
 		lblCubo_3 = new JLabel("");
-		lblCubo_3.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_3.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_3.setBounds(76, 187, 65, 67);
 		contentPane.add(lblCubo_3);
 		
 		lblCubo_2 = new JLabel("");
-		lblCubo_2.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_2.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_2.setBounds(76, 236, 65, 67);
 		contentPane.add(lblCubo_2);
 		
 		lblCubo_1 = new JLabel("");
-		lblCubo_1.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo_1.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo_1.setBounds(76, 285, 65, 67);
 		contentPane.add(lblCubo_1);
 		
 		
 		JLabel lblCubo0 = new JLabel("");
-		lblCubo0.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/cubo.png")));
+		lblCubo0.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/cubo.png")));
 		lblCubo0.setBounds(76, 334, 65, 67);
 		contentPane.add(lblCubo0);
 		
@@ -261,7 +261,7 @@ public class Tela_Pilha extends Telas {
 		contentPane.add(lblFuncionamentoDeUma);
 		
 		lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Tela_Pilha.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 540, 399);
 		contentPane.add(lbl_fundo);
 		
@@ -306,7 +306,7 @@ public class Tela_Pilha extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JF_Perguntas p = new JF_Perguntas();
+				Frm_Perguntas p = new Frm_Perguntas();
 				p.setVisible(true);
 				dispose();
 			}
