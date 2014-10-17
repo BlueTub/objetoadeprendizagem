@@ -35,13 +35,9 @@ public class Frm_principal extends Telas {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 * 
-	 * @throws IOException
-	 */
 
-	int objeto = 0;
+
+	int objeto = 0; // variavel que controla qual objeto de aprendizado sera trabalhado
 
 	public static void main(String[] args) throws IOException {
 		Carregatxt();
@@ -59,8 +55,8 @@ public class Frm_principal extends Telas {
 	}
 
 	/**
-	 * Carrega
 	 * 
+	 * @return objeto descrição já carregado
 	 * @throws IOException
 	 */
 
@@ -77,7 +73,7 @@ public class Frm_principal extends Telas {
 	}
 
 	/**
-	 * Create the frame.
+	 * inicializa o JFrame
 	 */
 
 	public Frm_principal() {
@@ -88,6 +84,9 @@ public class Frm_principal extends Telas {
 
 	}
 
+	/**
+	 * Create the frame.
+	 */
 	public void inicializa() {
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -291,13 +290,13 @@ public class Frm_principal extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 658, 374);
 		contentPane.add(lbl_fundo);
-          
+
 		try {
 			btn_pilha.doClick();
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Não foi possivel carregar 'Descricao.txt'");
+			JOptionPane.showMessageDialog(null,
+					"Não foi possivel carregar 'Descricao.txt'");
 		}
-		
 
 	}
 }

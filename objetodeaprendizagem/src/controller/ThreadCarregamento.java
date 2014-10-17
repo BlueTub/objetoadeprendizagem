@@ -4,7 +4,7 @@
 package controller;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 
 /**
@@ -23,7 +23,7 @@ public class ThreadCarregamento extends Thread{
 	   * Construtor 
 	   * @param barra 
 	   * @param texto
-	 * @param fila 
+	   * @param fila 
 	   */
 	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f){
 	        this.barra=barra;
