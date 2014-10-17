@@ -42,37 +42,17 @@ public abstract class Telas extends JFrame {
 	        y=(int) (scr.getHeight()-form.getHeight())/2;
 	        this.setLocation(x, y);
 	    }
+	  
 	 /**
-	  * seta o estilo como "Nimbus Look and Feel"
+	  * Metodo que seta o estilo de todas as telas
 	  */
-	  public void Estilo(){
-		  
+	  public void Estilo(){		  
 		  try {
-//			  for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-//				  if ("Nimbus".equals(info.getName())) {
-//			         UIManager.setLookAndFeel(info.getClassName());
-//			        break;
-//				  }
 			 UIManager.setLookAndFeel(look);
 			 javax.swing.SwingUtilities.updateComponentTreeUI( this );
 			} catch (Exception e) {
 				System.out.println(e);
-			}
-		  
-		  /*
-			try {
-				
-				javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
-			} catch (ClassNotFoundException e2) {
-				e2.printStackTrace();
-			} catch (InstantiationException e2) {
-				e2.printStackTrace();
-			} catch (IllegalAccessException e2) {
-				e2.printStackTrace();
-			} catch (UnsupportedLookAndFeelException e2) {
-				e2.printStackTrace();
-			}*/  
-		  
+			}		  
 	  }
 
 }
