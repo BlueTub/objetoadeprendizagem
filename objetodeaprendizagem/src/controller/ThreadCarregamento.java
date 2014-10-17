@@ -3,6 +3,9 @@
  */
 package controller;
 
+import java.awt.Cursor;
+
+import javax.swing.JButton;
 import javax.swing.JLabel;
 //import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
@@ -17,7 +20,9 @@ public class ThreadCarregamento extends Thread{
 	  private JLabel texto=new JLabel();
 	  private JLabel pontuacao = new JLabel();
 	  private Fila f=new Fila();
-	  private static int pont = 0;
+	  private int pont = 0;
+	  private Cursor cursor;
+	  private JButton btnVoltar;
 	    
 	  /**
 	   * Construtor 
@@ -25,11 +30,13 @@ public class ThreadCarregamento extends Thread{
 	   * @param texto
 	   * @param fila 
 	   */
-	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f){
+	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f,Cursor cursor,JButton btnVoltar){
 	        this.barra=barra;
 	        this.texto=texto;
 	        this.pontuacao=pontuacao;
 	        this.f=f;
+	        this.cursor=cursor;
+	        this.btnVoltar=btnVoltar;
 	    }
 	    
 	    @Override
@@ -64,7 +71,9 @@ public class ThreadCarregamento extends Thread{
 	        }
 	           barra.setVisible(false);
 	           Potuacao();
-	        	    
+	           
+	           cursor=Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+	           btnVoltar.setCursor(cursor);
 	    }
 	    /**
 	     * Metodo para gerar a pontuacao das perguntas e pegar qual perguntas ele errou.
