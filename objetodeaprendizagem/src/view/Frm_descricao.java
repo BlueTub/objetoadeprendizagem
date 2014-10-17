@@ -252,7 +252,7 @@ public class Frm_descricao extends Telas {
 
 				switch (objeto) {
 				case 0:
-					Tela_Pilha telapilha = new Tela_Pilha();
+					Frm_animaPilha telapilha = new Frm_animaPilha();
 					telapilha.setVisible(true);
 					dispose();
 					break;

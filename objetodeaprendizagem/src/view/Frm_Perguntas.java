@@ -20,7 +20,7 @@ import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
-public class JF_Perguntas extends Telas {
+public class Frm_Perguntas extends Telas {
 
 	private JPanel contentPane;
 	/**
@@ -30,7 +30,7 @@ public class JF_Perguntas extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JF_Perguntas frame = new JF_Perguntas();
+					Frm_Perguntas frame = new Frm_Perguntas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class JF_Perguntas extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	public JF_Perguntas() {
+	public Frm_Perguntas() {
 		setTitle("Perguntas");
 		setResizable(false);
 		Initialize();		
@@ -123,7 +123,7 @@ public class JF_Perguntas extends Telas {
 					int obj=0;
 			    Frm_descricao tela=new Frm_descricao(obj);
 				tela.setVisible(true);
-				JF_Perguntas.this.dispose();
+				Frm_Perguntas.this.dispose();
 				}
 			}
 		});
@@ -135,7 +135,7 @@ public class JF_Perguntas extends Telas {
 		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5);
 		
 		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(JF_Perguntas.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 601, 373);
 		contentPane.add(lbl_fundo);
 		muda.AlterarTela();
@@ -149,8 +149,8 @@ public class JF_Perguntas extends Telas {
 					muda.AlterarTela();
 					grupo.clearSelection();
 					}else{
-						JF_Perguntas.this.dispose();
-						JF_Pontuacao tela=new JF_Pontuacao(muda.fila);
+						Frm_Perguntas.this.dispose();
+						Frm_Pontuacao tela=new Frm_Pontuacao(muda.fila);
 					    tela.setVisible(true);
 						
 					}

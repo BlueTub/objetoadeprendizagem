@@ -18,7 +18,7 @@ import java.io.IOException;
 ;
 
 @SuppressWarnings("serial")
-public class JF_Splash extends Telas {
+public class Frm_Splash extends Telas {
 
 	/**
 	 * 
@@ -33,7 +33,7 @@ public class JF_Splash extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JF_Splash frame = new JF_Splash();
+					Frm_Splash frame = new Frm_Splash();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -67,7 +67,7 @@ public class JF_Splash extends Telas {
 						}
 					}
 				}
-				JF_Splash.this.dispose();
+				Frm_Splash.this.dispose();
 				try {
 					Frm_principal tela = new Frm_principal();
 					tela.setVisible(true);
@@ -85,7 +85,7 @@ public class JF_Splash extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	public JF_Splash() {
+	public Frm_Splash() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -122,13 +122,13 @@ public class JF_Splash extends Telas {
 		Carrega(barra, lbltexto);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(JF_Splash.class
+		label.setIcon(new ImageIcon(Frm_Splash.class
 				.getResource("/Imagens/icon.png")));
 		label.setBounds(198, 23, 68, 66);
 		contentPane.add(label);
 
 		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(JF_Splash.class
+		lbl_fundo.setIcon(new ImageIcon(Frm_Splash.class
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 450, 300);
 		contentPane.add(lbl_fundo);
