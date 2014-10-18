@@ -191,6 +191,7 @@ public class Frm_animaPilha extends Telas {
 		contentPane.add(lblCubo0);
 		
 		btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setToolTipText("Adicionar um novo elemento a pilha");
 		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAdicionar.setBounds(226, 54, 108, 41);
 		contentPane.add(btnAdicionar);
@@ -201,10 +202,12 @@ public class Frm_animaPilha extends Telas {
 		contentPane.add(lblTitulo);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setToolTipText("Voltar para a descrição da pilha");
 		btnVoltar.setBounds(280, 346, 89, 38);
 		contentPane.add(btnVoltar);
 		
 		btnRemover = new JButton("Remover");
+		btnRemover.setToolTipText("Remover elemento da pilha");
 		btnRemover.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnRemover.setBounds(226, 125, 108, 41);
 		contentPane.add(btnRemover);
@@ -313,6 +316,7 @@ public class Frm_animaPilha extends Telas {
 		};
 		
 		btnQuestionario.addActionListener(questionario);
+		btnQuestionario.setToolTipText("Ir para o questionário");
 		btnRemover.addActionListener(remover);
 		btnAdicionar.addActionListener(adicionar);
 		btnVoltar.addActionListener(voltar);
