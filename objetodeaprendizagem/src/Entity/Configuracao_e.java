@@ -11,6 +11,8 @@ package Entity;
 public class Configuracao_e {
 	private int Fonte;
 	private String look;
+	private String Linguagem;
+	private boolean Dautonismo;
 	
 	/**
 	 * Método para pegar a fonte
@@ -40,4 +42,30 @@ public class Configuracao_e {
 	public void setLook(String look) {
 		this.look = look;
 	}
+	/**
+	 * @return the linguagem
+	 */
+	public String getLinguagem() {
+		return Linguagem;
+	}
+	/**
+	 * @param linguagem the linguagem to set
+	 */
+	public void setLinguagem(String linguagem) {
+		Linguagem = linguagem;
+	}
+	/**
+	 * @return the dautonismo
+	 */
+	public boolean isDautonismo() {
+		return Dautonismo;
+	}
+	/**
+	 * @param dautonismo the dautonismo to set
+	 */
+	public void setDautonismo(boolean dautonismo) {
+		Dautonismo = dautonismo;
+	}
+	
+	
 }
