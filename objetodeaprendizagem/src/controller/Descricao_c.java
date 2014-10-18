@@ -15,6 +15,7 @@ public class Descricao_c {
 		String fileName = "src\\Arquivos\\Descricao.txt"; //seleciona o arquivo no diretorio
 		BufferedReader ler = new BufferedReader(new FileReader(fileName));
 		for(int i=0; i<3; i++){                          //carrega 3 objetos com seus respectivos dados
+			desc[i].setTipo(Integer.parseInt(ler.readLine()));
 			desc[i].setDescricao_int(ler.readLine());						
 			desc[i].setDescricao_res(ler.readLine()) ;
 			desc[i].setCaract(ler.readLine()) ;

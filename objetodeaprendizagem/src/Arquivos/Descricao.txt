@@ -1,13 +1,16 @@
+0
 PILHA é um tipo de lista linear em que todas as inserções, remoções são feitas num mesmo extremo, denominado TOPO. Cada vez que um novo item é inserido numa pilha é colocado em seu topo. Apenas o item do topo da pilha pode ser removido, devido a essa política de acesso, os itens são sempre removidos na ordem inversa àquela em que foram inseridos.A funcionalidade do topo é a referência ao último elemento adicionado
 Pilha é uma das estruturas de dados mais úteis em computação, sendo usada na solução de vários problemas clássicos na área.
 Uma pilha é denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sai).Isso significa que o primeiro elemento a entrar, será o ultimo a sair. Imagine uma pilha de pratos onde, você queira pegar o primeiro prato(o que está embaixo da pilha), para fazer isso você precisa retirar todos aqueles que estão acima dele.
 Um de seus usos pode ser visto na validação de expressões aritméticas em compiladores.
 A pilha é a estrutura de dados de mais facil compreensão. 
+1
 Descrição: FILA
 Descrição resumida: FILA
 Caracteristica: FILA
 Uso: FILA
 Dificuldade:Fila
+2
 Descrição: LISTA lIGADA
 Descrição resumida: LISTA lIGADA
 Caracteristica: LISTA lIGADA

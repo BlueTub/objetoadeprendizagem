@@ -1,2 +1,2 @@
-16
-com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+12
+javax.swing.plaf.nimbus.NimbusLookAndFeel

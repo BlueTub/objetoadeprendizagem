@@ -60,6 +60,7 @@ public class Frm_config extends Telas {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Frm_config() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,7 +69,10 @@ public class Frm_config extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 		centralizeFrame();
+		Estilo();
+		iconeBarra();
 		
 		final JComboBox cbestilo = new JComboBox();
 		cbestilo.setBounds(234, 192, 155, 20);

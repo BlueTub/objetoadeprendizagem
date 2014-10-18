@@ -12,14 +12,15 @@ public class Descricao_e {
 	private String caract;
 	private String uso;
 	private String dificuldade;
-	private String Tipo;
+	private int Tipo;
 
 	public Descricao_e() {
-		this("", "", "", "", "");
+		this(0, "", "", "", "", "");
 	}
 
-	Descricao_e(String descres, String descint, String cara, String us,
+	Descricao_e(int tip,String descres, String descint, String cara, String us,
 			String dific) {
+		Tipo = tip;
 		descricao_res = descres;
 		descricao_int = descint;
 		caract = cara;
@@ -123,7 +124,7 @@ public class Descricao_e {
 	 * Retorna o atribulto tipo
 	 * @return the tipo
 	 */
-	public String getTipo() {
+	public int getTipo() {
 		return Tipo;
 	}
 
@@ -131,7 +132,7 @@ public class Descricao_e {
 	 * metodo para passage de parametro ao atribulto tipo
 	 * @param tipo the tipo to set
 	 */
-	public void setTipo(String tipo) {
+	public void setTipo(int tipo) {
 		Tipo = tipo;
 	}
 
