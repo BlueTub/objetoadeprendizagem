@@ -3,6 +3,7 @@ package view;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -69,12 +70,14 @@ public class Frm_Pontuacao extends Telas {
 		painel.add(barra);
 		
 		JLabel lblCarregando = new JLabel("carregando");
+		lblCarregando.setFont(new Font("Tahoma",Font.PLAIN, tamanhofonte));
 		lblCarregando.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCarregando.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblCarregando.setBounds(10, 159, 564, 21);
 		painel.add(lblCarregando);
 		
 		JLabel lblPontucao = new JLabel("Pontua\u00E7\u00E3o");
+		lblPontucao.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		lblPontucao.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPontucao.setBounds(10, 220, 564, 14);
 		lblPontucao.setVisible(false);
@@ -86,6 +89,7 @@ public class Frm_Pontuacao extends Telas {
 		
 		
 		final JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		btnVoltar.setToolTipText("Ao aparecer a pontuação pressione o botão para a tela principal");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -97,7 +101,7 @@ public class Frm_Pontuacao extends Telas {
 			}
 		});
 		btnVoltar.setMnemonic('v');
-		btnVoltar.setBounds(10, 315, 89, 23);
+		btnVoltar.setBounds(10, 309, 89, 29);
 		painel.add(btnVoltar);
 		btnVoltar.setCursor(cursor);
 		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila,cursor,btnVoltar);

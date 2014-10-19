@@ -59,7 +59,6 @@ public class Frm_Perguntas extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
-		System.out.println(tamanhofonte);
 		JPanel painel = new JPanel();
 		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		painel.setBounds(10, 11, 594, 286);
@@ -109,12 +108,14 @@ public class Frm_Perguntas extends Telas {
 		painel.add(lblEnunciado);
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
+		btnProximo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnProximo.setMnemonic('p');
 		btnProximo.setToolTipText("Avançar para próxima pergunta");
-		btnProximo.setBounds(463, 308, 89, 30);
+		btnProximo.setBounds(463, 308, 107, 30);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoltar.setToolTipText("Voltar para a descrição");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
