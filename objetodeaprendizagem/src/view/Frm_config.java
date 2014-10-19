@@ -75,7 +75,7 @@ public class Frm_config extends Telas {
 		iconeBarra();
 		
 		final JComboBox cbestilo = new JComboBox();
-		cbestilo.setBounds(234, 192, 155, 20);
+		cbestilo.setBounds(234, 199, 155, 20);
 		contentPane.add(cbestilo);
 		cbestilo.setModel(new DefaultComboBoxModel(new String[]{
 				"Metal","Nimbus","CDE/Motif","Windows","Windows classic"
@@ -83,11 +83,12 @@ public class Frm_config extends Telas {
 		));
 		cbestilo.setSelectedIndex(1);
 		JLabel lblEstilo = new JLabel("Estilo");
-		lblEstilo.setBounds(234, 169, 46, 14);
+		lblEstilo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		lblEstilo.setBounds(234, 174, 46, 14);
 		contentPane.add(lblEstilo);
 
 		JLabel lblTamanhoDaLetra = new JLabel("Tamanho da Letra");
-		lblTamanhoDaLetra.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblTamanhoDaLetra.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		lblTamanhoDaLetra.setBounds(24, 41, 155, 14);
 		contentPane.add(lblTamanhoDaLetra);
 
@@ -110,16 +111,17 @@ public class Frm_config extends Telas {
 		grupo.add(rdbtngrande);
 
 		JLabel lblPequeno = new JLabel("Pequeno");
+		lblPequeno.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblPequeno.setBounds(59, 82, 65, 14);
 		contentPane.add(lblPequeno);
 
 		JLabel lblNewLabel = new JLabel("M\u00E9dio");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel.setBounds(59, 108, 65, 14);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Grande");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(59, 138, 100, 25);
 		contentPane.add(lblNewLabel_1);
 
@@ -128,6 +130,7 @@ public class Frm_config extends Telas {
 		contentPane.add(verticalStrut);
 
 		JButton btnVoutar = new JButton("OK");
+		btnVoutar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frm_principal tela=new Frm_principal();
@@ -139,10 +142,12 @@ public class Frm_config extends Telas {
 		contentPane.add(btnVoutar);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
+		chckbxNewCheckBox.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		chckbxNewCheckBox.setBounds(234, 66, 155, 23);
 		contentPane.add(chckbxNewCheckBox);
 
 		JButton btnAplicar = new JButton("Aplicar");
+		btnAplicar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int resp;
@@ -167,7 +172,8 @@ public class Frm_config extends Telas {
 		contentPane.add(btnAplicar);
 
 		JButton btnRestaurarPadres = new JButton("Restaurar Padr\u00F5es");
-		btnRestaurarPadres.setBounds(24, 284, 155, 36);
+		btnRestaurarPadres.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		btnRestaurarPadres.setBounds(24, 284, 172, 36);
 		contentPane.add(btnRestaurarPadres);
 
 		JComboBox comboBox = new JComboBox();
@@ -177,7 +183,8 @@ public class Frm_config extends Telas {
 		contentPane.add(comboBox);
 
 		JLabel lblNewLabel_2 = new JLabel("Linguagem");
-		lblNewLabel_2.setBounds(234, 108, 89, 14);
+		lblNewLabel_2.setFont(new  Font("Tahoma",Font.PLAIN,tamanhofonte));
+		lblNewLabel_2.setBounds(234, 108, 89, 23);
 		contentPane.add(lblNewLabel_2);
 
 		JLabel lbl_fundo = new JLabel("");
