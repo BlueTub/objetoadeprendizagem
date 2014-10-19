@@ -112,12 +112,12 @@ public class Frm_principal extends Telas {
 
 		JLabel label = new JLabel(
 				"Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
-		label.setFont(new Font("Arial", Font.BOLD, 14));
-		label.setBounds(52, 28, 504, 14);
+		label.setFont(new Font("Arial", Font.BOLD, tamanhofonte));
+		label.setBounds(52, 28, 548, 21);
 		contentPane.add(label);
 
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
-		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
 		lbl_titulo.setBounds(276, 66, 277, 14);
 		contentPane.add(lbl_titulo);
 
@@ -141,7 +141,7 @@ public class Frm_principal extends Telas {
 		contentPane.add(horizontalStrut);
 
 		final JTextPane txt_descricao = new JTextPane();
-		txt_descricao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txt_descricao.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		txt_descricao.setText("txt_descricao");
 		txt_descricao.setEditable(false);
 		txt_descricao.setBackground(UIManager
@@ -154,7 +154,7 @@ public class Frm_principal extends Telas {
 		contentPane.add(horizontalStrut_1);
 
 		JButton btn_inicia = new JButton(">>");
-		btn_inicia.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btn_inicia.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
 		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/btn_select.fw.png")));
 		btn_inicia
 				.setToolTipText("Abre a tela de descri\u00E7\u00F5es onde ir\u00E1 ser apresentado mais detalhes sobre o objeto.");
@@ -167,7 +167,7 @@ public class Frm_principal extends Telas {
 
 			}
 		});
-		btn_inicia.setBounds(515, 299, 83, 40);
+		btn_inicia.setBounds(515, 285, 83, 40);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
@@ -190,12 +190,12 @@ public class Frm_principal extends Telas {
 			}
 		});
 
-		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_pilha.setBounds(29, 32, 120, 56);
 		panel.add(btn_pilha);
 
 		JButton btn_fila = new JButton("Fila");
-		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -217,7 +217,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_fila);
 
 		JButton btn_lista = new JButton("Lista");
-		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Descricao_e[] descricao = new Descricao_e[3];
@@ -244,6 +244,7 @@ public class Frm_principal extends Telas {
 		panel.add(lblNewLabel);
 
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
+		lblMostrarMaisDetalhes.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
 
