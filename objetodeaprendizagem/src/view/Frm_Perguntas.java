@@ -50,7 +50,7 @@ public class Frm_Perguntas extends Telas {
 	
 	public void Initialize(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 607, 402);
+		setBounds(100, 100, 620, 402);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -59,41 +59,41 @@ public class Frm_Perguntas extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
-		
+		System.out.println(tamanhofonte);
 		JPanel painel = new JPanel();
 		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		painel.setBounds(10, 11, 571, 286);
+		painel.setBounds(10, 11, 594, 286);
 		contentPane.add(painel);
 		painel.setLayout(null);
 		
 		JRadioButton rdbtnPergunta1 = new JRadioButton("pergunta 1");
 		rdbtnPergunta1.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		rdbtnPergunta1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnPergunta1.setBounds(6, 81, 559, 23);
+		rdbtnPergunta1.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		rdbtnPergunta1.setBounds(6, 81, 588, 23);
 		painel.add(rdbtnPergunta1);
 		
 		JRadioButton rdbtnPergunta2 = new JRadioButton("pergunta 2");
 		rdbtnPergunta2.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		rdbtnPergunta2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnPergunta2.setBounds(6, 127, 559, 23);
+		rdbtnPergunta2.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		rdbtnPergunta2.setBounds(6, 127, 582, 23);
 		painel.add(rdbtnPergunta2);
 		
 		JRadioButton rdbtnPergunta3 = new JRadioButton("pergunta 3");
 		rdbtnPergunta3.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		rdbtnPergunta3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnPergunta3.setBounds(6, 172, 559, 23);
+		rdbtnPergunta3.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		rdbtnPergunta3.setBounds(6, 172, 588, 23);
 		painel.add(rdbtnPergunta3);
 		
 		JRadioButton rdbtnPergunta4 = new JRadioButton("pergunta 4");
 		rdbtnPergunta4.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		rdbtnPergunta4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnPergunta4.setBounds(6, 212, 559, 23);
+		rdbtnPergunta4.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		rdbtnPergunta4.setBounds(6, 212, 588, 23);
 		painel.add(rdbtnPergunta4);
 		
 		JRadioButton rdbtnPergunta5 = new JRadioButton("pergunta 5");
 		rdbtnPergunta5.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		rdbtnPergunta5.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnPergunta5.setBounds(6, 256, 559, 23);
+		rdbtnPergunta5.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		rdbtnPergunta5.setBounds(6, 256, 588, 23);
 		painel.add(rdbtnPergunta5);
 		
 		final ButtonGroup grupo = new ButtonGroup(); 
@@ -104,8 +104,8 @@ public class Frm_Perguntas extends Telas {
 		grupo.add(rdbtnPergunta5);
 		
 		JLabel lblEnunciado = new JLabel("enunciado");
-		lblEnunciado.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEnunciado.setBounds(6, 0, 565, 85);
+		lblEnunciado.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		lblEnunciado.setBounds(6, 0, 588, 85);
 		painel.add(lblEnunciado);
 		
 		JButton btnProximo = new JButton("Pr\u00F3ximo");
@@ -137,7 +137,7 @@ public class Frm_Perguntas extends Telas {
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 601, 373);
+		lbl_fundo.setBounds(0, 0, 614, 373);
 		contentPane.add(lbl_fundo);
 		muda.AlterarTela();
 	
