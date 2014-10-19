@@ -100,6 +100,7 @@ public class Frm_Splash extends Telas {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		tamanhofonte=dados.getFonte();
 		look=dados.getLook();
 		
 		centralizeFrame();
