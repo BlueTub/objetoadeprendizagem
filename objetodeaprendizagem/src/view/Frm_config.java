@@ -159,6 +159,7 @@ public class Frm_config extends Telas {
 					e.printStackTrace();
 				}
 			    look=dados.getLook();
+			    tamanhofonte=dados.getFonte();
 			    Estilo();
 			}
 		});

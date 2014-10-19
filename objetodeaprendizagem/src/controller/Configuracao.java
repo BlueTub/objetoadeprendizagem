@@ -37,7 +37,7 @@ public class Configuracao {
 	/**
 	 * Método para definir o estilo do usuario
 	 */
-	private void Estilos() {
+	private void Estilos(){		//org.jvnet.substance.SubstanceLookAndFeel
 		switch (OpcEstilo) {
 		case 0:
 			look = "javax.swing.plaf.metal.MetalLookAndFeel";
