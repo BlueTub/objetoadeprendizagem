@@ -1,2 +1,2 @@
 16
-javax.swing.plaf.nimbus.NimbusLookAndFeel
+javax.swing.plaf.metal.MetalLookAndFeel
