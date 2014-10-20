@@ -4,7 +4,11 @@ import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-
+/**
+ * 
+ * @author Zuzi
+ *
+ */
 public class AnimaçaoPilhaRm extends Thread {
 	private JButton btnAdicionar;
 	private JButton btnRemover;

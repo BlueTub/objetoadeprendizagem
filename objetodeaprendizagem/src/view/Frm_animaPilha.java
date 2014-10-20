@@ -20,7 +20,11 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 import controller.Telas;
-
+/**
+ * 
+ * @author Zuzi
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_animaPilha extends Telas {
 	
