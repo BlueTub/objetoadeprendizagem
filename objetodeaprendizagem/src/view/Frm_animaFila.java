@@ -14,6 +14,7 @@ import javax.swing.JButton;
 
 import controller.AnimaçaoFilaAdd;
 import controller.AnimaçaoFilaRm;
+import controller.MexerFila;
 import controller.Telas;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -26,12 +27,11 @@ import java.awt.event.ActionEvent;
 public class Frm_animaFila extends Telas {
 
 	private JPanel contentPane;
-	private JLabel fila[] = new JLabel [6];
-	private int tamanho = 0;
+	private int add = 0;
 	private int rm = 0;
-	private float x = 31;
-	private Thread elementos[] = new Thread[6];
-	private Thread elementosEspera[] = new Thread[6];
+	private float x = 27;
+	private int cont = 0;
+	private JLabel elementos[] = new JLabel[6];
 	private JLabel lbl_valor10;
 	private JLabel lbl_valor20;
 	private JLabel lbl_valor30;
@@ -129,32 +129,32 @@ public class Frm_animaFila extends Telas {
 		contentPane.add(lbl_valor20);
 		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor10.setForeground(Color.BLACK);
-		lbl_valor10.setBounds(281, 130, 29, 38);
+		lbl_valor10.setBounds(281, 134, 29, 31);
 		contentPane.add(lbl_valor10);
 		
 		lblCubo5 = new JLabel("");
 		lblCubo5.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo5.setBounds(269, 34, 65, 68);
+		lblCubo5.setBounds(256, 34, 65, 68);
 		contentPane.add(lblCubo5);
 		
 		lblCubo4 = new JLabel("");
 		lblCubo4.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo4.setBounds(220, 34, 65, 68);
+		lblCubo4.setBounds(210, 34, 65, 68);
 		contentPane.add(lblCubo4);
 		
 		JLabel lblCubo3 = new JLabel("");
 		lblCubo3.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo3.setBounds(171, 34, 65, 68);
+		lblCubo3.setBounds(164, 34, 65, 68);
 		contentPane.add(lblCubo3);
 		
 		lblCubo2 = new JLabel("");
 		lblCubo2.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo2.setBounds(122, 34, 65, 68);
+		lblCubo2.setBounds(118, 34, 65, 68);
 		contentPane.add(lblCubo2);
 		
 		lblCubo1 = new JLabel("");
 		lblCubo1.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo1.setBounds(73, 34, 65, 68);
+		lblCubo1.setBounds(72, 34, 65, 68);
 		contentPane.add(lblCubo1);
 		
 		btnAdicionar = new JButton("Adicionar");
@@ -169,8 +169,12 @@ public class Frm_animaFila extends Telas {
 		
 		JLabel lblCubo0 = new JLabel("");
 		lblCubo0.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cuboCinza.png")));
-		lblCubo0.setBounds(24, 34, 65, 68);
+		lblCubo0.setBounds(26, 34, 65, 68);
 		contentPane.add(lblCubo0);
+		
+		if (add == 0) {
+			btnRemover.setEnabled(false);
+		}
 		
 		ActionListener adicionar = new ActionListener() {
 			
@@ -195,14 +199,14 @@ public class Frm_animaFila extends Telas {
 	}
 	
 	public void carregaVtElementos(){
-		fila[0] = lbl_valor10;
-		fila[1] = lbl_valor20;
-		fila[2] = lbl_valor30;
-		fila[3] = lbl_valor40;
-		fila[4] = lbl_valor50;
-		fila[5] = lbl_valor60;
+		elementos[0] = lbl_valor10;
+		elementos[1] = lbl_valor20;
+		elementos[2] = lbl_valor30;
+		elementos[3] = lbl_valor40;
+		elementos[4] = lbl_valor50;
+		elementos[5] = lbl_valor60;
 	}
-	
+	/*
 	public void carregaElementosAdd(){
 		Thread t1 = new AnimaçaoFilaAdd(lbl_valor10, btnAdicionar, btnRemover,x);
 		Thread t2 = new AnimaçaoFilaAdd(lbl_valor20, btnAdicionar, btnRemover,x);
@@ -232,17 +236,24 @@ public class Frm_animaFila extends Telas {
 		elementos[4] = t5;
 		elementos[5] = t6;
 	}
-	
+	*/
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
-		carregaElementosAdd();
+		carregaVtElementos();
 		
-		elementos[tamanho].start();
-		tamanho++;
+		Thread t1 = new AnimaçaoFilaAdd(elementos[add], btnAdicionar, btnRemover, x);
+		t1.start();
+		add++;
 		x -= 5;
-        if (tamanho == 6) {
+		cont++;
+		
+		if (add == 6) {
+			add = 0;
+		}
+		
+        if (cont == 6) {
         	JOptionPane.showMessageDialog(null, "Fila cheia!!", "Aviso",
 					JOptionPane.INFORMATION_MESSAGE);
 			btnAdicionar.setEnabled(false);
@@ -252,11 +263,26 @@ public class Frm_animaFila extends Telas {
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
 		btnRemover.setEnabled(false);
 		btnAdicionar.setEnabled(false);
-		carregaVtIniciarRm();
+		carregaVtElementos();
 		
-		elementos[rm].start();
+		Thread t1 = new AnimaçaoFilaRm(elementos[rm], btnAdicionar, btnRemover);
+		t1.start();
+		
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		for (int i = rm; i < add; i++) {
+			Thread t2 = new MexerFila(elementos[i], btnAdicionar, btnRemover);
+			t2.start();
+		}
 		rm++;
-		tamanho--;
-		
+		cont--;
+		x += 5;
+		if (rm == 6) {
+			rm = 0;
+		}
 	}
 }

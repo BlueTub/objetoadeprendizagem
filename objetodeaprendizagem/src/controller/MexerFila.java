@@ -1,55 +1,37 @@
 package controller;
 
 import java.awt.Rectangle;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
-/**
- * 
- * @author Zuzi
- *
- */
-public class AnimaçaoFilaAdd extends Thread {
-	
+
+public class MexerFila extends Thread{
 	private JLabel lbl_valor;
 	private JButton btnAdicionar;
 	private JButton btnRemover;
-	private float x;
 	
-	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x){
+	public MexerFila(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover) {
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
-		this.x = x;
 	}
 	
 	public void run(){
-		AnimarAdd();
+		fila();
 	}
 	
-	public void AnimarAdd(){
-		lbl_valor.setVisible(true);
+	public void fila(){
 		Rectangle posiçao = lbl_valor.getBounds();
 		
-		for (int i = 0; i < x; i++) {
+		for (int i = 0; i < 5; i++) {
 			posiçao.x -= 9;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(35);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		for (int i = 0; i < 8; i++) {
-			posiçao.y -= 9;
-			lbl_valor.setBounds(posiçao);
-			try {
-				Thread.sleep(35);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
 		btnAdicionar.setEnabled(true);
 		btnRemover.setEnabled(true);
 	}
