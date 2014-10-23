@@ -26,11 +26,10 @@ public class AnimaçaoFilaRm extends Thread {
 	}
 	
 	public void animarRm(){
-		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
-		for (int i = 0; i < 15; i++) {
-			posiçao.x += 10.5;
+		for (int i = 0; i < 8; i++) {
+			posiçao.y += 9;
 			lbl_valor.setBounds(posiçao);
 			try {
 				Thread.sleep(35);
@@ -38,8 +37,23 @@ public class AnimaçaoFilaRm extends Thread {
 				e.printStackTrace();
 			}
 		}
+		lbl_valor.setVisible(false);
+		while (posiçao.x < 265){
+			posiçao.x += 10;
+			lbl_valor.setBounds(posiçao);
+			try {
+				Thread.sleep(35);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
-		btnAdicionar.setEnabled(true);
-		btnRemover.setEnabled(true);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
