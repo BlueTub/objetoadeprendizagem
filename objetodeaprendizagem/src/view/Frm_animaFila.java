@@ -19,9 +19,7 @@ import controller.Telas;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
- * 
  * @author Zuzi
- *
  */
 @SuppressWarnings("serial")
 public class Frm_animaFila extends Telas {
@@ -32,6 +30,7 @@ public class Frm_animaFila extends Telas {
 	private float x = 27;
 	private int cont = 0;
 	private JLabel elementos[] = new JLabel[6];
+	private JLabel fila[] = new JLabel[6];
 	private JLabel lbl_valor10;
 	private JLabel lbl_valor20;
 	private JLabel lbl_valor30;
@@ -206,44 +205,15 @@ public class Frm_animaFila extends Telas {
 		elementos[4] = lbl_valor50;
 		elementos[5] = lbl_valor60;
 	}
-	/*
-	public void carregaElementosAdd(){
-		Thread t1 = new AnimaçaoFilaAdd(lbl_valor10, btnAdicionar, btnRemover,x);
-		Thread t2 = new AnimaçaoFilaAdd(lbl_valor20, btnAdicionar, btnRemover,x);
-		Thread t3 = new AnimaçaoFilaAdd(lbl_valor30, btnAdicionar, btnRemover,x);
-		Thread t4 = new AnimaçaoFilaAdd(lbl_valor40, btnAdicionar, btnRemover,x);
-		Thread t5 = new AnimaçaoFilaAdd(lbl_valor50, btnAdicionar, btnRemover,x);
-		Thread t6 = new AnimaçaoFilaAdd(lbl_valor60, btnAdicionar, btnRemover,x);
-		elementos[0] = t1;
-		elementos[1] = t2;
-		elementos[2] = t3;
-		elementos[3] = t4;
-		elementos[4] = t5;
-		elementos[5] = t6;
-	}
-	
-	public void carregaVtIniciarRm(){
-		Thread t1 = new AnimaçaoFilaRm(lbl_valor10, btnAdicionar, btnRemover);
-		Thread t2 = new AnimaçaoFilaRm(lbl_valor20, btnAdicionar, btnRemover);
-		Thread t3 = new AnimaçaoFilaRm(lbl_valor30, btnAdicionar, btnRemover);
-		Thread t4 = new AnimaçaoFilaRm(lbl_valor40, btnAdicionar, btnRemover);
-		Thread t5 = new AnimaçaoFilaRm(lbl_valor50, btnAdicionar, btnRemover);
-		Thread t6 = new AnimaçaoFilaRm(lbl_valor60, btnAdicionar, btnRemover);
-		elementos[0] = t1;
-		elementos[1] = t2;
-		elementos[2] = t3;
-		elementos[3] = t4;
-		elementos[4] = t5;
-		elementos[5] = t6;
-	}
-	*/
+
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
 		carregaVtElementos();
 		
-		Thread t1 = new AnimaçaoFilaAdd(elementos[add], btnAdicionar, btnRemover, x);
+		fila[add] = elementos[add];
+		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x);
 		t1.start();
 		add++;
 		x -= 5;
@@ -265,24 +235,32 @@ public class Frm_animaFila extends Telas {
 		btnAdicionar.setEnabled(false);
 		carregaVtElementos();
 		
-		Thread t1 = new AnimaçaoFilaRm(elementos[rm], btnAdicionar, btnRemover);
+		Thread t1 = new AnimaçaoFilaRm(fila[rm]);
+		fila[rm] = null;
 		t1.start();
 		
 		try {
-			Thread.sleep(200);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		for (int i = rm; i < add; i++) {
-			Thread t2 = new MexerFila(elementos[i], btnAdicionar, btnRemover);
-			t2.start();
+		
+		for (int i = 0; i < fila.length; i++) {
+			if (fila[i] != null) {
+				Thread t2 = new MexerFila(fila[i], btnAdicionar, btnRemover);
+				t2.start();
+			}
+			
 		}
 		rm++;
 		cont--;
 		x += 5;
 		if (rm == 6) {
 			rm = 0;
+		}
+		if (fila[0] == null) {
+			btnAdicionar.setEnabled(true);
 		}
 	}
 }
