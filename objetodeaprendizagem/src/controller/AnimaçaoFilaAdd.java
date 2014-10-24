@@ -34,7 +34,7 @@ public class AnimaçaoFilaAdd extends Thread {
 			posiçao.x -= 9;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(15);
+				Thread.sleep(35);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -88,7 +88,7 @@ public class Frm_animaPilha extends Telas {
 		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - Pilha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 546, 449);
+		setBounds(100, 100, 546, 466);
 		
 		//Metodos para padronizaçao das Telas
 		centralizeFrame();
@@ -269,7 +269,7 @@ public class Frm_animaPilha extends Telas {
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 540, 399);
+		lbl_fundo.setBounds(0, 0, 540, 414);
 		contentPane.add(lbl_fundo);
 		
 		/**
