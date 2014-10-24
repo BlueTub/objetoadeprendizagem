@@ -26,12 +26,13 @@ public class AnimaçaoFilaRm extends Thread {
 			posiçao.y += 9;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(35);
+				Thread.sleep(110);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 			posiçao.x = 281;
 			lbl_valor.setBounds(posiçao);
+			lbl_valor.setVisible(false);
 	}
 }
