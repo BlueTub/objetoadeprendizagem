@@ -327,11 +327,9 @@ public class Frm_animaFila extends Telas {
 	}
 	
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
-		btnAdicionar.setEnabled(false);
-		btnRemover.setEnabled(false);
 		carregaVtElementos();
 		
-		Thread t1 = new AnimaçaoFilaRm(fila[rm]);
+		Thread t1 = new AnimaçaoFilaRm(fila[rm], btnAdicionar, btnRemover);
 		fila[rm] = null;
 		t1.start();
 		
@@ -346,16 +344,18 @@ public class Frm_animaFila extends Telas {
 				Thread t2 = new MexerFila(fila[i], btnAdicionar, btnRemover);
 				t2.start();
 			}
+			
 		}
+		
 		rm++;
 		cont--;
 		x += 5;
 		if (rm == 6) {
 			rm = 0;
 		}
-		if (fila[0] == null) {
-			btnAdicionar.setEnabled(true);
-		}
+		//if (fila[0] == null) {
+			//btnAdicionar.setEnabled(true);
+		//}
 	}
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
