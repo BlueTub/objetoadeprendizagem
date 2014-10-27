@@ -346,16 +346,15 @@ public class Frm_animaFila extends Telas {
 			}
 			
 		}
-		
 		rm++;
 		cont--;
 		x += 5;
 		if (rm == 6) {
 			rm = 0;
 		}
-		//if (fila[0] == null) {
-			//btnAdicionar.setEnabled(true);
-		//}
+		if (fila[0] == null) {
+			btnAdicionar.setEnabled(true);
+		}
 	}
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
