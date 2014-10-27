@@ -10,9 +10,13 @@ import javax.swing.JLabel;
 public class AnimaçaoFilaRm extends Thread {
 	
 	private JLabel lbl_valor;
+	private JButton btnAdicionar;
+	private JButton btnRemover;
 	
-	public AnimaçaoFilaRm(JLabel lbl_valor){
+	public AnimaçaoFilaRm(JLabel lbl_valor, JButton btnAdicionar, JButton btnRemover){
 		this.lbl_valor = lbl_valor;
+		this.btnAdicionar = btnAdicionar;
+		this.btnRemover = btnRemover;
 	}
 	
 	public void run (){
@@ -20,6 +24,8 @@ public class AnimaçaoFilaRm extends Thread {
 	}
 	
 	public void animarRm(){
+		btnAdicionar.setEnabled(false);
+		btnRemover.setEnabled(false);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
 		for (int i = 0; i < 8; i++) {
