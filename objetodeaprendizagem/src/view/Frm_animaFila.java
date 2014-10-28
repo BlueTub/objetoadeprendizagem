@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -251,6 +250,11 @@ public class Frm_animaFila extends Telas {
 		lbl_fundo.setBounds(0, 0, 535, 358);
 		contentPane.add(lbl_fundo);
 		
+		if (cont == 0) {
+			btnAdicionar.setEnabled(true);
+		}
+		carregaVtElementos();
+		
 		ActionListener adicionar = new ActionListener() {
 			
 			@Override
@@ -273,8 +277,9 @@ public class Frm_animaFila extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 
-				
+				dispose();
+				Frm_descricao d = new Frm_descricao(1);
+				d.setVisible(true);
 			}
 		};
 		
@@ -306,21 +311,17 @@ public class Frm_animaFila extends Telas {
 		
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
-		carregaVtElementos();
 		
 		fila[add] = elementos[add];
 		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x, cont);
 		t1.start();
 		add++;
 		cont++;
-		
 		x -= 5;
 
 		if (add == 6) {
 			add = 0;
 		}
-		
-        
 	}
 	
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
@@ -342,7 +343,6 @@ public class Frm_animaFila extends Telas {
 				Thread t2 = new MexerFila(fila[i], btnAdicionar, btnRemover);
 				t2.start();
 			}
-			
 		}
 
 		rm++;
