@@ -305,21 +305,18 @@ public class Frm_animaFila extends Telas {
 		carregaVtElementos();
 		
 		fila[add] = elementos[add];
-		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x);
+		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x, cont);
 		t1.start();
 		add++;
-		x -= 5;
 		cont++;
 		
+		x -= 5;
+
 		if (add == 6) {
 			add = 0;
 		}
 		
-        if (cont == 6) {
-        	JOptionPane.showMessageDialog(null, "Fila cheia!!", "Aviso",
-					JOptionPane.INFORMATION_MESSAGE);
-			btnAdicionar.setEnabled(false);
-		}
+        
 	}
 	
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){

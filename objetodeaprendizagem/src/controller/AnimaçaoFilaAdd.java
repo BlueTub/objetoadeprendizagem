@@ -3,6 +3,7 @@ package controller;
 import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 /**
  * 
  * @author Zuzi
@@ -14,12 +15,14 @@ public class AnimaçaoFilaAdd extends Thread {
 	private JButton btnAdicionar;
 	private JButton btnRemover;
 	private float x;
+	private int cont;
 	
-	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x){
+	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x, int cont){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
 		this.x = x;
+		this.cont = cont;
 	}
 	
 	public void run(){
@@ -27,6 +30,7 @@ public class AnimaçaoFilaAdd extends Thread {
 	}
 	
 	public void AnimarAdd(){
+		System.out.println(cont);
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
@@ -52,5 +56,11 @@ public class AnimaçaoFilaAdd extends Thread {
 		
 		btnAdicionar.setEnabled(true);
 		btnRemover.setEnabled(true);
+		
+		if (cont == 5) {
+        	JOptionPane.showMessageDialog(null, "Fila cheia!!", "Aviso",
+					JOptionPane.INFORMATION_MESSAGE);
+			btnAdicionar.setEnabled(false);
+		}
 	}
 }
