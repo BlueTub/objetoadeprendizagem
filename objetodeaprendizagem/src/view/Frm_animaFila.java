@@ -229,12 +229,14 @@ public class Frm_animaFila extends Telas {
 		
 		btnAdicionar = new JButton("Adicionar");
 		btnAdicionar.setMnemonic('A');
+		btnAdicionar.setToolTipText("Adiciona um novo elemento na fila");
 		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAdicionar.setBounds(388, 34, 109, 47);
 		contentPane.add(btnAdicionar);
 		
 		btnRemover = new JButton("Remover");
 		btnRemover.setMnemonic('R');
+		btnRemover.setToolTipText("Remove um elemento da fila");
 		btnRemover.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnRemover.setBounds(388, 118, 109, 47);
 		contentPane.add(btnRemover);
