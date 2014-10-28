@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -13,16 +14,19 @@ import controller.Telas;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Frm_animaLista extends Telas {
 
 	private JPanel contentPane;
-
+	private JLabel lbl_fundo;
 	/**
 	 * Launch the application.
 	 */
 	
 	private static int objeto =0;
+	private JLabel label;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -68,20 +72,20 @@ public class Frm_animaLista extends Telas {
 		Estilo();
 		iconeBarra();
 		
-		JLabel lblLista = new JLabel("Lista");
-		lblLista.setBounds(169, 122, 46, 14);
-		contentPane.add(lblLista);
+		label = new JLabel("10");
+		label.setForeground(Color.BLACK);
+		label.setFont(new Font("Tahoma", Font.BOLD, 18));
+		label.setBounds(38, 98, 30, 14);
+		contentPane.add(label);
 		
-		JButton btnNewButton = new JButton("Voltar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Frm_descricao teladesc = new Frm_descricao(getObjeto());
-				teladesc.setVisible(true);
-				dispose();
-			}
-		});
-		btnNewButton.setBounds(136, 178, 89, 23);
-		contentPane.add(btnNewButton);
+		JLabel lblCubo0 = new JLabel("");
+		lblCubo0.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo0.setBounds(27, 66, 65, 68);
+		contentPane.add(lblCubo0);
+		
+		lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 540, 414);
+		contentPane.add(lbl_fundo);
 	}
-
 }
