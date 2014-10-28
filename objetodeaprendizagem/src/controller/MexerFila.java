@@ -21,8 +21,6 @@ public class MexerFila extends Thread{
 	}
 	
 	public void fila(){
-		btnAdicionar.setEnabled(false);
-		btnRemover.setEnabled(false);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
 		for (int i = 0; i < 5; i++) {
