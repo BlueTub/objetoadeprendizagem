@@ -30,7 +30,6 @@ public class AnimaçaoFilaAdd extends Thread {
 	}
 	
 	public void AnimarAdd(){
-		System.out.println(cont);
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
