@@ -247,10 +247,6 @@ public class Frm_animaFila extends Telas {
 		lbl_fundo.setBounds(0, 0, 535, 358);
 		contentPane.add(lbl_fundo);
 		
-		if (add == 0) {
-			btnRemover.setEnabled(false);
-		}
-		
 		ActionListener adicionar = new ActionListener() {
 			
 			@Override
@@ -327,8 +323,9 @@ public class Frm_animaFila extends Telas {
 	}
 	
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
-		carregaVtElementos();
 		
+		btnAdicionar.setEnabled(false);
+		btnRemover.setEnabled(false);
 		Thread t1 = new AnimaçaoFilaRm(fila[rm], btnAdicionar, btnRemover);
 		fila[rm] = null;
 		t1.start();
@@ -346,15 +343,18 @@ public class Frm_animaFila extends Telas {
 			}
 			
 		}
+
 		rm++;
 		cont--;
 		x += 5;
 		if (rm == 6) {
 			rm = 0;
 		}
-		if (fila[0] == null) {
+
+		if (cont == 0) {
 			btnAdicionar.setEnabled(true);
-		}
+	    }
+		
 	}
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
