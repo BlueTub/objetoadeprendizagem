@@ -32,7 +32,7 @@ public class AnimaçaoFilaRm extends Thread {
 			posiçao.y += 9;
 			lbl_valor.setBounds(posiçao);
 			try {
-				Thread.sleep(110);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
