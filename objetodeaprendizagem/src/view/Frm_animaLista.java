@@ -1,22 +1,18 @@
 package view;
-
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-
 import controller.Telas;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class Frm_animaLista extends Telas {
 
 	private JPanel contentPane;
