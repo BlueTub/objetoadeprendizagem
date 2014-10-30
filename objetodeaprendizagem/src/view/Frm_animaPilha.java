@@ -1,12 +1,11 @@
 package view;
 
-import controller.AnimaçaoPilhaRm;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import controller.AnimaçaoPilhaAdd;
+import controller.AnimacaoPilha;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,12 +17,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
-import javax.swing.JOptionPane;
 import controller.Telas;
 /**
- * 
  * @author Zuzi
- *
  */
 @SuppressWarnings("serial")
 public class Frm_animaPilha extends Telas {
@@ -42,8 +38,7 @@ public class Frm_animaPilha extends Telas {
 	private int z = 0;
 	private JLabel vtEmpilhado[] = new JLabel[7];
 	private JLabel vtDesempilhado[] = new JLabel[7];
-	private Thread vtIniciarAdd[] = new Thread[7];
-	private Thread vtIniciarRm[] = new Thread[7];
+	private Thread vtIniciar[] = new Thread[7];
 	JButton btnAdicionar;
 	JButton btnRemover;
 	private int cont = 0;
@@ -66,6 +61,7 @@ public class Frm_animaPilha extends Telas {
 	private JLabel lblRemovaUmElemento;
 	private JLabel lblFuncionamentoDeUma;
 	private JLabel lblPilhaCheia;
+	private boolean condiçao;
 	/**
 	 * Launch the application.
 	 */
@@ -300,6 +296,7 @@ public class Frm_animaPilha extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				condiçao = true;
 				addElemento(btnAdicionar,btnRemover);
 			}
 		};
@@ -311,6 +308,7 @@ public class Frm_animaPilha extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				condiçao = false;
 				rmElemento(btnAdicionar, btnRemover);
 			}
 		};
@@ -359,42 +357,21 @@ public class Frm_animaPilha extends Telas {
 	 * Metodo que carrega o vetor com Threads, chamando uma classe 
 	 * para adicionar elementos na Pilha
 	 */
-	public void CarregavtIniciarAdd(){
-		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t5 = new AnimaçaoPilhaAdd(lbl_valor50,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t4 = new AnimaçaoPilhaAdd(lbl_valor40,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t3 = new AnimaçaoPilhaAdd(lbl_valor30,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t2 = new AnimaçaoPilhaAdd(lbl_valor20,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		Thread t1 = new AnimaçaoPilhaAdd(lbl_valor10,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
-		vtIniciarAdd[0] = t1;
-		vtIniciarAdd[1] = t2;
-		vtIniciarAdd[2] = t3;
-		vtIniciarAdd[3] = t4;
-		vtIniciarAdd[4] = t5;
-		vtIniciarAdd[5] = t6;
-		vtIniciarAdd[6] = t7;
-	}
-	
-	/**
-	 * Metodo que carrega o vetor com Threads, chamando uma classe
-	 * para remover os elementos da Pilha
-	 */
-	public void CarregavtIniciaRm(){
-		Thread t7 = new AnimaçaoPilhaRm(lbl_valor70,btnAdicionar,btnRemover,lblTopo);
-		Thread t6 = new AnimaçaoPilhaRm(lbl_valor60,btnAdicionar,btnRemover,lblTopo);
-		Thread t5 = new AnimaçaoPilhaRm(lbl_valor50,btnAdicionar,btnRemover,lblTopo);
-		Thread t4 = new AnimaçaoPilhaRm(lbl_valor40,btnAdicionar,btnRemover,lblTopo);
-		Thread t3 = new AnimaçaoPilhaRm(lbl_valor30,btnAdicionar,btnRemover,lblTopo);
-		Thread t2 = new AnimaçaoPilhaRm(lbl_valor20,btnAdicionar,btnRemover,lblTopo);
-		Thread t1 = new AnimaçaoPilhaRm(lbl_valor10,btnAdicionar,btnRemover,lblTopo);
-		vtIniciarRm[0] = t1;
-		vtIniciarRm[1] = t2;
-		vtIniciarRm[2] = t3;
-		vtIniciarRm[3] = t4;
-		vtIniciarRm[4] = t5;
-		vtIniciarRm[5] = t6;
-		vtIniciarRm[6] = t7;
+	public void CarregaThread(){
+		Thread t7 = new AnimacaoPilha(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t6 = new AnimacaoPilha(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t5 = new AnimacaoPilha(lbl_valor50,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t4 = new AnimacaoPilha(lbl_valor40,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t3 = new AnimacaoPilha(lbl_valor30,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t2 = new AnimacaoPilha(lbl_valor20,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		Thread t1 = new AnimacaoPilha(lbl_valor10,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia,condiçao);
+		vtIniciar[0] = t1;
+		vtIniciar[1] = t2;
+		vtIniciar[2] = t3;
+		vtIniciar[3] = t4;
+		vtIniciar[4] = t5;
+		vtIniciar[5] = t6;
+		vtIniciar[6] = t7;
 	}
 	
 	/**
@@ -405,11 +382,13 @@ public class Frm_animaPilha extends Telas {
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
-		CarregavtIniciarAdd();
+		CarregaThread();
+		
+		
 		for (int i = z; i < vtEmpilhado.length - n; i++) {
 			vtEmpilhado[i] = vtDesempilhado[i];
 			vtDesempilhado[i] = null;
-			vtIniciarAdd[i].start();
+			vtIniciar[i].start();
 		}
 		y -= 5;
 		n -=1;
@@ -430,8 +409,8 @@ public class Frm_animaPilha extends Telas {
 				if (vtDesempilhado[i] == null) {
 					vtDesempilhado[i] = vtEmpilhado[i];
 					vtEmpilhado[i] = null;
-					CarregavtIniciaRm();
-					vtIniciarRm[i].start();
+					CarregaThread();
+					vtIniciar[i].start();
 					i = -1;
 					z-=1;
 					n+=1;
