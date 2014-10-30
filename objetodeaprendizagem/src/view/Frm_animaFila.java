@@ -357,7 +357,6 @@ public class Frm_animaFila extends Telas {
 				t2.start();
 			}
 		}
-
 		rm++;
 		cont--;
 		x += 5;
