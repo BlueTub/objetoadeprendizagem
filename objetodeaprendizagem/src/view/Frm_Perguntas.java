@@ -24,6 +24,7 @@ public class Frm_Perguntas extends Telas {
 
 	private JPanel contentPane;
 	private String caminho;
+	private String caminhoRespostas;
 	/**
 	 * Launch the application.
 	 */
@@ -49,6 +50,14 @@ public class Frm_Perguntas extends Telas {
 		this.caminho=caminho;
 		Initialize();
 		
+	}
+	/*
+	 * Método para descobrir o caminho das respostas
+	 */
+	public void CaminhoResposta(){
+		if(caminho.equals("Perguntas.txt")){
+			caminhoRespostas="respostasPilha.txt";
+		}
 	}
 	
 	public void Initialize(){
@@ -154,8 +163,9 @@ public class Frm_Perguntas extends Telas {
 					muda.AlterarTela();
 					grupo.clearSelection();
 					}else{
+						CaminhoResposta();
 						Frm_Perguntas.this.dispose();
-						Frm_Pontuacao tela=new Frm_Pontuacao(muda.fila);
+						Frm_Pontuacao tela=new Frm_Pontuacao(muda.fila,caminhoRespostas);
 					    tela.setVisible(true);
 						
 					}

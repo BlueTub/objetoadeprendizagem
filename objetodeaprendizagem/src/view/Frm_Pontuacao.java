@@ -25,6 +25,7 @@ public class Frm_Pontuacao extends Telas {
 
 	private JPanel contentPane;
 	private static Fila fila;
+	private String caminhoRespostas;
 	/**
 	 * Launch the application.
 	 */
@@ -32,7 +33,7 @@ public class Frm_Pontuacao extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frm_Pontuacao frame = new Frm_Pontuacao(fila);
+					Frm_Pontuacao frame = new Frm_Pontuacao(fila,null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,9 +46,10 @@ public class Frm_Pontuacao extends Telas {
 	 * Create the frame.
 	 */
 	@SuppressWarnings("static-access")
-	public Frm_Pontuacao(Fila fila) {
+	public Frm_Pontuacao(Fila fila,String caminhoRespostas) {
 		setResizable(false);
 		this.fila=fila;
+		this.caminhoRespostas=caminhoRespostas;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 590, 402);
 		contentPane = new JPanel();
@@ -104,7 +106,7 @@ public class Frm_Pontuacao extends Telas {
 		btnVoltar.setBounds(10, 309, 89, 29);
 		painel.add(btnVoltar);
 		btnVoltar.setCursor(cursor);
-		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila,cursor,btnVoltar);
+		Thread t = new ThreadCarregamento(barra,lblCarregando,lblPontucao,fila,cursor,btnVoltar,caminhoRespostas);
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Pontuacao.class.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 595, 373);
