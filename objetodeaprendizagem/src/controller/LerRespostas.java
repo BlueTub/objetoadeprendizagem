@@ -19,7 +19,7 @@ public class LerRespostas {
 		/**
 		 * Metodo para pegar achar o arquivo, pegar e jogar na Pilha seus elementos.
 		 */
-		public void leArquivos() {
+		public void leArquivos(String nomeArquivo) {
 			StringBuffer sbDir=new StringBuffer();
 			sbDir.append("src");
 			sbDir.append(File.separator);
@@ -29,7 +29,7 @@ public class LerRespostas {
 			File dir= new File(sbDir.toString());
 			
 			if(dir.exists()){
-				String nomeArquivo="respostasPilha.txt";
+				
 				File arquivo = new File(sbDir.toString(),nomeArquivo);
 				
 				if(arquivo.exists()){

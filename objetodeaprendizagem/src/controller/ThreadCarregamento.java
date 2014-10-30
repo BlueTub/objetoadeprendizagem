@@ -23,6 +23,7 @@ public class ThreadCarregamento extends Thread{
 	  private int pont = 0;
 	  private Cursor cursor;
 	  private JButton btnVoltar;
+	  private String caminhoRespostas;
 	    
 	  /**
 	   * Construtor 
@@ -30,19 +31,20 @@ public class ThreadCarregamento extends Thread{
 	   * @param texto
 	   * @param fila 
 	   */
-	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f,Cursor cursor,JButton btnVoltar){
+	    public ThreadCarregamento(JProgressBar barra,JLabel texto,JLabel pontuacao, Fila f,Cursor cursor,JButton btnVoltar,String caminhoRespostas){
 	        this.barra=barra;
 	        this.texto=texto;
 	        this.pontuacao=pontuacao;
 	        this.f=f;
 	        this.cursor=cursor;
 	        this.btnVoltar=btnVoltar;
+	        this.caminhoRespostas=caminhoRespostas;
 	    }
 	    
 	    @Override
 	    public void run(){
 	    	Carrega(); 
-	    	Potuacao();
+	    	Potuacao(caminhoRespostas);
 	    }
 	    /**
 	     * Método para carregar a barra
@@ -70,7 +72,7 @@ public class ThreadCarregamento extends Thread{
 	            }  
 	        }
 	           barra.setVisible(false);
-	           Potuacao();
+	           Potuacao(caminhoRespostas);
 	           
 	           cursor=Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
 	           btnVoltar.setCursor(cursor);
@@ -79,9 +81,9 @@ public class ThreadCarregamento extends Thread{
 	     * Metodo para gerar a pontuacao das perguntas e pegar qual perguntas ele errou.
 	     * @return pontuacao.
 	     */
-	    public void Potuacao(){
+	    public void Potuacao(String caminho){
 	    	LerRespostas ler=new LerRespostas();
-	    	ler.leArquivos();
+	    	ler.leArquivos(caminho);
 	    	
 	    		while(!f.vazia()){
 	    		int usuario=f.remove();
