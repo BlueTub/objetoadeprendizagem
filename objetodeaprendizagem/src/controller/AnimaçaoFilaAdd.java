@@ -26,6 +26,7 @@ public class AnimaçaoFilaAdd extends Thread {
 		this.cont = cont;
 		this.lblFilaCheia = lblFilaCheia;
 	}
+
 	
 	public void run(){
 		AnimarAdd();

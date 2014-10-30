@@ -83,6 +83,9 @@ public class Frm_animaFila extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_animaFila(int obj) {
+		
+
+		
 		setTitle("Anima\u00E7\u00E3o - Fila");
 		setObjeto(obj);
 		setResizable(false);
