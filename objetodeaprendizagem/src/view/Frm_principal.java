@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.Desktop;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Component;
-import java.io.File;
 import java.io.IOException;
 
 import javax.swing.Box;

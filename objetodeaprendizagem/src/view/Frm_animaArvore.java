@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controller.Telas;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
 public class Frm_animaArvore extends Telas {
@@ -35,11 +37,15 @@ public class Frm_animaArvore extends Telas {
 	 */
 	public Frm_animaArvore() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 592, 391);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 576, 353);
+		contentPane.add(lbl_fundo);
 	}
-
 }

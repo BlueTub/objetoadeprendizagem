@@ -9,7 +9,7 @@ import javax.swing.JLabel;
  * @author Zuzi
  *
  */
-public class AnimaçaoPilhaAdd extends Thread{
+public class AnimaçaoPilhaAdd extends Thread implements OperacaoAnimacao{
 	
 	private JLabel lbl_valor;
 	private static int y;
@@ -78,5 +78,17 @@ public class AnimaçaoPilhaAdd extends Thread{
 			btnAdicionar.setEnabled(false);
 			lblPilhaCheia.setVisible(true);
 		}
+	}
+
+	@Override
+	public void addElemento() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeElemento() {
+		// TODO Auto-generated method stub
+		
 	}
 }
