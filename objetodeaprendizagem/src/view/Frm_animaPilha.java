@@ -313,7 +313,8 @@ public class Frm_animaPilha extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Frm_Perguntas p = new Frm_Perguntas();
+				String nomeArquivo="Perguntas.txt";
+				Frm_Perguntas p = new Frm_Perguntas(nomeArquivo);
 				p.setVisible(true);
 				dispose();
 			}

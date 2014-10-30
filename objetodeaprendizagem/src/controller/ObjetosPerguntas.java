@@ -20,6 +20,7 @@ public class ObjetosPerguntas {
  private JRadioButton resposta3;
  private JRadioButton resposta4;
  private JRadioButton resposta5;
+ private String caminho;
 
  public LerPerguntas arquivo = new LerPerguntas();
  
@@ -35,14 +36,15 @@ public class ObjetosPerguntas {
   */
 public ObjetosPerguntas(JLabel enunciado, JRadioButton resposta1,
 		JRadioButton resposta2, JRadioButton resposta3, JRadioButton resposta4,
-		JRadioButton resposta5) {
+		JRadioButton resposta5,String caminho) {
 	this.enunciado = enunciado;
 	this.resposta1 = resposta1;
 	this.resposta2 = resposta2;
 	this.resposta3 = resposta3;
 	this.resposta4 = resposta4;
 	this.resposta5 = resposta5;
-	arquivo.leArquivos();
+	this.caminho=caminho;
+	arquivo.leArquivos(caminho);
 }
  /**
   * Método que altera o conteúdo a partir dos dados da lista ligada
