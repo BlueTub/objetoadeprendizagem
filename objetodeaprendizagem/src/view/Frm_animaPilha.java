@@ -46,7 +46,7 @@ public class Frm_animaPilha extends Telas {
 	private Thread vtIniciarRm[] = new Thread[7];
 	JButton btnAdicionar;
 	JButton btnRemover;
-	private int cont = 1;
+	private int cont = 0;
 	private int y = 30;
 	private JLabel lbl1;
 	private JLabel lbl2;
@@ -65,6 +65,7 @@ public class Frm_animaPilha extends Telas {
 	private JLabel lblAdicioneUmElemento;
 	private JLabel lblRemovaUmElemento;
 	private JLabel lblFuncionamentoDeUma;
+	private JLabel lblPilhaCheia;
 	/**
 	 * Launch the application.
 	 */
@@ -111,6 +112,13 @@ public class Frm_animaPilha extends Telas {
 		
 		lbl_valor10 = new JLabel("10");
 		lbl_valor10.setVisible(false);
+		
+		lblPilhaCheia = new JLabel("Pilha Cheia!!");
+		lblPilhaCheia.setVisible(false);
+		lblPilhaCheia.setForeground(Color.DARK_GRAY);
+		lblPilhaCheia.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		lblPilhaCheia.setBounds(226, 221, 169, 33);
+		contentPane.add(lblPilhaCheia);
 		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor10.setForeground(Color.BLACK);
 		lbl_valor10.setBounds(163, 54, 29, 38);
@@ -326,10 +334,8 @@ public class Frm_animaPilha extends Telas {
 		btnAdicionar.addActionListener(adicionar);
 		btnVoltar.addActionListener(voltar);
 		
-		if (cont == 1) {
 			CarregaVtDesempilhado();
-			cont++;
-		}
+			
 		if (vtEmpilhado[0] == null) {
 			btnRemover.setEnabled(false);
 		}
@@ -354,13 +360,13 @@ public class Frm_animaPilha extends Telas {
 	 * para adicionar elementos na Pilha
 	 */
 	public void CarregavtIniciarAdd(){
-		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t5 = new AnimaçaoPilhaAdd(lbl_valor50,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t4 = new AnimaçaoPilhaAdd(lbl_valor40,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t3 = new AnimaçaoPilhaAdd(lbl_valor30,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t2 = new AnimaçaoPilhaAdd(lbl_valor20,btnAdicionar,btnRemover,y,lblTopo);
-		Thread t1 = new AnimaçaoPilhaAdd(lbl_valor10,btnAdicionar,btnRemover,y,lblTopo);
+		Thread t7 = new AnimaçaoPilhaAdd(lbl_valor70,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t6 = new AnimaçaoPilhaAdd(lbl_valor60,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t5 = new AnimaçaoPilhaAdd(lbl_valor50,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t4 = new AnimaçaoPilhaAdd(lbl_valor40,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t3 = new AnimaçaoPilhaAdd(lbl_valor30,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t2 = new AnimaçaoPilhaAdd(lbl_valor20,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
+		Thread t1 = new AnimaçaoPilhaAdd(lbl_valor10,btnAdicionar,btnRemover,y,lblTopo,cont, lblPilhaCheia);
 		vtIniciarAdd[0] = t1;
 		vtIniciarAdd[1] = t2;
 		vtIniciarAdd[2] = t3;
@@ -406,13 +412,9 @@ public class Frm_animaPilha extends Telas {
 			vtIniciarAdd[i].start();
 		}
 		y -= 5;
-		if (vtEmpilhado[6] != null) {
-			JOptionPane.showMessageDialog(null, "Pilha cheia!!", "Aviso",
-					JOptionPane.INFORMATION_MESSAGE);
-			btnAdicionar.setEnabled(false);
-		}
 		n -=1;
 		z +=1;
+		cont++;
 	}
 	
 	/**
@@ -423,7 +425,7 @@ public class Frm_animaPilha extends Telas {
 	public void rmElemento(JButton btnAdicionar,JButton btnRemover){
 		btnRemover.setEnabled(false);
 		btnAdicionar.setEnabled(false);
-		
+		lblPilhaCheia.setVisible(false);
 		for (int i = vtDesempilhado.length-1; i > -1; i--) {
 				if (vtDesempilhado[i] == null) {
 					vtDesempilhado[i] = vtEmpilhado[i];
@@ -434,6 +436,7 @@ public class Frm_animaPilha extends Telas {
 					z-=1;
 					n+=1;
 					y += 5;
+					cont--;
 				}
 		}
 	}
