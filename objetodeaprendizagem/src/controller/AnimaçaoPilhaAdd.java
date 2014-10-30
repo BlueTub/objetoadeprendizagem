@@ -16,14 +16,18 @@ public class AnimaçaoPilhaAdd extends Thread{
 	private JButton btnAdicionar;
 	private JButton btnRemover;
 	private JLabel lblTopo;
+	private int cont;
+	private JLabel lblPilhaCheia;
 
 	@SuppressWarnings("static-access")
-	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y,JLabel lblTopo){
+	public AnimaçaoPilhaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, int y,JLabel lblTopo, int cont, JLabel lblPilhaCheia){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
 		this.y = y;
 		this.lblTopo = lblTopo;
+		this.cont = cont;
+		this.lblPilhaCheia = lblPilhaCheia;
 		}
 	
 	/**
@@ -70,5 +74,9 @@ public class AnimaçaoPilhaAdd extends Thread{
 		
 		btnAdicionar.setEnabled(true);
 		btnRemover.setEnabled(true);
+		if (cont == 6) {
+			btnAdicionar.setEnabled(false);
+			lblPilhaCheia.setVisible(true);
+		}
 	}
 }
