@@ -16,13 +16,15 @@ public class AnimaçaoFilaAdd extends Thread {
 	private JButton btnRemover;
 	private float x;
 	private int cont;
+	private JLabel lblFilaCheia;
 	
-	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x, int cont){
+	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x, int cont, JLabel lblFilaCheia){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
 		this.x = x;
 		this.cont = cont;
+		this.lblFilaCheia = lblFilaCheia;
 	}
 	
 	public void run(){
@@ -57,8 +59,7 @@ public class AnimaçaoFilaAdd extends Thread {
 		btnRemover.setEnabled(true);
 		
 		if (cont == 5) {
-        	JOptionPane.showMessageDialog(null, "Fila cheia!!", "Aviso",
-					JOptionPane.INFORMATION_MESSAGE);
+        	lblFilaCheia.setVisible(true);
 			btnAdicionar.setEnabled(false);
 		}
 	}
