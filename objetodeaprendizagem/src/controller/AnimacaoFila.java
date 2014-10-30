@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @author Zuzi
  *
  */
-public class AnimaçaoFilaAdd extends Thread {
+public class AnimacaoFila extends Thread implements OperacaoAnimacao {
 	
 	private JLabel lbl_valor;
 	private JButton btnAdicionar;
@@ -17,22 +17,29 @@ public class AnimaçaoFilaAdd extends Thread {
 	private float x;
 	private int cont;
 	private JLabel lblFilaCheia;
+	private boolean condiçao;
 	
-	public AnimaçaoFilaAdd(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x, int cont, JLabel lblFilaCheia){
+	public AnimacaoFila(JLabel lbl_valor,JButton btnAdicionar, JButton btnRemover, float x, int cont, JLabel lblFilaCheia, boolean condiçao){
 		this.lbl_valor = lbl_valor;
 		this.btnAdicionar = btnAdicionar;
 		this.btnRemover = btnRemover;
 		this.x = x;
 		this.cont = cont;
 		this.lblFilaCheia = lblFilaCheia;
+		this.condiçao = condiçao;
 	}
 
 	
 	public void run(){
-		AnimarAdd();
+		if (condiçao == true) {
+			addElemento();
+		}else{
+			removeElemento();
+		}
 	}
-	
-	public void AnimarAdd(){
+
+	@Override
+	public void addElemento() {
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
@@ -63,5 +70,28 @@ public class AnimaçaoFilaAdd extends Thread {
         	lblFilaCheia.setVisible(true);
 			btnAdicionar.setEnabled(false);
 		}
+		
+	}
+
+
+	@Override
+	public void removeElemento() {
+		btnAdicionar.setEnabled(false);
+		btnRemover.setEnabled(false);
+		Rectangle posiçao = lbl_valor.getBounds();
+		
+		for (int i = 0; i < 8; i++) {
+			posiçao.y += 9;
+			lbl_valor.setBounds(posiçao);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+			posiçao.x = 281;
+			lbl_valor.setBounds(posiçao);
+			lbl_valor.setVisible(false);
+		
 	}
 }
