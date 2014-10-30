@@ -42,6 +42,7 @@ public class Frm_animaFila extends Telas {
 	private JButton btnAdicionar;
 	private JButton  btnRemover;
 	private JLabel lbl_fundo;
+	private JLabel lblFilaCheia;
 	/**
 	 * Launch the application.
 	 */
@@ -128,6 +129,13 @@ public class Frm_animaFila extends Telas {
 		lbl_valor60 = new JLabel("60");
 		lbl_valor60.setForeground(Color.BLACK);
 		lbl_valor60.setVisible(false);
+		
+		lblFilaCheia = new JLabel("Fila Cheia!!");
+		lblFilaCheia.setVisible(false);
+		lblFilaCheia.setForeground(Color.DARK_GRAY);
+		lblFilaCheia.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		lblFilaCheia.setBounds(110, 199, 137, 31);
+		contentPane.add(lblFilaCheia);
 		
 		JLabel label_7 = new JLabel("5");
 		label_7.setBounds(282, 52, 11, 14);
@@ -314,7 +322,7 @@ public class Frm_animaFila extends Telas {
 		btnRemover.setEnabled(false);
 		
 		fila[add] = elementos[add];
-		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x, cont);
+		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x, cont,lblFilaCheia);
 		t1.start();
 		add++;
 		cont++;
@@ -326,7 +334,7 @@ public class Frm_animaFila extends Telas {
 	}
 	
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
-		
+		lblFilaCheia.setVisible(false);
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
 		Thread t1 = new AnimaçaoFilaRm(fila[rm], btnAdicionar, btnRemover);
