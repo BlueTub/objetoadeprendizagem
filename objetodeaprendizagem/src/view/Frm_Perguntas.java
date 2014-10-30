@@ -23,6 +23,7 @@ import javax.swing.UIManager;
 public class Frm_Perguntas extends Telas {
 
 	private JPanel contentPane;
+	private String caminho;
 	/**
 	 * Launch the application.
 	 */
@@ -30,7 +31,7 @@ public class Frm_Perguntas extends Telas {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frm_Perguntas frame = new Frm_Perguntas();
+					Frm_Perguntas frame = new Frm_Perguntas(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,10 +43,12 @@ public class Frm_Perguntas extends Telas {
 	/**
 	 * Create the frame.
 	 */
-	public Frm_Perguntas() {
+	public Frm_Perguntas(String caminho) {
 		setTitle("Perguntas");
 		setResizable(false);
-		Initialize();		
+		this.caminho=caminho;
+		Initialize();
+		
 	}
 	
 	public void Initialize(){
@@ -134,7 +137,7 @@ public class Frm_Perguntas extends Telas {
 		contentPane.add(btnVoltar);
 	     
 		final ObjetosPerguntas muda;
-		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5);
+		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5,caminho);
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/BackGround.png")));

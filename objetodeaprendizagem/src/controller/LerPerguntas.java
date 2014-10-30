@@ -23,7 +23,7 @@ public class LerPerguntas {
 	/**
 	 * Método para ler o arquivo txt é colocar os dados em uma lista ligada
 	 */
-	public void leArquivos(){
+	public void leArquivos(String caminho){
 		StringBuffer sbDir=new StringBuffer();
 		sbDir.append("src");
 		sbDir.append(File.separator);
@@ -33,8 +33,8 @@ public class LerPerguntas {
 		File dir= new File(sbDir.toString());
 		
 		if(dir.exists()){
-			String nomeArquivo="Perguntas.txt";
-			File arquivo = new File(sbDir.toString(),nomeArquivo);
+
+			File arquivo = new File(sbDir.toString(),caminho);
 			
 			if(arquivo.exists()){
 				try {
