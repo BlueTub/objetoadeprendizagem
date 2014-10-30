@@ -9,8 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import controller.AnimaçaoFilaAdd;
-import controller.AnimaçaoFilaRm;
+import controller.AnimacaoFila;
 import controller.MexerFila;
 import controller.Telas;
 import java.awt.event.ActionListener;
@@ -43,9 +42,7 @@ public class Frm_animaFila extends Telas {
 	private JButton  btnRemover;
 	private JLabel lbl_fundo;
 	private JLabel lblFilaCheia;
-	/**
-	 * Launch the application.
-	 */
+	private boolean condiçao;
 	static private int objeto;
 	private JLabel lblCubo1;
 	private JLabel lblCubo2;
@@ -54,7 +51,9 @@ public class Frm_animaFila extends Telas {
 	private JButton btnQuestionrio;
 	private JButton btnVoltar;
 	private final Action menu = new SwingAction();
-	
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -271,6 +270,7 @@ public class Frm_animaFila extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				condiçao = true;
 				addElemento(btnAdicionar, btnRemover);
 				
 			}
@@ -280,6 +280,7 @@ public class Frm_animaFila extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				condiçao = false;
 				RmElemento(btnAdicionar, btnRemover);
 				
 			}
@@ -325,7 +326,7 @@ public class Frm_animaFila extends Telas {
 		btnRemover.setEnabled(false);
 		
 		fila[add] = elementos[add];
-		Thread t1 = new AnimaçaoFilaAdd(fila[add], btnAdicionar, btnRemover, x, cont,lblFilaCheia);
+		Thread t1 = new AnimacaoFila(fila[add], btnAdicionar, btnRemover, x, cont,lblFilaCheia,condiçao);
 		t1.start();
 		add++;
 		cont++;
@@ -340,7 +341,7 @@ public class Frm_animaFila extends Telas {
 		lblFilaCheia.setVisible(false);
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
-		Thread t1 = new AnimaçaoFilaRm(fila[rm], btnAdicionar, btnRemover);
+		Thread t1 = new AnimacaoFila(fila[rm], btnAdicionar, btnRemover, x, cont,lblFilaCheia,condiçao);
 		fila[rm] = null;
 		t1.start();
 		
