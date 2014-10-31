@@ -78,30 +78,37 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lbl_titulo);
 
 		final JLabel lbl_valor1 = new JLabel("New label");
+		lbl_valor1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor1.setBounds(429, 40, 46, 14);
 		contentPane.add(lbl_valor1);
 
 		final JLabel lbl_valor2 = new JLabel("New label");
+		lbl_valor2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor2.setBounds(429, 59, 46, 14);
 		contentPane.add(lbl_valor2);
 
 		final JLabel lbl_valor3 = new JLabel("New label");
+		lbl_valor3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor3.setBounds(429, 84, 46, 14);
 		contentPane.add(lbl_valor3);
 
 		final JLabel lbl_valor4 = new JLabel("New label");
+		lbl_valor4.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor4.setBounds(429, 105, 46, 14);
 		contentPane.add(lbl_valor4);
 
 		final JLabel lbl_valor5 = new JLabel("New label");
+		lbl_valor5.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor5.setBounds(493, 40, 46, 14);
 		contentPane.add(lbl_valor5);
 
 		final JLabel lbl_valor6 = new JLabel("New label");
+		lbl_valor6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor6.setBounds(493, 71, 46, 14);
 		contentPane.add(lbl_valor6);
 
 		final JLabel lbl_valor7 = new JLabel("New label");
+		lbl_valor7.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lbl_valor7.setBounds(493, 105, 46, 14);
 		contentPane.add(lbl_valor7);
 
