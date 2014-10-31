@@ -19,6 +19,8 @@ import java.awt.event.ActionEvent;
 @SuppressWarnings("serial")
 public class Frm_animaArvore extends Telas {
 
+	int[] arvore = new int [7];
+	
 	private JPanel contentPane;
 
 	/**
@@ -155,7 +157,7 @@ public class Frm_animaArvore extends Telas {
 				Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
 						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_cubo7,
 						lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
-						lbl_valor5, lbl_valor6, lbl_valor7, lbl_rand);
+						lbl_valor5, lbl_valor6, lbl_valor7, lbl_rand, arvore);
 				t1.start();
 
 			}
