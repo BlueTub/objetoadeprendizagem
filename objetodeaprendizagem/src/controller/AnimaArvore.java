@@ -53,7 +53,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	}
 
 	public void run() {
-		// Rectangle posicao = lblPonto.getBounds();
+		
 		if (operacao == 1) {
 			addElemento();
 		} else {
@@ -63,7 +63,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void addElemento() {
-		if (primeiro) {
+		if (primeiro==true) {
 			addPrimeiro();
 			primeiro=false;
 		} else {
