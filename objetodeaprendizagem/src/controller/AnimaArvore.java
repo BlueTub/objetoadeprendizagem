@@ -25,6 +25,8 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	private JLabel lbl_rand;
 
+	boolean primeiro = true;
+
 	public AnimaArvore(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
 			JLabel lbl_cubo3, JLabel lbl_cubo4, JLabel lbl_cubo5,
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
@@ -61,15 +63,37 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void addElemento() {
-		Rectangle posicao1 = lbl_valor1.getBounds();	
+		if (primeiro) {
+			addPrimeiro();
+			primeiro=false;
+		} else {
+         
+			
+			
+			
+			
+			
+			
+			
+		}
+
+	}
+
+	public void addPrimeiro() {
+		Rectangle posicao1 = lbl_valor1.getBounds();
 		Rectangle posicao2 = lbl_cubo1.getBounds();
-		
-		posicao1.x=posicao2.x;
-		posicao1.y=posicao2.y;
-		
+
+		posicao1.x = posicao2.x + 15;
+		posicao1.y = posicao2.y + 30;
+
 		lbl_valor1.setText(lbl_rand.getText());
-       lbl_valor1.setBounds(posicao1);
+		lbl_valor1.setBounds(posicao1);
 		
+		lbl_rand.setText(Integer.toString(rand()));
+	}
+	
+	public int rand() {
+		return (int) ((Math.random() * 100) + 1);
 	}
 
 	@Override
