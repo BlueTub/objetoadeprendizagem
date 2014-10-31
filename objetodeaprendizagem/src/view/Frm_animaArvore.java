@@ -157,6 +157,7 @@ public class Frm_animaArvore extends Telas {
 						lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 						lbl_valor5, lbl_valor6, lbl_valor7, lbl_rand);
 				t1.start();
+
 			}
 		});
 
