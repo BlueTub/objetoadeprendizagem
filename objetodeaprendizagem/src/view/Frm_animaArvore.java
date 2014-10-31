@@ -12,17 +12,20 @@ import controller.Telas;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class Frm_animaArvore extends Telas {
 
-
-int[] arvore = {0,0,0,0,0,0,0};
-boolean primeiro=true;
+	int[] arvore = { 0, 0, 0, 0, 0, 0, 0 };
+	boolean primeiro = true;
 	private JPanel contentPane;
+	private JTextField txt_num;
 
 	/**
 	 * Launch the application.
@@ -40,15 +43,15 @@ boolean primeiro=true;
 		});
 	}
 
-	/**
-	 * Retorna um número aleatorio de 1 a 100
-	 * 
-	 * @return
-	 */
-
-	public int rand() {
-		return (int) ((Math.random() * 100) + 1);
-	}
+	public static int TipoString(String texto) {
+		if (texto.matches("[a-zA-Z]*")) {
+			return 0;// Apenas texto
+		}
+		if (texto.matches("[0-9]*")) {
+			return 1;// Apenas números
+		}
+		return 2;// Misto
+	}// TipoString
 
 	/**
 	 * Create the frame.
@@ -65,15 +68,8 @@ boolean primeiro=true;
 		btn_remove.setBounds(462, 330, 89, 23);
 		contentPane.add(btn_remove);
 
-		final JLabel lbl_rand = new JLabel("lbl_rand");
-		lbl_rand.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lbl_rand.setBounds(203, 330, 60, 20);
-		contentPane.add(lbl_rand);
-
-		lbl_rand.setText(Integer.toString(rand()));
-
 		JLabel lblElementoASer = new JLabel("Elemento a ser adicionado");
-		lblElementoASer.setBounds(123, 356, 164, 14);
+		lblElementoASer.setBounds(135, 356, 164, 14);
 		contentPane.add(lblElementoASer);
 
 		JLabel lbl_titulo = new JLabel("Arvore Binaria");
@@ -151,16 +147,30 @@ boolean primeiro=true;
 		lbl_cubo7.setBounds(479, 235, 60, 60);
 		contentPane.add(lbl_cubo7);
 
+		txt_num = new JTextField();
+		txt_num.setBounds(160, 331, 86, 20);
+		contentPane.add(txt_num);
+		txt_num.setColumns(10);
+		
+		txt_num.setFocusable(true);
+
 		JButton btn_adiciona = new JButton("Adiciona");
 		btn_adiciona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int operacao = 1;
-				Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
-						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_cubo7,
-						lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
-						lbl_valor5, lbl_valor6, lbl_valor7, lbl_rand, arvore,primeiro);
-				t1.start();
-primeiro = false;
+				if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
+				} else {
+					int operacao = 1;
+					Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
+							lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
+							txt_num, arvore, primeiro);
+					t1.start();
+					primeiro = false;
+					
+					
+				}
 			}
 		});
 
