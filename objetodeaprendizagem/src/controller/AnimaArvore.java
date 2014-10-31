@@ -61,8 +61,15 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void addElemento() {
-		// TODO Auto-generated method stub
-
+		Rectangle posicao1 = lbl_valor1.getBounds();	
+		Rectangle posicao2 = lbl_cubo1.getBounds();
+		
+		posicao1.x=posicao2.x;
+		posicao1.y=posicao2.y;
+		
+		lbl_valor1.setText(lbl_rand.getText());
+       lbl_valor1.setBounds(posicao1);
+		
 	}
 
 	@Override
