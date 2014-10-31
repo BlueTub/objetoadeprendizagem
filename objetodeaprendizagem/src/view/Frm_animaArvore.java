@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 
 import controller.AnimaArvore;
 import controller.Telas;
+
+import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,11 +20,14 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 @SuppressWarnings("serial")
 public class Frm_animaArvore extends Telas {
 
 	int[] arvore = { 0, 0, 0, 0, 0, 0, 0 };
+	int selecionado = 0;
 	boolean primeiro = true;
 	private JPanel contentPane;
 	private JTextField txt_num;
@@ -113,42 +118,49 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lbl_valor7);
 
 		final JLabel lbl_cubo1 = new JLabel("");
+
 		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo1.setBounds(268, 59, 60, 60);
 		contentPane.add(lbl_cubo1);
 
 		final JLabel lbl_cubo2 = new JLabel("");
+
 		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo2.setBounds(123, 132, 60, 60);
 		contentPane.add(lbl_cubo2);
 
 		final JLabel lbl_cubo3 = new JLabel("");
+
 		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo3.setBounds(415, 132, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
+
 		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo4.setBounds(53, 235, 60, 60);
 		contentPane.add(lbl_cubo4);
 
 		final JLabel lbl_cubo5 = new JLabel("");
+
 		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo5.setBounds(186, 235, 60, 60);
 		contentPane.add(lbl_cubo5);
 
 		final JLabel lbl_cubo6 = new JLabel("");
+
 		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo6.setBounds(352, 235, 60, 60);
 		contentPane.add(lbl_cubo6);
 
 		final JLabel lbl_cubo7 = new JLabel("");
+
 		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo7.setBounds(479, 235, 60, 60);
@@ -158,7 +170,7 @@ public class Frm_animaArvore extends Telas {
 		txt_num.setBounds(160, 331, 86, 20);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
-		
+
 		txt_num.setFocusable(true);
 
 		JButton btn_adiciona = new JButton("Adiciona");
@@ -175,24 +187,171 @@ public class Frm_animaArvore extends Telas {
 							txt_num, arvore, primeiro);
 					t1.start();
 					primeiro = false;
-					
-					
+
 				}
 			}
 		});
 
 		btn_adiciona.setBounds(323, 330, 89, 23);
 		contentPane.add(btn_adiciona);
-		
+
 		JLabel lblProfundidade = new JLabel("Profundidade 2");
 		lblProfundidade.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		lblProfundidade.setBounds(66, 40, 85, 14);
 		contentPane.add(lblProfundidade);
-		
-				JLabel lbl_fundo = new JLabel("");
-				lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-						.getResource("/Imagens/BackGround.png")));
-				lbl_fundo.setBounds(0, 0, 590, 382);
-				contentPane.add(lbl_fundo);
+
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 590, 382);
+		contentPane.add(lbl_fundo);
+
+		lbl_cubo1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 1;
+
+			}
+		});
+
+		lbl_cubo2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 2;
+			}
+		});
+
+		lbl_cubo3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 3;
+			}
+		});
+
+		lbl_cubo4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 4;
+			}
+		});
+
+		lbl_cubo5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 5;
+			}
+		});
+
+		lbl_cubo6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				selecionado = 6;
+			}
+		});
+
+		lbl_cubo7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/Cubo Vermelho.png")));
+				lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/CuboVermelhoSelect.png")));
+				selecionado = 7;
+			}
+		});
 	}
 }
