@@ -24,6 +24,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	private JLabel lbl_valor7;
 
 	private JLabel lbl_rand;
+	private int[] arvore;
 
 	boolean primeiro = true;
 
@@ -32,7 +33,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
 			JLabel lbl_valor2, JLabel lbl_valor3, JLabel lbl_valor4,
 			JLabel lbl_valor5, JLabel lbl_valor6, JLabel lbl_valor7,
-			JLabel lbl_rand) {
+			JLabel lbl_rand, int[] arvore) {
 		super();
 		this.operacao = operacao;
 		this.lbl_cubo1 = lbl_cubo1;
@@ -50,10 +51,11 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		this.lbl_valor6 = lbl_valor6;
 		this.lbl_valor7 = lbl_valor7;
 		this.lbl_rand = lbl_rand;
+		this.arvore = arvore;
 	}
 
 	public void run() {
-		
+
 		if (operacao == 1) {
 			addElemento();
 		} else {
@@ -63,20 +65,31 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void addElemento() {
-		if (primeiro==true) {
-			addPrimeiro();
-			primeiro=false;
+		int rand = Integer.parseInt(lbl_rand.getText());
+		if (verificadupli(rand) == false) {
+			if (primeiro == true) {
+				addPrimeiro();
+			} else {
+				if (rand > arvore[0]) {
+					addDireita();
+				}
+				if (rand < arvore[0]) {
+					addEsquerda();
+				}
+			}
 		} else {
-         
-			
-			
-			
-			
-			
-			
-			
+			System.out.println("numero repetido");
 		}
+	}//
 
+	private void addEsquerda() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void addDireita() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public void addPrimeiro() {
@@ -88,12 +101,25 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 		lbl_valor1.setText(lbl_rand.getText());
 		lbl_valor1.setBounds(posicao1);
-		
+
+		arvore[0] = Integer.parseInt(lbl_rand.getText());
 		lbl_rand.setText(Integer.toString(rand()));
 	}
-	
+
 	public int rand() {
 		return (int) ((Math.random() * 100) + 1);
+	}
+
+	public boolean verificadupli(int rand) {
+		boolean result = false;
+		for (int i = 0; i < arvore.length; i++) {
+			if (arvore[i] == rand) {
+				result = true;
+			} else {
+
+			}
+		}
+		return result;
 	}
 
 	@Override
