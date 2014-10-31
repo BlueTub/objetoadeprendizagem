@@ -102,84 +102,40 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		int rand = Integer.parseInt(lbl_rand.getText());
 		if (verificadupli(rand) == false) {
 			if (primeiro == true) {
-				addPrimeiro();
+				add(1);
 			} else {
 				if (arvore[1] == 0 && arvore[2] == 0) {
 					if (rand > arvore[0]) {
-						// addDireita();
-						Rectangle posicao1 = lbl_valor3.getBounds();
-						Rectangle posicao2 = lbl_cubo3.getBounds();
-
-						posicao1.x = posicao2.x + 15;
-						posicao1.y = posicao2.y + 30;
-
-						lbl_valor3.setText(lbl_rand.getText());
-						lbl_valor3.setBounds(posicao1);
-
-						arvore[2] = Integer.parseInt(lbl_rand.getText());
-						lbl_rand.setText(Integer.toString(rand()));
-
+						add(3);
 					}
 					if (rand < arvore[0]) {
 						// addEsquerda();
-						Rectangle posicao1 = lbl_valor2.getBounds();
-						Rectangle posicao2 = lbl_cubo2.getBounds();
-
-						posicao1.x = posicao2.x + 15;
-						posicao1.y = posicao2.y + 30;
-
-						lbl_valor2.setText(lbl_rand.getText());
-						lbl_valor2.setBounds(posicao1);
-
-						arvore[1] = Integer.parseInt(lbl_rand.getText());
-						lbl_rand.setText(Integer.toString(rand()));
+						add(2);
 					}
 				}
 				if ((arvore[1] != 0 && arvore[2] == 0)
 						|| (arvore[1] == 0 && arvore[2] != 0)) {
 					if (arvore[1] != 0) {
 						if (rand < arvore[1]) {
-							Rectangle posicao1 = lbl_valor4.getBounds();
-							Rectangle posicao2 = lbl_cubo4.getBounds();
-
-							posicao1.x = posicao2.x + 15;
-							posicao1.y = posicao2.y + 30;
-
-							lbl_valor4.setText(lbl_rand.getText());
-							lbl_valor4.setBounds(posicao1);
-
-							arvore[3] = Integer.parseInt(lbl_rand.getText());
-							lbl_rand.setText(Integer.toString(rand()));
+							add(4);
 						}
 						if (rand > arvore[1] && rand > arvore[0]) {
-							Rectangle posicao1 = lbl_valor3.getBounds();
-							Rectangle posicao2 = lbl_cubo3.getBounds();
-
-							posicao1.x = posicao2.x + 15;
-							posicao1.y = posicao2.y + 30;
-
-							lbl_valor3.setText(lbl_rand.getText());
-							lbl_valor3.setBounds(posicao1);
-
-							arvore[2] = Integer.parseInt(lbl_rand.getText());
-							lbl_rand.setText(Integer.toString(rand()));
+							add(3);
 						}
-						if(rand>arvore[1]&&rand<arvore[0]){
-							Rectangle posicao1 = lbl_valor5.getBounds();
-							Rectangle posicao2 = lbl_cubo5.getBounds();
-
-							posicao1.x = posicao2.x + 15;
-							posicao1.y = posicao2.y + 30;
-
-							lbl_valor5.setText(lbl_rand.getText());
-							lbl_valor5.setBounds(posicao1);
-
-							arvore[4] = Integer.parseInt(lbl_rand.getText());
-							lbl_rand.setText(Integer.toString(rand()));
+						if (rand > arvore[1] && rand < arvore[0]) {
+							add(5);
 						}
 					}
 					if (arvore[2] != 0) {
-
+						if (rand > arvore[2]) {
+							add(7);
+						}
+						if(rand< arvore[2]&& rand < arvore[0]){
+							add(2);
+						}
+						if(rand>arvore[0]&& rand < arvore[2]){
+							add(6);
+						}
 					}
 				}
 
@@ -189,13 +145,104 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		}
 	}//
 
-	private void addEsquerda() {
-		// TODO Auto-generated method stub
+	private void add(int opc) {
+		Rectangle posicao1;
+		Rectangle posicao2;
+		switch (opc) {
+		case 1:
+			posicao1 = lbl_valor1.getBounds();
+			posicao2 = lbl_cubo1.getBounds();
 
-	}
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
 
-	private void addDireita() {
-		// TODO Auto-generated method stub
+			lbl_valor1.setText(lbl_rand.getText());
+			lbl_valor1.setBounds(posicao1);
+
+			arvore[0] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 2:
+			posicao1 = lbl_valor2.getBounds();
+			posicao2 = lbl_cubo2.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor2.setText(lbl_rand.getText());
+			lbl_valor2.setBounds(posicao1);
+
+			arvore[1] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 3:
+			posicao1 = lbl_valor3.getBounds();
+			posicao2 = lbl_cubo3.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor3.setText(lbl_rand.getText());
+			lbl_valor3.setBounds(posicao1);
+
+			arvore[2] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 4:
+			posicao1 = lbl_valor4.getBounds();
+			posicao2 = lbl_cubo4.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor4.setText(lbl_rand.getText());
+			lbl_valor4.setBounds(posicao1);
+
+			arvore[3] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 5:
+			posicao1 = lbl_valor5.getBounds();
+			posicao2 = lbl_cubo5.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor5.setText(lbl_rand.getText());
+			lbl_valor5.setBounds(posicao1);
+
+			arvore[4] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 6:
+			posicao1 = lbl_valor6.getBounds();
+			posicao2 = lbl_cubo6.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor6.setText(lbl_rand.getText());
+			lbl_valor6.setBounds(posicao1);
+
+			arvore[5] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		case 7:
+			posicao1 = lbl_valor7.getBounds();
+			posicao2 = lbl_cubo7.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor7.setText(lbl_rand.getText());
+			lbl_valor7.setBounds(posicao1);
+
+			arvore[6] = Integer.parseInt(lbl_rand.getText());
+			lbl_rand.setText(Integer.toString(rand()));
+			break;
+		default:
+			break;
+		}
 
 	}
 
