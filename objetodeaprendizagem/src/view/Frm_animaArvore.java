@@ -183,11 +183,16 @@ public class Frm_animaArvore extends Telas {
 
 		btn_adiciona.setBounds(323, 330, 89, 23);
 		contentPane.add(btn_adiciona);
-
-		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 590, 382);
-		contentPane.add(lbl_fundo);
+		
+		JLabel lblProfundidade = new JLabel("Profundidade 2");
+		lblProfundidade.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblProfundidade.setBounds(66, 40, 85, 14);
+		contentPane.add(lblProfundidade);
+		
+				JLabel lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 590, 382);
+				contentPane.add(lbl_fundo);
 	}
 }
