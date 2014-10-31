@@ -33,7 +33,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
 			JLabel lbl_valor2, JLabel lbl_valor3, JLabel lbl_valor4,
 			JLabel lbl_valor5, JLabel lbl_valor6, JLabel lbl_valor7,
-			JLabel lbl_rand, int[] arvore) {
+			JLabel lbl_rand, int[] arvore, boolean primeiro) {
 		super();
 		this.operacao = operacao;
 		this.lbl_cubo1 = lbl_cubo1;
@@ -52,8 +52,11 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		this.lbl_valor7 = lbl_valor7;
 		this.lbl_rand = lbl_rand;
 		this.arvore = arvore;
+		this.primeiro= primeiro;
 	}
 
+	// arvore 0=raiz/ 1= esquerda1/ 2 = direira1/ 3= esquerda2/ 4= direita2/ 5=
+	// esquerda3/ 6= direita3
 	public void run() {
 
 		if (operacao == 1) {
@@ -70,12 +73,38 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			if (primeiro == true) {
 				addPrimeiro();
 			} else {
-				if (rand > arvore[0]) {
-					addDireita();
+				if (arvore[1] == 0 && arvore[2] == 0) {
+					if (rand > arvore[0]) {
+						//addDireita();
+						Rectangle posicao1 = lbl_valor3.getBounds();
+						Rectangle posicao2 = lbl_cubo3.getBounds();
+
+						posicao1.x = posicao2.x + 15;
+						posicao1.y = posicao2.y + 30;
+
+						lbl_valor3.setText(lbl_rand.getText());
+						lbl_valor3.setBounds(posicao1);
+
+						arvore[2] = Integer.parseInt(lbl_rand.getText());
+						lbl_rand.setText(Integer.toString(rand()));
+						
+					}
+					if (rand < arvore[0]) {
+						//addEsquerda();
+						Rectangle posicao1 = lbl_valor2.getBounds();
+						Rectangle posicao2 = lbl_cubo2.getBounds();
+
+						posicao1.x = posicao2.x + 15;
+						posicao1.y = posicao2.y + 30;
+
+						lbl_valor2.setText(lbl_rand.getText());
+						lbl_valor2.setBounds(posicao1);
+
+						arvore[1] = Integer.parseInt(lbl_rand.getText());
+						lbl_rand.setText(Integer.toString(rand()));
+					}
 				}
-				if (rand < arvore[0]) {
-					addEsquerda();
-				}
+
 			}
 		} else {
 			System.out.println("numero repetido");
@@ -84,12 +113,12 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	private void addEsquerda() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private void addDireita() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void addPrimeiro() {
