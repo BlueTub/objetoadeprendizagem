@@ -4,6 +4,11 @@ import java.awt.Rectangle;
 
 import javax.swing.JLabel;
 
+/**
+ * 
+ * @author Hury
+ * 
+ */
 public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	private int operacao;
 
@@ -28,6 +33,27 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	boolean primeiro = true;
 
+	/**
+	 * 
+	 * @param operacao
+	 * @param lbl_cubo1
+	 * @param lbl_cubo2
+	 * @param lbl_cubo3
+	 * @param lbl_cubo4
+	 * @param lbl_cubo5
+	 * @param lbl_cubo6
+	 * @param lbl_cubo7
+	 * @param lbl_valor1
+	 * @param lbl_valor2
+	 * @param lbl_valor3
+	 * @param lbl_valor4
+	 * @param lbl_valor5
+	 * @param lbl_valor6
+	 * @param lbl_valor7
+	 * @param lbl_rand
+	 * @param arvore
+	 * @param primeiro
+	 */
 	public AnimaArvore(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
 			JLabel lbl_cubo3, JLabel lbl_cubo4, JLabel lbl_cubo5,
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
@@ -52,11 +78,16 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		this.lbl_valor7 = lbl_valor7;
 		this.lbl_rand = lbl_rand;
 		this.arvore = arvore;
-		this.primeiro= primeiro;
+		this.primeiro = primeiro;
 	}
 
 	// arvore 0=raiz/ 1= esquerda1/ 2 = direira1/ 3= esquerda2/ 4= direita2/ 5=
 	// esquerda3/ 6= direita3
+
+	/**
+	 * Metodo run da thread
+	 */
+
 	public void run() {
 
 		if (operacao == 1) {
@@ -75,7 +106,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			} else {
 				if (arvore[1] == 0 && arvore[2] == 0) {
 					if (rand > arvore[0]) {
-						//addDireita();
+						// addDireita();
 						Rectangle posicao1 = lbl_valor3.getBounds();
 						Rectangle posicao2 = lbl_cubo3.getBounds();
 
@@ -87,10 +118,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 						arvore[2] = Integer.parseInt(lbl_rand.getText());
 						lbl_rand.setText(Integer.toString(rand()));
-						
+
 					}
 					if (rand < arvore[0]) {
-						//addEsquerda();
+						// addEsquerda();
 						Rectangle posicao1 = lbl_valor2.getBounds();
 						Rectangle posicao2 = lbl_cubo2.getBounds();
 
@@ -102,6 +133,53 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 						arvore[1] = Integer.parseInt(lbl_rand.getText());
 						lbl_rand.setText(Integer.toString(rand()));
+					}
+				}
+				if ((arvore[1] != 0 && arvore[2] == 0)
+						|| (arvore[1] == 0 && arvore[2] != 0)) {
+					if (arvore[1] != 0) {
+						if (rand < arvore[1]) {
+							Rectangle posicao1 = lbl_valor4.getBounds();
+							Rectangle posicao2 = lbl_cubo4.getBounds();
+
+							posicao1.x = posicao2.x + 15;
+							posicao1.y = posicao2.y + 30;
+
+							lbl_valor4.setText(lbl_rand.getText());
+							lbl_valor4.setBounds(posicao1);
+
+							arvore[3] = Integer.parseInt(lbl_rand.getText());
+							lbl_rand.setText(Integer.toString(rand()));
+						}
+						if (rand > arvore[1] && rand > arvore[0]) {
+							Rectangle posicao1 = lbl_valor3.getBounds();
+							Rectangle posicao2 = lbl_cubo3.getBounds();
+
+							posicao1.x = posicao2.x + 15;
+							posicao1.y = posicao2.y + 30;
+
+							lbl_valor3.setText(lbl_rand.getText());
+							lbl_valor3.setBounds(posicao1);
+
+							arvore[2] = Integer.parseInt(lbl_rand.getText());
+							lbl_rand.setText(Integer.toString(rand()));
+						}
+						if(rand>arvore[1]&&rand<arvore[0]){
+							Rectangle posicao1 = lbl_valor5.getBounds();
+							Rectangle posicao2 = lbl_cubo5.getBounds();
+
+							posicao1.x = posicao2.x + 15;
+							posicao1.y = posicao2.y + 30;
+
+							lbl_valor5.setText(lbl_rand.getText());
+							lbl_valor5.setBounds(posicao1);
+
+							arvore[4] = Integer.parseInt(lbl_rand.getText());
+							lbl_rand.setText(Integer.toString(rand()));
+						}
+					}
+					if (arvore[2] != 0) {
+
 					}
 				}
 
