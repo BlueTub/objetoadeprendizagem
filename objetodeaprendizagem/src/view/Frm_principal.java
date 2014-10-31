@@ -90,7 +90,7 @@ public class Frm_principal extends Telas {
 	public void inicializa() {
 		setBackground(SystemColor.activeCaption);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 664, 403);
+		setBounds(100, 100, 664, 429);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.inactiveCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -105,7 +105,7 @@ public class Frm_principal extends Telas {
 		panel.setBackground(UIManager
 				.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
-		panel.setBounds(40, 64, 180, 251);
+		panel.setBounds(40, 64, 180, 307);
 		contentPane.add(panel);
 
 		JLabel label = new JLabel(
@@ -240,6 +240,11 @@ public class Frm_principal extends Telas {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblNewLabel.setBounds(60, 7, 67, 14);
 		panel.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Arvore Bin\u00E1ria");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton.setBounds(29, 233, 120, 56);
+		panel.add(btnNewButton);
 
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
@@ -300,7 +305,7 @@ public class Frm_principal extends Telas {
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
 				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 658, 374);
+		lbl_fundo.setBounds(0, 0, 658, 401);
 		contentPane.add(lbl_fundo);
 
 		try {
