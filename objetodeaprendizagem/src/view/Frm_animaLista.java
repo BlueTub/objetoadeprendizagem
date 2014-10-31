@@ -22,7 +22,30 @@ public class Frm_animaLista extends Telas {
 	 */
 	
 	private static int objeto =0;
-	private JLabel label;
+	private JLabel lbl_valor10;
+	private JLabel lblCubo2;
+	private JLabel lblCubo3;
+	private JLabel lblCubo4;
+	private JLabel lblCubo5;
+	private JButton btnAdicionaFinal;
+	private JButton btnAdicionar;
+	private JButton btnRemoveIncio;
+	private JButton btnRemoveFinal;
+	private JButton btnRemover;
+	private JLabel lblFuncionamentoDeUma;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
+	private JLabel label_5;
+	private JLabel label_6;
+	private JLabel lbl_valor20;
+	private JLabel lbl_valor30;
+	private JLabel lbl_valor40;
+	private JLabel lbl_valor50;
+	private JLabel lbl_valor60;
+	private JButton button;
+	private JButton button_1;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -58,7 +81,7 @@ public class Frm_animaLista extends Telas {
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 650, 404);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -68,11 +91,142 @@ public class Frm_animaLista extends Telas {
 		Estilo();
 		iconeBarra();
 		
-		label = new JLabel("10");
-		label.setForeground(Color.BLACK);
-		label.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label.setBounds(38, 98, 30, 14);
-		contentPane.add(label);
+		button = new JButton("Voltar");
+		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		button.setBounds(412, 313, 101, 36);
+		contentPane.add(button);
+		
+		button_1 = new JButton("Question\u00E1rio");
+		button_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		button_1.setBounds(533, 313, 101, 36);
+		contentPane.add(button_1);
+		
+		lbl_valor60 = new JLabel("60");
+		lbl_valor60.setForeground(Color.BLACK);
+		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor60.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor60);
+		
+		lbl_valor50 = new JLabel("50");
+		lbl_valor50.setForeground(Color.BLACK);
+		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor50.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor50);
+		
+		lbl_valor40 = new JLabel("40");
+		lbl_valor40.setForeground(Color.BLACK);
+		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor40.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor40);
+		
+		lbl_valor30 = new JLabel("30");
+		lbl_valor30.setForeground(Color.BLACK);
+		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor30.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor30);
+		
+		lbl_valor10 = new JLabel("10");
+		lbl_valor10.setForeground(Color.BLACK);
+		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor10.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor10);
+		
+		lbl_valor20 = new JLabel("20");
+		lbl_valor20.setForeground(Color.BLACK);
+		lbl_valor20.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbl_valor20.setBounds(282, 163, 29, 31);
+		contentPane.add(lbl_valor20);
+		
+		label_6 = new JLabel("5");
+		label_6.setBounds(287, 53, 11, 14);
+		contentPane.add(label_6);
+		
+		label_1 = new JLabel("0");
+		label_1.setBounds(57, 53, 11, 14);
+		contentPane.add(label_1);
+		
+		label_4 = new JLabel("3");
+		label_4.setBounds(195, 53, 11, 14);
+		contentPane.add(label_4);
+		
+		label_5 = new JLabel("4");
+		label_5.setBounds(241, 53, 11, 14);
+		contentPane.add(label_5);
+		
+		label_3 = new JLabel("2");
+		label_3.setBounds(150, 53, 11, 14);
+		contentPane.add(label_3);
+		
+		label_2 = new JLabel("1");
+		label_2.setBounds(105, 53, 11, 14);
+		contentPane.add(label_2);
+		
+		lblFuncionamentoDeUma = new JLabel("Funcionamento de uma Lista");
+		lblFuncionamentoDeUma.setForeground(Color.BLACK);
+		lblFuncionamentoDeUma.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblFuncionamentoDeUma.setBounds(57, 11, 254, 14);
+		contentPane.add(lblFuncionamentoDeUma);
+		
+		btnRemover = new JButton("Remover");
+		btnRemover.setToolTipText("Remove um elemento de uma posi\u00E7\u00E3o espec\u00EDfica");
+		btnRemover.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnRemover.setBounds(515, 182, 115, 47);
+		contentPane.add(btnRemover);
+		
+		btnRemoveFinal = new JButton("Remove Final");
+		btnRemoveFinal.setToolTipText("Remove um elemento do final");
+		btnRemoveFinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnRemoveFinal.setBounds(515, 112, 115, 47);
+		contentPane.add(btnRemoveFinal);
+		
+		btnRemoveIncio = new JButton("Remove In\u00EDcio");
+		btnRemoveIncio.setToolTipText("Remove um elemento do in\u00EDcio");
+		btnRemoveIncio.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnRemoveIncio.setBounds(515, 41, 115, 47);
+		contentPane.add(btnRemoveIncio);
+		
+		btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.setToolTipText("Adiciona um novo elemento em uma posi\u00E7\u00E3o espec\u00EDfica");
+		btnAdicionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnAdicionar.setBounds(368, 182, 115, 47);
+		contentPane.add(btnAdicionar);
+		
+		btnAdicionaFinal = new JButton("Adiciona Final");
+		btnAdicionaFinal.setToolTipText("Adiciona um novo elemento no final");
+		btnAdicionaFinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnAdicionaFinal.setBounds(368, 112, 115, 47);
+		contentPane.add(btnAdicionaFinal);
+		
+		JButton btnAdicionaInicio = new JButton("Adiciona In\u00EDcio");
+		btnAdicionaInicio.setToolTipText("Adiciona um novo elemento no In\u00EDcio");
+		btnAdicionaInicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnAdicionaInicio.setBounds(368, 41, 115, 47);
+		contentPane.add(btnAdicionaInicio);
+		
+		lblCubo5 = new JLabel("");
+		lblCubo5.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo5.setBounds(257, 66, 65, 68);
+		contentPane.add(lblCubo5);
+		
+		lblCubo4 = new JLabel("");
+		lblCubo4.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo4.setBounds(211, 66, 65, 68);
+		contentPane.add(lblCubo4);
+		
+		lblCubo3 = new JLabel("");
+		lblCubo3.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo3.setBounds(165, 66, 65, 68);
+		contentPane.add(lblCubo3);
+		
+		lblCubo2 = new JLabel("");
+		lblCubo2.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo2.setBounds(119, 66, 65, 68);
+		contentPane.add(lblCubo2);
+		
+		JLabel lblCubo1 = new JLabel("");
+		lblCubo1.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
+		lblCubo1.setBounds(73, 66, 65, 68);
+		contentPane.add(lblCubo1);
 		
 		JLabel lblCubo0 = new JLabel("");
 		lblCubo0.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/cubo2.png")));
@@ -81,7 +235,7 @@ public class Frm_animaLista extends Telas {
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 540, 414);
+		lbl_fundo.setBounds(0, 0, 664, 397);
 		contentPane.add(lbl_fundo);
 	}
 }

@@ -82,9 +82,6 @@ public class Frm_animaFila extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_animaFila(int obj) {
-		
-
-		
 		setTitle("Anima\u00E7\u00E3o - Fila");
 		setObjeto(obj);
 		setResizable(false);
@@ -310,7 +307,9 @@ public class Frm_animaFila extends Telas {
 		btnVoltar.addActionListener(voltar);
 		btnQuestionrio.addActionListener(questionario);
 	}
-	
+	/**
+	 * metodo para carregar as JLabels em um vetor
+	 */
 	public void carregaVtElementos(){
 		elementos[0] = lbl_valor10;
 		elementos[1] = lbl_valor20;
@@ -319,7 +318,11 @@ public class Frm_animaFila extends Telas {
 		elementos[4] = lbl_valor50;
 		elementos[5] = lbl_valor60;
 	}
-
+	/**
+	 * Metodo para adicionar elementos na Fila
+	 * @param btnAdicionar
+	 * @param btnRemover
+	 */
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		
 		btnAdicionar.setEnabled(false);
@@ -336,7 +339,11 @@ public class Frm_animaFila extends Telas {
 			add = 0;
 		}
 	}
-	
+	/**
+	 * Metodo para remover elementos da Fila
+	 * @param btnAdicionar
+	 * @param btnRemover
+	 */
 	public void RmElemento(JButton btnAdicionar,JButton btnRemover){
 		lblFilaCheia.setVisible(false);
 		btnAdicionar.setEnabled(false);
