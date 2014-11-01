@@ -69,8 +69,8 @@ public class Frm_descricao extends Telas {
 	 * @throws IOException
 	 */
 	public static Descricao_e[] Carregatxt() throws IOException {
-		Descricao_e[] descricao = new Descricao_e[3];
-		for (int i = 0; i < 3; i++) {
+		Descricao_e[] descricao = new Descricao_e[4];
+		for (int i = 0; i < 4; i++) {
 			descricao[i] = new Descricao_e();
 		}
 
@@ -155,6 +155,9 @@ public class Frm_descricao extends Telas {
 				case 2:
 					lbl_titulo.setText("Lista Ligada");
 					break;
+				case 3:
+					lbl_titulo.setText("Arvore Binária");
+					break;
 				default:
 					break;
 				}
@@ -175,7 +178,7 @@ public class Frm_descricao extends Telas {
 		JButton btn_caract = new JButton("Caracteristicas");
 		btn_caract.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e1) {
@@ -192,7 +195,7 @@ public class Frm_descricao extends Telas {
 		JButton btn_uso = new JButton("Uso");
 		btn_uso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e1) {
@@ -209,7 +212,7 @@ public class Frm_descricao extends Telas {
 		JButton btn_dificuldade = new JButton("Dificuldade");
 		btn_dificuldade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e1) {
@@ -265,7 +268,12 @@ public class Frm_descricao extends Telas {
 					Frm_animaLista telalista = new Frm_animaLista(objeto);
 					telalista.setVisible(true);
 					dispose();
-
+					break;
+					
+				case 3:
+					Frm_animaArvore telaarvore = new Frm_animaArvore();
+					telaarvore.setVisible(true);
+					dispose();
 					break;
 				default:
 					JOptionPane.showMessageDialog(null,
