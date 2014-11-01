@@ -68,6 +68,10 @@ public class Frm_animaArvore extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		centralizeFrame();
+		Estilo();
+		iconeBarra();
 
 		JButton btn_remove = new JButton("Remove");
 		btn_remove.setBounds(462, 330, 89, 23);
@@ -167,7 +171,7 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lbl_cubo7);
 
 		txt_num = new JTextField();
-		txt_num.setBounds(160, 331, 86, 20);
+		txt_num.setBounds(160, 319, 86, 32);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
