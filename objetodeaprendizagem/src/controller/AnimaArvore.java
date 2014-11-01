@@ -86,7 +86,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 		int rand = Integer.parseInt(txt_num.getText());
 		if (verificadupli(rand) == false) {
-			if (arvore[0]==0) {
+			if (arvore[0] == 0) {
 				add(1);
 			} else {
 				if (arvore[1] == 0 && arvore[2] == 0) {
@@ -259,24 +259,52 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void removeElemento() {
-
+		int aux;
 		switch (selecionado) {
 		case 1:
 			if (arvore[1] == 0 && arvore[2] == 0) {
-               arvore[0]=0;
-               lbl_valor1.setVisible(false);
-			}if ((arvore[1]!=0 && arvore[2]==0) || (arvore[1]==0 && arvore[2]!=0)){
-				if(arvore[1]!=0){
-					
+				arvore[0] = 0;
+				lbl_valor1.setVisible(false);
+			}
+			if ((arvore[1] != 0 && arvore[2] == 0) || (arvore[1] == 0 && arvore[2] != 0)) {
+				if (arvore[1] != 0) {
+					if (arvore[3] != 0 && arvore[4] != 0) {
+						// direita sobe
+					}
+					if (arvore[3] == 0 && arvore[4] == 0) {
+						// nenhum sobe
+					}
+					if (arvore[3] != 0 && arvore[4] == 0) {
+						// esquerda sobe
+					}
+					if (arvore[3] == 0 && arvore[4] != 0) {
+						// direita sobe
+					}
+
 				}
-				if(arvore[2]!=0){
-					
+				if (arvore[2] != 0) {
+
 				}
 			}
-			
+			if (arvore[3] != 0 && arvore[4] != 0) {
+
+			}
+
 			break;
 		case 2:
 
+			if ((arvore[1] != 0 && arvore[2] == 0)
+					|| (arvore[1] == 0 && arvore[2] != 0)) {
+				if (arvore[1] != 0) {
+					if (arvore[3] != 0 && arvore[4] != 0) {
+						lbl_valor2.setText(Integer.toString(arvore[4]));
+						arvore[1] = arvore[4];
+						arvore[4] = 0;
+						lbl_valor5.setVisible(false);
+
+					}
+				}
+			}
 			break;
 		case 3:
 
@@ -298,5 +326,4 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		}
 
 	}
-
 }
