@@ -61,8 +61,8 @@ public class Frm_principal extends Telas {
 	 */
 
 	public static Descricao_e[] Carregatxt() throws IOException {
-		Descricao_e[] descricao = new Descricao_e[3];
-		for (int i = 0; i < 3; i++) {
+		Descricao_e[] descricao = new Descricao_e[4];
+		for (int i = 0; i < 4; i++) {
 			descricao[i] = new Descricao_e();
 		}
 
@@ -173,7 +173,7 @@ public class Frm_principal extends Telas {
 		JButton btn_pilha = new JButton("Pilha");
 		btn_pilha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e) {
@@ -196,7 +196,7 @@ public class Frm_principal extends Telas {
 		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e1) {
@@ -218,7 +218,7 @@ public class Frm_principal extends Telas {
 		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
+				Descricao_e[] descricao = new Descricao_e[4];
 				try {
 					descricao = Carregatxt();
 				} catch (IOException e1) {
@@ -242,6 +242,23 @@ public class Frm_principal extends Telas {
 		panel.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Arvore Bin\u00E1ria");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Descricao_e[] descricao = new Descricao_e[4];
+				try {
+					descricao = Carregatxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				String texto = descricao[3].getDescricao_res();
+				txt_descricao.setText(texto);
+				lbl_titulo.setText("Arvore Binária");
+				lbl_titulo.setVisible(true);
+				txt_descricao.setVisible(true);
+				objeto = 3;
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.setBounds(29, 233, 120, 56);
 		panel.add(btnNewButton);
