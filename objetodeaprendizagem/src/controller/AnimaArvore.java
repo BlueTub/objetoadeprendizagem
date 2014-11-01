@@ -32,6 +32,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	private JTextField txt_num;
 	private int[] arvore;
+	private int selecionado;
 
 	boolean primeiro = true;
 
@@ -40,7 +41,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
 			JLabel lbl_valor2, JLabel lbl_valor3, JLabel lbl_valor4,
 			JLabel lbl_valor5, JLabel lbl_valor6, JLabel lbl_valor7,
-			JTextField txt_num, int[] arvore, boolean primeiro) {
+			JTextField txt_num, int[] arvore, boolean primeiro, int selecionado) {
 		super();
 		this.operacao = operacao;
 		this.lbl_cubo1 = lbl_cubo1;
@@ -60,10 +61,8 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		this.txt_num = txt_num;
 		this.arvore = arvore;
 		this.primeiro = primeiro;
+		this.selecionado = selecionado;
 	}
-
-	// arvore 0=raiz/ 1= esquerda1/ 2 = direira1/ 3= esquerda2/ 4= direita2/ 5=
-	// esquerda3/ 6= direita3
 
 	/**
 	 * Metodo run da thread
@@ -81,9 +80,13 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	@Override
 	public void addElemento() {
 
+		// arvore 0=raiz/ 1= esquerda1/ 2 = direira1/ 3= esquerda2/ 4= direita2/
+		// 5=
+		// esquerda3/ 6= direita3
+
 		int rand = Integer.parseInt(txt_num.getText());
 		if (verificadupli(rand) == false) {
-			if (primeiro == true) {
+			if (arvore[0]==0) {
 				add(1);
 			} else {
 				if (arvore[1] == 0 && arvore[2] == 0) {
@@ -118,17 +121,18 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 							add(6);
 						}
 					}
-				}if(arvore[1]!=0 && arvore[2]!=0){
-					if(rand<arvore[1]){
+				}
+				if (arvore[1] != 0 && arvore[2] != 0) {
+					if (rand < arvore[1]) {
 						add(4);
 					}
-					if(rand>arvore[2]){
+					if (rand > arvore[2]) {
 						add(7);
 					}
-					if(rand<arvore[0]&&rand>arvore[1]){
+					if (rand < arvore[0] && rand > arvore[1]) {
 						add(5);
 					}
-					if(rand>arvore[0]&&rand<arvore[2]){
+					if (rand > arvore[0] && rand < arvore[2]) {
 						add(6);
 					}
 				}
@@ -155,7 +159,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor1.setBounds(posicao1);
 
 			arvore[0] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor1.setVisible(true);
 			break;
 		case 2:
 			posicao1 = lbl_valor2.getBounds();
@@ -168,7 +172,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor2.setBounds(posicao1);
 
 			arvore[1] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor2.setVisible(true);
 			break;
 		case 3:
 			posicao1 = lbl_valor3.getBounds();
@@ -181,7 +185,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor3.setBounds(posicao1);
 
 			arvore[2] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor3.setVisible(true);
 			break;
 		case 4:
 			posicao1 = lbl_valor4.getBounds();
@@ -194,7 +198,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor4.setBounds(posicao1);
 
 			arvore[3] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor4.setVisible(true);
 			break;
 		case 5:
 			posicao1 = lbl_valor5.getBounds();
@@ -207,7 +211,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor5.setBounds(posicao1);
 
 			arvore[4] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor5.setVisible(true);
 			break;
 		case 6:
 			posicao1 = lbl_valor6.getBounds();
@@ -220,7 +224,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor6.setBounds(posicao1);
 
 			arvore[5] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor6.setVisible(true);
 			break;
 		case 7:
 			posicao1 = lbl_valor7.getBounds();
@@ -233,7 +237,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			lbl_valor7.setBounds(posicao1);
 
 			arvore[6] = Integer.parseInt(txt_num.getText());
-
+			lbl_valor7.setVisible(true);
 			break;
 		default:
 			break;
@@ -255,7 +259,43 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void removeElemento() {
-		// TODO Auto-generated method stub
+
+		switch (selecionado) {
+		case 1:
+			if (arvore[1] == 0 && arvore[2] == 0) {
+               arvore[0]=0;
+               lbl_valor1.setVisible(false);
+			}if ((arvore[1]!=0 && arvore[2]==0) || (arvore[1]==0 && arvore[2]!=0)){
+				if(arvore[1]!=0){
+					
+				}
+				if(arvore[2]!=0){
+					
+				}
+			}
+			
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+
+			break;
+		case 6:
+
+			break;
+		case 7:
+
+			break;
+		default:
+			break;
+		}
 
 	}
 
