@@ -77,6 +77,7 @@ public class Frm_animaLista extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_animaLista(int obj) {
+		setTitle("Anima\u00E7\u00E3o - Lista");
 		setObjeto(obj);
 		
 		setResizable(false);
