@@ -73,9 +73,7 @@ public class Frm_animaArvore extends Telas {
 		Estilo();
 		iconeBarra();
 
-		JButton btn_remove = new JButton("Remove");
-		btn_remove.setBounds(462, 330, 89, 23);
-		contentPane.add(btn_remove);
+
 
 		JLabel lblElementoASer = new JLabel("Elemento a ser adicionado");
 		lblElementoASer.setBounds(135, 356, 164, 14);
@@ -188,13 +186,29 @@ public class Frm_animaArvore extends Telas {
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
 							lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
-							txt_num, arvore, primeiro);
+							txt_num, arvore, primeiro,selecionado);
 					t1.start();
 					primeiro = false;
 
 				}
 			}
 		});
+		
+		JButton btn_remove = new JButton("Remove");
+		btn_remove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int operacao =2;
+				Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
+						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+						lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
+						lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
+						txt_num, arvore, primeiro,selecionado);
+				t1.start();
+			}
+		});
+		
+		btn_remove.setBounds(462, 330, 89, 23);
+		contentPane.add(btn_remove);
 
 		btn_adiciona.setBounds(323, 330, 89, 23);
 		contentPane.add(btn_adiciona);
@@ -357,5 +371,13 @@ public class Frm_animaArvore extends Telas {
 				selecionado = 7;
 			}
 		});
+		
+		lbl_valor1.setVisible(false);
+		lbl_valor2.setVisible(false);
+		lbl_valor3.setVisible(false);
+		lbl_valor4.setVisible(false);
+		lbl_valor5.setVisible(false);
+		lbl_valor6.setVisible(false);
+		lbl_valor7.setVisible(false);
 	}
 }
