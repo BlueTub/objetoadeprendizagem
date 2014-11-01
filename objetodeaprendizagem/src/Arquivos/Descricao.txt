@@ -15,4 +15,10 @@ Descrição: LISTA lIGADA
 Descrição resumida: LISTA lIGADA
 Caracteristica: LISTA lIGADA
 Uso: LISTA lIGADA
-Dificuldade:Lista Ligada
+Dificuldade: Lista Ligada
+3
+Descrição: Arvore binaria
+Descrição resumida: Arvore binaria
+Caracteristica: Arvore binaria
+Uso: Arvore binaria
+Dificuldade: Arvore binaria
