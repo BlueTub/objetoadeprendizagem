@@ -1,5 +1,9 @@
 package controller;
-
+/**
+ * Interface com os principais metodos de animação de fila.
+ * @author Hury
+ *
+ */
 public interface OperacaoAnimacao {
 
 	/**
