@@ -15,7 +15,12 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.io.IOException;
 
-;
+/**
+ * Classe que irá apresentar a tela Splash.
+ * 
+ * @author João
+ * 
+ */
 
 @SuppressWarnings("serial")
 public class Frm_Splash extends Telas {
@@ -23,7 +28,7 @@ public class Frm_Splash extends Telas {
 	/**
 	 * 
 	 */
-	
+
 	private JPanel contentPane;
 
 	/**
@@ -41,11 +46,13 @@ public class Frm_Splash extends Telas {
 			}
 		});
 	}
-/**
- * Carrega a progress Bar
- * @param barra
- * @param lbltexto
- */
+
+	/**
+	 * Carrega a progress Bar
+	 * 
+	 * @param barra
+	 * @param lbltexto
+	 */
 	public void Carrega(final JProgressBar barra, final JLabel lbltexto) {
 		new Thread() {
 
@@ -92,17 +99,17 @@ public class Frm_Splash extends Telas {
 		setContentPane(contentPane);
 		setUndecorated(true);
 		contentPane.setLayout(null);
-		
-		Configuracao_e dados=new Configuracao_e();
-		LerConfuguracao ler=new LerConfuguracao();
+
+		Configuracao_e dados = new Configuracao_e();
+		LerConfuguracao ler = new LerConfuguracao();
 		try {
 			ler.ler(dados);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		tamanhofonte=dados.getFonte();
-		look=dados.getLook();
-		
+		tamanhofonte = dados.getFonte();
+		look = dados.getLook();
+
 		centralizeFrame();
 		iconeBarra();
 		Estilo();

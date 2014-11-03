@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
+ * Classe de manipulação dos elementos da animação da arvore
  * 
  * @author Hury
  * 
@@ -77,6 +78,9 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		}
 	}
 
+	/**
+	 * Adiciona  
+	 */
 	@Override
 	public void addElemento() {
 
@@ -267,19 +271,20 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 				arvore[0] = 0;
 				lbl_valor1.setVisible(false);
 			}
-			if ((arvore[1] != 0 && arvore[2] == 0) || (arvore[1] == 0 && arvore[2] != 0)) {
+			if ((arvore[1] != 0 && arvore[2] == 0)
+					|| (arvore[1] == 0 && arvore[2] != 0)) {
 				if (arvore[1] != 0) {
 					if (arvore[3] != 0 && arvore[4] != 0) {
 						// direita sobe
-						
-						aux= arvore[1];
+
+						aux = arvore[1];
 						lbl_valor2.setText(Integer.toString(arvore[4]));
-						arvore[1]=arvore[4];
-						arvore[4]=0;
+						arvore[1] = arvore[4];
+						arvore[4] = 0;
 						lbl_valor5.setVisible(false);
 						lbl_valor1.setText(Integer.toString(aux));
-						arvore[0]=aux;
-						
+						arvore[0] = aux;
+
 					}
 					if (arvore[3] == 0 && arvore[4] == 0) {
 						// nenhum sobe
