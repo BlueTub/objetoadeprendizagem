@@ -22,7 +22,11 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
-
+/**
+ * Tela que irá aprensentar os atribultos do objeto em questão
+ * @author Hury
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_descricao extends Telas {
 

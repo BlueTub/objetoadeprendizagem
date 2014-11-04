@@ -7,13 +7,17 @@ import java.io.IOException;
 import Entity.Descricao_e;
 
 /**
+ * Classe que carrega na memoria o conteúdo do arquivo descricao.txt
+ * 
  * @author Hury
  */
 public class Descricao_c {
 	/**
 	 * 
 	 * @param desc
+	 *            Entidade descrição
 	 * @throws IOException
+	 *             Rxceções de arquivo
 	 */
 	public void le(Descricao_e[] desc) throws IOException {
 
@@ -33,12 +37,6 @@ public class Descricao_c {
 
 	}
 
-	public void TestaTexto(Descricao_e[] descricao) { // imprimi o conteudo de
-														// todos objetos no
-														// console
-		for (int i = 0; i < 3; i++) {
-			// System.out.println(descricao[i].descricao_int+"\n"+descricao[i].descricao_res+"\n"+descricao[i].caract+"\n"+descricao[i].uso+"\n"+descricao[i].dificuldade);
-		}
-	}
+
 
 }

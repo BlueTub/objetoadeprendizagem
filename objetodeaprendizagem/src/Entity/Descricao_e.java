@@ -17,7 +17,16 @@ public class Descricao_e {
 	public Descricao_e() {
 		this(0, "", "", "", "", "");
 	}
-
+/**
+ * Construtor
+ * 
+ * @param tip
+ * @param descres
+ * @param descint
+ * @param cara
+ * @param us
+ * @param dific
+ */
 	Descricao_e(int tip,String descres, String descint, String cara, String us,
 			String dific) {
 		Tipo = tip;

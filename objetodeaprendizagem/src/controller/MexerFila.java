@@ -4,7 +4,11 @@ import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-
+/**
+ * 
+ * @author Zuzi
+ *
+ */
 public class MexerFila extends Thread{
 	private JLabel lbl_valor;
 	private JButton btnAdicionar;
@@ -19,7 +23,9 @@ public class MexerFila extends Thread{
 	public void run(){
 		fila();
 	}
-	
+	/**
+	 * 
+	 */
 	public void fila(){
 		Rectangle posiçao = lbl_valor.getBounds();
 		

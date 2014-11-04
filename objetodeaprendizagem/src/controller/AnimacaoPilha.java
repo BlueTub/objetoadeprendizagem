@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 /**
- * 
+ * Classe com os metodos de animação da pilha
  * @author Zuzi
  *
  */

@@ -18,7 +18,11 @@ import controller.ObjetosPerguntas;
 import controller.Telas;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
-
+/**
+ * Tela que irá apresentar o questionario do objeto em questão
+ * @author João
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_Perguntas extends Telas {
 

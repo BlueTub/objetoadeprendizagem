@@ -20,7 +20,8 @@ public class ObjetosPerguntas {
  private JRadioButton resposta3;
  private JRadioButton resposta4;
  private JRadioButton resposta5;
- private String caminho;
+ @SuppressWarnings("unused")
+private String caminho;
 
  public LerPerguntas arquivo = new LerPerguntas();
  

@@ -30,7 +30,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-
+/**
+ * Tela principal, o usuário pode selecionar um objeto
+ * @author Hury
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_principal extends Telas {
 

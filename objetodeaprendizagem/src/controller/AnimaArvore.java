@@ -3,7 +3,6 @@ package controller;
 import java.awt.Rectangle;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -12,6 +11,7 @@ import javax.swing.JTextField;
  * @author Hury
  * 
  */
+
 public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	private int operacao;
 
@@ -79,7 +79,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 	}
 
 	/**
-	 * Adiciona  
+	 * Adiciona
 	 */
 	@Override
 	public void addElemento() {
@@ -148,6 +148,11 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	}//
 
+	/**
+	 * Adiciona em determinado cubo
+	 * 
+	 * @param opc
+	 */
 	private void add(int opc) {
 		Rectangle posicao1;
 		Rectangle posicao2;
@@ -249,6 +254,13 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	}
 
+	/**
+	 * Verifica se o número em questão está em duplicidade com o conteúdo da
+	 * arvore
+	 * 
+	 * @param rand
+	 * @return
+	 */
 	public boolean verificadupli(int rand) {
 		boolean result = false;
 		for (int i = 0; i < arvore.length; i++) {
@@ -261,10 +273,14 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 		return result;
 	}
 
+	/**
+	 * remove um elemento selecionado
+	 */
+	
 	@Override
 	public void removeElemento() {
 		int aux;
-		int removido;
+		//int removido;
 		switch (selecionado) {
 		case 1:
 			if (arvore[1] == 0 && arvore[2] == 0) {

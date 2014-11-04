@@ -11,7 +11,7 @@ import javax.swing.UIManager;
 /**
  * Classe que herda de jFrame e contem os metodos de aparencia do frame
  * @author joão
- * @autor Hury
+ * @author Hury
  */
 @SuppressWarnings("serial")
 public abstract class Telas extends JFrame {

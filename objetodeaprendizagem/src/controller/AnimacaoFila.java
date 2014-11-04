@@ -3,9 +3,8 @@ package controller;
 import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 /**
- * 
+ * Classe com os metodos de animação da Fila
  * @author Zuzi
  *
  */
@@ -28,7 +27,9 @@ public class AnimacaoFila extends Thread implements OperacaoAnimacao {
 		this.lblFilaCheia = lblFilaCheia;
 		this.condiçao = condiçao;
 	}
-
+/**
+ * metodo run da thread
+ */
 	
 	public void run(){
 		if (condiçao == true) {

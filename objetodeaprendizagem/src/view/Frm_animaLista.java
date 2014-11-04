@@ -7,11 +7,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import controller.Telas;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
-
+/**
+ * Formulario da animação da Lista
+ * @author Zuzi
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_animaLista extends Telas {
 

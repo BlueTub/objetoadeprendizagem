@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import controller.AnimaArvore;
 import controller.Telas;
 
-import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,6 +21,12 @@ import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Formulario de animação da arvore
+ * 
+ * @author Hury
+ * 
+ */
 @SuppressWarnings("serial")
 public class Frm_animaArvore extends Telas {
 
@@ -48,6 +52,12 @@ public class Frm_animaArvore extends Telas {
 		});
 	}
 
+	/**
+	 * 
+	 * @param texto
+	 *            o texto a ser análisado
+	 * @return resultado da análise
+	 */
 	public static int TipoString(String texto) {
 		if (texto.matches("[a-zA-Z]*")) {
 			return 0;// Apenas texto
@@ -68,12 +78,10 @@ public class Frm_animaArvore extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		centralizeFrame();
 		Estilo();
 		iconeBarra();
-
-
 
 		JLabel lblElementoASer = new JLabel("Elemento a ser adicionado");
 		lblElementoASer.setBounds(135, 356, 164, 14);
@@ -186,27 +194,27 @@ public class Frm_animaArvore extends Telas {
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
 							lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
-							txt_num, arvore, primeiro,selecionado);
+							txt_num, arvore, primeiro, selecionado);
 					t1.start();
 					primeiro = false;
 
 				}
 			}
 		});
-		
+
 		JButton btn_remove = new JButton("Remove");
 		btn_remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int operacao =2;
+				int operacao = 2;
 				Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
-						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
-						lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
-						lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
-						txt_num, arvore, primeiro,selecionado);
+						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_cubo7,
+						lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+						lbl_valor5, lbl_valor6, lbl_valor7, txt_num, arvore,
+						primeiro, selecionado);
 				t1.start();
 			}
 		});
-		
+
 		btn_remove.setBounds(462, 330, 89, 23);
 		contentPane.add(btn_remove);
 
@@ -371,7 +379,7 @@ public class Frm_animaArvore extends Telas {
 				selecionado = 7;
 			}
 		});
-		
+
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);
 		lbl_valor3.setVisible(false);
