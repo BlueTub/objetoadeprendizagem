@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 /**
- * 
+ * Move elementos da fila
  * @author Zuzi
  *
  */
