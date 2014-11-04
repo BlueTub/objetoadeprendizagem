@@ -19,6 +19,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import controller.Telas;
 /**
+ * Formulario da animação da Pilha
  * @author Zuzi
  */
 @SuppressWarnings("serial")

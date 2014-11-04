@@ -15,7 +15,11 @@ import controller.Telas;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * Mostra o sobre da aplicação
+ * @author Hury
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_sobre extends Telas {
 

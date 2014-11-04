@@ -27,7 +27,7 @@ import controller.LerConfuguracao;
 import controller.Telas;
 
 /**
- * 
+ * Tela de configurações
  * @author Hury
  * 
  */

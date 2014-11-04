@@ -19,12 +19,17 @@ import controller.Fila;
 import controller.Telas;
 import controller.ThreadCarregamento;
 import javax.swing.ImageIcon;
-
+/**
+ * Tela que irá mostrar a pontuação obtida no questionario
+ * @author João
+ *
+ */
 @SuppressWarnings("serial")
 public class Frm_Pontuacao extends Telas {
 
 	private JPanel contentPane;
 	private static Fila fila;
+	@SuppressWarnings("unused")
 	private String caminhoRespostas;
 	/**
 	 * Launch the application.

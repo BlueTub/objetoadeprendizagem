@@ -20,6 +20,7 @@ import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 /**
+ * Formulario da animação da fila
  * @author Zuzi
  */
 @SuppressWarnings("serial")
