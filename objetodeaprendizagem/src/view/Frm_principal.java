@@ -105,13 +105,6 @@ public class Frm_principal extends Telas {
 		Estilo();
 		iconeBarra();
 
-		Panel panel = new Panel();
-		panel.setBackground(UIManager
-				.getColor("InternalFrame.activeTitleGradient"));
-		panel.setLayout(null);
-		panel.setBounds(40, 64, 180, 307);
-		contentPane.add(panel);
-
 		JLabel label = new JLabel(
 				"Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
 		label.setFont(new Font("Arial", Font.BOLD, tamanhofonte));
@@ -174,104 +167,6 @@ public class Frm_principal extends Telas {
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
 
-		JButton btn_pilha = new JButton("Pilha");
-		btn_pilha.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				String texto = descricao[0].getDescricao_res();
-				txt_descricao.setText(texto);
-				lbl_titulo.setText("Pilha");
-				lbl_titulo.setVisible(true);
-				txt_descricao.setVisible(true);
-				objeto = 0;
-			}
-		});
-
-		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
-		btn_pilha.setBounds(29, 32, 120, 56);
-		btn_pilha.setMnemonic('P');
-		panel.add(btn_pilha);
-
-		JButton btn_fila = new JButton("Fila");
-		btn_fila.setMnemonic('F');
-		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
-		btn_fila.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[1].getDescricao_res();
-				txt_descricao.setText(texto);
-				lbl_titulo.setText("Fila");
-				lbl_titulo.setVisible(true);
-				txt_descricao.setVisible(true);
-				objeto = 1;
-			}
-		});
-		btn_fila.setBounds(29, 99, 120, 56);
-		panel.add(btn_fila);
-
-		JButton btn_lista = new JButton("Lista");
-		btn_lista.setMnemonic('L');
-		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
-		btn_lista.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[2].getDescricao_res();
-				txt_descricao.setText(texto);
-				lbl_titulo.setText("Lista Ligada");
-				lbl_titulo.setVisible(true);
-				txt_descricao.setVisible(true);
-				objeto = 2;
-			}
-		});
-		btn_lista.setBounds(29, 166, 120, 56);
-		panel.add(btn_lista);
-
-		JLabel lblNewLabel = new JLabel("Selecione");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setBounds(60, 7, 67, 14);
-		panel.add(lblNewLabel);
-		
-		JButton btn_arvore = new JButton("Arvore Bin\u00E1ria");
-		btn_arvore.setMnemonic('A');
-		System.out.println(btn_arvore.getFont());
-		btn_arvore.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[3].getDescricao_res();
-				txt_descricao.setText(texto);
-				lbl_titulo.setText("Arvore Binária");
-				lbl_titulo.setVisible(true);
-				txt_descricao.setVisible(true);
-				objeto = 3;
-			}
-		});
-		btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btn_arvore.setBounds(29, 233, 120, 56);
-		panel.add(btn_arvore);
-
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
@@ -283,14 +178,6 @@ public class Frm_principal extends Telas {
 
 		JMenu mnNewMenu = new JMenu("Arquivo");
 		menuBar.add(mnNewMenu);
-
-		JMenuItem mntmNewMenuItem = new JMenuItem("Menu Principal");
-		mntmNewMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
-		mnNewMenu.add(mntmNewMenuItem);
 
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Fechar");
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
@@ -313,15 +200,12 @@ public class Frm_principal extends Telas {
 
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_1);
-
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Sobre");
-		mntmNewMenuItem_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Frm_sobre tela = new Frm_sobre();
-				tela.setVisible(true);
-			}
-		});
-		mnNewMenu_1.add(mntmNewMenuItem_2);
+		
+		JMenu mnSobre = new JMenu("Sobre");
+		menuBar.add(mnSobre);
+		
+		JMenuItem mntmSobre = new JMenuItem("Detalhes");
+		mnSobre.add(mntmSobre);
 
 		JLabel lblConfig = new JLabel("Config");
 		lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -333,9 +217,114 @@ public class Frm_principal extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 658, 401);
 		contentPane.add(lbl_fundo);
+		
+				Panel panel = new Panel();
+				panel.setBackground(UIManager
+						.getColor("InternalFrame.activeTitleGradient"));
+				panel.setLayout(null);
+				panel.setBounds(40, 64, 180, 307);
+				contentPane.add(panel);
+				
+						JButton btn_pilha = new JButton("Pilha");
+						btn_pilha.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								Descricao_e[] descricao = new Descricao_e[4];
+								try {
+									descricao = Carregatxt();
+								} catch (IOException e) {
+									e.printStackTrace();
+								}
+								String texto = descricao[0].getDescricao_res();
+								txt_descricao.setText(texto);
+								lbl_titulo.setText("Pilha");
+								lbl_titulo.setVisible(true);
+								txt_descricao.setVisible(true);
+								objeto = 0;
+							}
+						});
+						
+								btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+								btn_pilha.setBounds(29, 32, 120, 56);
+								btn_pilha.setMnemonic('P');
+								panel.add(btn_pilha);
+								
+										JButton btn_fila = new JButton("Fila");
+										btn_fila.setMnemonic('F');
+										btn_fila.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+										btn_fila.addActionListener(new ActionListener() {
+											public void actionPerformed(ActionEvent e) {
+												Descricao_e[] descricao = new Descricao_e[4];
+												try {
+													descricao = Carregatxt();
+												} catch (IOException e1) {
+													// TODO Auto-generated catch block
+													e1.printStackTrace();
+												}
+												String texto = descricao[1].getDescricao_res();
+												txt_descricao.setText(texto);
+												lbl_titulo.setText("Fila");
+												lbl_titulo.setVisible(true);
+												txt_descricao.setVisible(true);
+												objeto = 1;
+											}
+										});
+										btn_fila.setBounds(29, 99, 120, 56);
+										panel.add(btn_fila);
+										
+												JButton btn_lista = new JButton("Lista");
+												btn_lista.setMnemonic('L');
+												btn_lista.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+												btn_lista.addActionListener(new ActionListener() {
+													public void actionPerformed(ActionEvent e) {
+														Descricao_e[] descricao = new Descricao_e[4];
+														try {
+															descricao = Carregatxt();
+														} catch (IOException e1) {
+															// TODO Auto-generated catch block
+															e1.printStackTrace();
+														}
+														String texto = descricao[2].getDescricao_res();
+														txt_descricao.setText(texto);
+														lbl_titulo.setText("Lista Ligada");
+														lbl_titulo.setVisible(true);
+														txt_descricao.setVisible(true);
+														objeto = 2;
+													}
+												});
+												btn_lista.setBounds(29, 166, 120, 56);
+												panel.add(btn_lista);
+												
+														JLabel lblNewLabel = new JLabel("Selecione");
+														lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+														lblNewLabel.setBounds(60, 7, 67, 14);
+														panel.add(lblNewLabel);
+														
+														JButton btn_arvore = new JButton("Arvore Bin\u00E1ria");
+														btn_arvore.setMnemonic('A');
+														System.out.println(btn_arvore.getFont());
+														btn_arvore.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent arg0) {
+																Descricao_e[] descricao = new Descricao_e[4];
+																try {
+																	descricao = Carregatxt();
+																} catch (IOException e1) {
+																	// TODO Auto-generated catch block
+																	e1.printStackTrace();
+																}
+																String texto = descricao[3].getDescricao_res();
+																txt_descricao.setText(texto);
+																lbl_titulo.setText("Arvore Binária");
+																lbl_titulo.setVisible(true);
+																txt_descricao.setVisible(true);
+																objeto = 3;
+															}
+														});
+														btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
+														btn_arvore.setBounds(29, 233, 120, 56);
+														panel.add(btn_arvore);
+														btn_pilha.doClick();
 
 		try {
-			btn_pilha.doClick();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null,
 					"Não foi possivel carregar 'Descricao.txt'");
