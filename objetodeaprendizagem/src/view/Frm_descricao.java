@@ -127,13 +127,14 @@ public class Frm_descricao extends Telas {
 		panel.setBackground(UIManager
 				.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
-		panel.setBounds(50, 68, 467, 215);
+		panel.setBounds(30, 68, 487, 230);
 		contentPane.add(panel);
 
 		final JTextPane txt_texto = new JTextPane();
 		txt_texto.setEditable(false);
+		txt_texto.setFont(new Font("Tahoma",Font.BOLD,tamanhofonte));
 		txt_texto.setText("txt_texto");
-		txt_texto.setBounds(10, 30, 447, 142);
+		txt_texto.setBounds(10, 30, 457, 189);
 		panel.add(txt_texto);
 
 		JButton btn_descricao = new JButton("Descri\u00E7\u00E3o");
@@ -210,7 +211,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_uso.setBounds(248, 11, 89, 23);
+		btn_uso.setBounds(248, 11, 101, 23);
 		panel.add(btn_uso);
 
 		JButton btn_dificuldade = new JButton("Dificuldade");
@@ -227,7 +228,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_dificuldade.setBounds(334, 11, 110, 23);
+		btn_dificuldade.setBounds(347, 11, 120, 23);
 		panel.add(btn_dificuldade);
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
