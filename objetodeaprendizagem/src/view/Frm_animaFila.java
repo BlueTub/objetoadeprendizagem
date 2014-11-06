@@ -182,7 +182,7 @@ public class Frm_animaFila extends Telas {
 		
 		btnQuestionrio = new JButton("Question\u00E1rio");
 		btnQuestionrio.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnQuestionrio.setBounds(388, 300, 101, 36);
+		btnQuestionrio.setBounds(388, 300, 114, 36);
 		contentPane.add(btnQuestionrio);
 		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor60.setBounds(282, 163, 29, 31);
@@ -298,7 +298,7 @@ public class Frm_animaFila extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO 
+				//TODO
 				
 			}
 		};
