@@ -93,7 +93,6 @@ public class Frm_config extends Telas {
 		contentPane.add(lblTamanhoDaLetra);
 
 		rdbtnnpequeno = new JRadioButton("");
-		rdbtnnpequeno.setSelected(true);
 		rdbtnnpequeno.setBounds(24, 82, 29, 23);
 		contentPane.add(rdbtnnpequeno);
 
@@ -105,6 +104,7 @@ public class Frm_config extends Telas {
 		rdbtngrande.setBounds(24, 138, 29, 23);
 		contentPane.add(rdbtngrande);
 
+		acharFonte();
 		ButtonGroup grupo = new ButtonGroup();
 		grupo.add(rdbtnnpequeno);
 		grupo.add(rdbtnmedio);
@@ -151,7 +151,9 @@ public class Frm_config extends Telas {
 		btnAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int resp;
-				resp=JOptionPane.showConfirmDialog(null, "Deseja realmente alterar o estilo","Alteração de estilo",0,1);	
+				Object[] options = { "Sim", "Não" }; 
+				resp=JOptionPane.showOptionDialog(null, "Deseja realmente alterar o estilo","Alteração de estilo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, 
+		                options, options[0]);
 				if(resp==0){
 					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte());
 					config.geraArquivo();
@@ -194,6 +196,20 @@ public class Frm_config extends Telas {
 		contentPane.add(lbl_fundo);
 	}
 	
+	/**
+	 * Método para selecionar o radiobutton que o usuário configurou
+	 */
+	public void acharFonte(){
+		if(tamanhofonte==12){
+			rdbtnnpequeno.setSelected(true);
+		}else{
+			if(tamanhofonte==14){
+				rdbtnmedio.setSelected(true);
+			}else{
+				rdbtngrande.setSelected(true);
+			}
+		}
+	}
 	public int SelecaoFonte(){
 		int Fonte;
 		if(rdbtnnpequeno.isSelected()){
