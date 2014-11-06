@@ -96,12 +96,12 @@ public class Frm_animaLista extends Telas {
 		
 		button = new JButton("Voltar");
 		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button.setBounds(412, 313, 101, 36);
+		button.setBounds(389, 313, 101, 36);
 		contentPane.add(button);
 		
 		button_1 = new JButton("Question\u00E1rio");
 		button_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button_1.setBounds(533, 313, 101, 36);
+		button_1.setBounds(515, 313, 119, 36);
 		contentPane.add(button_1);
 		
 		lbl_valor60 = new JLabel("60");
@@ -203,7 +203,7 @@ public class Frm_animaLista extends Telas {
 		JButton btnAdicionaInicio = new JButton("Adiciona In\u00EDcio");
 		btnAdicionaInicio.setToolTipText("Adiciona um novo elemento no In\u00EDcio");
 		btnAdicionaInicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnAdicionaInicio.setBounds(368, 41, 115, 47);
+		btnAdicionaInicio.setBounds(368, 41, 123, 47);
 		contentPane.add(btnAdicionaInicio);
 		
 		lblCubo5 = new JLabel("");
@@ -238,7 +238,7 @@ public class Frm_animaLista extends Telas {
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 664, 397);
+		lbl_fundo.setBounds(0, 0, 644, 376);
 		contentPane.add(lbl_fundo);
 	}
 }

@@ -194,9 +194,11 @@ public class Frm_principal extends Telas {
 
 		btn_pilha.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_pilha.setBounds(29, 32, 120, 56);
+		btn_pilha.setMnemonic('P');
 		panel.add(btn_pilha);
 
 		JButton btn_fila = new JButton("Fila");
+		btn_fila.setMnemonic('F');
 		btn_fila.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_fila.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -219,6 +221,7 @@ public class Frm_principal extends Telas {
 		panel.add(btn_fila);
 
 		JButton btn_lista = new JButton("Lista");
+		btn_lista.setMnemonic('L');
 		btn_lista.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btn_lista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -245,8 +248,10 @@ public class Frm_principal extends Telas {
 		lblNewLabel.setBounds(60, 7, 67, 14);
 		panel.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Arvore Bin\u00E1ria");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_arvore = new JButton("Arvore Bin\u00E1ria");
+		btn_arvore.setMnemonic('A');
+		System.out.println(btn_arvore.getFont());
+		btn_arvore.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Descricao_e[] descricao = new Descricao_e[4];
 				try {
@@ -263,9 +268,9 @@ public class Frm_principal extends Telas {
 				objeto = 3;
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnNewButton.setBounds(29, 233, 120, 56);
-		panel.add(btnNewButton);
+		btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btn_arvore.setBounds(29, 233, 120, 56);
+		panel.add(btn_arvore);
 
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
