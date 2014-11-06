@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.RenderingHints.Key;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,6 +21,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  * Formulario de animação da arvore
@@ -177,13 +180,14 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lbl_cubo7);
 
 		txt_num = new JTextField();
+
 		txt_num.setBounds(160, 319, 86, 32);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
 		txt_num.setFocusable(true);
 
-		JButton btn_adiciona = new JButton("Adiciona");
+		final JButton btn_adiciona = new JButton("Adiciona");
 		btn_adiciona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TipoString(txt_num.getText()) != 1) {
@@ -198,6 +202,20 @@ public class Frm_animaArvore extends Telas {
 					t1.start();
 					primeiro = false;
 
+				}
+			}
+		});
+		
+		/**
+		 * Listener enter
+		 */
+		
+		txt_num.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+			
+				if(arg0.getKeyCode() == KeyEvent.VK_ENTER){
+					btn_adiciona.doClick();
 				}
 			}
 		});
@@ -225,12 +243,28 @@ public class Frm_animaArvore extends Telas {
 		lblProfundidade.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		lblProfundidade.setBounds(66, 40, 85, 14);
 		contentPane.add(lblProfundidade);
-
-		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 590, 382);
-		contentPane.add(lbl_fundo);
+		
+		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Frm_descricao tela = new Frm_descricao(3);
+				tela.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(10, 306, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Questionario");
+		btnNewButton_1.setBounds(10, 352, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+				JLabel lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 590, 382);
+				contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
 			@Override
