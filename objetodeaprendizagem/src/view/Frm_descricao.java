@@ -22,9 +22,6 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
-import javax.swing.JScrollPane;
-import javax.swing.JScrollBar;
-import javax.swing.ScrollPaneConstants;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -130,19 +127,14 @@ public class Frm_descricao extends Telas {
 		panel.setBackground(UIManager
 				.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
-		panel.setBounds(50, 68, 480, 217);
+		panel.setBounds(50, 68, 467, 215);
 		contentPane.add(panel);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(10, 30, 447, 142);
-		panel.add(scrollPane);
 
 		final JTextPane txt_texto = new JTextPane();
-		scrollPane.setViewportView(txt_texto);
-		txt_texto.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		txt_texto.setEditable(false);
 		txt_texto.setText("txt_texto");
+		txt_texto.setBounds(10, 30, 447, 142);
+		panel.add(txt_texto);
 
 		JButton btn_descricao = new JButton("Descri\u00E7\u00E3o");
 		btn_descricao.addActionListener(new ActionListener() {
@@ -297,4 +289,5 @@ public class Frm_descricao extends Telas {
 		});
 
 	}
+
 }
