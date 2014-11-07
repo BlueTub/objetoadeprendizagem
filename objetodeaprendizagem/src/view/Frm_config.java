@@ -129,7 +129,7 @@ public class Frm_config extends Telas {
 		verticalStrut.setBounds(52, 66, 11, 106);
 		contentPane.add(verticalStrut);
 
-		JButton btnVoutar = new JButton("OK");
+		JButton btnVoutar = new JButton("Voltar");
 		btnVoutar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
