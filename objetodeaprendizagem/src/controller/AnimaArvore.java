@@ -288,27 +288,32 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 				lbl_valor1.setVisible(false);
 			} else if (arvore[1] != 0 && arvore[2] != 0) {
 
-				if        ((arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)
+				if ((arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)
 						|| (arvore[3] != 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] == 0)
 						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)
-						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] == 0)
-						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] != 0)
-						|| (arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] != 0)) {
+						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] == 0)) {
 
 					arvore[0] = arvore[2];
 					arvore[2] = 0;
 					lbl_valor1.setText(Integer.toString(arvore[0]));
 					lbl_valor3.setVisible(false);
-				} else if (arvore[3] != 0 && arvore[4] != 0 && arvore[5] != 0
-						&& arvore[6] != 0) {
+				} else if ((arvore[3] != 0 && arvore[4] != 0 && arvore[5] != 0 && arvore[6] != 0)
+						|| (arvore[3] == 0 && arvore[4] == 0 && arvore[5] != 0 && arvore[6] == 0)
+						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] != 0 && arvore[6] != 0)
+						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] != 0 && arvore[6] != 0)
+						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] != 0 && arvore[6] == 0)
+						|| (arvore[3] != 0 && arvore[4] != 0 && arvore[5] != 0 && arvore[6] == 0)
+						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] != 0 && arvore[6] == 0)
+						|| (arvore[3] == 0 && arvore[4] == 0 && arvore[5] != 0 && arvore[6] != 0)) {
 					arvore[0] = arvore[5];
 					arvore[5] = 0;
 					lbl_valor1.setText(Integer.toString(arvore[0]));
 					lbl_valor6.setVisible(false);
 
 				} else if ((arvore[3] != 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] != 0)
-						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] == 0)
-						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)) {
+						|| (arvore[3] != 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] != 0)
+						|| (arvore[3] == 0 && arvore[4] != 0 && arvore[5] == 0 && arvore[6] != 0)
+						|| (arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] != 0)) {
 					arvore[0] = arvore[2];
 					arvore[2] = arvore[6];
 					arvore[6] = 0;
@@ -319,10 +324,35 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 				}
 
 			} else if (arvore[1] != 0 && arvore[2] == 0) {
-				arvore[0] = arvore[1];
-				arvore[1] = 0;
+
+				if (arvore[3] == 0 && arvore[4] == 0) {
+					arvore[0] = arvore[1];
+					arvore[1] = 0;
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor2.setVisible(false);
+
+				} else if ((arvore[3] != 0 && arvore[4] != 0)
+						|| (arvore[3] == 0 && arvore[4] != 0)) {
+					arvore[0] = arvore[4];
+					arvore[4] = 0;
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor5.setVisible(false);
+
+				} else if (arvore[3] != 0 && arvore[4] == 0) {
+					arvore[0] = arvore[1];
+					arvore[1] = arvore[3];
+					arvore[3] = 0;
+
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor2.setText(Integer.toString(arvore[1]));
+					lbl_valor4.setVisible(false);
+
+				}
+			} else if (arvore[1] == 0 && arvore[2] != 0) {
+				arvore[0] = arvore[2];
+				arvore[2] = 0;
 				lbl_valor1.setText(Integer.toString(arvore[0]));
-				lbl_valor2.setVisible(false);
+				lbl_valor3.setVisible(false);
 			}
 
 			break;
