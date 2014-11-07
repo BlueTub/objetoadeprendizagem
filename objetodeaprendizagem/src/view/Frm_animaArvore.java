@@ -76,7 +76,7 @@ public class Frm_animaArvore extends Telas {
 	 */
 	public Frm_animaArvore() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 606, 420);
+		setBounds(100, 100, 656, 439);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,7 +87,7 @@ public class Frm_animaArvore extends Telas {
 		iconeBarra();
 
 		JLabel lblElementoASer = new JLabel("Elemento a ser adicionado");
-		lblElementoASer.setBounds(135, 356, 164, 14);
+		lblElementoASer.setBounds(82, 362, 154, 14);
 		contentPane.add(lblElementoASer);
 
 		JLabel lbl_titulo = new JLabel("Arvore Binaria");
@@ -181,7 +181,7 @@ public class Frm_animaArvore extends Telas {
 
 		txt_num = new JTextField();
 
-		txt_num.setBounds(160, 319, 86, 32);
+		txt_num.setBounds(112, 320, 86, 32);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
@@ -233,10 +233,10 @@ public class Frm_animaArvore extends Telas {
 			}
 		});
 
-		btn_remove.setBounds(462, 330, 89, 23);
+		btn_remove.setBounds(323, 322, 89, 29);
 		contentPane.add(btn_remove);
 
-		btn_adiciona.setBounds(323, 330, 89, 23);
+		btn_adiciona.setBounds(224, 322, 89, 29);
 		contentPane.add(btn_adiciona);
 
 		JLabel lblProfundidade = new JLabel("Profundidade 2");
@@ -253,17 +253,17 @@ public class Frm_animaArvore extends Telas {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(10, 306, 89, 23);
+		btnNewButton.setBounds(419, 356, 89, 33);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Questionario");
-		btnNewButton_1.setBounds(10, 352, 89, 23);
+		btnNewButton_1.setBounds(518, 356, 100, 33);
 		contentPane.add(btnNewButton_1);
 		
 				JLabel lbl_fundo = new JLabel("");
 				lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/BackGround.png")));
-				lbl_fundo.setBounds(0, 0, 590, 382);
+				lbl_fundo.setBounds(0, 0, 640, 400);
 				contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
