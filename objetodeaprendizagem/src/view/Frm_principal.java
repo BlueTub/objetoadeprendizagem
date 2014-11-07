@@ -205,6 +205,12 @@ public class Frm_principal extends Telas {
 		menuBar.add(mnSobre);
 		
 		JMenuItem mntmSobre = new JMenuItem("Detalhes");
+		mntmSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_sobre telasobre = new Frm_sobre();
+				telasobre.setVisible(true);
+			}
+		});
 		mnSobre.add(mntmSobre);
 
 		JLabel lblConfig = new JLabel("Config");

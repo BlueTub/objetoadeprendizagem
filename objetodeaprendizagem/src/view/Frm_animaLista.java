@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import controller.Telas;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 /**
  * Formulario da animação da Lista
  * @author Zuzi
@@ -95,6 +97,13 @@ public class Frm_animaLista extends Telas {
 		iconeBarra();
 		
 		button = new JButton("Voltar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frm_descricao telades = new Frm_descricao(2);
+				telades.setVisible(true);
+				dispose();
+			}
+		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		button.setBounds(389, 313, 101, 36);
 		contentPane.add(button);
