@@ -211,12 +211,6 @@ public class Frm_principal extends Telas {
 		lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblConfig.setBounds(610, 68, 46, 14);
 		contentPane.add(lblConfig);
-
-		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 658, 401);
-		contentPane.add(lbl_fundo);
 		
 				Panel panel = new Panel();
 				panel.setBackground(UIManager
@@ -322,6 +316,12 @@ public class Frm_principal extends Telas {
 														btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
 														btn_arvore.setBounds(29, 233, 120, 56);
 														panel.add(btn_arvore);
+														
+																JLabel lbl_fundo = new JLabel("");
+																lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
+																		.getResource("/Imagens/BackGround.png")));
+																lbl_fundo.setBounds(0, 0, 658, 401);
+																contentPane.add(lbl_fundo);
 														btn_pilha.doClick();
 
 		try {
