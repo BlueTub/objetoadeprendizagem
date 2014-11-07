@@ -38,6 +38,8 @@ import javax.swing.JOptionPane;
 @SuppressWarnings("serial")
 public class Frm_principal extends Telas {
 
+	//TODO as fontes de todas as labels devem ser "VERDANA"
+	
 	private JPanel contentPane;
 
 	int objeto = 0; // variavel que controla qual objeto de aprendizado sera
