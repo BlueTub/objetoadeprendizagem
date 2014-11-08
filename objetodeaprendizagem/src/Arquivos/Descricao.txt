@@ -6,14 +6,14 @@ Um de seus usos pode ser visto na validação de expressões aritméticas em compila
 A pilha é a estrutura de dados de mais facil compreensão. 
 1
 FILA é um tipo de lista linear em que todas as inserções são feitas ao final dela e suas remoções são feitas no inicio dela, sendo controlado no codigo atraves do Tamanho. Em uma Fila a  ordem de saída dos itens corresponde diretamente à ordem de entrada,ou seja, o primeiro que entra é o primeiro a sair.
-Fila é uma estrutura de dados muito utilizada na computação, sendo usada em diversas vezes, como por exemplo em coloração de regiões de imagens(pixel).
+Fila é uma estrutura de dados muito utilizada na computação, sendo usada em diversas vezes, como por exemplo em coloração de regiões de imagens (pixel).
 Uma Fila é denominada FIFO(First-in/First-out ou Primeiro-que-entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, será o primeiro a sair. Imagine uma fila de banco.
 Um de seu uso é alocação de recursos para impressão de documentos em uma impressora (spooler de impressao). Pode ser visto tambem ao atendimento de processos requisitados a um sistema operacional.FILA
 A fila é uma estrutura de dados de facil compreensão.
 2
-Descrição: LISTA lIGADA
-Descrição resumida: LISTA lIGADA
-Caracteristica: LISTA lIGADA
+Descrição: LISTA LIGADA
+Descrição resumida: LISTA LIGADA
+Caracteristica: LISTA LIGADA
 Uso: LISTA lIGADA
 Dificuldade: Lista Ligada
 3
