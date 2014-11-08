@@ -115,12 +115,12 @@ public class Frm_animaLista extends Telas {
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button.setBounds(389, 313, 101, 36);
+		button.setBounds(459, 313, 101, 36);
 		contentPane.add(button);
 
 		button_1 = new JButton("Question\u00E1rio");
 		button_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button_1.setBounds(515, 313, 119, 36);
+		button_1.setBounds(592, 313, 119, 36);
 		contentPane.add(button_1);
 
 		lbl_valor1 = new JLabel("1");
@@ -193,31 +193,31 @@ public class Frm_animaLista extends Telas {
 		btn_remove
 				.setToolTipText("Remove um elemento de uma posi\u00E7\u00E3o espec\u00EDfica");
 		btn_remove.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_remove.setBounds(596, 182, 115, 47);
+		btn_remove.setBounds(588, 139, 123, 47);
 		contentPane.add(btn_remove);
 
 		btn_removefinal = new JButton("Remove Final");
 		btn_removefinal.setToolTipText("Remove um elemento do final");
 		btn_removefinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_removefinal.setBounds(596, 112, 115, 47);
+		btn_removefinal.setBounds(588, 87, 123, 47);
 		contentPane.add(btn_removefinal);
 
 		btn_removeinicio = new JButton("Remove In\u00EDcio");
 		btn_removeinicio.setToolTipText("Remove um elemento do in\u00EDcio");
 		btn_removeinicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_removeinicio.setBounds(596, 36, 115, 47);
+		btn_removeinicio.setBounds(588, 36, 123, 47);
 		contentPane.add(btn_removeinicio);
 
 		btn_add = new JButton("Adicionar");
 		btn_add.setToolTipText("Adiciona um novo elemento em uma posi\u00E7\u00E3o espec\u00EDfica");
 		btn_add.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_add.setBounds(459, 182, 115, 47);
+		btn_add.setBounds(459, 139, 123, 47);
 		contentPane.add(btn_add);
 
 		btn_addfinal = new JButton("Adiciona Final");
 		btn_addfinal.setToolTipText("Adiciona um novo elemento no final");
 		btn_addfinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btn_addfinal.setBounds(459, 112, 115, 47);
+		btn_addfinal.setBounds(459, 87, 123, 47);
 		contentPane.add(btn_addfinal);
 
 		JButton btn_addinicio = new JButton("Adiciona In\u00EDcio");
@@ -389,8 +389,17 @@ public class Frm_animaLista extends Telas {
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
 				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 734, 376);
+		lbl_fundo.setBounds(0, 0, 727, 376);
 		contentPane.add(lbl_fundo);
+		
+		lbl_valor1.setVisible(false);
+		lbl_valor2.setVisible(false);
+		lbl_valor3.setVisible(false);
+		lbl_valor4.setVisible(false);
+		lbl_valor5.setVisible(false);
+		lbl_valor6.setVisible(false);
+
+		
 
 	}
 }

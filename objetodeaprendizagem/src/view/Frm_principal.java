@@ -174,6 +174,8 @@ public class Frm_principal extends Telas {
 		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
 
+
+		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 658, 21);
 		contentPane.add(menuBar);
@@ -224,8 +226,13 @@ public class Frm_principal extends Telas {
 				panel.setBackground(UIManager
 						.getColor("InternalFrame.activeTitleGradient"));
 				panel.setLayout(null);
-				panel.setBounds(40, 64, 180, 307);
+				panel.setBounds(40, 64, 197, 307);
 				contentPane.add(panel);
+				
+				final JLabel lbl_select = new JLabel("");
+				lbl_select.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/bolaselect.png")));
+				lbl_select.setBounds(159, 52, 24, 20);
+				panel.add(lbl_select);
 				
 						JButton btn_pilha = new JButton("Pilha");
 						btn_pilha.addActionListener(new ActionListener() {
@@ -233,6 +240,7 @@ public class Frm_principal extends Telas {
 								Descricao_e[] descricao = new Descricao_e[4];
 								try {
 									descricao = Carregatxt();
+									lbl_select.setBounds(159, 52, 24, 20);
 								} catch (IOException e) {
 									e.printStackTrace();
 								}
@@ -258,6 +266,7 @@ public class Frm_principal extends Telas {
 												Descricao_e[] descricao = new Descricao_e[4];
 												try {
 													descricao = Carregatxt();
+													lbl_select.setBounds(159, 112, 24, 20);
 												} catch (IOException e1) {
 													// TODO Auto-generated catch block
 													e1.printStackTrace();
@@ -281,6 +290,7 @@ public class Frm_principal extends Telas {
 														Descricao_e[] descricao = new Descricao_e[4];
 														try {
 															descricao = Carregatxt();
+															lbl_select.setBounds(159, 182, 24, 20);
 														} catch (IOException e1) {
 															// TODO Auto-generated catch block
 															e1.printStackTrace();
@@ -309,6 +319,7 @@ public class Frm_principal extends Telas {
 																Descricao_e[] descricao = new Descricao_e[4];
 																try {
 																	descricao = Carregatxt();
+																	lbl_select.setBounds(159, 250, 24, 20);
 																} catch (IOException e1) {
 																	// TODO Auto-generated catch block
 																	e1.printStackTrace();
@@ -324,6 +335,8 @@ public class Frm_principal extends Telas {
 														btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
 														btn_arvore.setBounds(29, 233, 120, 56);
 														panel.add(btn_arvore);
+														
+
 														
 																JLabel lbl_fundo = new JLabel("");
 																lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
