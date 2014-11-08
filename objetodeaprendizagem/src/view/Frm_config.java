@@ -19,12 +19,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import Entity.Configuracao_e;
 import controller.Configuracao;
 import controller.LerConfuguracao;
 import controller.Telas;
+import javax.swing.SwingConstants;
 
 /**
  * Tela de configurações
@@ -74,6 +76,15 @@ public class Frm_config extends Telas {
 		Estilo();
 		iconeBarra();
 		
+		JLabel lblAplicarAsModificaes = new JLabel("Aplicar as modifica\u00E7\u00F5es na configura\u00E7\u00E3o");
+		lblAplicarAsModificaes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAplicarAsModificaes.setBounds(10, 306, 244, 24);
+		contentPane.add(lblAplicarAsModificaes);
+		
+		JLabel label = new JLabel("Retornar ao Menu principal");
+		label.setBounds(284, 306, 161, 24);
+		contentPane.add(label);
+		
 		final JComboBox cbestilo = new JComboBox();
 		cbestilo.setBounds(234, 199, 155, 20);
 		contentPane.add(cbestilo);
@@ -81,7 +92,7 @@ public class Frm_config extends Telas {
 				"Metal","Nimbus","CDE/Motif","Windows","Windows classic"
 		}
 		));
-		cbestilo.setSelectedIndex(1);
+		acharEstilos(look, cbestilo);
 		JLabel lblEstilo = new JLabel("Estilo");
 		lblEstilo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		lblEstilo.setBounds(234, 174, 46, 14);
@@ -130,6 +141,7 @@ public class Frm_config extends Telas {
 		contentPane.add(verticalStrut);
 
 		JButton btnVoutar = new JButton("Voltar");
+		btnVoutar.setToolTipText("Voltar para o Menu Principal");
 		btnVoutar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,7 +150,7 @@ public class Frm_config extends Telas {
 				dispose();
 			}
 		});
-		btnVoutar.setBounds(251, 284, 89, 36);
+		btnVoutar.setBounds(300, 259, 89, 36);
 		contentPane.add(btnVoutar);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
@@ -148,6 +160,8 @@ public class Frm_config extends Telas {
 
 		JButton btnAplicar = new JButton("Aplicar");
 		btnAplicar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		btnAplicar.setToolTipText("Alterar as configurações");
+		
 		btnAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int resp;
@@ -170,13 +184,8 @@ public class Frm_config extends Telas {
 			    Estilo();
 			}
 		});
-		btnAplicar.setBounds(364, 284, 89, 36);
+		btnAplicar.setBounds(70, 259, 89, 36);
 		contentPane.add(btnAplicar);
-
-		JButton btnRestaurarPadres = new JButton("Restaurar Padr\u00F5es");
-		btnRestaurarPadres.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
-		btnRestaurarPadres.setBounds(24, 284, 172, 36);
-		contentPane.add(btnRestaurarPadres);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {
@@ -210,6 +219,36 @@ public class Frm_config extends Telas {
 			}
 		}
 	}
+	/**
+	 * Método para achar o estilo selecionado
+	 * @param look 
+	 * @param combo recebe o combobox para alterar o indice
+	 */
+	private void acharEstilos(String look, JComboBox combo){		 
+		if(look.equals("javax.swing.plaf.metal.MetalLookAndFeel")){
+			combo.setSelectedIndex(0);
+		}
+		if(look.equals("javax.swing.plaf.nimbus.NimbusLookAndFeel")){
+			combo.setSelectedIndex(1);
+		}
+
+		if(look.equals("com.sun.java.swing.plaf.motif.MotifLookAndFeel")){
+			combo.setSelectedIndex(2);
+		}
+
+		if(look.equals("com.sun.java.swing.plaf.windows.WindowsLookAndFeel")){
+			combo.setSelectedIndex(3);
+		}
+
+		if(look.equals("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel")){
+			combo.setSelectedIndex(4);
+		}
+	}
+
+	/**
+	 * Método para selecionar fonte a partir da seleção do radioButton
+	 * @return tamanho da fonte
+	 */
 	public int SelecaoFonte(){
 		int Fonte;
 		if(rdbtnnpequeno.isSelected()){
