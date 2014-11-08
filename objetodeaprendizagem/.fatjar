@@ -1,12 +1,12 @@
 #Fat Jar Configuration File
-#Thu Oct 16 11:15:12 BRT 2014
+#Fri Nov 07 21:47:48 BRST 2014
 onejar.license.required=false
 manifest.classpath=
 manifest.removesigners=true
 onejar.checkbox=false
 jarname=objetodeaprendizagem_fat.jar
 manifest.mergeall=true
-manifest.mainclass=view.JF_Splash
+manifest.mainclass=view.Frm_Splash
 manifest.file=<createnew>
 jarname.isextern=false
 onejar.expand=
