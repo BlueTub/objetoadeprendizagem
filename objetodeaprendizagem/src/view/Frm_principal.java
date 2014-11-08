@@ -312,7 +312,7 @@ public class Frm_principal extends Telas {
 														panel.add(lblNewLabel);
 														
 														JButton btn_arvore = new JButton("Árvore Bin\u00E1ria");
-														btn_arvore.setMnemonic('A');
+														btn_arvore.setMnemonic('Á');
 														btn_arvore.addActionListener(new ActionListener() {
 															public void actionPerformed(ActionEvent arg0) {
 																Descricao_e[] descricao = new Descricao_e[4];
