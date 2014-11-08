@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Component;
+import javax.swing.Box;
 
 /**
  * Formulario da animação da Lista
@@ -58,7 +60,11 @@ public class Frm_animaLista extends Telas {
 	private JButton button_1;
 	private JTextField txt_num;
 	int selecionado=0;
-
+	int[] Lista = { 0, 0, 0, 0, 0, 0 };
+/**
+ * Launch
+ * @param args
+ */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -115,48 +121,48 @@ public class Frm_animaLista extends Telas {
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button.setBounds(459, 313, 101, 36);
+		button.setBounds(459, 302, 123, 47);
 		contentPane.add(button);
 
 		button_1 = new JButton("Question\u00E1rio");
 		button_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		button_1.setBounds(592, 313, 119, 36);
+		button_1.setBounds(588, 302, 123, 47);
 		contentPane.add(button_1);
 
 		lbl_valor1 = new JLabel("1");
 		lbl_valor1.setForeground(Color.BLACK);
 		lbl_valor1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor1.setBounds(20, 145, 29, 31);
+		lbl_valor1.setBounds(31, 172, 29, 31);
 		contentPane.add(lbl_valor1);
 
 		lbl_valor2 = new JLabel("2");
 		lbl_valor2.setForeground(Color.BLACK);
 		lbl_valor2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor2.setBounds(92, 145, 29, 31);
+		lbl_valor2.setBounds(110, 172, 29, 31);
 		contentPane.add(lbl_valor2);
 
 		lbl_valor3 = new JLabel("3");
 		lbl_valor3.setForeground(Color.BLACK);
 		lbl_valor3.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor3.setBounds(165, 145, 29, 31);
+		lbl_valor3.setBounds(175, 172, 29, 31);
 		contentPane.add(lbl_valor3);
 
 		lbl_valor4 = new JLabel("4");
 		lbl_valor4.setForeground(Color.BLACK);
 		lbl_valor4.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor4.setBounds(229, 145, 29, 31);
+		lbl_valor4.setBounds(247, 172, 29, 31);
 		contentPane.add(lbl_valor4);
 
 		lbl_valor5 = new JLabel("5");
 		lbl_valor5.setForeground(Color.BLACK);
 		lbl_valor5.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor5.setBounds(289, 145, 29, 31);
+		lbl_valor5.setBounds(313, 172, 29, 31);
 		contentPane.add(lbl_valor5);
 
 		lbl_valor6 = new JLabel("6");
 		lbl_valor6.setForeground(Color.BLACK);
 		lbl_valor6.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor6.setBounds(360, 156, 29, 31);
+		lbl_valor6.setBounds(370, 172, 29, 31);
 		contentPane.add(lbl_valor6);
 
 		label_6 = new JLabel("5");
@@ -378,12 +384,12 @@ public class Frm_animaLista extends Telas {
 		});
 
 		txt_num = new JTextField();
-		txt_num.setBounds(73, 232, 111, 25);
+		txt_num.setBounds(174, 259, 111, 25);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
 		JLabel lblDigiteOValor = new JLabel("Digite o valor");
-		lblDigiteOValor.setBounds(83, 268, 82, 14);
+		lblDigiteOValor.setBounds(194, 295, 82, 14);
 		contentPane.add(lblDigiteOValor);
 
 		lbl_fundo = new JLabel("");
@@ -391,6 +397,10 @@ public class Frm_animaLista extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 727, 376);
 		contentPane.add(lbl_fundo);
+		
+		Component horizontalStrut = Box.createHorizontalStrut(20);
+		horizontalStrut.setBounds(10, 138, 415, 7);
+		contentPane.add(horizontalStrut);
 		
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);
