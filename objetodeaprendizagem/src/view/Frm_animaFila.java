@@ -176,11 +176,13 @@ public class Frm_animaFila extends Telas {
 		contentPane.add(label);
 		
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setMnemonic('V');
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnVoltar.setBounds(267, 300, 101, 36);
 		contentPane.add(btnVoltar);
 		
 		btnQuestionrio = new JButton("Question\u00E1rio");
+		btnQuestionrio.setMnemonic('Q');
 		btnQuestionrio.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnQuestionrio.setBounds(388, 300, 114, 36);
 		contentPane.add(btnQuestionrio);
