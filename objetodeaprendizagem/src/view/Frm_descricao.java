@@ -127,14 +127,14 @@ public class Frm_descricao extends Telas {
 		panel.setBackground(UIManager
 				.getColor("InternalFrame.activeTitleGradient"));
 		panel.setLayout(null);
-		panel.setBounds(30, 68, 487, 230);
+		panel.setBounds(30, 68, 518, 230);
 		contentPane.add(panel);
 
 		final JTextPane txt_texto = new JTextPane();
 		txt_texto.setEditable(false);
 		txt_texto.setFont(new Font("Tahoma",Font.BOLD,tamanhofonte));
 		txt_texto.setText("txt_texto");
-		txt_texto.setBounds(10, 30, 457, 189);
+		txt_texto.setBounds(10, 30, 498, 189);
 		panel.add(txt_texto);
 
 		JButton btn_descricao = new JButton("Descri\u00E7\u00E3o");
@@ -177,7 +177,7 @@ public class Frm_descricao extends Telas {
 					"Não foi possivel carregar 'Descricao.txt'");
 		}
 
-		btn_descricao.setBounds(10, 11, 110, 23);
+		btn_descricao.setBounds(10, 11, 130, 23);
 		panel.add(btn_descricao);
 
 		JButton btn_caract = new JButton("Caracteristicas");
@@ -194,7 +194,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_caract.setBounds(119, 11, 130, 23);
+		btn_caract.setBounds(137, 11, 144, 23);
 		panel.add(btn_caract);
 
 		JButton btn_uso = new JButton("Uso");
@@ -211,7 +211,7 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_uso.setBounds(248, 11, 101, 23);
+		btn_uso.setBounds(277, 11, 101, 23);
 		panel.add(btn_uso);
 
 		JButton btn_dificuldade = new JButton("Dificuldade");
@@ -228,10 +228,11 @@ public class Frm_descricao extends Telas {
 				txt_texto.setText(texto);
 			}
 		});
-		btn_dificuldade.setBounds(347, 11, 120, 23);
+		btn_dificuldade.setBounds(378, 11, 130, 23);
 		panel.add(btn_dificuldade);
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
+		lblRetornarAoMenu.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblRetornarAoMenu.setBounds(30, 360, 161, 14);
 		contentPane.add(lblRetornarAoMenu);
 
@@ -241,7 +242,8 @@ public class Frm_descricao extends Telas {
 
 		JLabel lblProseguirParaA = new JLabel(
 				"Proseguir para a anima\u00E7\u00E3o interativa");
-		lblProseguirParaA.setBounds(361, 360, 205, 14);
+		lblProseguirParaA.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblProseguirParaA.setBounds(344, 360, 215, 14);
 		contentPane.add(lblProseguirParaA);
 
 		JLabel lblNavegueEntreAs = new JLabel(
