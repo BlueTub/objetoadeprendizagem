@@ -77,12 +77,14 @@ public class Frm_config extends Telas {
 		iconeBarra();
 		
 		JLabel lblAplicarAsModificaes = new JLabel("Aplicar as modifica\u00E7\u00F5es na configura\u00E7\u00E3o");
+		lblAplicarAsModificaes.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblAplicarAsModificaes.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAplicarAsModificaes.setBounds(10, 306, 244, 24);
+		lblAplicarAsModificaes.setBounds(234, 307, 244, 24);
 		contentPane.add(lblAplicarAsModificaes);
 		
 		JLabel label = new JLabel("Retornar ao Menu principal");
-		label.setBounds(284, 306, 161, 24);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label.setBounds(35, 307, 161, 24);
 		contentPane.add(label);
 		
 		final JComboBox cbestilo = new JComboBox();
@@ -141,6 +143,7 @@ public class Frm_config extends Telas {
 		contentPane.add(verticalStrut);
 
 		JButton btnVoutar = new JButton("Voltar");
+		btnVoutar.setMnemonic('V');
 		btnVoutar.setToolTipText("Voltar para o Menu Principal");
 		btnVoutar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoutar.addActionListener(new ActionListener() {
@@ -150,7 +153,7 @@ public class Frm_config extends Telas {
 				dispose();
 			}
 		});
-		btnVoutar.setBounds(300, 259, 89, 36);
+		btnVoutar.setBounds(59, 259, 89, 36);
 		contentPane.add(btnVoutar);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
@@ -159,6 +162,7 @@ public class Frm_config extends Telas {
 		contentPane.add(chckbxNewCheckBox);
 
 		JButton btnAplicar = new JButton("Aplicar");
+		btnAplicar.setMnemonic('A');
 		btnAplicar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnAplicar.setToolTipText("Alterar as configurações");
 		
@@ -184,7 +188,7 @@ public class Frm_config extends Telas {
 			    Estilo();
 			}
 		});
-		btnAplicar.setBounds(70, 259, 89, 36);
+		btnAplicar.setBounds(300, 260, 89, 36);
 		contentPane.add(btnAplicar);
 
 		JComboBox comboBox = new JComboBox();
@@ -219,6 +223,7 @@ public class Frm_config extends Telas {
 			}
 		}
 	}
+	
 	/**
 	 * Método para achar o estilo selecionado
 	 * @param look 
