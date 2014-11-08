@@ -18,6 +18,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	private JLabel lbl_valor4;
 	private JLabel lbl_valor5;
 	private JLabel lbl_valor6;
+	private JLabel lbl_cheia;
 
 	private JTextField txt_num;
 
@@ -28,7 +29,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			JLabel lbl_cubo4, JLabel lbl_cubo5, JLabel lbl_cubo6,
 			JLabel lbl_valor1, JLabel lbl_valor2, JLabel lbl_valor3,
 			JLabel lbl_valor4, JLabel lbl_valor5, JLabel lbl_valor6,
-			JTextField txt_num, int selecionado, int[] lista) {
+			JLabel lbl_cheia, JTextField txt_num, int selecionado, int[] lista) {
 		super();
 		this.lbl_cubo1 = lbl_cubo1;
 		this.lbl_cubo2 = lbl_cubo2;
@@ -42,6 +43,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		this.lbl_valor4 = lbl_valor4;
 		this.lbl_valor5 = lbl_valor5;
 		this.lbl_valor6 = lbl_valor6;
+		this.lbl_cheia = lbl_cheia;
 		this.txt_num = txt_num;
 		Selecionado = selecionado;
 		Lista = lista;
@@ -78,7 +80,9 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 * Adiciona no inicio da lista
 	 */
 	public void addInicio() {
+		if (cheia() == false) {
 
+		}
 	}
 
 	/**
@@ -111,19 +115,19 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 	public boolean cheia() {
 		for (int i = 0; i < Lista.length; i++) {
-			
+
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Verifica se o número em questão está em duplicidade com o conteúdo da
-	 * arvore
+	 * arvore.
 	 * 
 	 * @param rand
 	 * @return
 	 */
-	
+
 	public boolean verificadupli(int rand) {
 		boolean result = false;
 		for (int i = 0; i < Lista.length; i++) {
@@ -134,6 +138,84 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Move os elementos da lista para a direita a partir de determinada
+	 * posição.
+	 * 
+	 * @param elemento
+	 */
+	public void movDireita(int elemento) {
+		int aux1 = 0;
+		int aux2 = 0;
+
+		switch (elemento) {
+		case 1:
+			if (Lista[0] != 0) {
+				aux1 = Lista[1];
+				Lista[1] = Lista[0];
+				aux2 = Lista[2];
+				Lista[2] = aux1;
+				aux1 = Lista[3];
+				Lista[3] = aux2;
+				aux2 = Lista[4];
+				Lista[4] = aux1;
+				aux1 = Lista[5];
+				Lista[5] = aux2;
+			}
+			break;
+		case 2:
+			if (Lista[1] != 0) {
+				aux2 = Lista[2];
+				Lista[2] = Lista[1];
+				aux1 = Lista[3];
+				Lista[3] = aux2;
+				aux2 = Lista[4];
+				Lista[4] = aux1;
+				aux1 = Lista[5];
+				Lista[5] = aux2;
+			}
+			break;
+		case 3:
+			if (Lista[3] != 0) {
+				aux1 = Lista[3];
+				Lista[3] = Lista[2];
+				aux2 = Lista[4];
+				Lista[4] = aux1;
+				aux1 = Lista[5];
+				Lista[5] = aux2;
+			}
+			break;
+		case 4:
+			if (Lista[3] != 0) {
+				aux2 = Lista[4];
+				Lista[4] = Lista[3];
+				aux1 = Lista[5];
+				Lista[5] = aux2;
+			}
+			break;
+		case 5:
+			if (Lista[4] != 0) {
+				Lista[5] = Lista[4];
+				lbl_valor6.setText(Integer.toString(Lista[5]));
+			}
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	/**
+	 * Move os elementos da lista para a esquerda a partir de determinada
+	 * posição
+	 * 
+	 * @param elemento
+	 */
+
+	public void movEsquerda(int elemento) {
+
 	}
 
 }

@@ -391,6 +391,11 @@ public class Frm_animaLista extends Telas {
 		JLabel lblDigiteOValor = new JLabel("Digite o valor");
 		lblDigiteOValor.setBounds(194, 295, 82, 14);
 		contentPane.add(lblDigiteOValor);
+		
+		JLabel lbl_cheia = new JLabel("Lista Cheia");
+		lbl_cheia.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lbl_cheia.setBounds(185, 214, 91, 25);
+		contentPane.add(lbl_cheia);
 
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
