@@ -279,7 +279,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void removeElemento() {
-		int aux;
+	//	int aux;
 		// int removido;
 		switch (selecionado) {
 		case 1:

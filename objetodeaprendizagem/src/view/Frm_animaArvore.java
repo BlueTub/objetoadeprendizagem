@@ -1,8 +1,6 @@
 package view;
 
 import java.awt.EventQueue;
-import java.awt.RenderingHints.Key;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
