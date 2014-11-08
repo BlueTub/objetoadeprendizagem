@@ -115,7 +115,7 @@ public class Frm_principal extends Telas {
 
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
 		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
-		lbl_titulo.setBounds(276, 66, 277, 14);
+		lbl_titulo.setBounds(276, 60, 277, 20);
 		contentPane.add(lbl_titulo);
 
 		JButton btn_config = new JButton("");
@@ -311,9 +311,8 @@ public class Frm_principal extends Telas {
 														lblNewLabel.setBounds(60, 7, 67, 14);
 														panel.add(lblNewLabel);
 														
-														JButton btn_arvore = new JButton("Arvore Bin\u00E1ria");
+														JButton btn_arvore = new JButton("Árvore Bin\u00E1ria");
 														btn_arvore.setMnemonic('A');
-														System.out.println(btn_arvore.getFont());
 														btn_arvore.addActionListener(new ActionListener() {
 															public void actionPerformed(ActionEvent arg0) {
 																Descricao_e[] descricao = new Descricao_e[4];
