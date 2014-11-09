@@ -5,20 +5,20 @@ Uma pilha é denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sa
 Um de seus usos pode ser visto na validação de expressões aritméticas em compiladores.
 A pilha é a estrutura de dados de mais facil compreensão. 
 1
-FILA é um tipo de lista linear em que todas as inserções são feitas ao final dela e suas remoções são feitas no inicio dela, sendo controlado no codigo atraves do Tamanho. Em uma Fila a  ordem de saída dos itens corresponde diretamente à ordem de entrada,ou seja, o primeiro que entra é o primeiro a sair.
+FILA é um tipo de lista linear em que todas as inserções são feitas ao final dela e suas remoções são feitas no inicio dela, sendo controlado no código através do Tamanho. Em uma Fila a ordem de saída dos itens corresponde diretamente à ordem de entrada, ou seja, o primeiro que entra é o primeiro a sair.
 Fila é uma estrutura de dados muito utilizada na computação, sendo usada em diversas vezes, como por exemplo em coloração de regiões de imagens (pixel).
 Uma Fila é denominada FIFO(First-in/First-out ou Primeiro-que-entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, será o primeiro a sair. Imagine uma fila de banco.
-Um de seus usos é alocação de recursos para impressão de documentos em uma impressora (spooler de impressao). Pode ser visto tambem ao atendimento de processos requisitados a um sistema operacional.FILA
-A fila é uma estrutura de dados de facil compreensão.
+Um de seus usos é alocação de recursos para impressão de documentos em uma impressora (spooler de impressão). Pode ser visto também ao atendimento de processos requisitados a um sistema operacional. FILA
+A fila é uma estrutura de dados de fácil compreensão.
 2
-Lista (também chamado de  lista linear) é uma sequência de itens, cujas propriedades estruturais dependem apenas da posição relativa de seus itens.
-Lista é a estrutura de dados mais importante, conciderando que Pilha e Fila são ramificações suas.
+Lista (também chamado de lista linear) é uma sequência de itens, cujas propriedades estruturais dependem apenas da posição relativa de seus itens.
+Lista é a estrutura de dados mais importante, considerando que Pilha e Fila são ramificações suas.
 A característica fundamental de uma lista é sua organização unidimensional, que permite dizer precisamente onde ela começa e onde ela termina.
 Uso: LISTA lIGADA
 A lista é uma estrutura de dados de média compreensão.
 3
-Árvores são estruturas resursivas, ou seja, removendo a raiz de uma árvore, obtemos uma coleção de árvores. Cada nó de uma árvore é raiz de uma subárvore.
+Árvores são estruturas recursivas, ou seja, removendo a raiz de uma árvore, obtemos uma coleção de árvores. Cada nó de uma árvore é raiz de uma subárvore.
 Árvore é uma estrutura de dados que permite organizar dados de forma hierárquica.
-Árvore é uma estrutua hierárquica composta por nós.
+Árvore é uma estrutura hierárquica composta por nós.
 Um de seus usos é gerador de índices remissivos.
 Árvore é uma estrutura de dados de difícil compreensão.
