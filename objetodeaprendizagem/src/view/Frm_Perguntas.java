@@ -29,6 +29,7 @@ public class Frm_Perguntas extends Telas {
 	private JPanel contentPane;
 	private String caminho;
 	private String caminhoRespostas;
+	private int obj;
 	/**
 	 * Launch the application.
 	 */
@@ -61,9 +62,11 @@ public class Frm_Perguntas extends Telas {
 	public void CaminhoResposta(){
 		if(caminho.equals("Perguntas.txt")){
 			caminhoRespostas="respostasPilha.txt";
+			obj=0;
 		}else{
 			if(caminho.equals("Perguntas1.txt")){
 				caminhoRespostas="Resposta_Fila.txt";
+				obj=1;
 			}
 		}
 	}
@@ -142,7 +145,7 @@ public class Frm_Perguntas extends Telas {
 			int resp;
 			resp=JOptionPane.showConfirmDialog(null, "Deseja realmente voltar para a descrição","Voltar a descrição",0,1);	
 				if(resp==0){
-					int obj=0;
+				CaminhoResposta();
 			    Frm_descricao tela=new Frm_descricao(obj);
 				tela.setVisible(true);
 				Frm_Perguntas.this.dispose();
