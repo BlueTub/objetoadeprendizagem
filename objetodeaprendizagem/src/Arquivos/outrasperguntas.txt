@@ -1,0 +1,10 @@
+Lista:Questão 1
+Lista:Questão 2
+Lista:Questão 3
+Lista:Questão 4
+Lista:Questão 5
+Arvore:Questão 1
+Arvore:Questão 2
+Arvore:Questão 3
+Arvore:Questão 4
+Arvore:Questão 5
