@@ -54,7 +54,7 @@ public class ThreadCarregamento extends Thread{
 	        for(int i=0;i<=100;i++){
 	            barra.setValue(i);
 	            try {
-	                Thread.sleep(35);
+	                Thread.sleep(25);
 	            } catch (InterruptedException ex) {
 	                System.out.println(ex);
 	            }
