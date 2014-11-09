@@ -50,7 +50,7 @@ public class Frm_sobre extends Telas {
 		setTitle("Sobre");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 421);
+		setBounds(100, 100, 450, 444);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -79,18 +79,24 @@ public class Frm_sobre extends Telas {
 		txtpnDesenvolvedoresDoProjeto.setBounds(61, 182, 316, 158);
 		contentPane.add(txtpnDesenvolvedoresDoProjeto);
 		
-		JButton btnNewButton = new JButton("Fechar");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setSelectedIcon(new ImageIcon(Frm_sobre.class.getResource("/Imagens/arrow-back-select.png")));
+		btnNewButton.setIcon(new ImageIcon(Frm_sobre.class.getResource("/Imagens/arrow-back.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(178, 351, 89, 30);
+		btnNewButton.setBounds(178, 351, 89, 39);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblVoltar = new JLabel("Voltar");
+		lblVoltar.setBounds(202, 390, 46, 14);
+		contentPane.add(lblVoltar);
 		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_sobre.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 444, 392);
+		lbl_fundo.setBounds(0, 0, 444, 415);
 		contentPane.add(lbl_fundo);
 	}
 }
