@@ -52,6 +52,7 @@ public class Frm_Pontuacao extends Telas {
 	 */
 	@SuppressWarnings("static-access")
 	public Frm_Pontuacao(Fila fila,String caminhoRespostas) {
+		setTitle("Pontua\u00E7\u00E3o");
 		setResizable(false);
 		this.fila=fila;
 		this.caminhoRespostas=caminhoRespostas;

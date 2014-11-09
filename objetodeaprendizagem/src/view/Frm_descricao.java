@@ -161,7 +161,7 @@ public class Frm_descricao extends Telas {
 					lbl_titulo.setText("Fila");
 					break;
 				case 2:
-					lbl_titulo.setText("Lista Ligada");
+					lbl_titulo.setText("Lista");
 					break;
 				case 3:
 					lbl_titulo.setText("Arvore Binária");

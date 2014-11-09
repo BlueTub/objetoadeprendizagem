@@ -300,7 +300,7 @@ public class Frm_principal extends Telas {
 														}
 														String texto = descricao[2].getDescricao_res();
 														txt_descricao.setText(texto);
-														lbl_titulo.setText("Lista Ligada");
+														lbl_titulo.setText("Lista");
 														lbl_titulo.setVisible(true);
 														txt_descricao.setVisible(true);
 														objeto = 2;
