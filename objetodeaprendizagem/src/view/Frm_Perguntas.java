@@ -61,6 +61,10 @@ public class Frm_Perguntas extends Telas {
 	public void CaminhoResposta(){
 		if(caminho.equals("Perguntas.txt")){
 			caminhoRespostas="respostasPilha.txt";
+		}else{
+			if(caminho.equals("Perguntas1.txt")){
+				caminhoRespostas="Resposta_Fila.txt";
+			}
 		}
 	}
 	

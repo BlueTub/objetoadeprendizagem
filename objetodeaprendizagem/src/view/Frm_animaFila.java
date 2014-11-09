@@ -300,8 +300,9 @@ public class Frm_animaFila extends Telas {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//TODO
-				
+				dispose();
+				Frm_Perguntas tela=new Frm_Perguntas("Perguntas1.txt");
+				tela.setVisible(true);
 			}
 		};
 	
