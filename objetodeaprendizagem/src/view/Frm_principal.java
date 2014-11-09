@@ -184,6 +184,7 @@ public class Frm_principal extends Telas {
 		menuBar.add(mnNewMenu);
 
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Fechar");
+		mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/close.png")));
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -195,6 +196,7 @@ public class Frm_principal extends Telas {
 		menuBar.add(mnNewMenu_1);
 
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Manual");
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/manual.png")));
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -209,6 +211,7 @@ public class Frm_principal extends Telas {
 		menuBar.add(mnSobre);
 		
 		JMenuItem mntmSobre = new JMenuItem("Detalhes");
+		mntmSobre.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/about-people.png")));
 		mntmSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Frm_sobre telasobre = new Frm_sobre();
