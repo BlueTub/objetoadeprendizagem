@@ -108,7 +108,9 @@ public class Frm_descricao extends Telas {
 		Estilo();
 		iconeBarra();
 
-		JButton btn_volta = new JButton("<<");
+		JButton btn_volta = new JButton("");
+		btn_volta.setSelectedIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-back-select.png")));
+		btn_volta.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-back.png")));
 		btn_volta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frm_principal tela = new Frm_principal();
@@ -237,7 +239,9 @@ public class Frm_descricao extends Telas {
 		lblRetornarAoMenu.setBounds(30, 360, 161, 14);
 		contentPane.add(lblRetornarAoMenu);
 
-		JButton btn_prox = new JButton(">>");
+		JButton btn_prox = new JButton("");
+		btn_prox.setSelectedIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right-select.png")));
+		btn_prox.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right.png")));
 		btn_prox.setBounds(428, 309, 89, 40);
 		contentPane.add(btn_prox);
 
