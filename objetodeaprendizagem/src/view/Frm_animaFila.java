@@ -19,6 +19,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 /**
  * Formulario da animação da fila
  * @author Zuzi
@@ -52,9 +54,14 @@ public class Frm_animaFila extends Telas {
 	private JButton btnQuestionrio;
 	private JButton btnVoltar;
 	private final Action menu = new SwingAction();
+	
 	/**
 	 * Launch the application.
 	 */
+	
+	private JLabel[] v_label;
+	private JLabel[] c_label;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -95,9 +102,26 @@ public class Frm_animaFila extends Telas {
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
 		
-		JMenuItem mntmMenuPrincipal = new JMenuItem("Menu Principal");
-		mntmMenuPrincipal.setAction(menu);
-		mnArquivo.add(mntmMenuPrincipal);
+		JMenuItem mntmNewMenuItem = new JMenuItem("Menu Principal");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_principal telaprincipal = new Frm_principal();
+				telaprincipal.setVisible(true);
+				dispose();
+			}
+		});
+		mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/home.png")));
+		mnArquivo.add(mntmNewMenuItem);
+		
+		JMenuItem mntmFechar = new JMenuItem("Fechar");
+		mntmFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+
+		mntmFechar.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/close.png")));
+		mnArquivo.add(mntmFechar);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
