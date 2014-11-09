@@ -127,9 +127,7 @@ public class Frm_principal extends Telas {
 			}
 		});
 		btn_config
-				.setIcon(new ImageIcon(
-						Frm_principal.class
-								.getResource("/Imagens/rsz_gear-vector-icon-button_small.jpg")));
+				.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/config.png")));
 		btn_config.setBounds(610, 25, 38, 40);
 		contentPane.add(btn_config);
 

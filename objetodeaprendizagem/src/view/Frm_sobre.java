@@ -47,6 +47,7 @@ public class Frm_sobre extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_sobre() {
+		setTitle("Sobre");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 421);

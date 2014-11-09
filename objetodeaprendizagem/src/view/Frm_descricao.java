@@ -89,6 +89,7 @@ public class Frm_descricao extends Telas {
 	 */
 
 	public Frm_descricao(int obj) {
+		setTitle("Descri\u00E7\u00F5es");
 		setResizable(false);
 
 		setObjeto(obj); // informa ao novo frm qual o objeto em questão (0=

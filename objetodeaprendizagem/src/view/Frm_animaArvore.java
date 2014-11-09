@@ -73,6 +73,7 @@ public class Frm_animaArvore extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_animaArvore() {
+		setTitle("Anima\u00E7\u00E3o - Arvore Bin\u00E1ria");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 656, 439);
 		contentPane = new JPanel();
