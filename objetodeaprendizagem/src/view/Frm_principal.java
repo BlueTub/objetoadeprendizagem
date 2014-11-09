@@ -30,6 +30,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JSlider;
 /**
  * Tela principal, o usuário pode selecionar um objeto
  * @author Hury
@@ -148,9 +149,10 @@ public class Frm_principal extends Telas {
 		horizontalStrut_1.setBounds(276, 260, 333, 14);
 		contentPane.add(horizontalStrut_1);
 
-		JButton btn_inicia = new JButton(">>");
+		JButton btn_inicia = new JButton("");
+		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/arrow-right-select.png")));
+		btn_inicia.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/arrow-right.png")));
 		btn_inicia.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
-		btn_inicia.setSelectedIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/btn_select.fw.png")));
 		btn_inicia
 				.setToolTipText("Abre a tela de descri\u00E7\u00F5es onde ir\u00E1 ser apresentado mais detalhes sobre o objeto.");
 		btn_inicia.addActionListener(new ActionListener() {
@@ -332,14 +334,14 @@ public class Frm_principal extends Telas {
 														btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
 														btn_arvore.setBounds(29, 233, 120, 56);
 														panel.add(btn_arvore);
-														
+																
 
-														
-																JLabel lbl_fundo = new JLabel("");
-																lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
-																		.getResource("/Imagens/BackGround.png")));
-																lbl_fundo.setBounds(0, 0, 658, 401);
-																contentPane.add(lbl_fundo);
+																
+																		JLabel lbl_fundo = new JLabel("");
+																		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
+																				.getResource("/Imagens/BackGround.png")));
+																		lbl_fundo.setBounds(0, 0, 658, 401);
+																		contentPane.add(lbl_fundo);
 														btn_pilha.doClick();
 
 		try {
