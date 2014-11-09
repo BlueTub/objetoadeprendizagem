@@ -73,7 +73,7 @@ public class Frm_Perguntas extends Telas {
 	
 	public void Initialize(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 620, 402);
+		setBounds(100, 100, 620, 438);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -84,7 +84,7 @@ public class Frm_Perguntas extends Telas {
 		Estilo();
 		JPanel painel = new JPanel();
 		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		painel.setBounds(10, 11, 594, 286);
+		painel.setBounds(10, 53, 594, 286);
 		contentPane.add(painel);
 		painel.setLayout(null);
 		
@@ -134,7 +134,7 @@ public class Frm_Perguntas extends Telas {
 		btnProximo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnProximo.setMnemonic('p');
 		btnProximo.setToolTipText("Avançar para próxima pergunta");
-		btnProximo.setBounds(463, 308, 107, 30);
+		btnProximo.setBounds(463, 350, 107, 30);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -153,15 +153,20 @@ public class Frm_Perguntas extends Telas {
 			}
 		});
 		btnVoltar.setMnemonic('v');
-		btnVoltar.setBounds(53, 308, 89, 30);
+		btnVoltar.setBounds(51, 350, 89, 30);
 		contentPane.add(btnVoltar);
 	     
 		final ObjetosPerguntas muda;
 		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5,caminho);
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/circle-question.png")));
+		lblNewLabel.setBounds(271, 0, 64, 68);
+		contentPane.add(lblNewLabel);
+		
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 614, 373);
+		lbl_fundo.setBounds(0, 0, 614, 409);
 		contentPane.add(lbl_fundo);
 		muda.AlterarTela();
 	
