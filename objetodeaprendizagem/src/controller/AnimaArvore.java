@@ -142,6 +142,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 				}
 
 			}
+			
 		} else {
 			System.out.println("numero repetido");
 		}
