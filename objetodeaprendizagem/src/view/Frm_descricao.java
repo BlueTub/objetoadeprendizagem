@@ -36,7 +36,7 @@ public class Frm_descricao extends Telas {
 	 * Launch the application.
 	 */
 
-	static// TODO está variavel deve receber um parametro de 0 a 2 do formulario
+	static// TODO está variavel deve receber um parametro de 0 a 3 do formulario
 	// principal.
 	int objeto = 0;
 
