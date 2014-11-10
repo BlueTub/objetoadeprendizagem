@@ -25,13 +25,15 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	private JTextField txt_num;
 
 	private int Selecionado;
-	private int Lista[];
+	private int lista[];
+	private int tamanho;
 
 	public AnimaLista(JLabel lbl_cubo1, JLabel lbl_cubo2, JLabel lbl_cubo3,
 			JLabel lbl_cubo4, JLabel lbl_cubo5, JLabel lbl_cubo6,
 			JLabel lbl_valor1, JLabel lbl_valor2, JLabel lbl_valor3,
 			JLabel lbl_valor4, JLabel lbl_valor5, JLabel lbl_valor6,
-			JLabel lbl_cheia, JTextField txt_num, int selecionado, int[] lista) {
+			JLabel lbl_cheia, JTextField txt_num, int selecionado, int[] lista,
+			int tamanho) {
 		super();
 		this.lbl_cubo1 = lbl_cubo1;
 		this.lbl_cubo2 = lbl_cubo2;
@@ -48,7 +50,8 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		this.lbl_cheia = lbl_cheia;
 		this.txt_num = txt_num;
 		Selecionado = selecionado;
-		Lista = lista;
+		lista = lista;
+		this.tamanho = tamanho;
 	}
 
 	/**
@@ -116,7 +119,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 
 	public boolean cheia() {
-		for (int i = 0; i < Lista.length; i++) {
+		for (int i = 0; i < lista.length; i++) {
 
 		}
 		return false;
@@ -132,8 +135,8 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 	public boolean verificadupli(int rand) {
 		boolean result = false;
-		for (int i = 0; i < Lista.length; i++) {
-			if (Lista[i] == rand) {
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i] == rand) {
 				result = true;
 			} else {
 
@@ -154,53 +157,53 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 		switch (elemento) {
 		case 1:
-			if (Lista[0] != 0) {
-				aux1 = Lista[1];
-				Lista[1] = Lista[0];
-				aux2 = Lista[2];
-				Lista[2] = aux1;
-				aux1 = Lista[3];
-				Lista[3] = aux2;
-				aux2 = Lista[4];
-				Lista[4] = aux1;
-				aux1 = Lista[5];
-				Lista[5] = aux2;
+			if (lista[0] != 0) {
+				aux1 = lista[1];
+				lista[1] = lista[0];
+				aux2 = lista[2];
+				lista[2] = aux1;
+				aux1 = lista[3];
+				lista[3] = aux2;
+				aux2 = lista[4];
+				lista[4] = aux1;
+				aux1 = lista[5];
+				lista[5] = aux2;
 			}
 			break;
 		case 2:
-			if (Lista[1] != 0) {
-				aux2 = Lista[2];
-				Lista[2] = Lista[1];
-				aux1 = Lista[3];
-				Lista[3] = aux2;
-				aux2 = Lista[4];
-				Lista[4] = aux1;
-				aux1 = Lista[5];
-				Lista[5] = aux2;
+			if (lista[1] != 0) {
+				aux2 = lista[2];
+				lista[2] = lista[1];
+				aux1 = lista[3];
+				lista[3] = aux2;
+				aux2 = lista[4];
+				lista[4] = aux1;
+				aux1 = lista[5];
+				lista[5] = aux2;
 			}
 			break;
 		case 3:
-			if (Lista[3] != 0) {
-				aux1 = Lista[3];
-				Lista[3] = Lista[2];
-				aux2 = Lista[4];
-				Lista[4] = aux1;
-				aux1 = Lista[5];
-				Lista[5] = aux2;
+			if (lista[3] != 0) {
+				aux1 = lista[3];
+				lista[3] = lista[2];
+				aux2 = lista[4];
+				lista[4] = aux1;
+				aux1 = lista[5];
+				lista[5] = aux2;
 			}
 			break;
 		case 4:
-			if (Lista[3] != 0) {
-				aux2 = Lista[4];
-				Lista[4] = Lista[3];
-				aux1 = Lista[5];
-				Lista[5] = aux2;
+			if (lista[3] != 0) {
+				aux2 = lista[4];
+				lista[4] = lista[3];
+				aux1 = lista[5];
+				lista[5] = aux2;
 			}
 			break;
 		case 5:
-			if (Lista[4] != 0) {
-				Lista[5] = Lista[4];
-				lbl_valor6.setText(Integer.toString(Lista[5]));
+			if (lista[4] != 0) {
+				lista[5] = lista[4];
+				lbl_valor6.setText(Integer.toString(lista[5]));
 			}
 			break;
 		default:
@@ -217,7 +220,28 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 
 	public void movEsquerda(int elemento) {
+		switch (elemento) {
+		case 2:
 
+			break;
+
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+         lista[3]=lista[4];
+			break;
+		case 6:
+          lista[4]=lista[5];
+          lista[5]=0;
+          lbl_valor5.setText(Integer.toString(lista[4]));
+			break;
+		default:
+			break;
+		}
 	}
 
 	/**
@@ -240,7 +264,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor1.setText(txt_num.getText());
 			lbl_valor1.setBounds(posicao1);
 
-			Lista[0] = Integer.parseInt(txt_num.getText());
+			lista[0] = Integer.parseInt(txt_num.getText());
 			lbl_valor1.setVisible(true);
 			break;
 		case 2:
@@ -253,7 +277,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor2.setText(txt_num.getText());
 			lbl_valor2.setBounds(posicao1);
 
-			Lista[1] = Integer.parseInt(txt_num.getText());
+			lista[1] = Integer.parseInt(txt_num.getText());
 			lbl_valor2.setVisible(true);
 			break;
 		case 3:
@@ -266,7 +290,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor3.setText(txt_num.getText());
 			lbl_valor3.setBounds(posicao1);
 
-			Lista[2] = Integer.parseInt(txt_num.getText());
+			lista[2] = Integer.parseInt(txt_num.getText());
 			lbl_valor3.setVisible(true);
 			break;
 		case 4:
@@ -279,7 +303,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor4.setText(txt_num.getText());
 			lbl_valor4.setBounds(posicao1);
 
-			Lista[3] = Integer.parseInt(txt_num.getText());
+			lista[3] = Integer.parseInt(txt_num.getText());
 			lbl_valor4.setVisible(true);
 			break;
 		case 5:
@@ -292,7 +316,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor5.setText(txt_num.getText());
 			lbl_valor5.setBounds(posicao1);
 
-			Lista[4] = Integer.parseInt(txt_num.getText());
+			lista[4] = Integer.parseInt(txt_num.getText());
 			lbl_valor5.setVisible(true);
 			break;
 		case 6:
@@ -305,7 +329,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			lbl_valor6.setText(txt_num.getText());
 			lbl_valor6.setBounds(posicao1);
 
-			Lista[5] = Integer.parseInt(txt_num.getText());
+			lista[5] = Integer.parseInt(txt_num.getText());
 			lbl_valor6.setVisible(true);
 			break;
 		}
