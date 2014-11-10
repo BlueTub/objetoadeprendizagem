@@ -207,6 +207,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			}
 			break;
 		default:
+			System.out.println("Implementação incorreta, movDireita");
 			break;
 		}
 
@@ -222,24 +223,52 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	public void movEsquerda(int elemento) {
 		switch (elemento) {
 		case 2:
-
+			lista[0] = lista[1];
+			lista[1] = lista[2];
+			lista[2] = lista[3];
+			lista[3] = lista[4];
+			lista[4] = lista[5];
+			lista[5] = 0;
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor3.setText(Integer.toString(lista[2]));
+			lbl_valor2.setText(Integer.toString(lista[1]));
+			lbl_valor1.setText(Integer.toString(lista[0]));
 			break;
-
 		case 3:
-
+			lista[1] = lista[2];
+			lista[2] = lista[3];
+			lista[3] = lista[4];
+			lista[4] = lista[5];
+			lista[5] = 0;
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor3.setText(Integer.toString(lista[2]));
+			lbl_valor2.setText(Integer.toString(lista[1]));
 			break;
 		case 4:
-
+			lista[2] = lista[3];
+			lista[3] = lista[4];
+			lista[4] = lista[5];
+			lista[5] = 0;
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor3.setText(Integer.toString(lista[2]));
 			break;
 		case 5:
-         lista[3]=lista[4];
+			lista[3] = lista[4];
+			lista[4] = lista[5];
+			lista[5] = 0;
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
 			break;
 		case 6:
-          lista[4]=lista[5];
-          lista[5]=0;
-          lbl_valor5.setText(Integer.toString(lista[4]));
+			lista[4] = lista[5];
+			lista[5] = 0;
+			lbl_valor5.setText(Integer.toString(lista[4]));
 			break;
 		default:
+			System.out.println("Implementação incorreta, movEsquerda");
 			break;
 		}
 	}
