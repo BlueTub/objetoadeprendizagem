@@ -1,9 +1,8 @@
 /**
  * 
  */
-package controller;
+package Entity;
 
-import Entity.Perguntas;
 
 /**
  * Classe que controla o no de elementos

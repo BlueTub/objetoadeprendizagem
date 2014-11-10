@@ -3,6 +3,7 @@
  */
 package controller;
 
+import Entity.No;
 import Entity.Perguntas;
 
 /**
