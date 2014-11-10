@@ -50,7 +50,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		this.lbl_cheia = lbl_cheia;
 		this.txt_num = txt_num;
 		Selecionado = selecionado;
-		lista = lista;
+		this.lista = lista;
 		this.tamanho = tamanho;
 	}
 
