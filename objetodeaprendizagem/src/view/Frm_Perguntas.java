@@ -82,6 +82,7 @@ public class Frm_Perguntas extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
+		
 		JPanel painel = new JPanel();
 		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		painel.setBounds(10, 53, 594, 286);
