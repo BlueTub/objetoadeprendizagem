@@ -22,6 +22,9 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
+import javax.swing.JTabbedPane;
+import javax.swing.JLayeredPane;
+import javax.swing.BoxLayout;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -118,121 +121,98 @@ public class Frm_descricao extends Telas {
 				dispose();
 			}
 		});
+		
+		Descricao_e[] descricao = new Descricao_e[4];
+		try {
+			descricao = Carregatxt();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		JPanel painel = new JPanel();
+		painel.setBounds(30, 68, 531, 230);
+		contentPane.add(painel);
+		painel.setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
+		tabbedPane.setBounds(0, 0, 531, 230);
+		painel.add(tabbedPane);
+		
+		JPanel jp_descricao = new JPanel();
+		tabbedPane.addTab("Descri\u00E7\u00E3o", null, jp_descricao, null);
+		jp_descricao.setLayout(null);
+		
+		JTextPane txtpaneDesc = new JTextPane();
+		txtpaneDesc.setBounds(0, 0, 526, 202);
+		jp_descricao.add(txtpaneDesc);
+		txtpaneDesc.setText("txt_texto");
+		txtpaneDesc.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
+		txtpaneDesc.setEditable(false);
+		String texto = descricao[objeto].getDescricao_int();
+		txtpaneDesc.setText(texto);
+		
+		JPanel jp_carac = new JPanel();
+		tabbedPane.addTab("Caracter\u00EDsticas", null, jp_carac, null);
+		jp_carac.setLayout(null);
+		
+		JTextPane txtpaneCarac = new JTextPane();
+		txtpaneCarac.setText("txt_texto");
+		txtpaneCarac.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
+		txtpaneCarac.setEditable(false);
+		txtpaneCarac.setBounds(0, 0, 526, 202);
+		jp_carac.add(txtpaneCarac);
+		texto=descricao[objeto].getCaract();
+		txtpaneCarac.setText(texto);
+		
+		JPanel jp_uso = new JPanel();
+		tabbedPane.addTab("Uso", null, jp_uso, null);
+		jp_uso.setLayout(null);
+		
+		JTextPane txtpaneUso = new JTextPane();
+		txtpaneUso.setText("txt_texto");
+		txtpaneUso.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
+		txtpaneUso.setEditable(false);
+		txtpaneUso.setBounds(0, 0, 526, 202);
+		jp_uso.add(txtpaneUso);
+		texto=descricao[objeto].getUso();
+		txtpaneUso.setText(texto);
+		
+		JPanel jp_dificuldade = new JPanel();
+		tabbedPane.addTab("Dificuldade", null, jp_dificuldade, null);
+		jp_dificuldade.setLayout(null);
+		
+		JTextPane txtpaneDificuldade = new JTextPane();
+		txtpaneDificuldade.setText("txt_texto");
+		txtpaneDificuldade.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
+		txtpaneDificuldade.setEditable(false);
+		txtpaneDificuldade.setBounds(0, 0, 526, 202);
+		jp_dificuldade.add(txtpaneDificuldade);
 		btn_volta.setBounds(50, 309, 89, 40);
 		contentPane.add(btn_volta);
+		texto=descricao[objeto].getDificult();
+		txtpaneDificuldade.setText(texto);
 
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
 		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lbl_titulo.setBounds(248, 11, 167, 28);
 		contentPane.add(lbl_titulo);
-
-		JPanel panel = new JPanel();
-		panel.setBackground(UIManager
-				.getColor("InternalFrame.activeTitleGradient"));
-		panel.setLayout(null);
-		panel.setBounds(30, 68, 518, 230);
-		contentPane.add(panel);
-
-		final JTextPane txt_texto = new JTextPane();
-		txt_texto.setEditable(false);
-		txt_texto.setFont(new Font("Tahoma",Font.BOLD,tamanhofonte));
-		txt_texto.setText("txt_texto");
-		txt_texto.setBounds(10, 30, 498, 189);
-		panel.add(txt_texto);
-
-		JButton btn_descricao = new JButton("Descri\u00E7\u00E3o");
-		btn_descricao.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[3];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = "";
-				texto = descricao[objeto].getDescricao_int();
-				txt_texto.setText(texto);
-				switch (objeto) {
-				case 0:
-					lbl_titulo.setText("Pilha");
-					break;
-				case 1:
-					lbl_titulo.setText("Fila");
-					break;
-				case 2:
-					lbl_titulo.setText("Lista");
-					break;
-				case 3:
-					lbl_titulo.setText("Arvore Binária");
-					break;
-				default:
-					break;
-				}
-			}
-		});
-
-		// clica no botão para inicializar o textpanel com conteudo
-		try {
-			btn_descricao.doClick();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null,
-					"Não foi possivel carregar 'Descricao.txt'");
-		}
-
-		btn_descricao.setBounds(10, 11, 130, 23);
-		panel.add(btn_descricao);
-
-		JButton btn_caract = new JButton("Caracteristicas");
-		btn_caract.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[objeto].getCaract();
-				txt_texto.setText(texto);
-			}
-		});
-		btn_caract.setBounds(137, 11, 144, 23);
-		panel.add(btn_caract);
-
-		JButton btn_uso = new JButton("Uso");
-		btn_uso.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[objeto].getUso();
-				txt_texto.setText(texto);
-			}
-		});
-		btn_uso.setBounds(277, 11, 101, 23);
-		panel.add(btn_uso);
-
-		JButton btn_dificuldade = new JButton("Dificuldade");
-		btn_dificuldade.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Descricao_e[] descricao = new Descricao_e[4];
-				try {
-					descricao = Carregatxt();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				String texto = descricao[objeto].getDificult();
-				txt_texto.setText(texto);
-			}
-		});
-		btn_dificuldade.setBounds(378, 11, 130, 23);
-		panel.add(btn_dificuldade);
+		
+        switch (objeto) {
+        case 0:
+                lbl_titulo.setText("Pilha");
+                break;
+        case 1:
+                lbl_titulo.setText("Fila");
+                break;
+        case 2:
+                lbl_titulo.setText("Lista");
+                break;
+        case 3:
+                lbl_titulo.setText("Arvore Binária");
+                break;
+        default:
+                break;
+        }
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
 		lblRetornarAoMenu.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -297,5 +277,5 @@ public class Frm_descricao extends Telas {
 		});
 
 	}
-
+	
 }
