@@ -5,11 +5,11 @@ Uma pilha é denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sa
 Um de seus usos pode ser visto na validação de expressões aritméticas em compiladores.
 A pilha é a estrutura de dados de mais fácil compreensão. 
 1
-FILA é um tipo de lista linear em que todas as inserções são feitas ao final dela e suas remoções são feitas no inicio dela, sendo controlado no código através do Tamanho. Em uma Fila a ordem de saída dos itens corresponde diretamente à ordem de entrada, ou seja, o primeiro que entra é o primeiro a sair.
+FILA é um tipo de lista linear em que todas as inserções são feitas ao final dela e suas remoções são feitas no inicio dela, sendo controlado no código internamente por uma variavel "tamanho". Em uma Fila a ordem de saída dos itens corresponde diretamente à ordem de entrada.
 Fila é uma estrutura de dados muito utilizada na computação, sendo usada em diversas vezes, como por exemplo em coloração de regiões de imagens (pixel).
 Uma Fila é denominada FIFO(First-in/First-out ou Primeiro-que-entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, será o primeiro a sair. Imagine uma fila de banco.
 Um de seus usos é alocação de recursos para impressão de documentos em uma impressora (spooler de impressão). Pode ser visto também ao atendimento de processos requisitados a um sistema operacional. FILA
-A fila é uma estrutura de dados de fácil compreensão.
+A Fila é uma estrutura de dados de fácil compreensão, um pouco mais complicada que uma Pilha, mas ainda de facil entendimento.
 2
 Lista (também chamado de lista linear) é uma sequência de itens, cujas propriedades estruturais dependem apenas da posição relativa de seus itens.
 Lista é a estrutura de dados mais importante, considerando que Pilha e Fila são ramificações suas.
