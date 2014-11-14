@@ -15,7 +15,7 @@ Lista (também chamado de lista linear) é uma sequência de itens, cujas proprieda
 Lista é a estrutura de dados mais importante, considerando que Pilha e Fila são ramificações suas.
 A característica fundamental de uma lista é sua organização unidimensional, que permite dizer precisamente onde ela começa e onde ela termina.
 Uso: LISTA lIGADA
-A lista é uma estrutura de dados de média compreensão.
+A Lista é uma estrutura de dados de média compreensão.
 3
 Árvores são estruturas recursivas, ou seja, removendo a raiz de uma árvore, obtemos uma coleção de árvores. Cada nó de uma árvore é raiz de uma subárvore.
 Árvore é uma estrutura de dados que permite organizar dados de forma hierárquica.
