@@ -113,7 +113,19 @@ public class Frm_Splash extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
-
+		
+		JLabel cuboAzul = new JLabel("");
+		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class
+				.getResource("/Imagens/cuboAzul.png")));
+		cuboAzul.setBounds(230, 24, 68, 66);
+		contentPane.add(cuboAzul);
+		
+		JLabel cubo2 = new JLabel("");
+		cubo2.setIcon(new ImageIcon(Frm_Splash.class
+				.getResource("/Imagens/cubo2.png")));
+		cubo2.setBounds(181, 24, 68, 66);
+		contentPane.add(cubo2);
+		
 		JProgressBar barra = new JProgressBar();
 		barra.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		barra.setForeground(Color.DARK_GRAY);
@@ -129,11 +141,11 @@ public class Frm_Splash extends Telas {
 
 		Carrega(barra, lbltexto);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Frm_Splash.class
-				.getResource("/Imagens/icon.png")));
-		label.setBounds(198, 23, 68, 66);
-		contentPane.add(label);
+		JLabel cubo = new JLabel("");
+		cubo.setIcon(new ImageIcon(Frm_Splash.class
+				.getResource("/Imagens/cubo.png")));
+		cubo.setBounds(132, 24, 68, 66);
+		contentPane.add(cubo);
 
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_Splash.class
