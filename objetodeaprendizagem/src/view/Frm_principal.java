@@ -108,11 +108,11 @@ public class Frm_principal extends Telas {
 		Estilo();
 		iconeBarra();
 
-		JLabel label = new JLabel(
-				"Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o questionario.");
-		label.setFont(new Font("Arial", Font.BOLD, tamanhofonte));
-		label.setBounds(52, 28, 548, 21);
-		contentPane.add(label);
+		JLabel lblSelecioneUmObjeto = new JLabel(
+				"Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o question\u00E1rio.");
+		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.BOLD, tamanhofonte));
+		lblSelecioneUmObjeto.setBounds(52, 28, 548, 21);
+		contentPane.add(lblSelecioneUmObjeto);
 
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
 		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
@@ -328,7 +328,7 @@ public class Frm_principal extends Telas {
 																}
 																String texto = descricao[3].getDescricao_res();
 																txt_descricao.setText(texto);
-																lbl_titulo.setText("Arvore Binária");
+																lbl_titulo.setText("Árvore Binária");
 																lbl_titulo.setVisible(true);
 																txt_descricao.setVisible(true);
 																objeto = 3;
