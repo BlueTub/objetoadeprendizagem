@@ -107,33 +107,38 @@ public class Frm_principal extends Telas {
 		centralizeFrame();
 		Estilo();
 		iconeBarra();
+				
+						JButton btn_config = new JButton("");
+						btn_config.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								dispose();
+								Frm_config telaconfig = new Frm_config();
+								telaconfig.setVisible(true);
+							}
+						});
+						btn_config
+								.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/config.png")));
+						btn_config.setBounds(590, 28, 62, 70);
+						contentPane.add(btn_config);
+		
+				JLabel lblConfig = new JLabel("Config");
+				lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
+				lblConfig.setBounds(594, 96, 46, 14);
+				contentPane.add(lblConfig);
 
 		JLabel lblSelecioneUmObjeto = new JLabel(
 				"Selecione um objeto para iniciar a anima\u00E7\u00E3o e logo ap\u00F3s o question\u00E1rio.");
 		lblSelecioneUmObjeto.setFont(new Font("Arial", Font.BOLD, tamanhofonte));
-		lblSelecioneUmObjeto.setBounds(52, 28, 548, 21);
+		lblSelecioneUmObjeto.setBounds(30, 28, 548, 28);
 		contentPane.add(lblSelecioneUmObjeto);
 
 		final JLabel lbl_titulo = new JLabel("lbl_titulo");
 		lbl_titulo.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
-		lbl_titulo.setBounds(276, 60, 277, 20);
+		lbl_titulo.setBounds(276, 91, 277, 20);
 		contentPane.add(lbl_titulo);
 
-		JButton btn_config = new JButton("");
-		btn_config.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Frm_config telaconfig = new Frm_config();
-				telaconfig.setVisible(true);
-			}
-		});
-		btn_config
-				.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/config.png")));
-		btn_config.setBounds(610, 25, 38, 40);
-		contentPane.add(btn_config);
-
 		Component horizontalStrut = Box.createHorizontalStrut(20);
-		horizontalStrut.setBounds(276, 91, 333, 7);
+		horizontalStrut.setBounds(276, 128, 333, 7);
 		contentPane.add(horizontalStrut);
 
 		final JTextPane txt_descricao = new JTextPane();
@@ -142,11 +147,11 @@ public class Frm_principal extends Telas {
 		txt_descricao.setEditable(false);
 		txt_descricao.setBackground(UIManager
 				.getColor("InternalFrame.activeTitleGradient"));
-		txt_descricao.setBounds(276, 113, 314, 125);
+		txt_descricao.setBounds(276, 147, 314, 125);
 		contentPane.add(txt_descricao);
 
 		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
-		horizontalStrut_1.setBounds(276, 260, 333, 14);
+		horizontalStrut_1.setBounds(276, 284, 333, 14);
 		contentPane.add(horizontalStrut_1);
 
 		JButton btn_inicia = new JButton("");
@@ -164,20 +169,20 @@ public class Frm_principal extends Telas {
 
 			}
 		});
-		btn_inicia.setBounds(515, 285, 83, 40);
+		btn_inicia.setBounds(526, 300, 83, 60);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
 
 		JLabel lblMostrarMaisDetalhes = new JLabel("Mostrar Mais detalhes");
 		lblMostrarMaisDetalhes.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
-		lblMostrarMaisDetalhes.setBounds(491, 339, 157, 14);
+		lblMostrarMaisDetalhes.setBounds(495, 376, 157, 14);
 		contentPane.add(lblMostrarMaisDetalhes);
 
 
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 658, 21);
+		menuBar.setBounds(0, 0, 658, 28);
 		contentPane.add(menuBar);
 
 		JMenu mnNewMenu = new JMenu("Arquivo");
@@ -219,17 +224,12 @@ public class Frm_principal extends Telas {
 			}
 		});
 		mnSobre.add(mntmSobre);
-
-		JLabel lblConfig = new JLabel("Config");
-		lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblConfig.setBounds(610, 68, 46, 14);
-		contentPane.add(lblConfig);
 		
 				Panel panel = new Panel();
 				panel.setBackground(UIManager
 						.getColor("InternalFrame.activeTitleGradient"));
 				panel.setLayout(null);
-				panel.setBounds(40, 64, 197, 307);
+				panel.setBounds(40, 83, 197, 307);
 				contentPane.add(panel);
 				
 				final JLabel lbl_select = new JLabel("");

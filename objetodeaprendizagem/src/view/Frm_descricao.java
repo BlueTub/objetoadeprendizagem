@@ -187,7 +187,7 @@ public class Frm_descricao extends Telas {
 		txtpaneDificuldade.setEditable(false);
 		txtpaneDificuldade.setBounds(0, 0, 526, 202);
 		jp_dificuldade.add(txtpaneDificuldade);
-		btn_volta.setBounds(50, 309, 89, 40);
+		btn_volta.setBounds(40, 309, 89, 54);
 		contentPane.add(btn_volta);
 		texto=descricao[objeto].getDificult();
 		txtpaneDificuldade.setText(texto);
@@ -216,19 +216,19 @@ public class Frm_descricao extends Telas {
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
 		lblRetornarAoMenu.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblRetornarAoMenu.setBounds(30, 360, 161, 14);
+		lblRetornarAoMenu.setBounds(30, 368, 161, 14);
 		contentPane.add(lblRetornarAoMenu);
 
 		JButton btn_prox = new JButton("");
 		btn_prox.setSelectedIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right-select.png")));
 		btn_prox.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right.png")));
-		btn_prox.setBounds(428, 309, 89, 40);
+		btn_prox.setBounds(432, 309, 89, 54);
 		contentPane.add(btn_prox);
 
 		JLabel lblProseguirParaA = new JLabel(
 				"Proseguir para a anima\u00E7\u00E3o interativa");
 		lblProseguirParaA.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblProseguirParaA.setBounds(344, 360, 215, 14);
+		lblProseguirParaA.setBounds(346, 368, 215, 14);
 		contentPane.add(lblProseguirParaA);
 
 		JLabel lblNavegueEntreAs = new JLabel(
