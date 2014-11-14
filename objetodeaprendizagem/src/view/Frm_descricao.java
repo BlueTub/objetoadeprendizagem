@@ -208,7 +208,7 @@ public class Frm_descricao extends Telas {
                 lbl_titulo.setText("Lista");
                 break;
         case 3:
-                lbl_titulo.setText("Arvore Binária");
+                lbl_titulo.setText("Árvore Binária");
                 break;
         default:
                 break;
