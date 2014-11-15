@@ -411,28 +411,37 @@ public class Frm_animaLista extends Telas {
 		});
 
 		txt_num = new JTextField();
-		txt_num.setBounds(174, 259, 111, 25);
+		txt_num.setBounds(184, 234, 111, 25);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
 		JLabel lblDigiteOValor = new JLabel("Digite o valor");
-		lblDigiteOValor.setBounds(194, 295, 82, 14);
+		lblDigiteOValor.setFont(new Font("Verdana", Font.BOLD, 14));
+		lblDigiteOValor.setBounds(175, 264, 130, 25);
 		contentPane.add(lblDigiteOValor);
 
 		final JLabel lbl_cheia = new JLabel("Lista Cheia");
 		lbl_cheia.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lbl_cheia.setBounds(185, 214, 91, 25);
+		lbl_cheia.setBounds(185, 320, 91, 25);
 		contentPane.add(lbl_cheia);
-
-		lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 727, 376);
-		contentPane.add(lbl_fundo);
 
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		horizontalStrut.setBounds(10, 138, 415, 7);
 		contentPane.add(horizontalStrut);
+		
+		JLabel lblNewLabel = new JLabel("Add em uma posi\u00E7\u00E3o");
+		lblNewLabel.setBounds(471, 189, 111, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Del em uma posi\u00E7\u00E3o");
+		lblNewLabel_1.setBounds(598, 189, 102, 14);
+		contentPane.add(lblNewLabel_1);
+		
+				lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 727, 376);
+				contentPane.add(lbl_fundo);
 
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);
@@ -489,6 +498,9 @@ public class Frm_animaLista extends Telas {
 					JOptionPane.showMessageDialog(null, "Cheia");
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
+
+				} else if (selecionado == 0) {
+					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				} else {
 					System.out.println("entrou no if");
 					int operacao = 3;
@@ -505,19 +517,63 @@ public class Frm_animaLista extends Telas {
 
 		btn_removeinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				if (tamanho == 0) {
+					JOptionPane.showMessageDialog(null, "Vazia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
+				} else {
+					System.out.println("entrou no if");
+					int operacao = 4;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho--;
+				}
 			}
 		});
 
 		btn_removefinal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				if (tamanho == 0) {
+					JOptionPane.showMessageDialog(null, "Vazia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
+				} else {
+					System.out.println("entrou no if");
+					int operacao = 5;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho--;
+				}
 			}
 		});
 
 		btn_remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				if (tamanho == 0) {
+					JOptionPane.showMessageDialog(null, "Vazia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
+				} else if (selecionado == 0) {
+					JOptionPane.showMessageDialog(null, "Selecione um cubo");
+				} else {
+					System.out.println("entrou no if");
+					int operacao = 6;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho--;
+				}
 			}
 		});
 
