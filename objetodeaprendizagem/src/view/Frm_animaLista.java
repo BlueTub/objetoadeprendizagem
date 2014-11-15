@@ -3,6 +3,7 @@ package view;
 import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -97,6 +98,21 @@ public class Frm_animaLista extends Telas {
 	public static void setObjeto(int objeto) {
 		Frm_animaLista.objeto = objeto;
 	}
+
+	/**
+	 * 
+	 * @param texto
+	 * @return
+	 */
+	public static int TipoString(String texto) {
+		if (texto.matches("[a-zA-Z]*")) {
+			return 0;// Apenas texto
+		}
+		if (texto.matches("[0-9]*")) {
+			return 1;// Apenas números
+		}
+		return 2;// Misto
+	}// TipoString
 
 	/**
 	 * Create the frame.
@@ -424,13 +440,15 @@ public class Frm_animaLista extends Telas {
 		lbl_valor4.setVisible(false);
 		lbl_valor5.setVisible(false);
 		lbl_valor6.setVisible(false);
+		lbl_cheia.setVisible(false);
 
 		btn_addinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String ver = txt_num.getText();
-				System.out.println("Texto ver=" + ver + ".");
-				if (ver.matches("") || tamanho >= 6) {
-					System.out.println("digite número ou exedeu o tamanho");
+
+				if (tamanho >= 6) {
+					JOptionPane.showMessageDialog(null, "Cheia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
 					System.out.println("entrou no if");
 					int operacao = 1;
@@ -447,10 +465,10 @@ public class Frm_animaLista extends Telas {
 
 		btn_addfinal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String ver = txt_num.getText();
-				System.out.println("Texto ver=" + ver + ".");
-				if (ver.matches("") || tamanho >= 6) {
-					System.out.println("digite número ou exedeu o tamanho");
+				if (tamanho >= 6) {
+					JOptionPane.showMessageDialog(null, "Cheia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
 					System.out.println("entrou no if");
 					int operacao = 2;
@@ -467,10 +485,10 @@ public class Frm_animaLista extends Telas {
 
 		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String ver = txt_num.getText();
-				System.out.println("Texto ver=" + ver + ".");
-				if (ver.matches("") || tamanho >= 6 || selecionado==0) {
-					System.out.println("digite número ou exedeu o tamanho ou selecione um cubo");
+				if (tamanho >= 6) {
+					JOptionPane.showMessageDialog(null, "Cheia");
+				} else if (TipoString(txt_num.getText()) != 1) {
+					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
 					System.out.println("entrou no if");
 					int operacao = 3;
