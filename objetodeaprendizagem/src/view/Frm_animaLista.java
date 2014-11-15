@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import controller.AnimaLista;
 import controller.Telas;
 import java.awt.Font;
 import java.awt.Color;
@@ -59,8 +61,9 @@ public class Frm_animaLista extends Telas {
 	private JButton button;
 	private JButton button_1;
 	private JTextField txt_num;
-	int selecionado=0;
-	int[] Lista = { 0, 0, 0, 0, 0, 0 };
+	private int selecionado=0;
+	private int[] Lista = { 0, 0, 0, 0, 0, 0 };
+	static int tamanho;
 /**
  * Launch
  * @param args
@@ -227,6 +230,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(btn_addfinal);
 
 		JButton btn_addinicio = new JButton("Adiciona In\u00EDcio");
+		
 		btn_addinicio
 				.setToolTipText("Adiciona um novo elemento no In\u00EDcio");
 		btn_addinicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -392,7 +396,7 @@ public class Frm_animaLista extends Telas {
 		lblDigiteOValor.setBounds(194, 295, 82, 14);
 		contentPane.add(lblDigiteOValor);
 		
-		JLabel lbl_cheia = new JLabel("Lista Cheia");
+		final JLabel lbl_cheia = new JLabel("Lista Cheia");
 		lbl_cheia.setFont(new Font("Verdana", Font.PLAIN, 14));
 		lbl_cheia.setBounds(185, 214, 91, 25);
 		contentPane.add(lbl_cheia);
@@ -414,6 +418,14 @@ public class Frm_animaLista extends Telas {
 		lbl_valor5.setVisible(false);
 		lbl_valor6.setVisible(false);
 
+		btn_addinicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int operacao=1;
+				Thread t1 = new AnimaLista(operacao,lbl_cubo1, lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia, txt_num, selecionado, Lista, tamanho);
+			t1.start();
+			tamanho++;
+			}
+		});
 		
 
 	}
