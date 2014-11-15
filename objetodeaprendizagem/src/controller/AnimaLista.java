@@ -26,7 +26,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 	private int Selecionado;
 	private int lista[];
-	private static int tamanho;
+	private int tamanho;
 	private int operacao;
 
 	public AnimaLista(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
