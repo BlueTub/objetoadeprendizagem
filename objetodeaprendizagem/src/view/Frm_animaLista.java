@@ -64,7 +64,7 @@ public class Frm_animaLista extends Telas {
 	private JTextField txt_num;
 	private int selecionado = 0;
 	private int[] Lista = { 0, 0, 0, 0, 0, 0 };
-	static int tamanho;
+	private int tamanho;
 
 	/**
 	 * Launch
