@@ -433,7 +433,5 @@ public class Frm_animaLista extends Telas {
 				}	
 			}
 		});
-		
-
 	}
 }

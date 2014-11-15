@@ -146,11 +146,15 @@ public class Frm_Splash extends Telas {
 				.getResource("/Imagens/cubo.png")));
 		cubo.setBounds(132, 24, 68, 66);
 		contentPane.add(cubo);
-
-		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_Splash.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 450, 300);
-		contentPane.add(lbl_fundo);
+		
+		JLabel lblVerso = new JLabel("Vers\u00E3o: 1.0");
+		lblVerso.setBounds(10, 275, 82, 14);
+		contentPane.add(lblVerso);
+		
+				JLabel lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_Splash.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 450, 300);
+				contentPane.add(lbl_fundo);
 	}
 }
