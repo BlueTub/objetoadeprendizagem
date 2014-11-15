@@ -420,10 +420,17 @@ public class Frm_animaLista extends Telas {
 
 		btn_addinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int operacao=1;
-				Thread t1 = new AnimaLista(operacao,lbl_cubo1, lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia, txt_num, selecionado, Lista, tamanho);
-			t1.start();
-			tamanho++;
+				String ver = txt_num.getText();
+				System.out.println("Texto ver="+ver+".");
+				if(ver.matches("")||tamanho>=6){
+					System.out.println("digite número ou exedeu o tamanho");
+				}else{
+					System.out.println("entrou no if");
+					int operacao=1;
+					Thread t1 = new AnimaLista(operacao,lbl_cubo1, lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia, txt_num, selecionado, Lista, tamanho);
+				t1.start();
+				tamanho++;
+				}	
 			}
 		});
 		
