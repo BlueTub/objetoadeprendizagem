@@ -97,17 +97,17 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 	public void addInicio() {
 		if (cheia() == false) {
-			if(tamanho==0){
+			if (tamanho == 0) {
 				add(1);
-			}else{
+			} else {
 				movDireita(1);
 				add(1);
-				habilita(tamanho+1);
+				habilita(tamanho + 1);
 			}
-		}else{
+		} else {
 			System.out.println("Lista Cheia");
 		}
-		System.out.println("Tamanho="+tamanho);
+		System.out.println("Tamanho=" + tamanho);
 	}
 
 	private void habilita(int tamanho2) {
@@ -123,8 +123,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lbl_valor1.setBounds(posicao1);
 			lbl_valor1.setVisible(true);
-			
-		
+
 			break;
 		case 2:
 			posicao1 = lbl_valor2.getBounds();
@@ -134,9 +133,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor2.setBounds(posicao1);
-
 			lbl_valor2.setVisible(true);
-		
 			break;
 		case 3:
 			posicao1 = lbl_valor3.getBounds();
@@ -146,9 +143,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor3.setBounds(posicao1);
-
 			lbl_valor3.setVisible(true);
-			
 			break;
 		case 4:
 			posicao1 = lbl_valor4.getBounds();
@@ -159,7 +154,6 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lbl_valor4.setBounds(posicao1);
 			lbl_valor4.setVisible(true);
-			
 			break;
 		case 5:
 			posicao1 = lbl_valor5.getBounds();
@@ -170,7 +164,6 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lbl_valor5.setBounds(posicao1);
 			lbl_valor5.setVisible(true);
-			
 			break;
 		case 6:
 			posicao1 = lbl_valor6.getBounds();
@@ -181,24 +174,22 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lbl_valor6.setBounds(posicao1);
 			lbl_valor6.setVisible(true);
-			
 			break;
 		}
-		
 	}
 
 	/**
 	 * Adiciona no Final da lista
 	 */
 	public void addFinal() {
-
+		// TODO
 	}
 
 	/**
 	 * Remove o primeiro elemento da fila
 	 */
 	public void removeInicio() {
-
+		// TODO
 	}
 
 	/**
@@ -206,7 +197,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 
 	public void removeFinal() {
-
+		// TODO
 	}
 
 	/**
@@ -278,7 +269,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 			break;
 		case 2:
 			if (lista[1] != 0) {
-				
+
 				aux2 = lista[2];
 				lista[2] = lista[1];
 				aux1 = lista[3];
@@ -292,7 +283,6 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 				lbl_valor5.setText(Integer.toString(lista[4]));
 				lbl_valor4.setText(Integer.toString(lista[3]));
 				lbl_valor3.setText(Integer.toString(lista[2]));
-				
 
 			}
 			break;
@@ -417,8 +407,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[0] = Integer.parseInt(txt_num.getText());
 			lbl_valor1.setVisible(true);
-			
-		
+
 			break;
 		case 2:
 			posicao1 = lbl_valor2.getBounds();
@@ -432,7 +421,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[1] = Integer.parseInt(txt_num.getText());
 			lbl_valor2.setVisible(true);
-		
+
 			break;
 		case 3:
 			posicao1 = lbl_valor3.getBounds();
@@ -446,7 +435,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[2] = Integer.parseInt(txt_num.getText());
 			lbl_valor3.setVisible(true);
-			
+
 			break;
 		case 4:
 			posicao1 = lbl_valor4.getBounds();
@@ -460,7 +449,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[3] = Integer.parseInt(txt_num.getText());
 			lbl_valor4.setVisible(true);
-			
+
 			break;
 		case 5:
 			posicao1 = lbl_valor5.getBounds();
@@ -474,7 +463,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[4] = Integer.parseInt(txt_num.getText());
 			lbl_valor5.setVisible(true);
-			
+
 			break;
 		case 6:
 			posicao1 = lbl_valor6.getBounds();
@@ -488,7 +477,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lista[5] = Integer.parseInt(txt_num.getText());
 			lbl_valor6.setVisible(true);
-			
+
 			break;
 		}
 	}
