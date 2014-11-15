@@ -61,13 +61,15 @@ public class Frm_animaLista extends Telas {
 	private JButton button;
 	private JButton button_1;
 	private JTextField txt_num;
-	private int selecionado=0;
+	private int selecionado = 0;
 	private int[] Lista = { 0, 0, 0, 0, 0, 0 };
 	static int tamanho;
-/**
- * Launch
- * @param args
- */
+
+	/**
+	 * Launch
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -224,13 +226,14 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(btn_add);
 
 		btn_addfinal = new JButton("Adiciona Final");
+
 		btn_addfinal.setToolTipText("Adiciona um novo elemento no final");
 		btn_addfinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_addfinal.setBounds(459, 87, 123, 47);
 		contentPane.add(btn_addfinal);
 
 		JButton btn_addinicio = new JButton("Adiciona In\u00EDcio");
-		
+
 		btn_addinicio
 				.setToolTipText("Adiciona um novo elemento no In\u00EDcio");
 		btn_addinicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -288,7 +291,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2.png")));
-				selecionado=1;
+				selecionado = 1;
 			}
 		});
 
@@ -307,7 +310,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2.png")));
-				selecionado=2;
+				selecionado = 2;
 			}
 		});
 
@@ -326,7 +329,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2.png")));
-				selecionado=3;
+				selecionado = 3;
 			}
 		});
 
@@ -345,7 +348,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2.png")));
-				selecionado=4;
+				selecionado = 4;
 			}
 		});
 
@@ -364,7 +367,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2_select.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2.png")));
-				selecionado=5;
+				selecionado = 5;
 			}
 		});
 
@@ -383,7 +386,7 @@ public class Frm_animaLista extends Telas {
 						.getResource("/Imagens/Cubo2.png")));
 				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				selecionado=6;
+				selecionado = 6;
 			}
 		});
 
@@ -395,7 +398,7 @@ public class Frm_animaLista extends Telas {
 		JLabel lblDigiteOValor = new JLabel("Digite o valor");
 		lblDigiteOValor.setBounds(194, 295, 82, 14);
 		contentPane.add(lblDigiteOValor);
-		
+
 		final JLabel lbl_cheia = new JLabel("Lista Cheia");
 		lbl_cheia.setFont(new Font("Verdana", Font.PLAIN, 14));
 		lbl_cheia.setBounds(185, 214, 91, 25);
@@ -406,11 +409,11 @@ public class Frm_animaLista extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 727, 376);
 		contentPane.add(lbl_fundo);
-		
+
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		horizontalStrut.setBounds(10, 138, 415, 7);
 		contentPane.add(horizontalStrut);
-		
+
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);
 		lbl_valor3.setVisible(false);
@@ -421,16 +424,40 @@ public class Frm_animaLista extends Telas {
 		btn_addinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String ver = txt_num.getText();
-				System.out.println("Texto ver="+ver+".");
-				if(ver.matches("")||tamanho>=6){
+				System.out.println("Texto ver=" + ver + ".");
+				if (ver.matches("") || tamanho >= 6) {
 					System.out.println("digite número ou exedeu o tamanho");
-				}else{
+				} else {
 					System.out.println("entrou no if");
-					int operacao=1;
-					Thread t1 = new AnimaLista(operacao,lbl_cubo1, lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia, txt_num, selecionado, Lista, tamanho);
-				t1.start();
-				tamanho++;
-				}	
+					int operacao = 1;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho++;
+				}
+			}
+		});
+
+		btn_addfinal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String ver = txt_num.getText();
+				System.out.println("Texto ver=" + ver + ".");
+				if (ver.matches("") || tamanho >= 6) {
+					System.out.println("digite número ou exedeu o tamanho");
+				} else {
+					System.out.println("entrou no if");
+					int operacao = 2;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho++;
+				}
 			}
 		});
 	}
