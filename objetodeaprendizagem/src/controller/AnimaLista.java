@@ -157,7 +157,13 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 	@Override
 	public void removeElemento() {
-		// TODO Auto-generated method stub
+
+		desabilita(tamanho);
+		if (tamanho >= Selecionado) {
+			movEsquerda(Selecionado+1);
+		} else {
+			removeFinal();
+		}
 
 	}
 
@@ -198,7 +204,8 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 * Remove o primeiro elemento da fila
 	 */
 	public void removeInicio() {
-		// TODO
+		movEsquerda(2);
+		desabilita(tamanho);
 	}
 
 	/**
@@ -206,7 +213,8 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 */
 
 	public void removeFinal() {
-		// TODO
+		desabilita(tamanho);
+		lista[tamanho] = 0;
 	}
 
 	/**
@@ -254,7 +262,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		int aux2 = 0;
 
 		switch (elemento) {
-		
+
 		case 1:
 			aux1 = lista[1];
 			lista[1] = lista[0];
@@ -561,6 +569,33 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 			lbl_valor6.setBounds(posicao1);
 			lbl_valor6.setVisible(true);
+			break;
+		}
+	}
+
+	private void desabilita(int element) {
+
+		switch (element) {
+		case 1:
+			lbl_valor1.setVisible(false);
+			break;
+		case 2:
+			lbl_valor2.setVisible(false);
+			break;
+		case 3:
+			lbl_valor3.setVisible(false);
+			break;
+		case 4:
+			lbl_valor4.setVisible(false);
+			break;
+		case 5:
+			lbl_valor5.setVisible(false);
+			break;
+		case 6:
+			lbl_valor6.setVisible(false);
+			break;
+
+		default:
 			break;
 		}
 	}
