@@ -118,12 +118,12 @@ public class Frm_principal extends Telas {
 						});
 						btn_config
 								.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/config.png")));
-						btn_config.setBounds(590, 28, 62, 70);
+						btn_config.setBounds(594, 34, 54, 51);
 						contentPane.add(btn_config);
 		
 				JLabel lblConfig = new JLabel("Config");
 				lblConfig.setFont(new Font("Tahoma", Font.BOLD, 11));
-				lblConfig.setBounds(594, 96, 46, 14);
+				lblConfig.setBounds(604, 96, 46, 14);
 				contentPane.add(lblConfig);
 
 		JLabel lblSelecioneUmObjeto = new JLabel(
@@ -169,7 +169,7 @@ public class Frm_principal extends Telas {
 
 			}
 		});
-		btn_inicia.setBounds(526, 300, 83, 60);
+		btn_inicia.setBounds(526, 309, 83, 51);
 		contentPane.add(btn_inicia);
 		lbl_titulo.setVisible(false);
 		txt_descricao.setVisible(false);
@@ -230,6 +230,7 @@ public class Frm_principal extends Telas {
 						.getColor("InternalFrame.activeTitleGradient"));
 				panel.setLayout(null);
 				panel.setBounds(40, 83, 197, 307);
+				
 				contentPane.add(panel);
 				
 				final JLabel lbl_select = new JLabel("");
