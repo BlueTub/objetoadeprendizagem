@@ -60,7 +60,8 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 * Metodo de inicializada da thread
 	 */
 	public void run() {
-		// operações: 1=add inicio 2=add Final
+		// operações: 1=add inicio 2=add Final 3=add posição especifica
+		// 4=remove inicio 5=remove final 6= remove posição especifica
 
 		switch (operacao) {
 		case 1:
@@ -69,11 +70,23 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		case 2:
 			addFinal();
 			break;
+		case 3:
+			addElemento();
+			break;
+		case 4:
+			removeInicio();
+			break;
+		case 5:
+			removeFinal();
+			break;
+		case 6:
+			removeElemento();
+			break;
 		default:
-			System.out.println("Erro de implementação:"+operacao+" operação");
+			System.out.println("Erro de implementação:" + operacao
+					+ " operação");
 			break;
 		}
-		// TODO
 	}
 
 	/**
@@ -82,7 +95,60 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void addElemento() {
-		// TODO Auto-generated method stub
+		System.out.println("Selecionado=" + Selecionado);
+		switch (Selecionado) {
+		case 1:
+			movDireita(1);
+			add(1);
+			habilita(tamanho + 1);
+			break;
+		case 2:
+			if (lista[1] == 0) {
+				add(tamanho + 1);
+			} else {
+				movDireita(2);
+				add(2);
+				habilita(tamanho + 1);
+			}
+			break;
+		case 3:
+			if (lista[2] == 0) {
+				add(tamanho + 1);
+			} else {
+				movDireita(3);
+				add(3);
+				habilita(tamanho + 1);
+			}
+			break;
+		case 4:
+			if (lista[3] == 0) {
+				add(tamanho + 1);
+			} else {
+				movDireita(4);
+				add(4);
+				habilita(tamanho + 1);
+			}
+			break;
+		case 5:
+			if (lista[4] == 0) {
+				add(tamanho + 1);
+			} else {
+				movDireita(5);
+				add(5);
+				habilita(tamanho + 1);
+			}
+			break;
+		case 6:
+			if (lista[5] == 0) {
+				add(tamanho + 1);
+			} else {
+				add(6);
+				habilita(tamanho + 1);
+			}
+			break;
+		default:
+			break;
+		}
 
 	}
 
@@ -113,19 +179,17 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		System.out.println("Tamanho=" + tamanho);
 	}
 
-	
-
 	/**
 	 * Adiciona no Final da lista
 	 */
 	public void addFinal() {
-		if(cheia() == false){
-			if(tamanho == 0){
+		if (cheia() == false) {
+			if (tamanho == 0) {
 				add(1);
-			}else{
-				add(tamanho+1);
+			} else {
+				add(tamanho + 1);
 			}
-		}else{
+		} else {
 			System.out.println("Lista Cheia");
 		}
 	}
@@ -190,78 +254,71 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		int aux2 = 0;
 
 		switch (elemento) {
+		
 		case 1:
-			if (lista[0] != 0) {
+			aux1 = lista[1];
+			lista[1] = lista[0];
+			aux2 = lista[2];
+			lista[2] = aux1;
+			aux1 = lista[3];
+			lista[3] = aux2;
+			aux2 = lista[4];
+			lista[4] = aux1;
+			aux1 = lista[5];
+			lista[5] = aux2;
 
-				aux1 = lista[1];
-				lista[1] = lista[0];
-				aux2 = lista[2];
-				lista[2] = aux1;
-				aux1 = lista[3];
-				lista[3] = aux2;
-				aux2 = lista[4];
-				lista[4] = aux1;
-				aux1 = lista[5];
-				lista[5] = aux2;
+			lbl_valor6.setText(Integer.toString(lista[5]));
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor3.setText(Integer.toString(lista[2]));
+			lbl_valor2.setText(Integer.toString(lista[1]));
 
-				lbl_valor6.setText(Integer.toString(lista[5]));
-				lbl_valor5.setText(Integer.toString(lista[4]));
-				lbl_valor4.setText(Integer.toString(lista[3]));
-				lbl_valor3.setText(Integer.toString(lista[2]));
-				lbl_valor2.setText(Integer.toString(lista[1]));
-
-			}
 			break;
 		case 2:
-			if (lista[1] != 0) {
+			aux2 = lista[2];
+			lista[2] = lista[1];
+			aux1 = lista[3];
+			lista[3] = aux2;
+			aux2 = lista[4];
+			lista[4] = aux1;
+			aux1 = lista[5];
+			lista[5] = aux2;
 
-				aux2 = lista[2];
-				lista[2] = lista[1];
-				aux1 = lista[3];
-				lista[3] = aux2;
-				aux2 = lista[4];
-				lista[4] = aux1;
-				aux1 = lista[5];
-				lista[5] = aux2;
+			lbl_valor6.setText(Integer.toString(lista[5]));
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor3.setText(Integer.toString(lista[2]));
 
-				lbl_valor6.setText(Integer.toString(lista[5]));
-				lbl_valor5.setText(Integer.toString(lista[4]));
-				lbl_valor4.setText(Integer.toString(lista[3]));
-				lbl_valor3.setText(Integer.toString(lista[2]));
-
-			}
 			break;
 		case 3:
-			if (lista[3] != 0) {
-				aux1 = lista[3];
-				lista[3] = lista[2];
-				aux2 = lista[4];
-				lista[4] = aux1;
-				aux1 = lista[5];
-				lista[5] = aux2;
+			aux1 = lista[3];
+			lista[3] = lista[2];
+			aux2 = lista[4];
+			lista[4] = aux1;
+			aux1 = lista[5];
+			lista[5] = aux2;
 
-				lbl_valor6.setText(Integer.toString(lista[5]));
-				lbl_valor5.setText(Integer.toString(lista[4]));
-				lbl_valor4.setText(Integer.toString(lista[3]));
+			lbl_valor6.setText(Integer.toString(lista[5]));
+			lbl_valor5.setText(Integer.toString(lista[4]));
+			lbl_valor4.setText(Integer.toString(lista[3]));
 
-			}
+			System.out.println("[3]=" + lista[3] + "[4]=" + lista[4] + "[5]="
+					+ lista[5]);
+
 			break;
 		case 4:
-			if (lista[3] != 0) {
-				aux2 = lista[4];
-				lista[4] = lista[3];
-				aux1 = lista[5];
-				lista[5] = aux2;
-				lbl_valor6.setText(Integer.toString(lista[5]));
-				lbl_valor5.setText(Integer.toString(lista[4]));
+			aux2 = lista[4];
+			lista[4] = lista[3];
+			aux1 = lista[5];
+			lista[5] = aux2;
+			lbl_valor6.setText(Integer.toString(lista[5]));
+			lbl_valor5.setText(Integer.toString(lista[4]));
 
-			}
 			break;
 		case 5:
-			if (lista[4] != 0) {
-				lista[5] = lista[4];
-				lbl_valor6.setText(Integer.toString(lista[5]));
-			}
+			lista[5] = lista[4];
+			lbl_valor6.setText(Integer.toString(lista[5]));
+
 			break;
 		default:
 			System.out.println("Implementação incorreta, movDireita");
@@ -435,7 +492,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		lbl_valor5.setVisible(true);
 		lbl_valor6.setVisible(true);
 	}
-	
+
 	/**
 	 * 
 	 * @param tamanho2

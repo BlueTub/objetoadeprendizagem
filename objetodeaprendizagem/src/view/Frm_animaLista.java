@@ -23,7 +23,7 @@ import javax.swing.Box;
 /**
  * Formulario da animação da Lista
  * 
- * @author Zuzi
+ * @author Zuzi e Hury
  * 
  */
 @SuppressWarnings("serial")
@@ -201,6 +201,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(lblFuncionamentoDeUma);
 
 		btn_remove = new JButton("Remover");
+
 		btn_remove
 				.setToolTipText("Remove um elemento de uma posi\u00E7\u00E3o espec\u00EDfica");
 		btn_remove.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -208,18 +209,21 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(btn_remove);
 
 		btn_removefinal = new JButton("Remove Final");
+
 		btn_removefinal.setToolTipText("Remove um elemento do final");
 		btn_removefinal.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_removefinal.setBounds(588, 87, 123, 47);
 		contentPane.add(btn_removefinal);
 
 		btn_removeinicio = new JButton("Remove In\u00EDcio");
+
 		btn_removeinicio.setToolTipText("Remove um elemento do in\u00EDcio");
 		btn_removeinicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_removeinicio.setBounds(588, 36, 123, 47);
 		contentPane.add(btn_removeinicio);
 
 		btn_add = new JButton("Adicionar");
+
 		btn_add.setToolTipText("Adiciona um novo elemento em uma posi\u00E7\u00E3o espec\u00EDfica");
 		btn_add.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btn_add.setBounds(459, 139, 123, 47);
@@ -460,5 +464,44 @@ public class Frm_animaLista extends Telas {
 				}
 			}
 		});
+
+		btn_add.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String ver = txt_num.getText();
+				System.out.println("Texto ver=" + ver + ".");
+				if (ver.matches("") || tamanho >= 6 || selecionado==0) {
+					System.out.println("digite número ou exedeu o tamanho ou selecione um cubo");
+				} else {
+					System.out.println("entrou no if");
+					int operacao = 3;
+					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
+							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
+							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
+							selecionado, Lista, tamanho);
+					t1.start();
+					tamanho++;
+				}
+			}
+		});
+
+		btn_removeinicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+		});
+
+		btn_removefinal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+		});
+
+		btn_remove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+			}
+		});
+
 	}
 }
