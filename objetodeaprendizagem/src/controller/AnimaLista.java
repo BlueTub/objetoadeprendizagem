@@ -60,14 +60,17 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	 * Metodo de inicializada da thread
 	 */
 	public void run() {
-		// operações: 1=add inicio
+		// operações: 1=add inicio 2=add Final
 
 		switch (operacao) {
 		case 1:
 			addInicio();
 			break;
-
+		case 2:
+			addFinal();
+			break;
 		default:
+			System.out.println("Erro de implementação:"+operacao+" operação");
 			break;
 		}
 		// TODO
@@ -110,79 +113,21 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		System.out.println("Tamanho=" + tamanho);
 	}
 
-	private void habilita(int tamanho2) {
-		Rectangle posicao1;
-		Rectangle posicao2;
-		switch (tamanho2) {
-		case 1:
-			posicao1 = lbl_valor1.getBounds();
-			posicao2 = lbl_cubo1.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor1.setBounds(posicao1);
-			lbl_valor1.setVisible(true);
-
-			break;
-		case 2:
-			posicao1 = lbl_valor2.getBounds();
-			posicao2 = lbl_cubo2.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor2.setBounds(posicao1);
-			lbl_valor2.setVisible(true);
-			break;
-		case 3:
-			posicao1 = lbl_valor3.getBounds();
-			posicao2 = lbl_cubo3.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor3.setBounds(posicao1);
-			lbl_valor3.setVisible(true);
-			break;
-		case 4:
-			posicao1 = lbl_valor4.getBounds();
-			posicao2 = lbl_cubo4.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor4.setBounds(posicao1);
-			lbl_valor4.setVisible(true);
-			break;
-		case 5:
-			posicao1 = lbl_valor5.getBounds();
-			posicao2 = lbl_cubo5.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor5.setBounds(posicao1);
-			lbl_valor5.setVisible(true);
-			break;
-		case 6:
-			posicao1 = lbl_valor6.getBounds();
-			posicao2 = lbl_cubo6.getBounds();
-
-			posicao1.x = posicao2.x + 15;
-			posicao1.y = posicao2.y + 30;
-
-			lbl_valor6.setBounds(posicao1);
-			lbl_valor6.setVisible(true);
-			break;
-		}
-	}
+	
 
 	/**
 	 * Adiciona no Final da lista
 	 */
 	public void addFinal() {
-		// TODO
+		if(cheia() == false){
+			if(tamanho == 0){
+				add(1);
+			}else{
+				add(tamanho+1);
+			}
+		}else{
+			System.out.println("Lista Cheia");
+		}
 	}
 
 	/**
@@ -489,5 +434,77 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		lbl_valor4.setVisible(true);
 		lbl_valor5.setVisible(true);
 		lbl_valor6.setVisible(true);
+	}
+	
+	/**
+	 * 
+	 * @param tamanho2
+	 */
+	private void habilita(int tamanho2) {
+		Rectangle posicao1;
+		Rectangle posicao2;
+		switch (tamanho2) {
+		case 1:
+			posicao1 = lbl_valor1.getBounds();
+			posicao2 = lbl_cubo1.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor1.setBounds(posicao1);
+			lbl_valor1.setVisible(true);
+
+			break;
+		case 2:
+			posicao1 = lbl_valor2.getBounds();
+			posicao2 = lbl_cubo2.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor2.setBounds(posicao1);
+			lbl_valor2.setVisible(true);
+			break;
+		case 3:
+			posicao1 = lbl_valor3.getBounds();
+			posicao2 = lbl_cubo3.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor3.setBounds(posicao1);
+			lbl_valor3.setVisible(true);
+			break;
+		case 4:
+			posicao1 = lbl_valor4.getBounds();
+			posicao2 = lbl_cubo4.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor4.setBounds(posicao1);
+			lbl_valor4.setVisible(true);
+			break;
+		case 5:
+			posicao1 = lbl_valor5.getBounds();
+			posicao2 = lbl_cubo5.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor5.setBounds(posicao1);
+			lbl_valor5.setVisible(true);
+			break;
+		case 6:
+			posicao1 = lbl_valor6.getBounds();
+			posicao2 = lbl_cubo6.getBounds();
+
+			posicao1.x = posicao2.x + 15;
+			posicao1.y = posicao2.y + 30;
+
+			lbl_valor6.setBounds(posicao1);
+			lbl_valor6.setVisible(true);
+			break;
+		}
 	}
 }
