@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.Box;
@@ -25,6 +26,7 @@ import javax.swing.border.EmptyBorder;
 import Entity.Configuracao_e;
 import controller.Configuracao;
 import controller.LerConfuguracao;
+import controller.Linguagem_c;
 import controller.Telas;
 import javax.swing.SwingConstants;
 
@@ -167,6 +169,10 @@ public class Frm_config extends Telas {
 		btnAplicar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnAplicar.setToolTipText("Alterar as configurações");
 		
+		final JComboBox cb_linguagem = new JComboBox();
+		cb_linguagem.setBounds(234, 138, 155, 20);
+		contentPane.add(cb_linguagem);
+		
 		btnAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int resp;
@@ -174,7 +180,7 @@ public class Frm_config extends Telas {
 				resp=JOptionPane.showOptionDialog(null, "Deseja realmente alterar o estilo","Alteração de estilo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, 
 		                options, options[0]);
 				if(resp==0){
-					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte());
+					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte(),(String) cb_linguagem.getSelectedItem());
 					config.geraArquivo();
 				}
 				Configuracao_e dados=new Configuracao_e();
@@ -186,17 +192,13 @@ public class Frm_config extends Telas {
 				}
 			    look=dados.getLook();
 			    tamanhofonte=dados.getFonte();
+			    linguagem=dados.getLinguagem();
 			    Estilo();
 			}
 		});
 		btnAplicar.setBounds(300, 260, 89, 36);
 		contentPane.add(btnAplicar);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {
-				"Portugu\u00EAs - BR", "English" }));
-		comboBox.setBounds(234, 138, 155, 20);
-		contentPane.add(comboBox);
 
 		JLabel lblNewLabel_2 = new JLabel("Linguagem");
 		lblNewLabel_2.setFont(new  Font("Tahoma",Font.PLAIN,tamanhofonte));
@@ -208,6 +210,16 @@ public class Frm_config extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 487, 341);
 		contentPane.add(lbl_fundo);
+
+		//TODO
+		//LINGUAGEM, passa os arquivos do diretorio para o cb_linguagem.
+		Linguagem_c lang = new Linguagem_c();
+		int qtde = lang.qtdeDir();
+		File[] vet = lang.diretorio();
+		for(File f:vet){
+			System.out.println(f.getName());
+			cb_linguagem.addItem(f.getName());
+		}
 	}
 	
 	/**
@@ -249,6 +261,7 @@ public class Frm_config extends Telas {
 		if(look.equals("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel")){
 			combo.setSelectedIndex(4);
 		}
+		
 	}
 
 	/**
@@ -268,4 +281,6 @@ public class Frm_config extends Telas {
 		}
 		return Fonte;
 	}
+	
+
 }

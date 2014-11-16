@@ -10,18 +10,19 @@ import javax.swing.JLabel;
 public class Linguagem_e {
 
 	private JLabel label;
-	private int Linguagem;
-
+	private int linguagem;
+    private int formulario;
 	/**
 	 * Construtor
 	 * 
 	 * @param label
 	 * @param linguagem
 	 */
-	public Linguagem_e(JLabel label, int linguagem) {
+	public Linguagem_e(JLabel label, int linguagem, int formulario) {
 		super();
 		this.label = label;
-		Linguagem = linguagem;
+		this.linguagem = linguagem;
+		this.formulario = formulario;
 	}
 
 	/**
@@ -43,7 +44,7 @@ public class Linguagem_e {
 	 * @return the linguagem
 	 */
 	public int getLinguagem() {
-		return Linguagem;
+		return linguagem;
 	}
 
 	/**
@@ -51,7 +52,22 @@ public class Linguagem_e {
 	 *            the linguagem to set
 	 */
 	public void setLinguagem(int linguagem) {
-		Linguagem = linguagem;
+		this.linguagem = linguagem;
 	}
+
+	/**
+	 * @return the formulario
+	 */
+	public int getFormulario() {
+		return formulario;
+	}
+
+	/**
+	 * @param formulario the formulario to set
+	 */
+	public void setFormulario(int formulario) {
+		this.formulario = formulario;
+	}
+	
 
 }

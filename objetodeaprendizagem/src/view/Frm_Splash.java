@@ -102,6 +102,8 @@ public class Frm_Splash extends Telas {
 
 		Configuracao_e dados = new Configuracao_e();
 		LerConfuguracao ler = new LerConfuguracao();
+		
+		
 		try {
 			ler.ler(dados);
 		} catch (IOException e) {
@@ -113,6 +115,7 @@ public class Frm_Splash extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
+		linguagem();
 		
 		JLabel cuboAzul = new JLabel("");
 		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class
