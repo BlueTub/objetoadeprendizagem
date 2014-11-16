@@ -15,8 +15,10 @@ import javax.swing.UIManager;
  */
 @SuppressWarnings("serial")
 public abstract class Telas extends JFrame {
+	
 	protected static String look="javax.swing.plaf.nimbus.NimbusLookAndFeel";
 	protected static int tamanhofonte=16;
+	protected static String linguagem="portugues-br.txt";
 	
 	/**
 	 * Método que altera o icone das telas
@@ -54,6 +56,15 @@ public abstract class Telas extends JFrame {
 			} catch (Exception e) {
 				System.out.println(e);
 			}		  
+	  }
+	  
+	  public void linguagem(){
+		  try {
+			Linguagem_c lg = new Linguagem_c();
+			//lg.diretorio();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	  }
 
 }

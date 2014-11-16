@@ -20,6 +20,7 @@ public class Configuracao {
 	private int OpcEstilo;
 	private String look;
 	private int Fonte;
+	private String lingua;
 
 	/**
 	 * Construtor
@@ -29,9 +30,10 @@ public class Configuracao {
 	 * @param Fonte
 	 *            recebe a seleção do usuário
 	 */
-	public Configuracao(int OpcEstilo, int Fonte) {
+	public Configuracao(int OpcEstilo, int Fonte, String lingua) {
 		this.OpcEstilo = OpcEstilo;
 		this.Fonte = Fonte;
+		this.lingua = lingua;
 	}
 
 	/**
@@ -64,6 +66,7 @@ public class Configuracao {
 		Configuracao_e dados = new Configuracao_e();
 		dados.setFonte(Fonte);
 		dados.setLook(look);
+		dados.setLinguagem(lingua);
 		StringBuffer sb = new StringBuffer();
 		sb.append("src");
 		sb.append(File.separator);
@@ -83,6 +86,8 @@ public class Configuracao {
 				sbTexto.append(dados.getFonte());
 				sbTexto.append("\r\n");
 				sbTexto.append(dados.getLook());
+				sbTexto.append("\r\n");
+				sbTexto.append(dados.getLinguagem());
 				escreveArquivo.write(sbTexto.toString());
 				escreveArquivo.flush();
 				escreveArquivo.close();
