@@ -20,6 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.JEditorPane;
 
 /**
  * Formulario da animação da Lista
@@ -65,6 +66,8 @@ public class Frm_animaLista extends Telas {
 	private int selecionado = 0;
 	private int[] Lista = { 0, 0, 0, 0, 0, 0 };
 	private int tamanho;
+	private JLabel lblA;
+	private JLabel lbl_vazia;
 
 	/**
 	 * Launch
@@ -411,37 +414,62 @@ public class Frm_animaLista extends Telas {
 		});
 
 		txt_num = new JTextField();
-		txt_num.setBounds(184, 234, 111, 25);
+		txt_num.setBounds(165, 198, 111, 25);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
-		JLabel lblDigiteOValor = new JLabel("Digite o valor");
+		JLabel lblDigiteOValor = new JLabel("Valor a ser adicionado*.");
 		lblDigiteOValor.setFont(new Font("Verdana", Font.BOLD, 14));
-		lblDigiteOValor.setBounds(175, 264, 130, 25);
+		lblDigiteOValor.setBounds(129, 227, 226, 25);
 		contentPane.add(lblDigiteOValor);
 
-		final JLabel lbl_cheia = new JLabel("Lista Cheia");
-		lbl_cheia.setFont(new Font("Verdana", Font.PLAIN, 14));
-		lbl_cheia.setBounds(185, 320, 91, 25);
+		final JLabel lbl_cheia = new JLabel("Lista Cheia!");
+		lbl_cheia.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_cheia.setBounds(536, 227, 97, 25);
 		contentPane.add(lbl_cheia);
 
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		horizontalStrut.setBounds(10, 138, 415, 7);
 		contentPane.add(horizontalStrut);
-		
+
 		JLabel lblNewLabel = new JLabel("Add em uma posi\u00E7\u00E3o");
-		lblNewLabel.setBounds(471, 189, 111, 14);
+		lblNewLabel.setBounds(459, 189, 123, 14);
 		contentPane.add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Del em uma posi\u00E7\u00E3o");
-		lblNewLabel_1.setBounds(598, 189, 102, 14);
+		lblNewLabel_1.setBounds(588, 189, 123, 14);
 		contentPane.add(lblNewLabel_1);
-		
-				lbl_fundo = new JLabel("");
-				lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
-						.getResource("/Imagens/BackGround.png")));
-				lbl_fundo.setBounds(0, 0, 727, 376);
-				contentPane.add(lbl_fundo);
+
+		JLabel lblDicaVocw = new JLabel(
+				"Dica: Voc\u00EA pode selecionar uma posi\u00E7\u00E3o clicando sobre o cubo.");
+		lblDicaVocw.setBounds(10, 345, 385, 19);
+		contentPane.add(lblDicaVocw);
+
+		JLabel lblTamanho = new JLabel("Tamanho =");
+		lblTamanho.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTamanho.setBounds(10, 156, 65, 14);
+		contentPane.add(lblTamanho);
+
+		final JLabel lbl_tamanho = new JLabel("0");
+		lbl_tamanho.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lbl_tamanho.setBounds(80, 156, 19, 14);
+		contentPane.add(lbl_tamanho);
+
+		lblA = new JLabel("*1 a 99.");
+		lblA.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblA.setBounds(286, 203, 46, 14);
+		contentPane.add(lblA);
+
+		lbl_vazia = new JLabel("Lista Vazia!");
+		lbl_vazia.setFont(new Font("Verdana", Font.BOLD, 14));
+		lbl_vazia.setBounds(536, 214, 93, 19);
+		contentPane.add(lbl_vazia);
+
+		lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
+				.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 727, 376);
+		contentPane.add(lbl_fundo);
 
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);
@@ -455,10 +483,12 @@ public class Frm_animaLista extends Telas {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (tamanho >= 6) {
-					JOptionPane.showMessageDialog(null, "Cheia");
+
+					lbl_cheia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
+					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 1;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -468,6 +498,10 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho++;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho>=6){
+					lbl_cheia.setVisible(true);
+					}
 				}
 			}
 		});
@@ -475,10 +509,12 @@ public class Frm_animaLista extends Telas {
 		btn_addfinal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho >= 6) {
-					JOptionPane.showMessageDialog(null, "Cheia");
+
+					lbl_cheia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
+					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 2;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -488,6 +524,10 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho++;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho>=6){
+					lbl_cheia.setVisible(true);
+					}
 				}
 			}
 		});
@@ -495,13 +535,14 @@ public class Frm_animaLista extends Telas {
 		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho >= 6) {
-					JOptionPane.showMessageDialog(null, "Cheia");
+					lbl_cheia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 
 				} else if (selecionado == 0) {
 					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				} else {
+					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 3;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -511,6 +552,10 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho++;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho>=6){
+					lbl_cheia.setVisible(true);
+					}
 				}
 			}
 		});
@@ -518,10 +563,11 @@ public class Frm_animaLista extends Telas {
 		btn_removeinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
-					JOptionPane.showMessageDialog(null, "Vazia");
+					lbl_vazia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
+					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 4;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -531,6 +577,10 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho--;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho==0){
+					lbl_vazia.setVisible(true);
+					}
 				}
 			}
 		});
@@ -538,10 +588,11 @@ public class Frm_animaLista extends Telas {
 		btn_removefinal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
-					JOptionPane.showMessageDialog(null, "Vazia");
+					lbl_vazia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
+					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 5;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -551,6 +602,10 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho--;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho==0){
+					lbl_vazia.setVisible(true);
+					}
 				}
 			}
 		});
@@ -558,12 +613,13 @@ public class Frm_animaLista extends Telas {
 		btn_remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
-					JOptionPane.showMessageDialog(null, "Vazia");
+					lbl_vazia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else if (selecionado == 0) {
 					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				} else {
+					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 6;
 					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
@@ -573,9 +629,14 @@ public class Frm_animaLista extends Telas {
 							selecionado, Lista, tamanho);
 					t1.start();
 					tamanho--;
+					lbl_tamanho.setText(Integer.toString(tamanho));
+					if(tamanho==0){
+					lbl_vazia.setVisible(true);
+					}
 				}
 			}
 		});
 
 	}
+
 }

@@ -75,7 +75,7 @@ public class Frm_animaArvore extends Telas {
 	public Frm_animaArvore() {
 		setTitle("Anima\u00E7\u00E3o - Arvore Bin\u00E1ria");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 656, 439);
+		setBounds(100, 100, 695, 473);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -85,102 +85,103 @@ public class Frm_animaArvore extends Telas {
 		Estilo();
 		iconeBarra();
 
-		JLabel lblElementoASer = new JLabel("Elemento a ser adicionado");
-		lblElementoASer.setBounds(82, 362, 154, 14);
+		JLabel lblElementoASer = new JLabel("Valor a ser adicionado.");
+		lblElementoASer.setFont(new Font("Verdana", Font.BOLD, 14));
+		lblElementoASer.setBounds(134, 376, 237, 23);
 		contentPane.add(lblElementoASer);
 
-		JLabel lbl_titulo = new JLabel("Arvore Binaria");
-		lbl_titulo.setFont(new Font("Verdana", Font.BOLD, 14));
-		lbl_titulo.setBounds(31, 11, 121, 23);
+		JLabel lbl_titulo = new JLabel("Arvore Bin\u00E1ria");
+		lbl_titulo.setFont(new Font("Verdana", Font.BOLD, 16));
+		lbl_titulo.setBounds(31, 11, 162, 23);
 		contentPane.add(lbl_titulo);
 
 		final JLabel lbl_valor1 = new JLabel("New label");
 		lbl_valor1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor1.setBounds(429, 40, 46, 14);
+		lbl_valor1.setBounds(584, 17, 46, 14);
 		contentPane.add(lbl_valor1);
 
 		final JLabel lbl_valor2 = new JLabel("New label");
 		lbl_valor2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor2.setBounds(429, 59, 46, 14);
+		lbl_valor2.setBounds(584, 20, 46, 14);
 		contentPane.add(lbl_valor2);
 
 		final JLabel lbl_valor3 = new JLabel("New label");
 		lbl_valor3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor3.setBounds(429, 84, 46, 14);
+		lbl_valor3.setBounds(584, 20, 46, 14);
 		contentPane.add(lbl_valor3);
 
 		final JLabel lbl_valor4 = new JLabel("New label");
 		lbl_valor4.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor4.setBounds(429, 105, 46, 14);
+		lbl_valor4.setBounds(584, 20, 46, 14);
 		contentPane.add(lbl_valor4);
 
 		final JLabel lbl_valor5 = new JLabel("New label");
 		lbl_valor5.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor5.setBounds(493, 40, 46, 14);
+		lbl_valor5.setBounds(584, 17, 46, 14);
 		contentPane.add(lbl_valor5);
 
 		final JLabel lbl_valor6 = new JLabel("New label");
 		lbl_valor6.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor6.setBounds(493, 71, 46, 14);
+		lbl_valor6.setBounds(584, 20, 46, 14);
 		contentPane.add(lbl_valor6);
 
 		final JLabel lbl_valor7 = new JLabel("New label");
 		lbl_valor7.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lbl_valor7.setBounds(493, 105, 46, 14);
+		lbl_valor7.setBounds(584, 20, 46, 14);
 		contentPane.add(lbl_valor7);
 
 		final JLabel lbl_cubo1 = new JLabel("");
 
 		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo1.setBounds(268, 59, 60, 60);
+		lbl_cubo1.setBounds(311, 45, 60, 60);
 		contentPane.add(lbl_cubo1);
 
 		final JLabel lbl_cubo2 = new JLabel("");
 
 		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo2.setBounds(123, 132, 60, 60);
+		lbl_cubo2.setBounds(166, 118, 60, 60);
 		contentPane.add(lbl_cubo2);
 
 		final JLabel lbl_cubo3 = new JLabel("");
 
 		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo3.setBounds(415, 132, 60, 60);
+		lbl_cubo3.setBounds(458, 118, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
 
 		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo4.setBounds(53, 235, 60, 60);
+		lbl_cubo4.setBounds(96, 221, 60, 60);
 		contentPane.add(lbl_cubo4);
 
 		final JLabel lbl_cubo5 = new JLabel("");
 
 		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo5.setBounds(186, 235, 60, 60);
+		lbl_cubo5.setBounds(229, 221, 60, 60);
 		contentPane.add(lbl_cubo5);
 
 		final JLabel lbl_cubo6 = new JLabel("");
 
 		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo6.setBounds(352, 235, 60, 60);
+		lbl_cubo6.setBounds(395, 221, 60, 60);
 		contentPane.add(lbl_cubo6);
 
 		final JLabel lbl_cubo7 = new JLabel("");
 
 		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo7.setBounds(479, 235, 60, 60);
+		lbl_cubo7.setBounds(522, 221, 60, 60);
 		contentPane.add(lbl_cubo7);
 
 		txt_num = new JTextField();
 
-		txt_num.setBounds(112, 320, 86, 32);
+		txt_num.setBounds(185, 356, 86, 23);
 		contentPane.add(txt_num);
 		txt_num.setColumns(10);
 
@@ -232,10 +233,10 @@ public class Frm_animaArvore extends Telas {
 			}
 		});
 
-		btn_remove.setBounds(323, 322, 89, 29);
+		btn_remove.setBounds(86, 316, 89, 29);
 		contentPane.add(btn_remove);
 
-		btn_adiciona.setBounds(224, 322, 89, 29);
+		btn_adiciona.setBounds(185, 316, 89, 29);
 		contentPane.add(btn_adiciona);
 
 		JLabel lblProfundidade = new JLabel("Profundidade 2");
@@ -252,18 +253,22 @@ public class Frm_animaArvore extends Telas {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(419, 356, 89, 33);
+		btnNewButton.setBounds(470, 373, 89, 33);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Questionario");
-		btnNewButton_1.setBounds(518, 356, 100, 33);
+		btnNewButton_1.setBounds(569, 373, 100, 33);
 		contentPane.add(btnNewButton_1);
-		
-				JLabel lbl_fundo = new JLabel("");
-				lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-						.getResource("/Imagens/BackGround.png")));
-				lbl_fundo.setBounds(0, 0, 640, 400);
-				contentPane.add(lbl_fundo);
+				
+				JLabel label = new JLabel("Dica: Voc\u00EA pode selecionar uma posi\u00E7\u00E3o clicando sobre o cubo.");
+				label.setBounds(10, 404, 385, 19);
+				contentPane.add(label);
+				
+						JLabel lbl_fundo = new JLabel("");
+						lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+								.getResource("/Imagens/BackGround.png")));
+						lbl_fundo.setBounds(0, 0, 679, 434);
+						contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
 			@Override
