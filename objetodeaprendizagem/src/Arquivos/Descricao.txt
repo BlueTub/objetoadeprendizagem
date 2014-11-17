@@ -17,7 +17,7 @@ A característica fundamental de uma lista é sua organização unidimensional, que 
 Uso: LISTA lIGADA
 A Lista é uma estrutura de dados de média compreensão.
 3
-Árvores são estruturas recursivas, ou seja, removendo a raiz de uma árvore, obtemos uma coleção de árvores. Cada nó de uma árvore é raiz de uma subárvore.
+Árvores são estruturas recursivas, ou seja, removendo a raiz de uma árvore, obtemos uma coleção de árvores. Cada nó de uma árvore é raiz de uma subárvore.Para Adicionar um elemento em uma arvore devemos comparar se ele é maior ou menor que sua raiz. Se o numero for maior ele deverá ir para direita, se for menor deverá ir para esquerda. Para Remover um elemeto de uma arvore devemos observar seus filhos (nós descendentes). Se não existir filhos é só remover o elemento, se existir, o elemento removido será substituido ou pelo menor elemento da subarvore da direita ou pelo maior da subarvore da esquerda.
 Árvore é uma estrutura de dados que permite organizar dados de forma hierárquica.
 Árvore é uma estrutura hierárquica composta por nós.
 Um de seus usos é gerador de índices remissivos.
