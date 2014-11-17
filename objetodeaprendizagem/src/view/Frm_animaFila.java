@@ -19,6 +19,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 /**
  * Formulario da animação da fila
  * @author Zuzi
@@ -63,6 +65,9 @@ public class Frm_animaFila extends Telas {
 	private JLabel[] v_label;
 	@SuppressWarnings("unused")
 	private JLabel[] c_label;
+	private JTextField tf_num;
+	private JLabel label_8;
+	private JLabel label_9;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -158,9 +163,25 @@ public class Frm_animaFila extends Telas {
 		
 		lblFilaCheia = new JLabel("Fila Cheia!!");
 		lblFilaCheia.setVisible(false);
+		
+		label_9 = new JLabel("*1 a 99.");
+		label_9.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		label_9.setBounds(424, 259, 46, 14);
+		contentPane.add(label_9);
+		
+		label_8 = new JLabel("Valor a ser adicionado*.");
+		label_8.setFont(new Font("Verdana", Font.BOLD, 14));
+		label_8.setBounds(211, 231, 226, 25);
+		contentPane.add(label_8);
+		
+		tf_num = new JTextField();
+		tf_num.setFont(new Font("Tahoma", Font.BOLD, 16));
+		tf_num.setColumns(10);
+		tf_num.setBounds(408, 227, 75, 33);
+		contentPane.add(tf_num);
 		lblFilaCheia.setForeground(Color.DARK_GRAY);
 		lblFilaCheia.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		lblFilaCheia.setBounds(110, 199, 137, 31);
+		lblFilaCheia.setBounds(100, 189, 137, 31);
 		contentPane.add(lblFilaCheia);
 		
 		JLabel label_7 = new JLabel("5");
@@ -354,19 +375,30 @@ public class Frm_animaFila extends Telas {
 	 * @param btnRemover
 	 */
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
-		
+		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
+			JOptionPane.showMessageDialog(null, "Digite Números");
+		}else{
+		if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
+			JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+					JOptionPane.INFORMATION_MESSAGE);
+			tf_num.setText("");
+		}else{
 		btnAdicionar.setEnabled(false);
 		btnRemover.setEnabled(false);
 		
 		fila[add] = elementos[add];
+		fila[add].setText(tf_num.getText());
 		Thread t1 = new AnimacaoFila(fila[add], btnAdicionar, btnRemover, x, cont,lblFilaCheia,condiçao);
 		t1.start();
+		tf_num.setText("");
 		add++;
 		cont++;
 		x -= 5;
 
 		if (add == 6) {
 			add = 0;
+		}
+		}
 		}
 	}
 	/**
