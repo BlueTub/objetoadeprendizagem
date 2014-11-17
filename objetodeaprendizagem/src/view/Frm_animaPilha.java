@@ -104,6 +104,7 @@ public class Frm_animaPilha extends Telas {
 		menuBar.add(mnArquivo);
 		
 		JMenuItem mntmMenuPrincipal = new JMenuItem("Menu Principal");
+		mntmMenuPrincipal.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/home.png")));
 		mntmMenuPrincipal.setAction(action);
 		mnArquivo.add(mntmMenuPrincipal);
 		contentPane = new JPanel();
