@@ -149,6 +149,13 @@ public class Frm_animaFila extends Telas {
 		menuBar.add(mnSobre);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Detalhes");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_sobre sobre = new Frm_sobre();
+				sobre.setVisible(true);
+				
+			}
+		});
 		mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/about-people.png")));
 		mnSobre.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
