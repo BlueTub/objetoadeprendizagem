@@ -142,7 +142,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 				}
 
 			}
-			
+
 		} else {
 			System.out.println("numero repetido");
 		}
@@ -280,7 +280,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	@Override
 	public void removeElemento() {
-	//	int aux;
+		// int aux;
 		// int removido;
 		switch (selecionado) {
 		case 1:
@@ -350,10 +350,20 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 				}
 			} else if (arvore[1] == 0 && arvore[2] != 0) {
-				arvore[0] = arvore[2];
-				arvore[2] = 0;
-				lbl_valor1.setText(Integer.toString(arvore[0]));
-				lbl_valor3.setVisible(false);
+				if (arvore[5] == 0 && arvore[6] == 0 || arvore[5] == 0
+						&& arvore[6] != 0) {
+					arvore[0] = arvore[2];
+					arvore[2] = 0;
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor3.setVisible(false);
+				} else if (arvore[5] != 0 && arvore[6] != 0 || arvore[5] != 0
+						&& arvore[6] == 0) {
+					arvore[0] = arvore[5];
+					arvore[5]=0;
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor6.setVisible(false);
+
+				}
 			}
 
 			break;
