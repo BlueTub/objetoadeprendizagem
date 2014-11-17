@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import controller.AbreDoc;
 import controller.AnimacaoFila;
 import controller.MexerFila;
 import controller.Telas;
@@ -129,6 +131,26 @@ public class Frm_animaFila extends Telas {
 
 		mntmFechar.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/close.png")));
 		mnArquivo.add(mntmFechar);
+		
+		JMenu mnNewMenu = new JMenu("Ajuda");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Manual");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AbreDoc doc = new AbreDoc();
+				doc.AbreManual();
+			}
+		});
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/manual.png")));
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenu mnSobre = new JMenu("Sobre");
+		menuBar.add(mnSobre);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Detalhes");
+		mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaFila.class.getResource("/Imagens/about-people.png")));
+		mnSobre.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
