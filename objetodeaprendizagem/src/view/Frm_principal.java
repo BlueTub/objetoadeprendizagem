@@ -310,8 +310,8 @@ public class Frm_principal extends Telas {
 												panel.add(btn_lista);
 												
 														JLabel lblNewLabel = new JLabel("Selecione");
-														lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-														lblNewLabel.setBounds(60, 7, 67, 14);
+														lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+														lblNewLabel.setBounds(60, 7, 89, 14);
 														panel.add(lblNewLabel);
 														
 														JButton btn_arvore = new JButton("Árvore Bin\u00E1ria");

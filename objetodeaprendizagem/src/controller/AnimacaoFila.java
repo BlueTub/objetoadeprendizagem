@@ -44,6 +44,10 @@ public class AnimacaoFila extends Thread implements OperacaoAnimacao {
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
+		if (Integer.parseInt(lbl_valor.getText()) < 10) {
+			posiçao.x += 5;
+		}
+		
 		for (int i = 0; i < x; i++) {
 			posiçao.x -= 9;
 			lbl_valor.setBounds(posiçao);
