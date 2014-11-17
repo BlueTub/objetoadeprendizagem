@@ -17,7 +17,10 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JOptionPane;
+
 import controller.Telas;
+import javax.swing.JTextField;
 /**
  * Formulario da animação da Pilha
  * @author Zuzi
@@ -63,6 +66,7 @@ public class Frm_animaPilha extends Telas {
 	private JLabel lblFuncionamentoDeUma;
 	private JLabel lblPilhaCheia;
 	private boolean condiçao;
+	private JTextField tf_num;
 	/**
 	 * Launch the application.
 	 */
@@ -112,9 +116,24 @@ public class Frm_animaPilha extends Telas {
 		
 		lblPilhaCheia = new JLabel("Pilha Cheia!!");
 		lblPilhaCheia.setVisible(false);
+		
+		JLabel label_1 = new JLabel("*1 a 99.");
+		label_1.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		label_1.setBounds(255, 221, 46, 14);
+		contentPane.add(label_1);
+		
+		JLabel label = new JLabel("Valor a ser adicionado*.");
+		label.setFont(new Font("Verdana", Font.BOLD, 14));
+		label.setBounds(347, 185, 226, 25);
+		contentPane.add(label);
+		
+		tf_num = new JTextField();
+		tf_num.setColumns(10);
+		tf_num.setBounds(226, 187, 111, 25);
+		contentPane.add(tf_num);
 		lblPilhaCheia.setForeground(Color.DARK_GRAY);
 		lblPilhaCheia.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		lblPilhaCheia.setBounds(226, 221, 169, 33);
+		lblPilhaCheia.setBounds(226, 280, 169, 33);
 		contentPane.add(lblPilhaCheia);
 		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor10.setForeground(Color.BLACK);
@@ -385,13 +404,15 @@ public class Frm_animaPilha extends Telas {
 	 * @param btnRemover ficara false quando a animaçao estiver em execuçao
 	 */ 
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
-		btnAdicionar.setEnabled(false);
-		btnRemover.setEnabled(false);
-		CarregaThread();
-		
-		
-		for (int i = z; i < vtEmpilhado.length - n; i++) {
+		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
+			JOptionPane.showMessageDialog(null, "Digite Números");
+		}else{
+			btnAdicionar.setEnabled(false);
+			btnRemover.setEnabled(false);
+			CarregaThread();
+			for (int i = z; i < vtEmpilhado.length - n; i++) {
 			vtEmpilhado[i] = vtDesempilhado[i];
+			vtDesempilhado[i].setText(tf_num.getText());
 			vtDesempilhado[i] = null;
 			vtIniciar[i].start();
 		}
@@ -399,6 +420,7 @@ public class Frm_animaPilha extends Telas {
 		n -=1;
 		z +=1;
 		cont++;
+		}
 	}
 	
 	/**
