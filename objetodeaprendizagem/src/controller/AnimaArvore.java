@@ -350,8 +350,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 				}
 			} else if (arvore[1] == 0 && arvore[2] != 0) {
-				if (arvore[5] == 0 && arvore[6] == 0 || arvore[5] == 0
-						&& arvore[6] != 0) {
+				if (arvore[5] == 0 && arvore[6] == 0) {
 					arvore[0] = arvore[2];
 					arvore[2] = 0;
 					lbl_valor1.setText(Integer.toString(arvore[0]));
@@ -363,6 +362,13 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 					lbl_valor1.setText(Integer.toString(arvore[0]));
 					lbl_valor6.setVisible(false);
 
+				} else if(arvore[5]==0  && arvore[6]!=0){
+					arvore[0] = arvore[2];
+					arvore[2] = arvore[6];
+					arvore[6] = 0;
+					lbl_valor1.setText(Integer.toString(arvore[0]));
+					lbl_valor3.setText(Integer.toString(arvore[2]));
+					lbl_valor7.setVisible(false);
 				}
 			}
 
