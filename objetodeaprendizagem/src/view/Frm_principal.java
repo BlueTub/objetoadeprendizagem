@@ -117,7 +117,7 @@ public class Frm_principal extends Telas {
 						});
 						btn_config
 								.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/config.png")));
-						btn_config.setBounds(594, 34, 54, 51);
+						btn_config.setBounds(594, 28, 58, 57);
 						contentPane.add(btn_config);
 		
 				JLabel lblConfig = new JLabel("Config");
@@ -337,6 +337,11 @@ public class Frm_principal extends Telas {
 														btn_arvore.setFont(new Font("Tahoma", Font.PLAIN, 14));
 														btn_arvore.setBounds(29, 233, 120, 56);
 														panel.add(btn_arvore);
+																		
+																		JLabel lbl_fundo2 = new JLabel("");
+																		lbl_fundo2.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
+																		lbl_fundo2.setBounds(0, 0, 197, 307);
+																		panel.add(lbl_fundo2);
 																
 
 																

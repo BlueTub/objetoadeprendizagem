@@ -22,6 +22,7 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
+import java.awt.Color;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -126,6 +127,7 @@ public class Frm_descricao extends Telas {
 			e1.printStackTrace();
 		}
 		JPanel painel = new JPanel();
+		painel.setBackground(new Color(153, 204, 255));
 		painel.setBounds(30, 68, 531, 230);
 		contentPane.add(painel);
 		painel.setLayout(null);

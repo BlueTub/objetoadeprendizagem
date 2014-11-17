@@ -85,7 +85,7 @@ public class Frm_Perguntas extends Telas {
 		
 		JPanel painel = new JPanel();
 		painel.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
-		painel.setBounds(10, 53, 594, 286);
+		painel.setBounds(10, 72, 594, 286);
 		contentPane.add(painel);
 		painel.setLayout(null);
 		
@@ -98,7 +98,7 @@ public class Frm_Perguntas extends Telas {
 		JRadioButton rdbtnPergunta2 = new JRadioButton("pergunta 2");
 		rdbtnPergunta2.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		rdbtnPergunta2.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
-		rdbtnPergunta2.setBounds(6, 127, 582, 23);
+		rdbtnPergunta2.setBounds(6, 127, 588, 23);
 		painel.add(rdbtnPergunta2);
 		
 		JRadioButton rdbtnPergunta3 = new JRadioButton("pergunta 3");
@@ -135,7 +135,7 @@ public class Frm_Perguntas extends Telas {
 		btnProximo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnProximo.setMnemonic('p');
 		btnProximo.setToolTipText("Avançar para próxima pergunta");
-		btnProximo.setBounds(463, 350, 107, 30);
+		btnProximo.setBounds(463, 369, 107, 30);
 		contentPane.add(btnProximo);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -154,11 +154,16 @@ public class Frm_Perguntas extends Telas {
 			}
 		});
 		btnVoltar.setMnemonic('v');
-		btnVoltar.setBounds(51, 350, 89, 30);
+		btnVoltar.setBounds(52, 369, 89, 30);
 		contentPane.add(btnVoltar);
 	     
 		final ObjetosPerguntas muda;
 		muda=new ObjetosPerguntas(lblEnunciado, rdbtnPergunta1, rdbtnPergunta2, rdbtnPergunta3, rdbtnPergunta4, rdbtnPergunta5,caminho);
+		
+		JLabel lbl_fundo2 = new JLabel("");
+		lbl_fundo2.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/BackGround.png")));
+		lbl_fundo2.setBounds(0, 0, 594, 286);
+		painel.add(lbl_fundo2);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Frm_Perguntas.class.getResource("/Imagens/circle-question.png")));
@@ -193,5 +198,4 @@ public class Frm_Perguntas extends Telas {
 			}
 		});
 	}
-	
 }
