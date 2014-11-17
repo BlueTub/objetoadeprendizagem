@@ -1,13 +1,7 @@
 package controller;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
 import javax.swing.JOptionPane;
-
-import Entity.Descricao_e;
 
 /**
  * Classe contém os metodos para configuração de linguagem

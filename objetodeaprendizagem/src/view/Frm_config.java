@@ -20,7 +20,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import Entity.Configuracao_e;
@@ -214,7 +213,7 @@ public class Frm_config extends Telas {
 		//TODO
 		//LINGUAGEM, passa os arquivos do diretorio para o cb_linguagem.
 		Linguagem_c lang = new Linguagem_c();
-		int qtde = lang.qtdeDir();
+		//int qtde = lang.qtdeDir();
 		File[] vet = lang.diretorio();
 		for(File f:vet){
 			System.out.println(f.getName());
@@ -242,7 +241,7 @@ public class Frm_config extends Telas {
 	 * @param look 
 	 * @param combo recebe o combobox para alterar o indice
 	 */
-	private void acharEstilos(String look, JComboBox combo){		 
+	private void acharEstilos(String look, @SuppressWarnings("rawtypes") JComboBox combo){		 
 		if(look.equals("javax.swing.plaf.metal.MetalLookAndFeel")){
 			combo.setSelectedIndex(0);
 		}

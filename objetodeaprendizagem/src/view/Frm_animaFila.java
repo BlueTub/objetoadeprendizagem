@@ -19,8 +19,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 /**
  * Formulario da animação da fila
  * @author Zuzi
@@ -53,13 +51,17 @@ public class Frm_animaFila extends Telas {
 	private JLabel lblCubo5;
 	private JButton btnQuestionrio;
 	private JButton btnVoltar;
+	
+	@SuppressWarnings("unused")
 	private final Action menu = new SwingAction();
 	
 	/**
 	 * Launch the application.
 	 */
 	
+	@SuppressWarnings("unused")
 	private JLabel[] v_label;
+	@SuppressWarnings("unused")
 	private JLabel[] c_label;
 	
 	public static void main(String[] args) {

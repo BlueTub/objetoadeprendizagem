@@ -115,7 +115,7 @@ public class Frm_Splash extends Telas {
 		centralizeFrame();
 		iconeBarra();
 		Estilo();
-		linguagem();
+		//linguagem();
 		
 		JLabel cuboAzul = new JLabel("");
 		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class
