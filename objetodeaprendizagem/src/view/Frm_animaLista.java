@@ -20,6 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.JMenuBar;
 
 /**
  * Formulario da animação da Lista
@@ -67,6 +68,7 @@ public class Frm_animaLista extends Telas {
 	private int tamanho;
 	private JLabel lblA;
 	private JLabel lbl_vazia;
+	private JMenuBar menuBar;
 
 	/**
 	 * Launch
@@ -215,7 +217,7 @@ public class Frm_animaLista extends Telas {
 		lblFuncionamentoDeUma = new JLabel("Funcionamento de uma Lista");
 		lblFuncionamentoDeUma.setForeground(Color.BLACK);
 		lblFuncionamentoDeUma.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblFuncionamentoDeUma.setBounds(57, 11, 254, 14);
+		lblFuncionamentoDeUma.setBounds(59, 28, 254, 14);
 		contentPane.add(lblFuncionamentoDeUma);
 
 		btn_remove = new JButton("Remover");
@@ -463,12 +465,16 @@ public class Frm_animaLista extends Telas {
 		lbl_vazia.setFont(new Font("Verdana", Font.BOLD, 14));
 		lbl_vazia.setBounds(536, 214, 93, 19);
 		contentPane.add(lbl_vazia);
-
-		lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 727, 376);
-		contentPane.add(lbl_fundo);
+		
+		menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 727, 21);
+		contentPane.add(menuBar);
+		
+				lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 727, 376);
+				contentPane.add(lbl_fundo);
 
 		lbl_valor1.setVisible(false);
 		lbl_valor2.setVisible(false);

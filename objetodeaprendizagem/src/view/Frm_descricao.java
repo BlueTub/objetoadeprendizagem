@@ -23,6 +23,7 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 import java.awt.Color;
+import javax.swing.JMenuBar;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -235,6 +236,10 @@ public class Frm_descricao extends Telas {
 		lblNavegueEntreAs.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNavegueEntreAs.setBounds(50, 39, 299, 28);
 		contentPane.add(lblNavegueEntreAs);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 586, 21);
+		contentPane.add(menuBar);
 
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_descricao.class
@@ -276,5 +281,4 @@ public class Frm_descricao extends Telas {
 		});
 
 	}
-	
 }

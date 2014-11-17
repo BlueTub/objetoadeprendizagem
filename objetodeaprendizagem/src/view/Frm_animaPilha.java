@@ -298,7 +298,7 @@ public class Frm_animaPilha extends Telas {
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(-3, -12, 540, 414);
+		lbl_fundo.setBounds(-3, -12, 540, 428);
 		contentPane.add(lbl_fundo);
 		
 		/**

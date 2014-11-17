@@ -21,6 +21,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JMenuBar;
 
 /**
  * Formulario de animação da arvore
@@ -92,7 +93,7 @@ public class Frm_animaArvore extends Telas {
 
 		JLabel lbl_titulo = new JLabel("Arvore Bin\u00E1ria");
 		lbl_titulo.setFont(new Font("Verdana", Font.BOLD, 16));
-		lbl_titulo.setBounds(31, 11, 162, 23);
+		lbl_titulo.setBounds(30, 28, 162, 23);
 		contentPane.add(lbl_titulo);
 
 		final JLabel lbl_valor1 = new JLabel("New label");
@@ -134,49 +135,49 @@ public class Frm_animaArvore extends Telas {
 
 		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo1.setBounds(346, 11, 60, 60);
+		lbl_cubo1.setBounds(346, 31, 60, 60);
 		contentPane.add(lbl_cubo1);
 
 		final JLabel lbl_cubo2 = new JLabel("");
 
 		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo2.setBounds(203, 102, 60, 60);
+		lbl_cubo2.setBounds(203, 122, 60, 60);
 		contentPane.add(lbl_cubo2);
 
 		final JLabel lbl_cubo3 = new JLabel("");
 
 		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo3.setBounds(473, 102, 60, 60);
+		lbl_cubo3.setBounds(473, 122, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
 
 		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo4.setBounds(115, 193, 60, 60);
+		lbl_cubo4.setBounds(115, 213, 60, 60);
 		contentPane.add(lbl_cubo4);
 
 		final JLabel lbl_cubo5 = new JLabel("");
 
 		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo5.setBounds(273, 193, 60, 60);
+		lbl_cubo5.setBounds(273, 213, 60, 60);
 		contentPane.add(lbl_cubo5);
 
 		final JLabel lbl_cubo6 = new JLabel("");
 
 		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo6.setBounds(400, 193, 60, 60);
+		lbl_cubo6.setBounds(400, 213, 60, 60);
 		contentPane.add(lbl_cubo6);
 
 		final JLabel lbl_cubo7 = new JLabel("");
 
 		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
 				.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo7.setBounds(556, 193, 60, 60);
+		lbl_cubo7.setBounds(556, 213, 60, 60);
 		contentPane.add(lbl_cubo7);
 
 		txt_num = new JTextField();
@@ -244,7 +245,7 @@ public class Frm_animaArvore extends Telas {
 
 		JLabel lblProfundidade = new JLabel("Profundidade 2");
 		lblProfundidade.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		lblProfundidade.setBounds(66, 40, 85, 14);
+		lblProfundidade.setBounds(65, 57, 85, 14);
 		contentPane.add(lblProfundidade);
 		
 		JButton btnNewButton = new JButton("Voltar");
@@ -268,6 +269,10 @@ public class Frm_animaArvore extends Telas {
 				JLabel label = new JLabel("Dica: Voc\u00EA pode selecionar uma posi\u00E7\u00E3o clicando sobre o cubo.");
 				label.setBounds(10, 404, 385, 19);
 				contentPane.add(label);
+						
+						JMenuBar menuBar = new JMenuBar();
+						menuBar.setBounds(0, 0, 679, 21);
+						contentPane.add(menuBar);
 				
 						JLabel lbl_fundo = new JLabel("");
 						lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
