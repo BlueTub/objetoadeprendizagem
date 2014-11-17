@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import controller.AnimaLista;
+import controller.AnimacaoLista;
 import controller.Telas;
 import java.awt.Font;
 import java.awt.Color;
@@ -490,7 +490,7 @@ public class Frm_animaLista extends Telas {
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 1;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
@@ -516,7 +516,7 @@ public class Frm_animaLista extends Telas {
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 2;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
@@ -544,7 +544,7 @@ public class Frm_animaLista extends Telas {
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 3;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
@@ -569,7 +569,7 @@ public class Frm_animaLista extends Telas {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 4;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
@@ -594,7 +594,7 @@ public class Frm_animaLista extends Telas {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 5;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,
@@ -621,7 +621,7 @@ public class Frm_animaLista extends Telas {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 6;
-					Thread t1 = new AnimaLista(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 							lbl_valor5, lbl_valor6, lbl_cheia, txt_num,

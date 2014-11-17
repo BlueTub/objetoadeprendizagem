@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AnimaLista extends Thread implements OperacaoAnimacao {
+public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 
 	private JLabel lbl_cubo1;
 	private JLabel lbl_cubo2;
@@ -27,7 +27,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	private int tamanho;
 	private int operacao;
 
-	public AnimaLista(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
+	public AnimacaoLista(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
 			JLabel lbl_cubo3, JLabel lbl_cubo4, JLabel lbl_cubo5,
 			JLabel lbl_cubo6, JLabel lbl_valor1, JLabel lbl_valor2,
 			JLabel lbl_valor3, JLabel lbl_valor4, JLabel lbl_valor5,
