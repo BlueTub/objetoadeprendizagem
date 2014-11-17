@@ -159,8 +159,6 @@ public class Frm_config extends Telas {
 		btnVoutar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnVoutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Frm_principal tela=new Frm_principal();
-				tela.setVisible(true);
 				dispose();
 			}
 		});
