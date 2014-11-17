@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
+import controller.AbreDoc;
 import controller.AnimacaoLista;
 import controller.Telas;
 import java.awt.Font;
@@ -21,6 +22,8 @@ import java.awt.event.MouseEvent;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  * Formulario da animação da Lista
@@ -69,6 +72,13 @@ public class Frm_animaLista extends Telas {
 	private JLabel lblA;
 	private JLabel lbl_vazia;
 	private JMenuBar menuBar;
+	private JMenu mnNewMenu;
+	private JMenu mnNewMenu_1;
+	private JMenu mnNewMenu_2;
+	private JMenuItem mntmNewMenuItem;
+	private JMenuItem mntmNewMenuItem_1;
+	private JMenuItem mntmManual;
+	private JMenuItem mntmDetalhes;
 
 	/**
 	 * Launch
@@ -469,6 +479,37 @@ public class Frm_animaLista extends Telas {
 		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 727, 21);
 		contentPane.add(menuBar);
+		
+		mnNewMenu = new JMenu("Arquivo");
+		menuBar.add(mnNewMenu);
+		
+		mntmNewMenuItem = new JMenuItem("Menu Principal");
+		mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/home.png")));
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		mntmNewMenuItem_1 = new JMenuItem("Fechar");
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/close.png")));
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		mnNewMenu_1 = new JMenu("Ajuda");
+		menuBar.add(mnNewMenu_1);
+		
+		mntmManual = new JMenuItem("Manual");
+		mntmManual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AbreDoc doc = new AbreDoc();
+				doc.AbreManual();
+			}
+		});
+		mntmManual.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/manual.png")));
+		mnNewMenu_1.add(mntmManual);
+		
+		mnNewMenu_2 = new JMenu("Sobre");
+		menuBar.add(mnNewMenu_2);
+		
+		mntmDetalhes = new JMenuItem("Detalhes");
+		mntmDetalhes.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/about-people.png")));
+		mnNewMenu_2.add(mntmDetalhes);
 		
 				lbl_fundo = new JLabel("");
 				lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class
