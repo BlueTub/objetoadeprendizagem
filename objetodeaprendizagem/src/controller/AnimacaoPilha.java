@@ -49,7 +49,9 @@ public class AnimacaoPilha extends Thread implements OperacaoAnimacao{
 	public void addElemento() {
 		lbl_valor.setVisible(true);
 		Rectangle posiçao = lbl_valor.getBounds();
-		
+		if (Integer.parseInt(lbl_valor.getText()) < 10) {
+			posiçao.x += 5;
+		}
 		for (int i = 0; i < y; i++) {
 			posiçao.y += 10;
 			lbl_valor.setBounds(posiçao);

@@ -119,17 +119,18 @@ public class Frm_animaPilha extends Telas {
 		
 		JLabel label_1 = new JLabel("*1 a 99.");
 		label_1.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		label_1.setBounds(255, 221, 46, 14);
+		label_1.setBounds(242, 221, 46, 14);
 		contentPane.add(label_1);
 		
 		JLabel label = new JLabel("Valor a ser adicionado*.");
 		label.setFont(new Font("Verdana", Font.BOLD, 14));
-		label.setBounds(347, 185, 226, 25);
+		label.setBounds(311, 191, 226, 25);
 		contentPane.add(label);
 		
 		tf_num = new JTextField();
+		tf_num.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tf_num.setColumns(10);
-		tf_num.setBounds(226, 187, 111, 25);
+		tf_num.setBounds(226, 187, 75, 33);
 		contentPane.add(tf_num);
 		lblPilhaCheia.setForeground(Color.DARK_GRAY);
 		lblPilhaCheia.setFont(new Font("Tahoma", Font.PLAIN, 26));
@@ -137,49 +138,49 @@ public class Frm_animaPilha extends Telas {
 		contentPane.add(lblPilhaCheia);
 		lbl_valor10.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbl_valor10.setForeground(Color.BLACK);
-		lbl_valor10.setBounds(163, 54, 29, 38);
+		lbl_valor10.setBounds(163, 54, 53, 38);
 		contentPane.add(lbl_valor10);
 		
 		lbl_valor20 = new JLabel("20");
 		lbl_valor20.setForeground(Color.BLACK);
 		lbl_valor20.setVisible(false);
 		lbl_valor20.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor20.setBounds(163, 58, 29, 31);
+		lbl_valor20.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor20);
 		
 		lbl_valor30 = new JLabel("30");
 		lbl_valor30.setForeground(Color.BLACK);
 		lbl_valor30.setVisible(false);
 		lbl_valor30.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor30.setBounds(163, 58, 29, 31);
+		lbl_valor30.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor30);
 		
 		lbl_valor40 = new JLabel("40");
 		lbl_valor40.setForeground(Color.BLACK);
 		lbl_valor40.setVisible(false);
 		lbl_valor40.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor40.setBounds(163, 58, 29, 31);
+		lbl_valor40.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor40);
 		
 		lbl_valor50 = new JLabel("50");
 		lbl_valor50.setForeground(Color.BLACK);
 		lbl_valor50.setVisible(false);
 		lbl_valor50.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor50.setBounds(163, 58, 29, 31);
+		lbl_valor50.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor50);
 		
 		lbl_valor60 = new JLabel("60");
 		lbl_valor60.setForeground(Color.BLACK);
 		lbl_valor60.setVisible(false);
 		lbl_valor60.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor60.setBounds(163, 58, 29, 31);
+		lbl_valor60.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor60);
 		
 		lbl_valor70 = new JLabel("70");
 		lbl_valor70.setForeground(Color.BLACK);
 		lbl_valor70.setVisible(false);
 		lbl_valor70.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbl_valor70.setBounds(163, 58, 29, 31);
+		lbl_valor70.setBounds(163, 58, 53, 31);
 		contentPane.add(lbl_valor70);
 		
 		lblCubo_6 = new JLabel("");
@@ -297,7 +298,7 @@ public class Frm_animaPilha extends Telas {
 		
 		lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 540, 414);
+		lbl_fundo.setBounds(-3, -12, 540, 414);
 		contentPane.add(lbl_fundo);
 		
 		/**
@@ -407,6 +408,12 @@ public class Frm_animaPilha extends Telas {
 		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
 			JOptionPane.showMessageDialog(null, "Digite Números");
 		}else{
+			if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
+				JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+						JOptionPane.INFORMATION_MESSAGE);
+				tf_num.setText("");
+			}else{
+			
 			btnAdicionar.setEnabled(false);
 			btnRemover.setEnabled(false);
 			CarregaThread();
@@ -415,11 +422,13 @@ public class Frm_animaPilha extends Telas {
 			vtDesempilhado[i].setText(tf_num.getText());
 			vtDesempilhado[i] = null;
 			vtIniciar[i].start();
+			tf_num.setText("");
 		}
 		y -= 5;
 		n -=1;
 		z +=1;
 		cont++;
+		}
 		}
 	}
 	
