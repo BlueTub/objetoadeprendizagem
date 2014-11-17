@@ -21,10 +21,7 @@ import java.io.IOException;
 import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
 import javax.swing.JTabbedPane;
-import javax.swing.JLayeredPane;
-import javax.swing.BoxLayout;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury

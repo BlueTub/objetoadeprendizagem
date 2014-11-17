@@ -20,8 +20,6 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	private JLabel lbl_valor4;
 	private JLabel lbl_valor5;
 	private JLabel lbl_valor6;
-	private JLabel lbl_cheia;
-
 	private JTextField txt_num;
 
 	private int Selecionado;
@@ -49,7 +47,6 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		this.lbl_valor4 = lbl_valor4;
 		this.lbl_valor5 = lbl_valor5;
 		this.lbl_valor6 = lbl_valor6;
-		this.lbl_cheia = lbl_cheia;
 		this.txt_num = txt_num;
 		Selecionado = selecionado;
 		this.lista = lista;
@@ -160,7 +157,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 
 		desabilita(tamanho);
 		if (tamanho >= Selecionado) {
-			movEsquerda(Selecionado+1);
+			movEsquerda(Selecionado + 1);
 		} else {
 			removeFinal();
 		}
@@ -502,6 +499,7 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 	}
 
 	/**
+	 * Habilita e move labels
 	 * 
 	 * @param tamanho2
 	 */
@@ -573,6 +571,12 @@ public class AnimaLista extends Thread implements OperacaoAnimacao {
 		}
 	}
 
+	/**
+	 * desabilita labels
+	 * 
+	 * @param element
+	 */
+	
 	private void desabilita(int element) {
 
 		switch (element) {

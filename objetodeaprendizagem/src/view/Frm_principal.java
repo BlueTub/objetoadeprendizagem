@@ -30,7 +30,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JSlider;
 /**
  * Tela principal, o usuário pode selecionar um objeto
  * @author Hury
