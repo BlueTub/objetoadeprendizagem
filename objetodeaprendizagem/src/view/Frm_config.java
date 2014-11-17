@@ -28,6 +28,8 @@ import controller.LerConfuguracao;
 import controller.Linguagem_c;
 import controller.Telas;
 import javax.swing.SwingConstants;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Tela de configurações
@@ -65,9 +67,16 @@ public class Frm_config extends Telas {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Frm_config() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				Frm_principal tela=new Frm_principal();
+				tela.setVisible(true);
+			}
+		});
 		setTitle("Op\u00E7\u00F5es de Acessibilidade");
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 493, 370);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
