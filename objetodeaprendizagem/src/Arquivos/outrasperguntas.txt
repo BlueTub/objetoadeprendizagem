@@ -1,8 +1,8 @@
-considere a seguinte lista estatica com capacidade de 5. Após adicionar no inicio o elemento 10 no final o elemento 30 e adicionar o 20 na posição especifica 3 como ficaria a lista? * |10|20|30| tamanho 4 * |10|30|20| tamanho 3 * |20|10|30| tamanho 4 * |10|30|20| tamanho 3 lista cheia * |30|10|20| tamanho 3
-Lista:Questão 2
-Lista:Questão 3
-Lista:Questão 4
-Lista:Questão 5
+Em uma lista, podemos adicionar elementos aonde? * Inicio * Meio * Fim * Inicio, Meio, Fim * Inicio, Posição especifica, Fim
+Considere a seguinte lista estática com capacidade de 5. Após adicionar no inicio o elemento 10 no final o elemento 30 e adicionar o 20 na posição específica 3. Como ficaria a lista? * |10|20|30| tamanho 4 * |10|30|20| tamanho 3 * |20|10|30| tamanho 4 * |10|30|20| tamanho 3 lista cheia * |30|10|20| tamanho 3
+Considre uma lista estática com capacidade de 7. Após adicionar o elemento 15 na posição 5, adicionar o elemento 10 na posição 4 e o elemento 5 no inicio. Como ficaria a lista? * |15|10|5| * |5| | |10|15| * |5| * |5|10|15| * NDA
+Considere a seguinte lista estática com capacidade de 5. |5|10|15|20|25| Após remover o primeiro elemento e remover o elemento da posição 2. Como ficaria a lista? * | |10|15|20|25| * | | |15|20|25| * |10|15|20|25| | * |5|15|20|25| |  * |10|20|25| | |
+Considere uma lista estática com capacidade de 10. Após adicionar respectivamente os elementos 9,15,23,31,48 no inicio e depois adicionar os elementos 57,68,73,82,94 no final e remover um elemento no  fim. Como ficaria a lista? * |48|31|23|15|9|57|68|73|82| | * |9|15|23|31|48|57|68|73|82|94|  * |9|15|23|31|48|57|68|73|82| | * |15|23|34|48|57|68|73|82|94| | * NDA 
 Arvore:Questão 1
 Arvore:Questão 2
 Arvore:Questão 3
