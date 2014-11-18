@@ -225,9 +225,9 @@ public class Frm_config extends Telas {
 		//int qtde = lang.qtdeDir();
 		File[] vet = lang.diretorio();
 		for(File f:vet){
-			System.out.println(f.getName());
 			cb_linguagem.addItem(f.getName());
 		}
+		cb_linguagem.setSelectedIndex(1);
 	}
 	
 	/**
