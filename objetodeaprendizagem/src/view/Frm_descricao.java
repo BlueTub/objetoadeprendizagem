@@ -115,6 +115,7 @@ public class Frm_descricao extends Telas {
 		iconeBarra();
 
 		JButton btn_volta = new JButton("");
+		btn_volta.setMnemonic('R');
 		btn_volta.setSelectedIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-back-select.png")));
 		btn_volta.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-back.png")));
 		btn_volta.addActionListener(new ActionListener() {
@@ -224,11 +225,13 @@ public class Frm_descricao extends Telas {
         }
 
 		JLabel lblRetornarAoMenu = new JLabel("Retornar ao Menu principal");
+		lblRetornarAoMenu.setDisplayedMnemonic('R');
 		lblRetornarAoMenu.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblRetornarAoMenu.setBounds(30, 368, 161, 14);
 		contentPane.add(lblRetornarAoMenu);
 
 		JButton btn_prox = new JButton("");
+		btn_prox.setMnemonic('P');
 		btn_prox.setSelectedIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right-select.png")));
 		btn_prox.setIcon(new ImageIcon(Frm_descricao.class.getResource("/Imagens/arrow-right.png")));
 		btn_prox.setBounds(432, 309, 89, 54);
@@ -236,6 +239,7 @@ public class Frm_descricao extends Telas {
 
 		JLabel lblProseguirParaA = new JLabel(
 				"Proseguir para a anima\u00E7\u00E3o interativa");
+		lblProseguirParaA.setDisplayedMnemonic('P');
 		lblProseguirParaA.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblProseguirParaA.setBounds(346, 368, 215, 14);
 		contentPane.add(lblProseguirParaA);
