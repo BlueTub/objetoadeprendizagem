@@ -149,7 +149,7 @@ public class Frm_animaArvore extends Telas {
 		final JLabel lbl_cubo3 = new JLabel("");
 
 		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo3.setBounds(473, 122, 60, 60);
+		lbl_cubo3.setBounds(486, 122, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
