@@ -95,7 +95,7 @@ public class Frm_Pontuacao extends Telas {
 	
 		final JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
-		btnVoltar.setToolTipText("Ao aparecer a pontuação pressione o botão para a tela principal");
+		btnVoltar.setToolTipText("Ao aparecer a pontua\u00E7\u00E3o pressione o bot\u00E3o para o menu principal");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!(btnVoltar.getCursor()==cursor)){
