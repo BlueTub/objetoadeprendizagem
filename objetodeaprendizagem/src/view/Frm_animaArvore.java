@@ -25,6 +25,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.Dialog.ModalExclusionType;
 
 /**
  * Formulario de animação da arvore
@@ -77,6 +78,7 @@ public class Frm_animaArvore extends Telas {
 	 * Create the frame.
 	 */
 	public Frm_animaArvore() {
+		setResizable(false);
 		setTitle("Anima\u00E7\u00E3o - \u00C1rvore Bin\u00E1ria");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 695, 473);
