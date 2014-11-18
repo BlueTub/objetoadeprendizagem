@@ -148,6 +148,7 @@ public class Frm_animaLista extends Telas {
 		iconeBarra();
 
 		button = new JButton("Voltar");
+		button.setMnemonic('V');
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frm_descricao telades = new Frm_descricao(2);
@@ -160,6 +161,14 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(button);
 
 		button_1 = new JButton("Question\u00E1rio");
+		button_1.setMnemonic('Q');
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_Perguntas tela= new Frm_Perguntas("Perguntas2.txt");
+				tela.setVisible(true);
+				dispose();
+			}
+		});
 		button_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		button_1.setBounds(588, 302, 123, 47);
 		contentPane.add(button_1);
