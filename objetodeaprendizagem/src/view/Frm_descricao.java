@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
 import java.awt.Color;
 import javax.swing.JMenuBar;
+import javax.swing.JMenu;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -240,6 +241,15 @@ public class Frm_descricao extends Telas {
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 586, 21);
 		contentPane.add(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("New menu");
+		menuBar.add(mnNewMenu);
+		
+		JMenu mnNewMenu_1 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenu mnNewMenu_2 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_2);
 
 		JLabel lbl_fundo = new JLabel("");
 		lbl_fundo.setIcon(new ImageIcon(Frm_descricao.class

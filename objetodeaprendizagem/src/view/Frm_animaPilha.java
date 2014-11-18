@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
+import controller.AbreDoc;
 import controller.AnimacaoPilha;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -67,6 +69,12 @@ public class Frm_animaPilha extends Telas {
 	private JLabel lblPilhaCheia;
 	private boolean condiçao;
 	private JTextField tf_num;
+	private JMenuItem mntmNewMenuItem;
+	private JMenu mnNewMenu;
+	private JMenu mnNewMenu_1;
+	private JMenuItem mntmNewMenuItem_1;
+	private JMenuItem mntmNewMenuItem_2;
+	private JMenuItem mntmNewMenuItem_3;
 	/**
 	 * Launch the application.
 	 */
@@ -103,10 +111,51 @@ public class Frm_animaPilha extends Telas {
 		JMenu mnArquivo = new JMenu("Arquivo");
 		menuBar.add(mnArquivo);
 		
-		JMenuItem mntmMenuPrincipal = new JMenuItem("Menu Principal");
-		mntmMenuPrincipal.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/home.png")));
-		mntmMenuPrincipal.setAction(action);
-		mnArquivo.add(mntmMenuPrincipal);
+		mntmNewMenuItem = new JMenuItem("Menu Principal");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_principal telaprincipal = new Frm_principal();
+				telaprincipal.setVisible(true);
+				dispose();
+			}
+		});
+		mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/home.png")));
+		mnArquivo.add(mntmNewMenuItem);
+		
+		mntmNewMenuItem_1 = new JMenuItem("Fechar");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/close.png")));
+		mnArquivo.add(mntmNewMenuItem_1);
+		
+		mnNewMenu = new JMenu("Ajuda");
+		menuBar.add(mnNewMenu);
+		
+		mntmNewMenuItem_2 = new JMenuItem("Manual");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AbreDoc doc = new AbreDoc();
+				doc.AbreManual();
+			}
+		});
+		mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/manual.png")));
+		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		mnNewMenu_1 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_1);
+		
+		mntmNewMenuItem_3 = new JMenuItem("Detalhes");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_sobre sobre = new Frm_sobre();
+				sobre.setVisible(true);
+			}
+		});
+		mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/about-people.png")));
+		mnNewMenu_1.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -484,10 +484,22 @@ public class Frm_animaLista extends Telas {
 		menuBar.add(mnNewMenu);
 		
 		mntmNewMenuItem = new JMenuItem("Menu Principal");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_principal telaprincipal = new Frm_principal();
+				telaprincipal.setVisible(true);
+				dispose();
+			}
+		});
 		mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/home.png")));
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		mntmNewMenuItem_1 = new JMenuItem("Fechar");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/close.png")));
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
@@ -508,6 +520,12 @@ public class Frm_animaLista extends Telas {
 		menuBar.add(mnNewMenu_2);
 		
 		mntmDetalhes = new JMenuItem("Detalhes");
+		mntmDetalhes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_sobre sobre = new Frm_sobre();
+				sobre.setVisible(true);
+			}
+		});
 		mntmDetalhes.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/about-people.png")));
 		mnNewMenu_2.add(mntmDetalhes);
 		
