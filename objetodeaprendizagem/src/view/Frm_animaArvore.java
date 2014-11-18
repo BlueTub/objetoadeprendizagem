@@ -137,43 +137,43 @@ public class Frm_animaArvore extends Telas {
 		final JLabel lbl_cubo1 = new JLabel("");
 
 		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo1.setBounds(346, 31, 60, 60);
+		lbl_cubo1.setBounds(318, 28, 60, 60);
 		contentPane.add(lbl_cubo1);
 
 		final JLabel lbl_cubo2 = new JLabel("");
 
 		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo2.setBounds(203, 122, 60, 60);
+		lbl_cubo2.setBounds(175, 119, 60, 60);
 		contentPane.add(lbl_cubo2);
 
 		final JLabel lbl_cubo3 = new JLabel("");
 
 		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo3.setBounds(486, 122, 60, 60);
+		lbl_cubo3.setBounds(458, 119, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
 
 		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo4.setBounds(115, 213, 60, 60);
+		lbl_cubo4.setBounds(87, 210, 60, 60);
 		contentPane.add(lbl_cubo4);
 
 		final JLabel lbl_cubo5 = new JLabel("");
 
 		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo5.setBounds(273, 213, 60, 60);
+		lbl_cubo5.setBounds(245, 210, 60, 60);
 		contentPane.add(lbl_cubo5);
 
 		final JLabel lbl_cubo6 = new JLabel("");
 
 		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo6.setBounds(400, 213, 60, 60);
+		lbl_cubo6.setBounds(372, 210, 60, 60);
 		contentPane.add(lbl_cubo6);
 
 		final JLabel lbl_cubo7 = new JLabel("");
 
 		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
-		lbl_cubo7.setBounds(556, 213, 60, 60);
+		lbl_cubo7.setBounds(528, 210, 60, 60);
 		contentPane.add(lbl_cubo7);
 
 		txt_num = new JTextField();
