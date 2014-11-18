@@ -27,6 +27,7 @@ import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury
@@ -145,14 +146,19 @@ public class Frm_descricao extends Telas {
 		tabbedPane.addTab("Descri\u00E7\u00E3o", null, jp_descricao, null);
 		jp_descricao.setLayout(null);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 0, 526, 202);
+		jp_descricao.add(scrollPane);
+		
 		JTextPane txtpaneDesc = new JTextPane();
-		txtpaneDesc.setBounds(0, 0, 526, 202);
-		jp_descricao.add(txtpaneDesc);
+		scrollPane.setViewportView(txtpaneDesc);
 		txtpaneDesc.setText("txt_texto");
 		txtpaneDesc.setFont(new Font("Tahoma", Font.BOLD, tamanhofonte));
-		txtpaneDesc.setEditable(false);
+		txtpaneDesc.setEditable(false);	
 		String texto = descricao[objeto].getDescricao_int();
 		txtpaneDesc.setText(texto);
+		
+		txtpaneDesc.setCaretPosition(0);
 		
 		JPanel jp_carac = new JPanel();
 		tabbedPane.addTab("Caracter\u00EDsticas", null, jp_carac, null);
