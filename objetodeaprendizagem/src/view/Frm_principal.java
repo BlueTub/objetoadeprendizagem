@@ -342,14 +342,14 @@ public class Frm_principal extends Telas {
 																		lbl_fundo2.setIcon(new ImageIcon(Frm_principal.class.getResource("/Imagens/BackGround.png")));
 																		lbl_fundo2.setBounds(0, 0, 197, 307);
 																		panel.add(lbl_fundo2);
-																
+																		
 
-																
-																		JLabel lbl_fundo = new JLabel("");
-																		lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
-																				.getResource("/Imagens/BackGround.png")));
-																		lbl_fundo.setBounds(0, 0, 658, 401);
-																		contentPane.add(lbl_fundo);
+																		
+																				JLabel lbl_fundo = new JLabel("");
+																				lbl_fundo.setIcon(new ImageIcon(Frm_principal.class
+																						.getResource("/Imagens/BackGround.png")));
+																				lbl_fundo.setBounds(0, 0, 658, 401);
+																				contentPane.add(lbl_fundo);
 														btn_pilha.doClick();
 
 		try {
