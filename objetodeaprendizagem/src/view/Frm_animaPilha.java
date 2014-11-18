@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-
 import controller.AbreDoc;
 import controller.AnimacaoPilha;
 import java.awt.Font;
@@ -17,10 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
 import javax.swing.JOptionPane;
-
 import controller.Telas;
 import javax.swing.JTextField;
 /**
@@ -39,7 +35,6 @@ public class Frm_animaPilha extends Telas {
 	private JLabel lbl_valor50;
 	private JLabel lbl_valor60;
 	private JLabel lbl_valor70;
-	private Action action = new SwingAction();
 	private int n = 6;
 	private int z = 0;
 	private JLabel vtEmpilhado[] = new JLabel[7];
@@ -503,17 +498,6 @@ public class Frm_animaPilha extends Telas {
 					y += 5;
 					cont--;
 				}
-		}
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Menu Principal");
-			putValue(SHORT_DESCRIPTION, "Voltar ao Principal");
-		}
-		public void actionPerformed(ActionEvent e) {
-			dispose();
-			Frm_principal p = new Frm_principal();
-			p.setVisible(true);
 		}
 	}
 }
