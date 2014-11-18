@@ -144,7 +144,7 @@ public class Frm_animaPilha extends Telas {
 		mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaPilha.class.getResource("/Imagens/manual.png")));
 		mnNewMenu.add(mntmNewMenuItem_2);
 		
-		mnNewMenu_1 = new JMenu("New menu");
+		mnNewMenu_1 = new JMenu("Sobre");
 		menuBar.add(mnNewMenu_1);
 		
 		mntmNewMenuItem_3 = new JMenuItem("Detalhes");
