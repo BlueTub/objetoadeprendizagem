@@ -19,6 +19,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import controller.Telas;
 import javax.swing.JTextField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 /**
  * Formulario da animação da Pilha
  * @author Zuzi
@@ -173,6 +175,14 @@ public class Frm_animaPilha extends Telas {
 		contentPane.add(label);
 		
 		tf_num = new JTextField();
+		tf_num.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				if(arg0.getKeyCode() == KeyEvent.VK_ENTER){
+					btnAdicionar.doClick();
+				}
+			}
+		});
 		tf_num.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tf_num.setColumns(10);
 		tf_num.setBounds(226, 187, 75, 33);
@@ -452,6 +462,7 @@ public class Frm_animaPilha extends Telas {
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
 			JOptionPane.showMessageDialog(null, "Digite Números");
+			tf_num.setText("");
 		}else{
 			if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
 				JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
