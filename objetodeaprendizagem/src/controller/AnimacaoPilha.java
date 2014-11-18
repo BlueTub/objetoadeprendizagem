@@ -92,6 +92,10 @@ public class AnimacaoPilha extends Thread implements OperacaoAnimacao{
 	@Override
 	public void removeElemento() {
 Rectangle posiçao = lbl_valor.getBounds();
+
+	if (Integer.parseInt(lbl_valor.getText()) < 10) {
+		posiçao.x -= 5;
+	}
 		
 		for (int i = 0; i < 7; i++) {
 			posiçao.x += 11;
