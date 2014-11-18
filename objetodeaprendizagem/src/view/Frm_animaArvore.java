@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controller.AbreDoc;
 import controller.AnimaArvore;
 import controller.Telas;
 
@@ -22,6 +23,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  * Formulario de animação da arvore
@@ -273,6 +276,55 @@ public class Frm_animaArvore extends Telas {
 						JMenuBar menuBar = new JMenuBar();
 						menuBar.setBounds(0, 0, 679, 21);
 						contentPane.add(menuBar);
+						
+						JMenu mnNewMenu = new JMenu("Arquivo");
+						menuBar.add(mnNewMenu);
+						
+						JMenuItem mntmNewMenuItem = new JMenuItem("Menu Principal");
+						mntmNewMenuItem.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								Frm_principal telaprincipal = new Frm_principal();
+								telaprincipal.setVisible(true);
+								dispose();
+							}
+						});
+						mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/home.png")));
+						mnNewMenu.add(mntmNewMenuItem);
+						
+						JMenuItem mntmNewMenuItem_1 = new JMenuItem("Fechar");
+						mntmNewMenuItem_1.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								System.exit(0);
+							}
+						});
+						mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/close.png")));
+						mnNewMenu.add(mntmNewMenuItem_1);
+						
+						JMenu mnNewMenu_1 = new JMenu("Ajuda");
+						menuBar.add(mnNewMenu_1);
+						
+						JMenuItem mntmNewMenuItem_2 = new JMenuItem("Manual");
+						mntmNewMenuItem_2.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								AbreDoc doc = new AbreDoc();
+								doc.AbreManual();
+							}
+						});
+						mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/manual.png")));
+						mnNewMenu_1.add(mntmNewMenuItem_2);
+						
+						JMenu mnNewMenu_2 = new JMenu("Sobre");
+						menuBar.add(mnNewMenu_2);
+						
+						JMenuItem mntmNewMenuItem_3 = new JMenuItem("Descri\u00E7\u00E3o");
+						mntmNewMenuItem_3.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								Frm_sobre sobre = new Frm_sobre();
+								sobre.setVisible(true);
+							}
+						});
+						mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/about-people.png")));
+						mnNewMenu_2.add(mntmNewMenuItem_3);
 				
 						JLabel lbl_fundo = new JLabel("");
 						lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
