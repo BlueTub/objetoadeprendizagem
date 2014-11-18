@@ -254,7 +254,13 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 		}
 
 	}
-	
+	/**
+	 * Metodo para alinhar a Label ao Cubo
+	 * @param lbl_valor
+	 * @param posicao1
+	 * @param posicao2
+	 * @return
+	 */
 	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2){
 		if	(Integer.parseInt(lbl_valor.getText()) < 10){
 			return posicao1.x = posicao2.x + 15;
