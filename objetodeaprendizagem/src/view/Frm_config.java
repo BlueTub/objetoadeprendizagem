@@ -166,6 +166,7 @@ public class Frm_config extends Telas {
 		contentPane.add(btnVoutar);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
+		chckbxNewCheckBox.setEnabled(false);
 		chckbxNewCheckBox.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		chckbxNewCheckBox.setBounds(234, 66, 155, 23);
 		contentPane.add(chckbxNewCheckBox);
@@ -176,6 +177,7 @@ public class Frm_config extends Telas {
 		btnAplicar.setToolTipText("Alterar as configurações");
 		
 		final JComboBox cb_linguagem = new JComboBox();
+		cb_linguagem.setEnabled(false);
 		cb_linguagem.setBounds(234, 138, 155, 20);
 		contentPane.add(cb_linguagem);
 		
