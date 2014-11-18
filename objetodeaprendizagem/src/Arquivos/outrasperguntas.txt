@@ -1,4 +1,4 @@
-Lista:Questão 1
+considere a seguinte lista estatica com capacidade de 5. Após adicionar no inicio o elemento 10 no final o elemento 30 e adicionar o 20 na posição especifica 3 como ficaria a lista? * |10|20|30| tamanho 4 * |10|30|20| tamanho 3 * |20|10|30| tamanho 4 * |10|30|20| tamanho 3 lista cheia * |30|10|20| tamanho 3
 Lista:Questão 2
 Lista:Questão 3
 Lista:Questão 4
