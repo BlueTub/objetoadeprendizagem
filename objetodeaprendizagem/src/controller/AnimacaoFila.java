@@ -85,6 +85,10 @@ public class AnimacaoFila extends Thread implements OperacaoAnimacao {
 		btnRemover.setEnabled(false);
 		Rectangle posiçao = lbl_valor.getBounds();
 		
+		if (Integer.parseInt(lbl_valor.getText()) < 10) {
+			posiçao.x -= 5;
+		}
+		
 		for (int i = 0; i < 8; i++) {
 			posiçao.y += 9;
 			lbl_valor.setBounds(posiçao);
