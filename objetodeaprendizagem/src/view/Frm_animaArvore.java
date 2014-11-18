@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controller.AbreDoc;
-import controller.AnimaArvore;
+import controller.AnimacaoArvore;
 import controller.Telas;
 
 import javax.swing.JLabel;
@@ -193,7 +193,7 @@ public class Frm_animaArvore extends Telas {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
 					int operacao = 1;
-					Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
+					Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
 							lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
 							lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
@@ -224,7 +224,7 @@ public class Frm_animaArvore extends Telas {
 		btn_remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int operacao = 2;
-				Thread t1 = new AnimaArvore(operacao, lbl_cubo1, lbl_cubo2,
+				Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1, lbl_cubo2,
 						lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6, lbl_cubo7,
 						lbl_valor1, lbl_valor2, lbl_valor3, lbl_valor4,
 						lbl_valor5, lbl_valor6, lbl_valor7, txt_num, arvore,

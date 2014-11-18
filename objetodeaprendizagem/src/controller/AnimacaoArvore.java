@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  * 
  */
 
-public class AnimaArvore extends Thread implements OperacaoAnimacao {
+public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 	private int operacao;
 
 	private JLabel lbl_cubo1;
@@ -37,7 +37,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 
 	boolean primeiro = true;
 
-	public AnimaArvore(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
+	public AnimacaoArvore(int operacao, JLabel lbl_cubo1, JLabel lbl_cubo2,
 			JLabel lbl_cubo3, JLabel lbl_cubo4, JLabel lbl_cubo5,
 			JLabel lbl_cubo6, JLabel lbl_cubo7, JLabel lbl_valor1,
 			JLabel lbl_valor2, JLabel lbl_valor3, JLabel lbl_valor4,
@@ -162,10 +162,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor1.getBounds();
 			posicao2 = lbl_cubo1.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor1.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor1, posicao2, posicao2);
 			lbl_valor1.setBounds(posicao1);
 
 			arvore[0] = Integer.parseInt(txt_num.getText());
@@ -175,10 +175,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor2.getBounds();
 			posicao2 = lbl_cubo2.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor2.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor2, posicao2, posicao2);
 			lbl_valor2.setBounds(posicao1);
 
 			arvore[1] = Integer.parseInt(txt_num.getText());
@@ -188,10 +188,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor3.getBounds();
 			posicao2 = lbl_cubo3.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor3.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor3, posicao2, posicao2);
 			lbl_valor3.setBounds(posicao1);
 
 			arvore[2] = Integer.parseInt(txt_num.getText());
@@ -201,10 +201,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor4.getBounds();
 			posicao2 = lbl_cubo4.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor4.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor4, posicao2, posicao2);
 			lbl_valor4.setBounds(posicao1);
 
 			arvore[3] = Integer.parseInt(txt_num.getText());
@@ -214,10 +214,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor5.getBounds();
 			posicao2 = lbl_cubo5.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor5.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor5, posicao2, posicao2);
 			lbl_valor5.setBounds(posicao1);
 
 			arvore[4] = Integer.parseInt(txt_num.getText());
@@ -227,10 +227,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor6.getBounds();
 			posicao2 = lbl_cubo6.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor6.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor6, posicao2, posicao2);
 			lbl_valor6.setBounds(posicao1);
 
 			arvore[5] = Integer.parseInt(txt_num.getText());
@@ -240,10 +240,10 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor7.getBounds();
 			posicao2 = lbl_cubo7.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor7.setText(txt_num.getText());
+			posicao1.x = alinhar(lbl_valor7, posicao2, posicao2);
 			lbl_valor7.setBounds(posicao1);
 
 			arvore[6] = Integer.parseInt(txt_num.getText());
@@ -253,6 +253,14 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			break;
 		}
 
+	}
+	
+	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2){
+		if	(Integer.parseInt(lbl_valor.getText()) < 10){
+			return posicao1.x = posicao2.x + 15;
+		}else{
+		return posicao1.x = posicao2.x + 11;
+		}
 	}
 
 	/**
@@ -287,6 +295,7 @@ public class AnimaArvore extends Thread implements OperacaoAnimacao {
 			if (arvore[0] != 0 && (arvore[1] == 0 && arvore[2] == 0)) {
 				arvore[0] = 0;
 				lbl_valor1.setVisible(false);
+				
 			} else if (arvore[1] != 0 && arvore[2] != 0) {
 
 				if ((arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)
