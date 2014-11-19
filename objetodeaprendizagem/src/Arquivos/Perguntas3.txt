@@ -1,0 +1,5 @@
+Qual o máximo de nó(s) que uma raiz podem ter? * 1 * 2 * 3 * 4 * 5
+Para adicionar um elemento em uma árvore, devemos? * observar se ele é menor que o pai * observar se ele é maior que o pai * observar se ele tem pai * Todas alternativas anteriores * NDA
+<html>Após adicionar os elementos 15, 20, 25, 19 e remover o elemento 20. Qual elemento vai substituir o 20?</html> * 15 * 25 * 19 * 19 ou 25 * NDA
+<html>Após adicionar os elementos 50, 30, 40, 20 e remover os  elementos 40 e 20. Qual elementos vão substitui-los?</html> * 30 * 50 * 30 ou 50 * Não serão removidos * NDA
+<html>Após adicionar os elementos 53, 70, 25, 30, 10, 75 e remover o elemento 53. Qual elementos vai substituir o 53?</html> * 10 * 30 * 30 ou 70  * 10 ou 30 * 75 
