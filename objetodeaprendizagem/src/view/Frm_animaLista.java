@@ -240,6 +240,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(lblFuncionamentoDeUma);
 
 		btn_remove = new JButton("Remover");
+		btn_remove.setMnemonic('R');
 
 		btn_remove
 				.setToolTipText("Remove um elemento de uma posi\u00E7\u00E3o espec\u00EDfica");
@@ -262,6 +263,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(btn_removeinicio);
 
 		btn_add = new JButton("Adicionar");
+		btn_add.setMnemonic('A');
 
 		btn_add.setToolTipText("Adiciona um novo elemento em uma posi\u00E7\u00E3o espec\u00EDfica");
 		btn_add.setFont(new Font("Tahoma", Font.PLAIN, 13));
