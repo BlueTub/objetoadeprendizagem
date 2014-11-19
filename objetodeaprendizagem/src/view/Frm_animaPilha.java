@@ -464,11 +464,13 @@ public class Frm_animaPilha extends Telas {
 			if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
 				JOptionPane.showMessageDialog(null, "Digite Números");
 				tf_num.setText("");
+				tf_num.grabFocus();
 			}else{
 				if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
 					JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
 							JOptionPane.INFORMATION_MESSAGE);
 					tf_num.setText("");
+					tf_num.grabFocus();
 				}else{
 				
 				btnAdicionar.setEnabled(false);
@@ -492,6 +494,7 @@ public class Frm_animaPilha extends Telas {
 					"Por favor, Digite números de 1 a 99", "Aviso",
 					JOptionPane.INFORMATION_MESSAGE);
 			tf_num.setText("");
+			tf_num.grabFocus();
 		}
 		
 	}
