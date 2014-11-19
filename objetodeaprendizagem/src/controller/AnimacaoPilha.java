@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 /**
  * Classe com os metodos de animação da pilha
  * @author Zuzi
@@ -47,46 +48,51 @@ public class AnimacaoPilha extends Thread implements OperacaoAnimacao{
 	 */
 	@Override
 	public void addElemento() {
-		lbl_valor.setVisible(true);
-		Rectangle posiçao = lbl_valor.getBounds();
-		if (Integer.parseInt(lbl_valor.getText()) < 10) {
-			posiçao.x += 5;
-		}
-		for (int i = 0; i < y; i++) {
-			posiçao.y += 10;
-			lbl_valor.setBounds(posiçao);
-			try {
-				Thread.sleep(35);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		try {
+			lbl_valor.setVisible(true);
+			Rectangle posiçao = lbl_valor.getBounds();
+			if (Integer.parseInt(lbl_valor.getText()) < 10) {
+				posiçao.x += 5;
 			}
-		}
-		for (int i = 0; i < 7; i++) {
-			posiçao.x -= 10.5;
-			lbl_valor.setBounds(posiçao);
-			try {
-				Thread.sleep(35);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			for (int i = 0; i < y; i++) {
+				posiçao.y += 10;
+				lbl_valor.setBounds(posiçao);
+				try {
+					Thread.sleep(35);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
-		}
-		posiçao = lblTopo.getBounds();
-		for (int i = 0; i < 6; i++) {
-			posiçao.y -=8;
-			lblTopo.setBounds(posiçao);
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			for (int i = 0; i < 7; i++) {
+				posiçao.x -= 10.5;
+				lbl_valor.setBounds(posiçao);
+				try {
+					Thread.sleep(35);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+			posiçao = lblTopo.getBounds();
+			for (int i = 0; i < 6; i++) {
+				posiçao.y -=8;
+				lblTopo.setBounds(posiçao);
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			btnAdicionar.setEnabled(true);
+			btnRemover.setEnabled(true);
+			if (cont == 6) {
+				btnAdicionar.setEnabled(false);
+				lblPilhaCheia.setVisible(true);
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Digite Números");
 		}
-		
-		btnAdicionar.setEnabled(true);
-		btnRemover.setEnabled(true);
-		if (cont == 6) {
-			btnAdicionar.setEnabled(false);
-			lblPilhaCheia.setVisible(true);
-		}
+
 	}
 
 	@Override
