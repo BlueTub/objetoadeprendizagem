@@ -220,12 +220,18 @@ public class Frm_config extends Telas {
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		lblNewLabel_2.setBounds(234, 108, 89, 23);
 		contentPane.add(lblNewLabel_2);
-
-		JLabel lbl_fundo = new JLabel("");
-		lbl_fundo.setIcon(new ImageIcon(Frm_config.class
-				.getResource("/Imagens/BackGround.png")));
-		lbl_fundo.setBounds(0, 0, 487, 341);
-		contentPane.add(lbl_fundo);
+		
+		JLabel lblNewLabel_3 = new JLabel("Portugu\u00EAs");
+		lblNewLabel_3.setBounds(234, 141, 89, 14);
+		contentPane.add(lblNewLabel_3);
+		
+				JLabel lbl_fundo = new JLabel("");
+				lbl_fundo.setIcon(new ImageIcon(Frm_config.class
+						.getResource("/Imagens/BackGround.png")));
+				lbl_fundo.setBounds(0, 0, 487, 341);
+				contentPane.add(lbl_fundo);
+		cb_linguagem.setVisible(false);
+		chckbxNewCheckBox.setVisible(false);
 
 		// TODO
 		// LINGUAGEM, passa os arquivos do diretorio para o cb_linguagem.
@@ -301,5 +307,4 @@ public class Frm_config extends Telas {
 		}
 		return Fonte;
 	}
-
 }
