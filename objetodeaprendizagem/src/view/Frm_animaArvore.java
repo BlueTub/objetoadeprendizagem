@@ -203,7 +203,7 @@ public class Frm_animaArvore extends Telas {
 		btn_adiciona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
+					JOptionPane.showMessageDialog(null, "Digite números inteiros ");
 				} else {
 					try {
 						if (Integer.parseInt(txt_num.getText()) < 1
