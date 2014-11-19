@@ -36,9 +36,9 @@ public class Frm_animaLista extends Telas {
 
 	private JPanel contentPane;
 	private JLabel lbl_fundo;
-	
+
 	private static int objeto = 0;
-	
+
 	private JLabel lbl_valor1;
 	private JLabel lbl_cubo3;
 	private JLabel lbl_cubo4;
@@ -113,6 +113,7 @@ public class Frm_animaLista extends Telas {
 
 	/**
 	 * Verifica o tipo da String
+	 * 
 	 * @param texto
 	 * @return
 	 */
@@ -561,56 +562,14 @@ public class Frm_animaLista extends Telas {
 		btn_addinicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (tamanho >= 6) {
+				try {
+					if (tamanho >= 6) {
 
-					lbl_cheia.setVisible(true);
-				} else if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
-					txt_num.setText("");
-
-				} else {
-					if (Integer.parseInt(txt_num.getText()) < 1
-							|| Integer.parseInt(txt_num.getText()) > 99) {
-						JOptionPane.showMessageDialog(null,
-								"Por favor, Digite números de 1 a 99", "Aviso",
-								JOptionPane.INFORMATION_MESSAGE);
-						txt_num.setText("");
-					} else {
-						lbl_vazia.setVisible(false);
-						System.out.println("entrou no if");
-						int operacao = 1;
-						Thread t1 = new AnimacaoLista(operacao, lbl_cubo1,
-								lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
-								lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3,
-								lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia,
-								txt_num, selecionado, Lista, tamanho);
-						t1.start();
-						tamanho++;
-						lbl_tamanho.setText(Integer.toString(tamanho));
-
-						btn_remove.setEnabled(true);
-						btn_removefinal.setEnabled(true);
-						btn_removeinicio.setEnabled(true);
-						if (tamanho >= 6) {
-							lbl_cheia.setVisible(true);
-							btn_add.setEnabled(false);
-							btn_addinicio.setEnabled(false);
-							btn_addfinal.setEnabled(false);
-						}
-					}
-				}
-			}
-		});
-
-		btn_addfinal.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (tamanho >= 6) {
-
-					lbl_cheia.setVisible(true);
-				} else {
-					if (TipoString(txt_num.getText()) != 1) {
+						lbl_cheia.setVisible(true);
+					} else if (TipoString(txt_num.getText()) != 1) {
 						JOptionPane.showMessageDialog(null, "Digite Números");
 						txt_num.setText("");
+
 					} else {
 						if (Integer.parseInt(txt_num.getText()) < 1
 								|| Integer.parseInt(txt_num.getText()) > 99) {
@@ -621,7 +580,7 @@ public class Frm_animaLista extends Telas {
 						} else {
 							lbl_vazia.setVisible(false);
 							System.out.println("entrou no if");
-							int operacao = 2;
+							int operacao = 1;
 							Thread t1 = new AnimacaoLista(operacao, lbl_cubo1,
 									lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
 									lbl_cubo6, lbl_valor1, lbl_valor2,
@@ -643,50 +602,122 @@ public class Frm_animaLista extends Telas {
 							}
 						}
 					}
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null,
+							"Por favor, Digite números de 1 a 99", "Aviso",
+							JOptionPane.INFORMATION_MESSAGE);
+					txt_num.setText("");
 				}
+
+			}
+		});
+
+		btn_addfinal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					if (tamanho >= 6) {
+
+						lbl_cheia.setVisible(true);
+					} else {
+						if (TipoString(txt_num.getText()) != 1) {
+							JOptionPane.showMessageDialog(null,
+									"Digite Números");
+							txt_num.setText("");
+						} else {
+							if (Integer.parseInt(txt_num.getText()) < 1
+									|| Integer.parseInt(txt_num.getText()) > 99) {
+								JOptionPane.showMessageDialog(null,
+										"Por favor, Digite números de 1 a 99",
+										"Aviso",
+										JOptionPane.INFORMATION_MESSAGE);
+								txt_num.setText("");
+							} else {
+								lbl_vazia.setVisible(false);
+								System.out.println("entrou no if");
+								int operacao = 2;
+								Thread t1 = new AnimacaoLista(operacao,
+										lbl_cubo1, lbl_cubo2, lbl_cubo3,
+										lbl_cubo4, lbl_cubo5, lbl_cubo6,
+										lbl_valor1, lbl_valor2, lbl_valor3,
+										lbl_valor4, lbl_valor5, lbl_valor6,
+										lbl_cheia, txt_num, selecionado, Lista,
+										tamanho);
+								t1.start();
+								tamanho++;
+								lbl_tamanho.setText(Integer.toString(tamanho));
+
+								btn_remove.setEnabled(true);
+								btn_removefinal.setEnabled(true);
+								btn_removeinicio.setEnabled(true);
+								if (tamanho >= 6) {
+									lbl_cheia.setVisible(true);
+									btn_add.setEnabled(false);
+									btn_addinicio.setEnabled(false);
+									btn_addfinal.setEnabled(false);
+								}
+							}
+						}
+					}
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null,
+							"Por favor, Digite números de 1 a 99", "Aviso",
+							JOptionPane.INFORMATION_MESSAGE);
+					txt_num.setText("");
+
+				}
+
 			}
 		});
 
 		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (tamanho >= 6) {
-					lbl_cheia.setVisible(true);
-				} else if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
-					txt_num.setText("");
-				} else if (Integer.parseInt(txt_num.getText()) < 1
-						|| Integer.parseInt(txt_num.getText()) > 99) {
+				try {
+					if (tamanho >= 6) {
+						lbl_cheia.setVisible(true);
+					} else if (TipoString(txt_num.getText()) != 1) {
+						JOptionPane.showMessageDialog(null, "Digite Números");
+						txt_num.setText("");
+					} else if (Integer.parseInt(txt_num.getText()) < 1
+							|| Integer.parseInt(txt_num.getText()) > 99) {
+						JOptionPane.showMessageDialog(null,
+								"Por favor, Digite números de 1 a 99", "Aviso",
+								JOptionPane.INFORMATION_MESSAGE);
+						txt_num.setText("");
+					} else if (selecionado == 0) {
+						JOptionPane
+								.showMessageDialog(null, "Selecione um cubo");
+					} else if (selecionado - 1 > tamanho) {
+						JOptionPane
+								.showMessageDialog(null, "Posição inválida!");
+					} else {
+						lbl_vazia.setVisible(false);
+						System.out.println("entrou no if");
+						int operacao = 3;
+						Thread t1 = new AnimacaoLista(operacao, lbl_cubo1,
+								lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
+								lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3,
+								lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia,
+								txt_num, selecionado, Lista, tamanho);
+						t1.start();
+						tamanho++;
+						lbl_tamanho.setText(Integer.toString(tamanho));
+
+						btn_remove.setEnabled(true);
+						btn_removefinal.setEnabled(true);
+						btn_removeinicio.setEnabled(true);
+						if (tamanho >= 6) {
+							lbl_cheia.setVisible(true);
+							btn_add.setEnabled(false);
+							btn_addinicio.setEnabled(false);
+							btn_addfinal.setEnabled(false);
+
+						}
+					}
+				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null,
 							"Por favor, Digite números de 1 a 99", "Aviso",
 							JOptionPane.INFORMATION_MESSAGE);
 					txt_num.setText("");
-				} else if (selecionado == 0) {
-					JOptionPane.showMessageDialog(null, "Selecione um cubo");
-				} else if (selecionado - 1 > tamanho) {
-					JOptionPane.showMessageDialog(null, "Posição inválida!");
-				} else {
-					lbl_vazia.setVisible(false);
-					System.out.println("entrou no if");
-					int operacao = 3;
-					Thread t1 = new AnimacaoLista(operacao, lbl_cubo1,
-							lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
-							lbl_cubo6, lbl_valor1, lbl_valor2, lbl_valor3,
-							lbl_valor4, lbl_valor5, lbl_valor6, lbl_cheia,
-							txt_num, selecionado, Lista, tamanho);
-					t1.start();
-					tamanho++;
-					lbl_tamanho.setText(Integer.toString(tamanho));
-
-					btn_remove.setEnabled(true);
-					btn_removefinal.setEnabled(true);
-					btn_removeinicio.setEnabled(true);
-					if (tamanho >= 6) {
-						lbl_cheia.setVisible(true);
-						btn_add.setEnabled(false);
-						btn_addinicio.setEnabled(false);
-						btn_addfinal.setEnabled(false);
-
-					}
 				}
 			}
 		});

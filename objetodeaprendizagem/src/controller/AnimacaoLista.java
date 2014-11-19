@@ -1,7 +1,6 @@
 package controller;
 
 import java.awt.Rectangle;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -63,12 +62,15 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 		switch (operacao) {
 		case 1:
 			addInicio();
+			txt_num.setText("");
 			break;
 		case 2:
 			addFinal();
+			txt_num.setText("");
 			break;
 		case 3:
 			addElemento();
+			txt_num.setText("");
 			break;
 		case 4:
 			removeInicio();
@@ -410,9 +412,11 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor1.setText(txt_num.getText());
+			alinhar(lbl_valor1, posicao1, posicao2);
 			lbl_valor1.setBounds(posicao1);
 
 			lista[0] = Integer.parseInt(txt_num.getText());
+
 			lbl_valor1.setVisible(true);
 
 			break;
@@ -424,6 +428,7 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor2.setText(txt_num.getText());
+			alinhar(lbl_valor2, posicao1, posicao2);
 			lbl_valor2.setBounds(posicao1);
 
 			lista[1] = Integer.parseInt(txt_num.getText());
@@ -434,10 +439,10 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor3.getBounds();
 			posicao2 = lbl_cubo3.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor3.setText(txt_num.getText());
+			alinhar(lbl_valor3, posicao1, posicao2);
 			lbl_valor3.setBounds(posicao1);
 
 			lista[2] = Integer.parseInt(txt_num.getText());
@@ -448,10 +453,10 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor4.getBounds();
 			posicao2 = lbl_cubo4.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor4.setText(txt_num.getText());
+			alinhar(lbl_valor4, posicao1, posicao2);
 			lbl_valor4.setBounds(posicao1);
 
 			lista[3] = Integer.parseInt(txt_num.getText());
@@ -462,10 +467,10 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor5.getBounds();
 			posicao2 = lbl_cubo5.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor5.setText(txt_num.getText());
+			alinhar(lbl_valor1, posicao1, posicao2);
 			lbl_valor5.setBounds(posicao1);
 
 			lista[4] = Integer.parseInt(txt_num.getText());
@@ -476,16 +481,24 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			posicao1 = lbl_valor6.getBounds();
 			posicao2 = lbl_cubo6.getBounds();
 
-			posicao1.x = posicao2.x + 15;
 			posicao1.y = posicao2.y + 30;
 
 			lbl_valor6.setText(txt_num.getText());
+			alinhar(lbl_valor1, posicao1, posicao2);
 			lbl_valor6.setBounds(posicao1);
 
 			lista[5] = Integer.parseInt(txt_num.getText());
 			lbl_valor6.setVisible(true);
 
 			break;
+		}
+	}
+
+	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2) {
+		if (Integer.parseInt(lbl_valor.getText()) < 10) {
+			return posicao1.x = posicao2.x + 15;
+		} else {
+			return posicao1.x = posicao2.x + 12;
 		}
 	}
 
@@ -576,7 +589,7 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 	 * 
 	 * @param element
 	 */
-	
+
 	private void desabilita(int element) {
 
 		switch (element) {

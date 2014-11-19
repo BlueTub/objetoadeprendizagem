@@ -86,7 +86,7 @@ public class Frm_animaArvore extends Telas {
 		centralizeFrame();
 		Estilo();
 		iconeBarra();
-		
+
 		JLabel lblA = new JLabel("*1 a 999.");
 		lblA.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		lblA.setBounds(284, 369, 46, 14);
@@ -139,43 +139,50 @@ public class Frm_animaArvore extends Telas {
 
 		final JLabel lbl_cubo1 = new JLabel("");
 
-		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo1.setBounds(318, 28, 60, 60);
 		contentPane.add(lbl_cubo1);
 
 		final JLabel lbl_cubo2 = new JLabel("");
 
-		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo2.setBounds(175, 119, 60, 60);
 		contentPane.add(lbl_cubo2);
 
 		final JLabel lbl_cubo3 = new JLabel("");
 
-		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo3.setBounds(458, 119, 60, 60);
 		contentPane.add(lbl_cubo3);
 
 		final JLabel lbl_cubo4 = new JLabel("");
 
-		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo4.setBounds(87, 210, 60, 60);
 		contentPane.add(lbl_cubo4);
 
 		final JLabel lbl_cubo5 = new JLabel("");
 
-		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo5.setBounds(245, 210, 60, 60);
 		contentPane.add(lbl_cubo5);
 
 		final JLabel lbl_cubo6 = new JLabel("");
 
-		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo6.setBounds(372, 210, 60, 60);
 		contentPane.add(lbl_cubo6);
 
 		final JLabel lbl_cubo7 = new JLabel("");
 
-		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/Cubo Vermelho.png")));
+		lbl_cubo7.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/Cubo Vermelho.png")));
 		lbl_cubo7.setBounds(528, 210, 60, 60);
 		contentPane.add(lbl_cubo7);
 
@@ -189,7 +196,8 @@ public class Frm_animaArvore extends Telas {
 		txt_num.setFocusable(true);
 
 		final JButton btn_adiciona = new JButton("Adicionar");
-		btn_adiciona.setToolTipText("Adicionar n\u00FAmero a \u00E1rvore bin\u00E1ria");
+		btn_adiciona
+				.setToolTipText("Adicionar n\u00FAmero a \u00E1rvore bin\u00E1ria");
 		btn_adiciona.setMnemonic('A');
 		btn_adiciona.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_adiciona.addActionListener(new ActionListener() {
@@ -197,42 +205,56 @@ public class Frm_animaArvore extends Telas {
 				if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
-					if (Integer.parseInt(txt_num.getText()) < 1 || Integer.parseInt(txt_num.getText()) > 999){
-					JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
-							JOptionPane.INFORMATION_MESSAGE);
-					txt_num.setText("");
-					
-				}else{
-					int operacao = 1;
-					Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1, lbl_cubo2,
-							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
-							lbl_cubo7, lbl_valor1, lbl_valor2, lbl_valor3,
-							lbl_valor4, lbl_valor5, lbl_valor6, lbl_valor7,
-							txt_num, arvore, primeiro, selecionado);
-					t1.start();
-					primeiro = false;
+					try {
+						if (Integer.parseInt(txt_num.getText()) < 1
+								|| Integer.parseInt(txt_num.getText()) > 999) {
+							JOptionPane.showMessageDialog(null,
+									"Por favor, Digite números de 1 a 999",
+									"Aviso", JOptionPane.INFORMATION_MESSAGE);
+							txt_num.setText("");
+
+						} else {
+							int operacao = 1;
+							Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1,
+									lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
+									lbl_cubo6, lbl_cubo7, lbl_valor1,
+									lbl_valor2, lbl_valor3, lbl_valor4,
+									lbl_valor5, lbl_valor6, lbl_valor7,
+									txt_num, arvore, primeiro, selecionado);
+							t1.start();
+							primeiro = false;
+
+						}
+
+					} catch (Exception e) {
+						txt_num.setText("");
+						JOptionPane.showMessageDialog(null,
+								"Por favor, Digite números de 1 a 999",
+								"Aviso", JOptionPane.INFORMATION_MESSAGE);
+						
+					}
 
 				}
-			 }
 			}
 		});
-		
+
 		/**
 		 * Listener enter
 		 */
-		
+
 		txt_num.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-			
-				if(arg0.getKeyCode() == KeyEvent.VK_ENTER){
+
+				if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
 					btn_adiciona.doClick();
 				}
 			}
 		});
 
 		JButton btn_remove = new JButton("Remover");
-		btn_remove.setToolTipText("Remover n\u00FAmero a \u00E1rvore bin\u00E1ria");
+		btn_remove
+				.setToolTipText("Remover n\u00FAmero a \u00E1rvore bin\u00E1ria");
 		btn_remove.setMnemonic('R');
 		btn_remove.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_remove.addActionListener(new ActionListener() {
@@ -257,14 +279,15 @@ public class Frm_animaArvore extends Telas {
 		lblProfundidade.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		lblProfundidade.setBounds(65, 57, 85, 14);
 		contentPane.add(lblProfundidade);
-		
+
 		JButton btnNewButton = new JButton("Voltar");
-		btnNewButton.setToolTipText("Voltar para a descri\u00E7\u00E3o da \u00E1rvore bin\u00E1ria");
+		btnNewButton
+				.setToolTipText("Voltar para a descri\u00E7\u00E3o da \u00E1rvore bin\u00E1ria");
 		btnNewButton.setMnemonic('v');
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				Frm_descricao tela = new Frm_descricao(3);
 				tela.setVisible(true);
 				dispose();
@@ -272,13 +295,13 @@ public class Frm_animaArvore extends Telas {
 		});
 		btnNewButton.setBounds(432, 363, 101, 43);
 		contentPane.add(btnNewButton);
-		
+
 		JButton btnNewButton_1 = new JButton("Question\u00E1rio");
 		btnNewButton_1.setToolTipText("Ir para o question\u00E1rio");
 		btnNewButton_1.setMnemonic('q');
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Frm_Perguntas tela=new Frm_Perguntas("Perguntas3.txt");
+				Frm_Perguntas tela = new Frm_Perguntas("Perguntas3.txt");
 				tela.setVisible(true);
 				dispose();
 			}
@@ -286,99 +309,110 @@ public class Frm_animaArvore extends Telas {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(556, 363, 113, 43);
 		contentPane.add(btnNewButton_1);
-				
-				JLabel label = new JLabel("Dica: Voc\u00EA pode selecionar uma posi\u00E7\u00E3o clicando sobre o cubo.");
-				label.setBounds(10, 404, 385, 19);
-				contentPane.add(label);
-						
-						JMenuBar menuBar = new JMenuBar();
-						menuBar.setBounds(0, 0, 689, 21);
-						contentPane.add(menuBar);
-						
-						JMenu mnNewMenu = new JMenu("Arquivo");
-						menuBar.add(mnNewMenu);
-						
-						JMenuItem mntmNewMenuItem = new JMenuItem("Menu Principal");
-						mntmNewMenuItem.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent arg0) {
-								Frm_principal telaprincipal = new Frm_principal();
-								telaprincipal.setVisible(true);
-								dispose();
-							}
-						});
-						mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/home.png")));
-						mnNewMenu.add(mntmNewMenuItem);
-						
-						JMenuItem mntmNewMenuItem_1 = new JMenuItem("Fechar");
-						mntmNewMenuItem_1.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent arg0) {
-								System.exit(0);
-							}
-						});
-						mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/close.png")));
-						mnNewMenu.add(mntmNewMenuItem_1);
-						
-						JMenu mnNewMenu_1 = new JMenu("Ajuda");
-						menuBar.add(mnNewMenu_1);
-						
-						JMenuItem mntmNewMenuItem_2 = new JMenuItem("Manual");
-						mntmNewMenuItem_2.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent arg0) {
-								AbreDoc doc = new AbreDoc();
-								doc.AbreManual();
-							}
-						});
-						mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/manual.png")));
-						mnNewMenu_1.add(mntmNewMenuItem_2);
-						
-						JMenu mnNewMenu_2 = new JMenu("Sobre");
-						menuBar.add(mnNewMenu_2);
-						
-						JMenuItem mntmNewMenuItem_3 = new JMenuItem("Descri\u00E7\u00E3o");
-						mntmNewMenuItem_3.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent arg0) {
-								Frm_sobre sobre = new Frm_sobre();
-								sobre.setVisible(true);
-							}
-						});
-						mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/about-people.png")));
-						mnNewMenu_2.add(mntmNewMenuItem_3);
-						
-						JLabel lblNewLabel = new JLabel("");
-						lblNewLabel.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
-						lblNewLabel.setBounds(233, 91, 60, 23);
-						contentPane.add(lblNewLabel);
-						
-						JLabel lblNewLabel_1 = new JLabel("");
-						lblNewLabel_1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
-						lblNewLabel_1.setBounds(115, 190, 46, 14);
-						contentPane.add(lblNewLabel_1);
-						
-						JLabel lblNewLabel_2 = new JLabel("");
-						lblNewLabel_2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
-						lblNewLabel_2.setBounds(233, 190, 46, 14);
-						contentPane.add(lblNewLabel_2);
-						
-						JLabel lblNewLabel_3 = new JLabel("");
-						lblNewLabel_3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
-						lblNewLabel_3.setBounds(398, 91, 60, 23);
-						contentPane.add(lblNewLabel_3);
-						
-						JLabel lblNewLabel_4 = new JLabel("");
-						lblNewLabel_4.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
-						lblNewLabel_4.setBounds(505, 190, 46, 14);
-						contentPane.add(lblNewLabel_4);
-						
-						JLabel lblNewLabel_5 = new JLabel("");
-						lblNewLabel_5.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
-						lblNewLabel_5.setBounds(402, 190, 46, 14);
-						contentPane.add(lblNewLabel_5);
-						
-								JLabel lbl_fundo = new JLabel("");
-								lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-										.getResource("/Imagens/BackGround.png")));
-								lbl_fundo.setBounds(0, 0, 689, 458);
-								contentPane.add(lbl_fundo);
+
+		JLabel label = new JLabel(
+				"Dica: Voc\u00EA pode selecionar uma posi\u00E7\u00E3o clicando sobre o cubo.");
+		label.setBounds(10, 404, 385, 19);
+		contentPane.add(label);
+
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 689, 21);
+		contentPane.add(menuBar);
+
+		JMenu mnNewMenu = new JMenu("Arquivo");
+		menuBar.add(mnNewMenu);
+
+		JMenuItem mntmNewMenuItem = new JMenuItem("Menu Principal");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_principal telaprincipal = new Frm_principal();
+				telaprincipal.setVisible(true);
+				dispose();
+			}
+		});
+		mntmNewMenuItem.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/home.png")));
+		mnNewMenu.add(mntmNewMenuItem);
+
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Fechar");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/close.png")));
+		mnNewMenu.add(mntmNewMenuItem_1);
+
+		JMenu mnNewMenu_1 = new JMenu("Ajuda");
+		menuBar.add(mnNewMenu_1);
+
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Manual");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AbreDoc doc = new AbreDoc();
+				doc.AbreManual();
+			}
+		});
+		mntmNewMenuItem_2.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/manual.png")));
+		mnNewMenu_1.add(mntmNewMenuItem_2);
+
+		JMenu mnNewMenu_2 = new JMenu("Sobre");
+		menuBar.add(mnNewMenu_2);
+
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Descri\u00E7\u00E3o");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_sobre sobre = new Frm_sobre();
+				sobre.setVisible(true);
+			}
+		});
+		mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/about-people.png")));
+		mnNewMenu_2.add(mntmNewMenuItem_3);
+
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/galhoesq.png")));
+		lblNewLabel.setBounds(233, 91, 60, 23);
+		contentPane.add(lblNewLabel);
+
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/galhoesq.png")));
+		lblNewLabel_1.setBounds(115, 190, 46, 14);
+		contentPane.add(lblNewLabel_1);
+
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/ganhodir.png")));
+		lblNewLabel_2.setBounds(233, 190, 46, 14);
+		contentPane.add(lblNewLabel_2);
+
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/ganhodir.png")));
+		lblNewLabel_3.setBounds(398, 91, 60, 23);
+		contentPane.add(lblNewLabel_3);
+
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/ganhodir.png")));
+		lblNewLabel_4.setBounds(505, 190, 46, 14);
+		contentPane.add(lblNewLabel_4);
+
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/galhoesq.png")));
+		lblNewLabel_5.setBounds(402, 190, 46, 14);
+		contentPane.add(lblNewLabel_5);
+
+		JLabel lbl_fundo = new JLabel("");
+		lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+				.getResource("/Imagens/BackGround.png")));
+		lbl_fundo.setBounds(0, 0, 689, 458);
+		contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
 			@Override

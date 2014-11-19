@@ -3,6 +3,7 @@ package controller;
 import java.awt.Rectangle;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -89,7 +90,9 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 		// esquerda3/ 6= direita3
 
 		int rand = Integer.parseInt(txt_num.getText());
+
 		if (verificadupli(rand) == false) {
+
 			if (arvore[0] == 0) {
 				add(1);
 			} else {
@@ -142,7 +145,7 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 				}
 
 			}
-
+			txt_num.setText("");
 		} else {
 			System.out.println("numero repetido");
 		}
@@ -157,116 +160,131 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 	private void add(int opc) {
 		Rectangle posicao1;
 		Rectangle posicao2;
-		switch (opc) {
-		case 1:
-			posicao1 = lbl_valor1.getBounds();
-			posicao2 = lbl_cubo1.getBounds();
 
-			posicao1.y = posicao2.y + 30;
+			switch (opc) {
+			case 1:
+				posicao1 = lbl_valor1.getBounds();
+				posicao2 = lbl_cubo1.getBounds();
 
-			lbl_valor1.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor1, posicao2, posicao2);
-			lbl_valor1.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[0] = Integer.parseInt(txt_num.getText());
-			lbl_valor1.setVisible(true);
-			break;
-		case 2:
-			posicao1 = lbl_valor2.getBounds();
-			posicao2 = lbl_cubo2.getBounds();
+				lbl_valor1.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor1, posicao2, posicao2);
+				lbl_valor1.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[0] = Integer.parseInt(txt_num.getText());
+				lbl_valor1.setVisible(true);
+				break;
+			case 2:
+				posicao1 = lbl_valor2.getBounds();
+				posicao2 = lbl_cubo2.getBounds();
 
-			lbl_valor2.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor2, posicao2, posicao2);
-			lbl_valor2.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[1] = Integer.parseInt(txt_num.getText());
-			lbl_valor2.setVisible(true);
-			break;
-		case 3:
-			posicao1 = lbl_valor3.getBounds();
-			posicao2 = lbl_cubo3.getBounds();
+				lbl_valor2.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor2, posicao2, posicao2);
+				lbl_valor2.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[1] = Integer.parseInt(txt_num.getText());
+				lbl_valor2.setVisible(true);
+				break;
+			case 3:
+				posicao1 = lbl_valor3.getBounds();
+				posicao2 = lbl_cubo3.getBounds();
 
-			lbl_valor3.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor3, posicao2, posicao2);
-			lbl_valor3.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[2] = Integer.parseInt(txt_num.getText());
-			lbl_valor3.setVisible(true);
-			break;
-		case 4:
-			posicao1 = lbl_valor4.getBounds();
-			posicao2 = lbl_cubo4.getBounds();
+				lbl_valor3.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor3, posicao2, posicao2);
+				lbl_valor3.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[2] = Integer.parseInt(txt_num.getText());
+				lbl_valor3.setVisible(true);
+				break;
+			case 4:
+				posicao1 = lbl_valor4.getBounds();
+				posicao2 = lbl_cubo4.getBounds();
 
-			lbl_valor4.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor4, posicao2, posicao2);
-			lbl_valor4.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[3] = Integer.parseInt(txt_num.getText());
-			lbl_valor4.setVisible(true);
-			break;
-		case 5:
-			posicao1 = lbl_valor5.getBounds();
-			posicao2 = lbl_cubo5.getBounds();
+				lbl_valor4.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor4, posicao2, posicao2);
+				lbl_valor4.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[3] = Integer.parseInt(txt_num.getText());
+				lbl_valor4.setVisible(true);
+				break;
+			case 5:
+				posicao1 = lbl_valor5.getBounds();
+				posicao2 = lbl_cubo5.getBounds();
 
-			lbl_valor5.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor5, posicao2, posicao2);
-			lbl_valor5.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[4] = Integer.parseInt(txt_num.getText());
-			lbl_valor5.setVisible(true);
-			break;
-		case 6:
-			posicao1 = lbl_valor6.getBounds();
-			posicao2 = lbl_cubo6.getBounds();
+				lbl_valor5.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor5, posicao2, posicao2);
+				lbl_valor5.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[4] = Integer.parseInt(txt_num.getText());
+				lbl_valor5.setVisible(true);
+				break;
+			case 6:
+				posicao1 = lbl_valor6.getBounds();
+				posicao2 = lbl_cubo6.getBounds();
 
-			lbl_valor6.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor6, posicao2, posicao2);
-			lbl_valor6.setBounds(posicao1);
+				posicao1.y = posicao2.y + 30;
 
-			arvore[5] = Integer.parseInt(txt_num.getText());
-			lbl_valor6.setVisible(true);
-			break;
-		case 7:
-			posicao1 = lbl_valor7.getBounds();
-			posicao2 = lbl_cubo7.getBounds();
+				lbl_valor6.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor6, posicao2, posicao2);
+				lbl_valor6.setBounds(posicao1);
 
-			posicao1.y = posicao2.y + 30;
+				arvore[5] = Integer.parseInt(txt_num.getText());
+				lbl_valor6.setVisible(true);
 
-			lbl_valor7.setText(txt_num.getText());
-			posicao1.x = alinhar(lbl_valor7, posicao2, posicao2);
-			lbl_valor7.setBounds(posicao1);
+				break;
+			case 7:
+				posicao1 = lbl_valor7.getBounds();
+				posicao2 = lbl_cubo7.getBounds();
 
-			arvore[6] = Integer.parseInt(txt_num.getText());
-			lbl_valor7.setVisible(true);
-			break;
-		default:
-			break;
-		}
+				posicao1.y = posicao2.y + 30;
+
+				lbl_valor7.setText(txt_num.getText());
+				posicao1.x = alinhar(lbl_valor7, posicao2, posicao2);
+				lbl_valor7.setBounds(posicao1);
+
+				arvore[6] = Integer.parseInt(txt_num.getText());
+				lbl_valor7.setVisible(true);
+				break;
+			default:
+				break;
+			}
+
 
 	}
+
 	/**
 	 * Metodo para alinhar a Label ao Cubo
+	 * 
 	 * @param lbl_valor
 	 * @param posicao1
 	 * @param posicao2
 	 * @return
 	 */
-	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2){
-		if	(Integer.parseInt(lbl_valor.getText()) < 10){
-			return posicao1.x = posicao2.x + 15;
-		}else{
-		return posicao1.x = posicao2.x + 11;
+	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2) {
+		try {
+			if (Integer.parseInt(lbl_valor.getText()) < 10) {
+				return posicao1.x = posicao2.x + 15;
+			} else if (Integer.parseInt(lbl_valor.getText()) > 99) {
+				return posicao1.x = posicao2.x + 5;
+			} else {
+				return posicao1.x = posicao2.x + 12;
+			}
+
+		} catch (NumberFormatException e) {
+			txt_num.setText("");
+			JOptionPane.showMessageDialog(null, "entrou");
+			return 0;
 		}
+
 	}
 
 	/**
@@ -301,7 +319,7 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 			if (arvore[0] != 0 && (arvore[1] == 0 && arvore[2] == 0)) {
 				arvore[0] = 0;
 				lbl_valor1.setVisible(false);
-				
+
 			} else if (arvore[1] != 0 && arvore[2] != 0) {
 
 				if ((arvore[3] == 0 && arvore[4] == 0 && arvore[5] == 0 && arvore[6] == 0)
@@ -373,11 +391,11 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 				} else if (arvore[5] != 0 && arvore[6] != 0 || arvore[5] != 0
 						&& arvore[6] == 0) {
 					arvore[0] = arvore[5];
-					arvore[5]=0;
+					arvore[5] = 0;
 					lbl_valor1.setText(Integer.toString(arvore[0]));
 					lbl_valor6.setVisible(false);
 
-				} else if(arvore[5]==0  && arvore[6]!=0){
+				} else if (arvore[5] == 0 && arvore[6] != 0) {
 					arvore[0] = arvore[2];
 					arvore[2] = arvore[6];
 					arvore[6] = 0;
