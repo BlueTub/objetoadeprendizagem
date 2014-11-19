@@ -68,7 +68,7 @@ public class Frm_animaLista extends Telas {
 	private JTextField txt_num;
 	private int selecionado = 0;
 	private int[] Lista = { 0, 0, 0, 0, 0, 0 };
-	private int tamanho;
+	private int tamanho =0;
 	private JLabel lblA;
 	private JLabel lbl_vazia;
 	private JMenuBar menuBar;
@@ -614,6 +614,8 @@ public class Frm_animaLista extends Telas {
 
 				} else if (selecionado == 0) {
 					JOptionPane.showMessageDialog(null, "Selecione um cubo");
+				}else if (selecionado-1>tamanho){
+					JOptionPane.showMessageDialog(null, "Posição invalida!");
 				} else {
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
@@ -691,6 +693,8 @@ public class Frm_animaLista extends Telas {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else if (selecionado == 0) {
 					JOptionPane.showMessageDialog(null, "Selecione um cubo");
+				}else if (selecionado-1>=tamanho){
+					JOptionPane.showMessageDialog(null, "Posição invalida!");
 				} else {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
