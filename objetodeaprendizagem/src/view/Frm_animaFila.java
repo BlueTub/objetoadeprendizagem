@@ -480,6 +480,13 @@ public class Frm_animaFila extends Telas {
 	    }
 		
 	}
+	
+	/**
+	 * 
+	 * @author Hury
+	 *
+	 */
+	
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Menu Principal");

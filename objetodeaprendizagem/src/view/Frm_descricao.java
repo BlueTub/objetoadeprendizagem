@@ -14,7 +14,6 @@ import controller.AbreDoc;
 import controller.Descricao_c;
 import controller.Telas;
 
-import Entity.Descricao_e;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -28,6 +27,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+
+import entity.Descricao_e;
 /**
  * Tela que irá aprensentar os atribultos do objeto em questão
  * @author Hury

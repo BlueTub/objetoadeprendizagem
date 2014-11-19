@@ -8,7 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import Entity.Configuracao_e;
+import entity.Configuracao_e;
+
 
 /**
  * Classe para gravar um arquivo txt com a personalização do usuario

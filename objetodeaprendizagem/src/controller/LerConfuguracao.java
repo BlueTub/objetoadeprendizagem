@@ -8,7 +8,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Entity.Configuracao_e;
+import entity.Configuracao_e;
+
 
 /**
  * Classe para leitara do arquivo Config

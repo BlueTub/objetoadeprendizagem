@@ -3,8 +3,8 @@
  */
 package controller;
 
-import Entity.No;
-import Entity.Perguntas;
+import entity.No;
+import entity.Perguntas;
 
 /**
  * Classe que armazena as perguntas em uma lista ligada
