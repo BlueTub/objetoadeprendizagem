@@ -274,7 +274,7 @@ public class Frm_animaArvore extends Telas {
 				contentPane.add(label);
 						
 						JMenuBar menuBar = new JMenuBar();
-						menuBar.setBounds(0, 0, 679, 21);
+						menuBar.setBounds(0, 0, 687, 21);
 						contentPane.add(menuBar);
 						
 						JMenu mnNewMenu = new JMenu("Arquivo");
@@ -325,12 +325,42 @@ public class Frm_animaArvore extends Telas {
 						});
 						mntmNewMenuItem_3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/about-people.png")));
 						mnNewMenu_2.add(mntmNewMenuItem_3);
-				
-						JLabel lbl_fundo = new JLabel("");
-						lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
-								.getResource("/Imagens/BackGround.png")));
-						lbl_fundo.setBounds(0, 0, 687, 439);
-						contentPane.add(lbl_fundo);
+						
+						JLabel lblNewLabel = new JLabel("");
+						lblNewLabel.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
+						lblNewLabel.setBounds(233, 91, 60, 23);
+						contentPane.add(lblNewLabel);
+						
+						JLabel lblNewLabel_1 = new JLabel("");
+						lblNewLabel_1.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
+						lblNewLabel_1.setBounds(115, 190, 46, 14);
+						contentPane.add(lblNewLabel_1);
+						
+						JLabel lblNewLabel_2 = new JLabel("");
+						lblNewLabel_2.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
+						lblNewLabel_2.setBounds(233, 190, 46, 14);
+						contentPane.add(lblNewLabel_2);
+						
+						JLabel lblNewLabel_3 = new JLabel("");
+						lblNewLabel_3.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
+						lblNewLabel_3.setBounds(398, 91, 60, 23);
+						contentPane.add(lblNewLabel_3);
+						
+						JLabel lblNewLabel_4 = new JLabel("");
+						lblNewLabel_4.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/ganhodir.png")));
+						lblNewLabel_4.setBounds(505, 190, 46, 14);
+						contentPane.add(lblNewLabel_4);
+						
+						JLabel lblNewLabel_5 = new JLabel("");
+						lblNewLabel_5.setIcon(new ImageIcon(Frm_animaArvore.class.getResource("/Imagens/galhoesq.png")));
+						lblNewLabel_5.setBounds(402, 190, 46, 14);
+						contentPane.add(lblNewLabel_5);
+						
+								JLabel lbl_fundo = new JLabel("");
+								lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
+										.getResource("/Imagens/BackGround.png")));
+								lbl_fundo.setBounds(0, 0, 687, 439);
+								contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
 			@Override
