@@ -86,6 +86,11 @@ public class Frm_animaArvore extends Telas {
 		centralizeFrame();
 		Estilo();
 		iconeBarra();
+		
+		JLabel lblA = new JLabel("*1 a 999.");
+		lblA.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblA.setBounds(284, 369, 46, 14);
+		contentPane.add(lblA);
 
 		JLabel lblElementoASer = new JLabel("Valor a ser adicionado*.");
 		lblElementoASer.setFont(new Font("Verdana", Font.BOLD, 14));
@@ -191,6 +196,12 @@ public class Frm_animaArvore extends Telas {
 				if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else {
+					if (Integer.parseInt(txt_num.getText()) < 1 || Integer.parseInt(txt_num.getText()) > 999){
+					JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+							JOptionPane.INFORMATION_MESSAGE);
+					txt_num.setText("");
+					
+				}else{
 					int operacao = 1;
 					Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1, lbl_cubo2,
 							lbl_cubo3, lbl_cubo4, lbl_cubo5, lbl_cubo6,
@@ -201,6 +212,7 @@ public class Frm_animaArvore extends Telas {
 					primeiro = false;
 
 				}
+			 }
 			}
 		});
 		
