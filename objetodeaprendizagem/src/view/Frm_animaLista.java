@@ -726,8 +726,7 @@ public class Frm_animaLista extends Telas {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
 					lbl_vazia.setVisible(true);
-				} else if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
+
 				} else {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
@@ -758,8 +757,7 @@ public class Frm_animaLista extends Telas {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
 					lbl_vazia.setVisible(true);
-				} else if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
+
 				} else {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");
