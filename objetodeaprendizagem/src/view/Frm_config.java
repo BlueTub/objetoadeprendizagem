@@ -40,7 +40,7 @@ import java.awt.event.WindowEvent;
  * 
  */
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 public class Frm_config extends Telas {
 
 	JRadioButton rdbtnnpequeno;
