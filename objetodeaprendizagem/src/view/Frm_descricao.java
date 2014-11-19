@@ -43,9 +43,9 @@ public class Frm_descricao extends Telas {
 	 * Launch the application.
 	 */
 
-	static// TODO está variavel deve receber um parametro de 0 a 3 do formulario
+	// TODO está variavel deve receber um parametro de 0 a 3 do formulario
 	// principal.
-	int objeto = 0;
+	private static int objeto = 0;
 
 	public static void main(String[] args) throws IOException {
 
@@ -309,6 +309,7 @@ public class Frm_descricao extends Telas {
 				.getResource("/Imagens/BackGround.png")));
 		lbl_fundo.setBounds(0, 0, 586, 395);
 		contentPane.add(lbl_fundo);
+		
 		btn_prox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -319,10 +320,17 @@ public class Frm_descricao extends Telas {
 					dispose();
 					break;
 				case 1:
-					Frm_animaFila telafila = new Frm_animaFila(objeto);
-					telafila.setVisible(true);
-					dispose();
+					try {
+						Frm_animaFila telafila = new Frm_animaFila();
+						telafila.setVisible(true);
+						dispose();
+						
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(null, "erro fila. obj=" +objeto);
+						
+					}
 					break;
+
 				case 2:
 					Frm_animaLista telalista = new Frm_animaLista(objeto);
 					telalista.setVisible(true);
