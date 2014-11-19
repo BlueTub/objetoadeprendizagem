@@ -189,6 +189,7 @@ public class Frm_animaArvore extends Telas {
 		txt_num.setFocusable(true);
 
 		final JButton btn_adiciona = new JButton("Adicionar");
+		btn_adiciona.setToolTipText("Adicionar n\u00FAmero a \u00E1rvore bin\u00E1ria");
 		btn_adiciona.setMnemonic('A');
 		btn_adiciona.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_adiciona.addActionListener(new ActionListener() {
@@ -231,6 +232,7 @@ public class Frm_animaArvore extends Telas {
 		});
 
 		JButton btn_remove = new JButton("Remover");
+		btn_remove.setToolTipText("Remover n\u00FAmero a \u00E1rvore bin\u00E1ria");
 		btn_remove.setMnemonic('R');
 		btn_remove.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_remove.addActionListener(new ActionListener() {
@@ -257,6 +259,7 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lblProfundidade);
 		
 		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.setToolTipText("Voltar para a descri\u00E7\u00E3o da \u00E1rvore bin\u00E1ria");
 		btnNewButton.setMnemonic('v');
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -271,6 +274,7 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Question\u00E1rio");
+		btnNewButton_1.setToolTipText("Ir para o question\u00E1rio");
 		btnNewButton_1.setMnemonic('q');
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
