@@ -146,6 +146,7 @@ public class AnimacaoArvore extends Thread implements OperacaoAnimacao {
 
 			}
 			txt_num.setText("");
+			txt_num.grabFocus();
 		} else {
 			System.out.println("numero repetido");
 		}
