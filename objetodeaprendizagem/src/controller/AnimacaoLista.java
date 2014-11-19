@@ -4,6 +4,12 @@ import java.awt.Rectangle;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * Classe com os metodos da Lista
+ * @author Hury
+ *
+ */
+
 public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 
 	private JLabel lbl_cubo1;
