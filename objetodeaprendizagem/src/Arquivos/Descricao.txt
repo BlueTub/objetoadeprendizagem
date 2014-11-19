@@ -1,24 +1,24 @@
 0
-PILHA √© um tipo de lista linear em que todas as inser√ß√µes e remo√ß√µes s√£o feitas num mesmo extremo, denominado TOPO. Cada vez que um novo item √© inserido numa pilha √© colocado em seu topo. Apenas o item do topo da pilha pode ser removido, devido a essa pol√≠tica de acesso, os itens s√£o sempre removidos na ordem inversa √†quela em que foram inseridos. A funcionalidade do topo √© a refer√™ncia ao √∫ltimo elemento adicionado
-Pilha √© uma das estruturas de dados mais √∫teis em computa√ß√£o, sendo usada na solu√ß√£o de v√°rios problemas cl√°ssicos na √°rea.
-Uma pilha √© denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, ser√° o ultimo a sair. Imagine uma pilha de pratos onde, voc√™ queira pegar o primeiro prato(o que est√° embaixo da pilha), para fazer isso voc√™ precisa retirar todos aqueles que est√£o acima dele.
-Um de seus usos pode ser visto na valida√ß√£o de express√µes aritm√©ticas em compiladores.
-A pilha √© a estrutura de dados de mais f√°cil compreens√£o. 
+PILHA È um tipo de lista linear em que todas as inserÁıes e remoÁıes s„o feitas num mesmo extremo, denominado TOPO. Cada vez que um novo item È inserido numa pilha È colocado em seu topo. Apenas o item do topo da pilha pode ser removido, devido a essa polÌtica de acesso, os itens s„o sempre removidos na ordem inversa ‡quela em que foram inseridos. A funcionalidade do topo È a referÍncia ao ˙ltimo elemento adicionado
+Pilha È uma das estruturas de dados mais ˙teis em computaÁ„o, sendo usada na soluÁ„o de v·rios problemas cl·ssicos na ·rea.
+Uma pilha È denominada LIFO(Last-In/Fist-Out ou Ultimo-que-Entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, ser· o ultimo a sair. Imagine uma pilha de pratos onde, vocÍ queira pegar o primeiro prato(o que est· embaixo da pilha), para fazer isso vocÍ precisa retirar todos aqueles que est„o acima dele.
+Um de seus usos pode ser visto na validaÁ„o de expressıes aritmÈticas em compiladores.
+A pilha È a estrutura de dados de mais f·cil compreens„o. 
 1
-FILA √© um tipo de lista linear em que todas as inser√ß√µes s√£o feitas ao final dela e suas remo√ß√µes s√£o feitas no in√≠cio, sendo controlado no c√≥digo internamente por uma vari√°vel "tamanho". Em uma Fila a ordem de sa√≠da dos itens corresponde diretamente √† ordem de entrada.
-Fila √© uma estrutura de dados muito utilizada na computa√ß√£o, sendo usada em diversas vezes, como por exemplo, em colora√ß√£o de regi√µes de imagens (pixel).
-Uma Fila √© denominada FIFO(First-in/First-out ou Primeiro-que-entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, ser√° o primeiro a sair. Imagine uma fila de banco.
-Um de seus usos √© aloca√ß√£o de recursos para impress√£o de documentos em uma impressora (spooler de impress√£o). Pode ser visto tamb√©m ao atendimento de processos requisitados a um sistema operacional. FILA
-A Fila √© uma estrutura de dados de f√°cil compreens√£o, um pouco mais complicada que uma Pilha, mas ainda de f√°cil entendimento.
+FILA È um tipo de lista linear em que todas as inserÁıes s„o feitas ao final dela e suas remoÁıes s„o feitas no inÌcio, sendo controlado no cÛdigo internamente por uma vari·vel "tamanho". Em uma Fila a ordem de saÌda dos itens corresponde diretamente ‡ ordem de entrada.
+Fila È uma estrutura de dados muito utilizada na computaÁ„o, sendo usada em diversas vezes, como por exemplo, em coloraÁ„o de regiıes de imagens (pixel).
+Uma Fila È denominada FIFO(First-in/First-out ou Primeiro-que-entra/Primeiro-que-sai). Isso significa que o primeiro elemento a entrar, ser· o primeiro a sair. Imagine uma fila de banco.
+Um de seus usos È alocaÁ„o de recursos para impress„o de documentos em uma impressora (spooler de impress„o). Pode ser visto tambÈm ao atendimento de processos requisitados a um sistema operacional. FILA
+A Fila È uma estrutura de dados de f·cil compreens„o, um pouco mais complicada que uma Pilha, mas ainda de f·cil entendimento.
 2
-Lista (tamb√©m chamado de lista linear) √© uma sequ√™ncia de itens, cujas propriedades estruturais dependem apenas da posi√ß√£o relativa de seus itens.
-Lista √© a estrutura de dados mais importante, considerando que Pilha e Fila s√£o ramifica√ß√µes suas.
-A caracter√≠stica fundamental de uma lista √© sua organiza√ß√£o unidimensional, que permite dizer precisamente onde ela come√ßa e onde ela termina.
-Um de seus usos √© no sistema de arquivos de um sistema operacional. O sistema operacional guarda os dados no disco criando uma lista, sabendo a posi√ß√£o de do arquivo a ser aberto/gravado. 
-A Lista √© uma estrutura de dados de m√©dia compreens√£o.
+Lista (tambÈm chamado de lista linear) È uma sequÍncia de itens, cujas propriedades estruturais dependem apenas da posiÁ„o relativa de seus itens.
+Lista È a estrutura de dados mais importante, considerando que Pilha e Fila s„o ramificaÁıes suas.
+A caracterÌstica fundamental de uma lista È sua organizaÁ„o unidimensional, que permite dizer precisamente onde ela comeÁa e onde ela termina.
+Um de seus usos È no sistema de arquivos de um sistema operacional. O sistema operacional guarda os dados no disco criando uma lista, sabendo a posiÁ„o de do arquivo a ser aberto/gravado. 
+A Lista È uma estrutura de dados de mÈdia compreens„o.
 3
-√Årvores s√£o estruturas recursivas, ou seja, removendo a raiz de uma √°rvore, obtemos uma cole√ß√£o de √°rvores. Na √°rvore bin√°ria os dados s√£o armazenados em n√≥s, cada n√≥ √© raiz de uma sub√°rvore, onde s√≥ √© permite no m√°ximo 2 n√≥s. Quando o n√≥ n√£o possue filhos (n√≥s descendentes) √© denominado folha, o n√≥ ao topo da √°rvore √© denominado raiz. Para Adicionar um elemento em uma √°rvore devemos comparar se ele √© maior ou menor que sua raiz. Se o n√∫mero for maior ele dever√° ir para direita, se for menor dever√° ir para esquerda. Para Remover um elemeto de uma arvore devemos observar seus filhos. Se n√£o existir filhos √© s√≥ remover o elemento, se existir, o elemento removido ser√° substituido ou pelo menor elemento da sub√°rvore da direita ou pelo maior da sub√°rvore da esquerda.(na ANIMA√á√ÉO ser√° utilizada a remo√ß√£o pelo menor da direita)
-√Årvore √© uma estrutura de dados que permite organizar dados de forma hier√°rquica. 
-√Årvore √© uma estrutura hier√°rquica composta por n√≥s. A profundidade de um n√≥ √© a dist√¢ncia deste n√≥ at√© a raiz. Um conjunto de n√≥s com a mesma profundidade √© denominado n√≠vel da √°rvore. A maior profundidade de um n√≥, √© a altura da √°rvore.
-Um de seus usos √© gerador de √≠ndices remissivos.
-√Årvore √© uma estrutura de dados de dif√≠cil compreens√£o.
+¡rvores s„o estruturas recursivas, ou seja, removendo a raiz de uma ·rvore, obtemos uma coleÁ„o de ·rvores. Na ·rvore bin·ria os dados s„o armazenados em nÛs, cada nÛ È raiz de uma sub·rvore, onde sÛ È permite no m·ximo 2 nÛs. Quando o nÛ n„o possue filhos (nÛs descendentes) È denominado folha, o nÛ ao topo da ·rvore È denominado raiz. Para Adicionar um elemento em uma ·rvore devemos comparar se ele È maior ou menor que sua raiz. Se o n˙mero for maior ele dever· ir para direita, se for menor dever· ir para esquerda. Para Remover um elemeto de uma arvore devemos observar seus filhos. Se n„o existir filhos È sÛ remover o elemento, se existir, o elemento removido ser· substituido ou pelo menor elemento da sub·rvore da direita ou pelo maior da sub·rvore da esquerda.(na ANIMA«√O ser· utilizada a remoÁ„o pelo menor da direita)
+¡rvore È uma estrutura de dados que permite organizar dados de forma hier·rquica. 
+¡rvore È uma estrutura hier·rquica composta por nÛs. A profundidade de um nÛ È a dist‚ncia deste nÛ atÈ a raiz. Um conjunto de nÛs com a mesma profundidade È denominado nÌvel da ·rvore. A maior profundidade de um nÛ, È a altura da ·rvore.
+Um de seus usos È gerador de Ìndices remissivos.
+¡rvore È uma estrutura de dados de difÌcil compreens„o.
