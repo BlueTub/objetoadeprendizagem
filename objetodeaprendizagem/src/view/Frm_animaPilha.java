@@ -460,32 +460,40 @@ public class Frm_animaPilha extends Telas {
 	 * @param btnRemover ficara false quando a animaçao estiver em execuçao
 	 */ 
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
-		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
-			JOptionPane.showMessageDialog(null, "Digite Números");
-			tf_num.setText("");
-		}else{
-			if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
-				JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
-						JOptionPane.INFORMATION_MESSAGE);
+		try {
+			if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
+				JOptionPane.showMessageDialog(null, "Digite Números");
 				tf_num.setText("");
 			}else{
-			
-			btnAdicionar.setEnabled(false);
-			btnRemover.setEnabled(false);
-			CarregaThread();
-			for (int i = z; i < vtEmpilhado.length - n; i++) {
-			vtEmpilhado[i] = vtDesempilhado[i];
-			vtDesempilhado[i].setText(tf_num.getText());
-			vtDesempilhado[i] = null;
-			vtIniciar[i].start();
+				if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
+					JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+							JOptionPane.INFORMATION_MESSAGE);
+					tf_num.setText("");
+				}else{
+				
+				btnAdicionar.setEnabled(false);
+				btnRemover.setEnabled(false);
+				CarregaThread();
+				for (int i = z; i < vtEmpilhado.length - n; i++) {
+				vtEmpilhado[i] = vtDesempilhado[i];
+				vtDesempilhado[i].setText(tf_num.getText());
+				vtDesempilhado[i] = null;
+				vtIniciar[i].start();
+				tf_num.setText("");
+			}
+			y -= 5;
+			n -=1;
+			z +=1;
+			cont++;
+			}
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,
+					"Por favor, Digite números de 1 a 99", "Aviso",
+					JOptionPane.INFORMATION_MESSAGE);
 			tf_num.setText("");
 		}
-		y -= 5;
-		n -=1;
-		z +=1;
-		cont++;
-		}
-		}
+		
 	}
 	
 	/**
