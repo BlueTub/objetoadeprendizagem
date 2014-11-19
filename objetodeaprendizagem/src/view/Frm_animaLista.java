@@ -275,7 +275,7 @@ public class Frm_animaLista extends Telas {
 		btn_addfinal.setBounds(459, 87, 123, 47);
 		contentPane.add(btn_addfinal);
 
-		JButton btn_addinicio = new JButton("Adiciona In\u00EDcio");
+		final JButton btn_addinicio = new JButton("Adiciona In\u00EDcio");
 
 		btn_addinicio
 				.setToolTipText("Adiciona um novo elemento no In\u00EDcio");
@@ -572,8 +572,15 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho++;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_remove.setEnabled(true);
+					btn_removefinal.setEnabled(true);
+					btn_removeinicio.setEnabled(true);
 					if(tamanho>=6){
 					lbl_cheia.setVisible(true);
+					btn_add.setEnabled(false);
+					btn_addinicio.setEnabled(false);
+					btn_addfinal.setEnabled(false);
 					}
 				}
 			}
@@ -598,8 +605,15 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho++;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_remove.setEnabled(true);
+					btn_removefinal.setEnabled(true);
+					btn_removeinicio.setEnabled(true);
 					if(tamanho>=6){
 					lbl_cheia.setVisible(true);
+					btn_add.setEnabled(false);
+					btn_addinicio.setEnabled(false);
+					btn_addfinal.setEnabled(false);
 					}
 				}
 			}
@@ -628,8 +642,16 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho++;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_remove.setEnabled(true);
+					btn_removefinal.setEnabled(true);
+					btn_removeinicio.setEnabled(true);
 					if(tamanho>=6){
 					lbl_cheia.setVisible(true);
+					btn_add.setEnabled(false);
+					btn_addinicio.setEnabled(false);
+					btn_addfinal.setEnabled(false);
+					
 					}
 				}
 			}
@@ -653,8 +675,15 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho--;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_add.setEnabled(true);
+					btn_addinicio.setEnabled(true);
+					btn_addfinal.setEnabled(true);
 					if(tamanho==0){
 					lbl_vazia.setVisible(true);
+					btn_remove.setEnabled(false);
+					btn_removefinal.setEnabled(false);
+					btn_removeinicio.setEnabled(false);
 					}
 				}
 			}
@@ -678,8 +707,15 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho--;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_add.setEnabled(true);
+					btn_addinicio.setEnabled(true);
+					btn_addfinal.setEnabled(true);
 					if(tamanho==0){
 					lbl_vazia.setVisible(true);
+					btn_remove.setEnabled(false);
+					btn_removefinal.setEnabled(false);
+					btn_removeinicio.setEnabled(false);
 					}
 				}
 			}
@@ -689,6 +725,7 @@ public class Frm_animaLista extends Telas {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
 					lbl_vazia.setVisible(true);
+					
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
 				} else if (selecionado == 0) {
@@ -707,12 +744,23 @@ public class Frm_animaLista extends Telas {
 					t1.start();
 					tamanho--;
 					lbl_tamanho.setText(Integer.toString(tamanho));
+					
+					btn_add.setEnabled(true);
+					btn_addinicio.setEnabled(true);
+					btn_addfinal.setEnabled(true);
 					if(tamanho==0){
 					lbl_vazia.setVisible(true);
+					btn_remove.setEnabled(false);
+					btn_removefinal.setEnabled(false);
+					btn_removeinicio.setEnabled(false);
 					}
 				}
 			}
 		});
+		
+		btn_remove.setEnabled(false);
+		btn_removefinal.setEnabled(false);
+		btn_removeinicio.setEnabled(false);
 
 	}
 
