@@ -243,6 +243,7 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(lblProfundidade);
 		
 		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.setMnemonic('v');
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -256,6 +257,14 @@ public class Frm_animaArvore extends Telas {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Question\u00E1rio");
+		btnNewButton_1.setMnemonic('q');
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Frm_Perguntas tela=new Frm_Perguntas("Perguntas3.txt");
+				tela.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(556, 363, 113, 43);
 		contentPane.add(btnNewButton_1);
