@@ -560,7 +560,14 @@ public class Frm_animaLista extends Telas {
 					lbl_cheia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
+					txt_num.setText("");
+					
 				} else {
+					if (Integer.parseInt(txt_num.getText()) < 1 || Integer.parseInt(txt_num.getText()) > 99){
+						JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+								JOptionPane.INFORMATION_MESSAGE);
+						txt_num.setText("");
+				}else{
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 1;
@@ -583,6 +590,7 @@ public class Frm_animaLista extends Telas {
 					btn_addfinal.setEnabled(false);
 					}
 				}
+			  }
 			}
 		});
 
@@ -591,9 +599,17 @@ public class Frm_animaLista extends Telas {
 				if (tamanho >= 6) {
 
 					lbl_cheia.setVisible(true);
-				} else if (TipoString(txt_num.getText()) != 1) {
+				} else{ 
+					if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
-				} else {
+					txt_num.setText("");
+				}else{
+					if (Integer.parseInt(txt_num.getText()) < 1 || Integer.parseInt(txt_num.getText()) > 99){
+						JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+								JOptionPane.INFORMATION_MESSAGE);
+						txt_num.setText("");
+					}
+				 else {
 					lbl_vazia.setVisible(false);
 					System.out.println("entrou no if");
 					int operacao = 2;
@@ -616,6 +632,7 @@ public class Frm_animaLista extends Telas {
 					btn_addfinal.setEnabled(false);
 					}
 				}
+			}}
 			}
 		});
 
@@ -625,7 +642,11 @@ public class Frm_animaLista extends Telas {
 					lbl_cheia.setVisible(true);
 				} else if (TipoString(txt_num.getText()) != 1) {
 					JOptionPane.showMessageDialog(null, "Digite Números");
-
+					txt_num.setText("");
+				}else if (Integer.parseInt(txt_num.getText()) < 1 || Integer.parseInt(txt_num.getText()) > 99){
+					JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
+							JOptionPane.INFORMATION_MESSAGE);
+					txt_num.setText("");
 				} else if (selecionado == 0) {
 					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				}else if (selecionado-1>tamanho){
