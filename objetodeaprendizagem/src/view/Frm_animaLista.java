@@ -325,17 +325,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
 				selecionado = 1;
 			}
@@ -344,17 +344,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
 				selecionado = 2;
 			}
@@ -363,17 +363,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
 				selecionado = 3;
 			}
@@ -382,17 +382,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
 				selecionado = 4;
 			}
@@ -401,17 +401,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
 				selecionado = 5;
 			}
@@ -420,17 +420,17 @@ public class Frm_animaLista extends Telas {
 		lbl_cubo6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaArvore.class
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
 						.getResource("/Imagens/Cubo2_select.png")));
 				selecionado = 6;
 			}
