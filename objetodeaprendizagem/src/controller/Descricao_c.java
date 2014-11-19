@@ -4,7 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Entity.Descricao_e;
+import entity.Descricao_e;
+
 
 /**
  * Classe que carrega na memoria o conteúdo do arquivo descricao.txt

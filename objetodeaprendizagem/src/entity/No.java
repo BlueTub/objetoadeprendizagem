@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Entity;
+package entity;
 
 
 /**

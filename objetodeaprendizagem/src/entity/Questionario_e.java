@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 /**
  * Tipo abstrato para o questionario 

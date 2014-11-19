@@ -22,17 +22,20 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
-import Entity.Configuracao_e;
 import controller.Configuracao;
 import controller.LerConfuguracao;
 import controller.Linguagem_c;
 import controller.Telas;
 import javax.swing.SwingConstants;
+
+import entity.Configuracao_e;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
  * Tela de configurações
+ * 
  * @author Hury
  * 
  */
@@ -70,7 +73,7 @@ public class Frm_config extends Telas {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosed(WindowEvent arg0) {
-				Frm_principal tela=new Frm_principal();
+				Frm_principal tela = new Frm_principal();
 				tela.setVisible(true);
 			}
 		});
@@ -82,29 +85,28 @@ public class Frm_config extends Telas {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		centralizeFrame();
 		Estilo();
 		iconeBarra();
-		
-		JLabel lblAplicarAsModificaes = new JLabel("Aplicar as modifica\u00E7\u00F5es na configura\u00E7\u00E3o");
+
+		JLabel lblAplicarAsModificaes = new JLabel(
+				"Aplicar as modifica\u00E7\u00F5es na configura\u00E7\u00E3o");
 		lblAplicarAsModificaes.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblAplicarAsModificaes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAplicarAsModificaes.setBounds(234, 307, 244, 24);
 		contentPane.add(lblAplicarAsModificaes);
-		
+
 		JLabel label = new JLabel("Retornar ao Menu principal");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label.setBounds(35, 307, 161, 24);
 		contentPane.add(label);
-		
+
 		final JComboBox cbestilo = new JComboBox();
 		cbestilo.setBounds(234, 199, 155, 20);
 		contentPane.add(cbestilo);
-		cbestilo.setModel(new DefaultComboBoxModel(new String[]{
-				"Metal","Nimbus","CDE/Motif","Windows","Windows classic"
-		}
-		));
+		cbestilo.setModel(new DefaultComboBoxModel(new String[] { "Metal",
+				"Nimbus", "CDE/Motif", "Windows", "Windows classic" }));
 		acharEstilos(look, cbestilo);
 		JLabel lblEstilo = new JLabel("Estilo");
 		lblEstilo.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
@@ -167,7 +169,7 @@ public class Frm_config extends Telas {
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Modo Dautonismo");
 		chckbxNewCheckBox.setEnabled(false);
-		chckbxNewCheckBox.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
+		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		chckbxNewCheckBox.setBounds(234, 66, 155, 23);
 		contentPane.add(chckbxNewCheckBox);
 
@@ -175,41 +177,47 @@ public class Frm_config extends Telas {
 		btnAplicar.setMnemonic('A');
 		btnAplicar.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		btnAplicar.setToolTipText("Alterar as configurações");
-		
+
 		final JComboBox cb_linguagem = new JComboBox();
 		cb_linguagem.setEnabled(false);
 		cb_linguagem.setBounds(234, 138, 155, 20);
 		contentPane.add(cb_linguagem);
-		
+
 		btnAplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int resp;
-				Object[] options = { "Sim", "Não" }; 
-				resp=JOptionPane.showOptionDialog(null, "Deseja realmente alterar o estilo","Alteração de estilo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, 
-		                options, options[0]);
-				if(resp==0){
-					Configuracao config=new Configuracao(cbestilo.getSelectedIndex(),SelecaoFonte(),(String) cb_linguagem.getSelectedItem());
+				Object[] options = { "Sim", "Não" };
+				resp = JOptionPane
+						.showOptionDialog(null,
+								"Deseja realmente alterar o estilo",
+								"Alteração de estilo",
+								JOptionPane.DEFAULT_OPTION,
+								JOptionPane.QUESTION_MESSAGE, null, options,
+								options[0]);
+				if (resp == 0) {
+					Configuracao config = new Configuracao(cbestilo
+							.getSelectedIndex(), SelecaoFonte(),
+							(String) cb_linguagem.getSelectedItem());
 					config.geraArquivo();
 				}
-				Configuracao_e dados=new Configuracao_e();
-				LerConfuguracao ler=new LerConfuguracao();
-			    try {
+				Configuracao_e dados = new Configuracao_e();
+				LerConfuguracao ler = new LerConfuguracao();
+				try {
 					ler.ler(dados);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			    look=dados.getLook();
-			    tamanhofonte=dados.getFonte();
-			    linguagem=dados.getLinguagem();
-			    Estilo();
+				look = dados.getLook();
+				tamanhofonte = dados.getFonte();
+				linguagem = dados.getLinguagem();
+				Estilo();
 			}
 		});
 		btnAplicar.setBounds(300, 260, 89, 36);
 		contentPane.add(btnAplicar);
 
-
 		JLabel lblNewLabel_2 = new JLabel("Linguagem");
-		lblNewLabel_2.setFont(new  Font("Tahoma",Font.PLAIN,tamanhofonte));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, tamanhofonte));
 		lblNewLabel_2.setBounds(234, 108, 89, 23);
 		contentPane.add(lblNewLabel_2);
 
@@ -219,76 +227,79 @@ public class Frm_config extends Telas {
 		lbl_fundo.setBounds(0, 0, 487, 341);
 		contentPane.add(lbl_fundo);
 
-		//TODO
-		//LINGUAGEM, passa os arquivos do diretorio para o cb_linguagem.
-		Linguagem_c lang = new Linguagem_c();
-		//int qtde = lang.qtdeDir();
-		File[] vet = lang.diretorio();
-		for(File f:vet){
-			cb_linguagem.addItem(f.getName());
-		}
-		cb_linguagem.setSelectedIndex(1);
+		// TODO
+		// LINGUAGEM, passa os arquivos do diretorio para o cb_linguagem.
+		// Linguagem_c lang = new Linguagem_c();
+		// int qtde = lang.qtdeDir();
+		// File[] vet = lang.diretorio();
+		// for(File f:vet){
+		// cb_linguagem.addItem(f.getName());
+		// }
+		// cb_linguagem.setSelectedIndex(1);
 	}
-	
+
 	/**
 	 * Método para selecionar o radiobutton que o usuário configurou
 	 */
-	public void acharFonte(){
-		if(tamanhofonte==12){
+	public void acharFonte() {
+		if (tamanhofonte == 12) {
 			rdbtnnpequeno.setSelected(true);
-		}else{
-			if(tamanhofonte==14){
+		} else {
+			if (tamanhofonte == 14) {
 				rdbtnmedio.setSelected(true);
-			}else{
+			} else {
 				rdbtngrande.setSelected(true);
 			}
 		}
 	}
-	
+
 	/**
 	 * Método para achar o estilo selecionado
-	 * @param look 
-	 * @param combo recebe o combobox para alterar o indice
+	 * 
+	 * @param look
+	 * @param combo
+	 *            recebe o combobox para alterar o indice
 	 */
-	private void acharEstilos(String look, @SuppressWarnings("rawtypes") JComboBox combo){		 
-		if(look.equals("javax.swing.plaf.metal.MetalLookAndFeel")){
+	private void acharEstilos(String look,
+			@SuppressWarnings("rawtypes") JComboBox combo) {
+		if (look.equals("javax.swing.plaf.metal.MetalLookAndFeel")) {
 			combo.setSelectedIndex(0);
 		}
-		if(look.equals("javax.swing.plaf.nimbus.NimbusLookAndFeel")){
+		if (look.equals("javax.swing.plaf.nimbus.NimbusLookAndFeel")) {
 			combo.setSelectedIndex(1);
 		}
 
-		if(look.equals("com.sun.java.swing.plaf.motif.MotifLookAndFeel")){
+		if (look.equals("com.sun.java.swing.plaf.motif.MotifLookAndFeel")) {
 			combo.setSelectedIndex(2);
 		}
 
-		if(look.equals("com.sun.java.swing.plaf.windows.WindowsLookAndFeel")){
+		if (look.equals("com.sun.java.swing.plaf.windows.WindowsLookAndFeel")) {
 			combo.setSelectedIndex(3);
 		}
 
-		if(look.equals("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel")){
+		if (look.equals("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel")) {
 			combo.setSelectedIndex(4);
 		}
-		
+
 	}
 
 	/**
 	 * Método para selecionar fonte a partir da seleção do radioButton
+	 * 
 	 * @return tamanho da fonte
 	 */
-	public int SelecaoFonte(){
+	public int SelecaoFonte() {
 		int Fonte;
-		if(rdbtnnpequeno.isSelected()){
-			Fonte= 12;
-		}else{
-			if(rdbtnmedio.isSelected()){
-				Fonte=14;
-			}else{
-				Fonte=16;
+		if (rdbtnnpequeno.isSelected()) {
+			Fonte = 12;
+		} else {
+			if (rdbtnmedio.isSelected()) {
+				Fonte = 14;
+			} else {
+				Fonte = 16;
 			}
 		}
 		return Fonte;
 	}
-	
 
 }

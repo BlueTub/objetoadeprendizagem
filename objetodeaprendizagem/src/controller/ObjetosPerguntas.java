@@ -6,7 +6,8 @@ package controller;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
-import Entity.Perguntas;
+import entity.Perguntas;
+
 
 /**
  * Classe que tratara dos objetos da classe JF_Perguntas

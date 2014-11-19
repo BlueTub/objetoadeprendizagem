@@ -81,6 +81,9 @@ public class Frm_Perguntas extends Telas {
 		}
 	}
 	
+	/**
+	 *Inicializa componentes 
+	 */
 	public void Initialize(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 620, 438);
@@ -198,8 +201,7 @@ public class Frm_Perguntas extends Telas {
 						CaminhoResposta();
 						Frm_Perguntas.this.dispose();
 						Frm_Pontuacao tela=new Frm_Pontuacao(muda.fila,caminhoRespostas);
-					    tela.setVisible(true);
-						
+					    tela.setVisible(true);	
 					}
 						
 				}else{

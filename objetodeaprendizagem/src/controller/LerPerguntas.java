@@ -10,7 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import Entity.Perguntas;
+import entity.Perguntas;
+
 
 /**
  * Classe que ira ler as perguntas do arquivo txt
