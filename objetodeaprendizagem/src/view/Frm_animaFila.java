@@ -422,7 +422,7 @@ public class Frm_animaFila extends Telas {
 	public void addElemento(JButton btnAdicionar, JButton btnRemover) {
 		try {
 			if (Frm_animaLista.TipoString(tf_num.getText()) != 1) {
-				JOptionPane.showMessageDialog(null, "Digite números inteiros ");
+				JOptionPane.showMessageDialog(null, "Digite números inteiros");
 				tf_num.setText("");
 			} else {
 				if (Integer.parseInt(tf_num.getText()) < 1
