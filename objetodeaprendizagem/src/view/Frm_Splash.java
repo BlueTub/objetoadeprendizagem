@@ -115,20 +115,17 @@ public class Frm_Splash extends Telas {
 		// linguagem();
 
 		JLabel cuboAzul = new JLabel("");
-		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class
-				.getResource("/Imagens/cuboAzul.png")));
+		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class.getResource("/Imagens/CuboAzul.png")));
 		cuboAzul.setBounds(256, 68, 68, 66);
 		contentPane.add(cuboAzul);
 
 		JLabel cubo = new JLabel("");
-		cubo.setIcon(new ImageIcon(Frm_Splash.class
-				.getResource("/Imagens/cubo.png")));
+		cubo.setIcon(new ImageIcon(Frm_Splash.class.getResource("/Imagens/cubo.png")));
 		cubo.setBounds(210, 68, 68, 66);
 		contentPane.add(cubo);
 
 		JLabel cubo3 = new JLabel("");
-		cubo3.setIcon(new ImageIcon(Frm_Splash.class
-				.getResource("/Imagens/cubo Vermelho.png")));
+		cubo3.setIcon(new ImageIcon(Frm_Splash.class.getResource("/Imagens/Cubo Vermelho.png")));
 		cubo3.setBounds(165, 68, 68, 66);
 		contentPane.add(cubo3);
 

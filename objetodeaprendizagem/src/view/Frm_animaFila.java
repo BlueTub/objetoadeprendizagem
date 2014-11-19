@@ -19,8 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
@@ -52,20 +51,13 @@ public class Frm_animaFila extends Telas {
 	private JLabel lbl_fundo;
 	private JLabel lblFilaCheia;
 	private boolean condiçao;
-	static private int objeto;
+	
 	private JLabel lblCubo1;
 	private JLabel lblCubo2;
 	private JLabel lblCubo4;
 	private JLabel lblCubo5;
 	private JButton btnQuestionrio;
 	private JButton btnVoltar;
-
-	@SuppressWarnings("unused")
-	private final Action menu = new SwingAction();
-
-	/**
-	 * Launch the application.
-	 */
 
 	@SuppressWarnings("unused")
 	private JLabel[] v_label;
@@ -75,11 +67,15 @@ public class Frm_animaFila extends Telas {
 	private JLabel label_8;
 	private JLabel label_9;
 
+	
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frm_animaFila frame = new Frm_animaFila(objeto);
+					Frm_animaFila frame = new Frm_animaFila();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -88,27 +84,14 @@ public class Frm_animaFila extends Telas {
 		});
 	}
 
-	/**
-	 * @return the objeto
-	 */
-	public static int getObjeto() {
-		return objeto;
-	}
 
-	/**
-	 * @param objeto
-	 *            the objeto to set
-	 */
-	public static void setObjeto(int objeto) {
-		Frm_animaFila.objeto = objeto;
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Frm_animaFila(int obj) {
+	public Frm_animaFila() {
+		
 		setTitle("Anima\u00E7\u00E3o - Fila");
-		setObjeto(obj);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 541, 406);
@@ -369,6 +352,7 @@ public class Frm_animaFila extends Telas {
 			btnAdicionar.setEnabled(true);
 			btnRemover.setEnabled(false);
 		}
+		
 		carregaVtElementos();
 
 		ActionListener adicionar = new ActionListener() {
@@ -514,22 +498,5 @@ public class Frm_animaFila extends Telas {
 
 	}
 
-	/**
-	 * 
-	 * @author Hury
-	 * 
-	 */
 
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Menu Principal");
-			putValue(SHORT_DESCRIPTION, "Voltar ao menu principal");
-		}
-
-		public void actionPerformed(ActionEvent e) {
-			dispose();
-			Frm_principal p = new Frm_principal();
-			p.setVisible(true);
-		}
-	}
 }
