@@ -495,7 +495,6 @@ public class Frm_animaFila extends Telas {
 		if (cont == 0) {
 			btnAdicionar.setEnabled(true);
 		}
-
 	}
 
 
