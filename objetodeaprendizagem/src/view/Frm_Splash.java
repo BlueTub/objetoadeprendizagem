@@ -78,7 +78,7 @@ public class Frm_Splash extends Telas {
 					tela.setVisible(true);
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null,
-							"Ocorreu uma treta maligna");
+							"Ocorreu uma erro, o programa não consegue encontrar as outras classes");
 				}
 
 			}
