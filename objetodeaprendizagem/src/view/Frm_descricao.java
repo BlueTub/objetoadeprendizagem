@@ -332,7 +332,7 @@ public class Frm_descricao extends Telas {
 					Frm_animaFila telafila = new Frm_animaFila();
 					telafila.setVisible(true);
 					dispose();
-
+					break;
 				case 2:
 					Frm_animaLista telalista = new Frm_animaLista(objeto);
 					telalista.setVisible(true);
