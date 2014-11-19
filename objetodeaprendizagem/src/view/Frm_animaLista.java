@@ -146,6 +146,7 @@ public class Frm_animaLista extends Telas {
 		iconeBarra();
 
 		button = new JButton("Voltar");
+		button.setToolTipText("Voltar para a descri\u00E7\u00E3o da lista");
 		button.setMnemonic('V');
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -159,6 +160,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(button);
 
 		button_1 = new JButton("Question\u00E1rio");
+		button_1.setToolTipText("Ir para o question\u00E1rio");
 		button_1.setMnemonic('Q');
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
