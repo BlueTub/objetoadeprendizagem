@@ -418,6 +418,7 @@ public class Frm_animaFila extends Telas {
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
 			JOptionPane.showMessageDialog(null, "Digite Números");
+			tf_num.setText("");
 		}else{
 		if (Integer.parseInt(tf_num.getText()) < 1 || Integer.parseInt(tf_num.getText()) > 99){
 			JOptionPane.showMessageDialog(null, "Por favor, Digite números de 1 a 99", "Aviso", 
