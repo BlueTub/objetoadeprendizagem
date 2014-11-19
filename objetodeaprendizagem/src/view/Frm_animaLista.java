@@ -287,8 +287,7 @@ public class Frm_animaLista extends Telas {
 		contentPane.add(btn_addinicio);
 
 		final JLabel lbl_cubo1 = new JLabel("");
-		lbl_cubo1.setIcon(new ImageIcon(Frm_animaFila.class
-				.getResource("/Imagens/cubo2.png")));
+		lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class.getResource("/Imagens/cubo2.png")));
 		lbl_cubo1.setBounds(10, 66, 65, 68);
 		contentPane.add(lbl_cubo1);
 
@@ -321,120 +320,6 @@ public class Frm_animaLista extends Telas {
 				.getResource("/Imagens/cubo2.png")));
 		lbl_cubo6.setBounds(360, 66, 65, 68);
 		contentPane.add(lbl_cubo6);
-
-		lbl_cubo1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				selecionado = 1;
-			}
-		});
-
-		lbl_cubo2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				selecionado = 2;
-			}
-		});
-
-		lbl_cubo3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				selecionado = 3;
-			}
-		});
-
-		lbl_cubo4.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				selecionado = 4;
-			}
-		});
-
-		lbl_cubo5.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				selecionado = 5;
-			}
-		});
-
-		lbl_cubo6.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2.png")));
-				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
-						.getResource("/Imagens/Cubo2_select.png")));
-				selecionado = 6;
-			}
-		});
 
 		txt_num = new JTextField();
 		txt_num.setBounds(165, 198, 111, 25);
@@ -823,6 +708,121 @@ public class Frm_animaLista extends Telas {
 		btn_remove.setEnabled(false);
 		btn_removefinal.setEnabled(false);
 		btn_removeinicio.setEnabled(false);
+		
+		lbl_cubo1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				selecionado = 1;
+			}
+		});
+
+		lbl_cubo2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				selecionado = 2;
+			}
+		});
+
+		lbl_cubo3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				selecionado = 3;
+			}
+		});
+
+		lbl_cubo4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				selecionado = 4;
+			}
+		});
+
+		lbl_cubo5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				selecionado = 5;
+			}
+		});
+
+		lbl_cubo6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbl_cubo1.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo2.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo3.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo4.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo5.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2.png")));
+				lbl_cubo6.setIcon(new ImageIcon(Frm_animaLista.class
+						.getResource("/Imagens/Cubo2_select.png")));
+				selecionado = 6;
+			}
+		});
+
 
 	}
 
