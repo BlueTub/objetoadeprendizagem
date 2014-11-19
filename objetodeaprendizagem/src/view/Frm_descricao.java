@@ -329,16 +329,9 @@ public class Frm_descricao extends Telas {
 					dispose();
 					break;
 				case 1:
-					try {
-						Frm_animaFila telafila = new Frm_animaFila();
-						telafila.setVisible(true);
-						dispose();
-
-					} catch (Exception e2) {
-						JOptionPane.showMessageDialog(null, "erro fila. obj="
-								+ objeto);
-					}
-					break;
+					Frm_animaFila telafila = new Frm_animaFila();
+					telafila.setVisible(true);
+					dispose();
 
 				case 2:
 					Frm_animaLista telalista = new Frm_animaLista(objeto);
