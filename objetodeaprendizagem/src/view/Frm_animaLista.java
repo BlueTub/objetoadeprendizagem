@@ -790,13 +790,10 @@ public class Frm_animaLista extends Telas {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tamanho == 0) {
 					lbl_vazia.setVisible(true);
-
-				} else if (TipoString(txt_num.getText()) != 1) {
-					JOptionPane.showMessageDialog(null, "Digite Números");
-				} else if (selecionado == 0) {
-					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				} else if (selecionado - 1 >= tamanho) {
 					JOptionPane.showMessageDialog(null, "Posição inválida!");
+				} else if (selecionado == 0) {
+					JOptionPane.showMessageDialog(null, "Selecione um cubo");
 				} else {
 					lbl_cheia.setVisible(false);
 					System.out.println("entrou no if");

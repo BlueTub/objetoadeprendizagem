@@ -63,14 +63,17 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 		case 1:
 			addInicio();
 			txt_num.setText("");
+			txt_num.grabFocus();
 			break;
 		case 2:
 			addFinal();
 			txt_num.setText("");
+			txt_num.grabFocus();
 			break;
 		case 3:
 			addElemento();
 			txt_num.setText("");
+			txt_num.grabFocus();
 			break;
 		case 4:
 			removeInicio();
@@ -493,22 +496,19 @@ public class AnimacaoLista extends Thread implements OperacaoAnimacao {
 			break;
 		}
 	}
-
+	/**
+	 * Metodo para alinhar a Label ao cubo
+	 * @param lbl_valor
+	 * @param posicao1
+	 * @param posicao2
+	 * @return
+	 */
 	public int alinhar(JLabel lbl_valor, Rectangle posicao1, Rectangle posicao2) {
 		if (Integer.parseInt(lbl_valor.getText()) < 10) {
 			return posicao1.x = posicao2.x + 15;
 		} else {
-			return posicao1.x = posicao2.x + 12;
+			return posicao1.x = posicao2.x + 10;
 		}
-	}
-
-	public void test() {
-		lbl_valor1.setVisible(true);
-		lbl_valor2.setVisible(true);
-		lbl_valor3.setVisible(true);
-		lbl_valor4.setVisible(true);
-		lbl_valor5.setVisible(true);
-		lbl_valor6.setVisible(true);
 	}
 
 	/**
