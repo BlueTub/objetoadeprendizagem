@@ -184,6 +184,7 @@ public class Frm_animaArvore extends Telas {
 		txt_num.setFocusable(true);
 
 		final JButton btn_adiciona = new JButton("Adicionar");
+		btn_adiciona.setMnemonic('A');
 		btn_adiciona.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_adiciona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -218,6 +219,7 @@ public class Frm_animaArvore extends Telas {
 		});
 
 		JButton btn_remove = new JButton("Remover");
+		btn_remove.setMnemonic('R');
 		btn_remove.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btn_remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -359,7 +361,7 @@ public class Frm_animaArvore extends Telas {
 								JLabel lbl_fundo = new JLabel("");
 								lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
 										.getResource("/Imagens/BackGround.png")));
-								lbl_fundo.setBounds(0, 0, 687, 439);
+								lbl_fundo.setBounds(0, 0, 687, 458);
 								contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
