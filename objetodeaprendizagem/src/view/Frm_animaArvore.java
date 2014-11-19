@@ -92,7 +92,7 @@ public class Frm_animaArvore extends Telas {
 		lblElementoASer.setBounds(10, 363, 237, 23);
 		contentPane.add(lblElementoASer);
 
-		JLabel lbl_titulo = new JLabel("Arvore Bin\u00E1ria");
+		JLabel lbl_titulo = new JLabel("\u00C1rvore Bin\u00E1ria");
 		lbl_titulo.setFont(new Font("Verdana", Font.BOLD, 16));
 		lbl_titulo.setBounds(30, 28, 162, 23);
 		contentPane.add(lbl_titulo);
