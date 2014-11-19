@@ -569,7 +569,7 @@ public class Frm_animaLista extends Telas {
 					} else if (TipoString(txt_num.getText()) != 1) {
 						JOptionPane.showMessageDialog(null, "Digite Números");
 						txt_num.setText("");
-
+						txt_num.grabFocus();
 					} else {
 						if (Integer.parseInt(txt_num.getText()) < 1
 								|| Integer.parseInt(txt_num.getText()) > 99) {
@@ -577,6 +577,7 @@ public class Frm_animaLista extends Telas {
 									"Por favor, Digite números de 1 a 99",
 									"Aviso", JOptionPane.INFORMATION_MESSAGE);
 							txt_num.setText("");
+							txt_num.grabFocus();
 						} else {
 							lbl_vazia.setVisible(false);
 							System.out.println("entrou no if");
@@ -607,6 +608,7 @@ public class Frm_animaLista extends Telas {
 							"Por favor, Digite números de 1 a 99", "Aviso",
 							JOptionPane.INFORMATION_MESSAGE);
 					txt_num.setText("");
+					txt_num.grabFocus();
 				}
 
 			}
