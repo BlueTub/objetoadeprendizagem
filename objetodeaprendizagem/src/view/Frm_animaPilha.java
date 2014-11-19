@@ -462,7 +462,7 @@ public class Frm_animaPilha extends Telas {
 	public void addElemento(JButton btnAdicionar,JButton btnRemover){
 		try {
 			if (Frm_animaLista.TipoString(tf_num.getText()) != 1){
-				JOptionPane.showMessageDialog(null, "Digite Números");
+				JOptionPane.showMessageDialog(null, "Digite números inteiros");
 				tf_num.setText("");
 				tf_num.grabFocus();
 			}else{
