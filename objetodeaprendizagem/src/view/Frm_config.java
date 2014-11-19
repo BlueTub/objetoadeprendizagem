@@ -24,7 +24,7 @@ import javax.swing.border.EmptyBorder;
 
 import controller.Configuracao;
 import controller.LerConfuguracao;
-import controller.Linguagem_c;
+//import controller.Linguagem_c;
 import controller.Telas;
 import javax.swing.SwingConstants;
 
