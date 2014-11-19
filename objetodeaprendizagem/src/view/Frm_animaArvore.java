@@ -288,7 +288,7 @@ public class Frm_animaArvore extends Telas {
 				contentPane.add(label);
 						
 						JMenuBar menuBar = new JMenuBar();
-						menuBar.setBounds(0, 0, 687, 21);
+						menuBar.setBounds(0, 0, 689, 21);
 						contentPane.add(menuBar);
 						
 						JMenu mnNewMenu = new JMenu("Arquivo");
@@ -373,7 +373,7 @@ public class Frm_animaArvore extends Telas {
 								JLabel lbl_fundo = new JLabel("");
 								lbl_fundo.setIcon(new ImageIcon(Frm_animaArvore.class
 										.getResource("/Imagens/BackGround.png")));
-								lbl_fundo.setBounds(0, 0, 687, 458);
+								lbl_fundo.setBounds(0, 0, 689, 458);
 								contentPane.add(lbl_fundo);
 
 		lbl_cubo1.addMouseListener(new MouseAdapter() {
