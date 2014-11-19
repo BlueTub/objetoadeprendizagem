@@ -23,6 +23,8 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 /**
  * Formulario da animação da fila
  * @author Zuzi
@@ -204,6 +206,14 @@ public class Frm_animaFila extends Telas {
 		contentPane.add(label_8);
 		
 		tf_num = new JTextField();
+		tf_num.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				if(arg0.getKeyCode() == KeyEvent.VK_ENTER){
+					btnAdicionar.doClick();
+				}
+			}
+		});
 		tf_num.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tf_num.setColumns(10);
 		tf_num.setBounds(408, 227, 75, 33);
@@ -252,12 +262,14 @@ public class Frm_animaFila extends Telas {
 		contentPane.add(label);
 		
 		btnVoltar = new JButton("Voltar");
+		btnVoltar.setToolTipText("Voltar para a descri\u00E7\u00E3o da fila");
 		btnVoltar.setMnemonic('V');
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnVoltar.setBounds(267, 300, 101, 36);
 		contentPane.add(btnVoltar);
 		
 		btnQuestionrio = new JButton("Question\u00E1rio");
+		btnQuestionrio.setToolTipText("Ir para o question\u00E1rio");
 		btnQuestionrio.setMnemonic('Q');
 		btnQuestionrio.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnQuestionrio.setBounds(388, 300, 114, 36);
