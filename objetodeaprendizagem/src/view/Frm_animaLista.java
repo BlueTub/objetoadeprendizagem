@@ -452,7 +452,7 @@ public class Frm_animaLista extends Telas {
 
 						lbl_cheia.setVisible(true);
 					} else if (TipoString(txt_num.getText()) != 1) {
-						JOptionPane.showMessageDialog(null, "Digite Números");
+						JOptionPane.showMessageDialog(null, "Digite números inteiros");
 						txt_num.setText("");
 						txt_num.grabFocus();
 					} else {
@@ -507,8 +507,7 @@ public class Frm_animaLista extends Telas {
 						lbl_cheia.setVisible(true);
 					} else {
 						if (TipoString(txt_num.getText()) != 1) {
-							JOptionPane.showMessageDialog(null,
-									"Digite Números");
+							JOptionPane.showMessageDialog(null, "Digite números inteiros ");
 							txt_num.setText("");
 							txt_num.grabFocus();
 						} else {
@@ -565,7 +564,7 @@ public class Frm_animaLista extends Telas {
 					if (tamanho >= 6) {
 						lbl_cheia.setVisible(true);
 					} else if (TipoString(txt_num.getText()) != 1) {
-						JOptionPane.showMessageDialog(null, "Digite Números");
+						JOptionPane.showMessageDialog(null, "Digite números inteiros ");
 						txt_num.setText("");
 						txt_num.grabFocus();
 					} else if (Integer.parseInt(txt_num.getText()) < 1
