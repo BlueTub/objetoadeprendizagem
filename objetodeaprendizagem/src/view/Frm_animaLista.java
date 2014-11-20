@@ -464,6 +464,8 @@ public class Frm_animaLista extends Telas {
 							txt_num.setText("");
 							txt_num.grabFocus();
 						} else {
+							int valor=Integer.parseInt(txt_num.getText());
+							txt_num.setText(""+valor);
 							lbl_vazia.setVisible(false);
 							System.out.println("entrou no if");
 							int operacao = 1;
@@ -476,7 +478,7 @@ public class Frm_animaLista extends Telas {
 							t1.start();
 							tamanho++;
 							lbl_tamanho.setText(Integer.toString(tamanho));
-
+							
 							btn_remove.setEnabled(true);
 							btn_removefinal.setEnabled(true);
 							btn_removeinicio.setEnabled(true);
@@ -520,6 +522,8 @@ public class Frm_animaLista extends Telas {
 								txt_num.setText("");
 								txt_num.grabFocus();
 							} else {
+								int valor=Integer.parseInt(txt_num.getText());
+								txt_num.setText(""+valor);
 								lbl_vazia.setVisible(false);
 								System.out.println("entrou no if");
 								int operacao = 2;
@@ -581,6 +585,8 @@ public class Frm_animaLista extends Telas {
 						JOptionPane
 								.showMessageDialog(null, "Posição inválida!");
 					} else {
+						int valor=Integer.parseInt(txt_num.getText());
+						txt_num.setText(""+valor);
 						lbl_vazia.setVisible(false);
 						System.out.println("entrou no if");
 						int operacao = 3;
