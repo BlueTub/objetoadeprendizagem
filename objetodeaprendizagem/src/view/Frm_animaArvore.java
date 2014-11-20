@@ -216,7 +216,7 @@ public class Frm_animaArvore extends Telas {
 						} else {
 							int operacao = 1;
 							int valor=Integer.parseInt(txt_num.getText());
-							txt_num.setText(""+valor);
+							txt_num.setText(String.valueOf(valor));
 							Thread t1 = new AnimacaoArvore(operacao, lbl_cubo1,
 									lbl_cubo2, lbl_cubo3, lbl_cubo4, lbl_cubo5,
 									lbl_cubo6, lbl_cubo7, lbl_valor1,

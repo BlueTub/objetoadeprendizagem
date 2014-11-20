@@ -479,7 +479,7 @@ public class Frm_animaPilha extends Telas {
 				for (int i = z; i < vtEmpilhado.length - n; i++) {
 				vtEmpilhado[i] = vtDesempilhado[i];
 				int valor=Integer.parseInt(tf_num.getText());
-				tf_num.setText(""+valor);
+				tf_num.setText(String.valueOf(valor));
 				vtDesempilhado[i].setText(tf_num.getText());
 				vtDesempilhado[i] = null;
 				vtIniciar[i].start();

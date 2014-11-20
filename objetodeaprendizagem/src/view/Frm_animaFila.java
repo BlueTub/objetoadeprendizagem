@@ -437,7 +437,7 @@ public class Frm_animaFila extends Telas {
 
 					fila[add] = elementos[add];
 					int valor=Integer.parseInt(tf_num.getText());
-					tf_num.setText(""+valor);
+					tf_num.setText(String.valueOf(valor));
 					fila[add].setText(tf_num.getText());
 					Thread t1 = new AnimacaoFila(fila[add], btnAdicionar,
 							btnRemover, x, cont, lblFilaCheia, condiçao);
