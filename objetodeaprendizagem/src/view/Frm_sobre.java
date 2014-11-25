@@ -180,7 +180,7 @@ public class Frm_sobre extends Telas {
 		JTextPane txtpnProjetoDesenvolvidoNa = new JTextPane();
 		txtpnProjetoDesenvolvidoNa.setBackground(UIManager.getColor("InternalFrame.activeTitleGradient"));
 		txtpnProjetoDesenvolvidoNa.setEditable(false);
-		txtpnProjetoDesenvolvidoNa.setText("Projeto desenvolvido na institui\u00E7\u00E3o FATEC da zona leste, no 3\u00BA semestre do curso de análise e desenvolvimento de sistemas sob orienta\u00E7\u00E3o dos prof(a) ms. Andreia, Cristina e Wellingtton");
+		txtpnProjetoDesenvolvidoNa.setText("Projeto desenvolvido na institui\u00E7\u00E3o FATEC da zona leste, no 3\u00BA semestre do curso de an\u00E1lise e desenvolvimento de sistemas sob orienta\u00E7\u00E3o dos prof(a) ms. Andrea, Cristina e Wellingtton.");
 		txtpnProjetoDesenvolvidoNa.setBounds(62, 67, 316, 106);
 		txtpnProjetoDesenvolvidoNa.setFont(new Font("Tahoma",Font.PLAIN,tamanhofonte));
 		contentPane.add(txtpnProjetoDesenvolvidoNa);
