@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import entity.Configuracao_e;
 
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -113,6 +114,7 @@ public class Frm_Splash extends Telas {
 		iconeBarra();
 		Estilo();
 		// linguagem();
+		listarArquivos();
 
 		JLabel cuboAzul = new JLabel("");
 		cuboAzul.setIcon(new ImageIcon(Frm_Splash.class.getResource("/Imagens/CuboAzul.png")));
@@ -159,5 +161,39 @@ public class Frm_Splash extends Telas {
 		JLabel lblVerso = new JLabel("Vers\u00E3o: 1.0");
 		lblVerso.setBounds(10, 275, 82, 14);
 		contentPane.add(lblVerso);
+	}
+	/**
+	 * Método para mudar a visibilidade dos arquivos deixando os ocultos
+	 * @param nome recebe o nome do arquivo a ser mudado
+	 */
+	public void mudarVisibilidade(File dir){
+		String os=System.getProperty("os.name");
+		if(os.contains("Win")){			
+			if(dir.exists()){
+				try {
+					Runtime.getRuntime().exec("attrib +H "+dir);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}else{
+				System.out.println("faio");
+			}
+		}
+	}
+	/**
+	 * Método para listar arquivos e verificar se ele está oculto
+	 */
+	public void listarArquivos(){
+		StringBuffer sbDir=new StringBuffer();
+		sbDir.append("src");
+		sbDir.append(File.separator);
+		sbDir.append("Arquivos");
+		File dir=new File(sbDir.toString());
+		for(File files:dir.listFiles()){
+			if(files.toString().contains("Resposta")&&!files.isHidden()){
+				mudarVisibilidade(files);
+			}
+		}
+		
 	}
 }
