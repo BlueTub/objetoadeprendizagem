@@ -12,21 +12,21 @@ import com.sun.jna.platform.win32.WinReg;
 public class WinRegistry {
 
 	/**
-	 * // Create a key and write a string
+	 *  Create a key and write a string
 	 */
-	public void geraChave() {
+	public void geraChave(String linguagem, String estilo, String tamanholetra) {
 		try {
 			Advapi32Util.registryCreateKey(WinReg.HKEY_CURRENT_USER,
 					"SOFTWARE\\Estrutura de Aprendizagem");
 			Advapi32Util.registrySetStringValue(WinReg.HKEY_CURRENT_USER,
 					"SOFTWARE\\Estrutura de Aprendizagem", "Linguagem",
-					"Portugues");
+					linguagem);
 			Advapi32Util.registrySetStringValue(WinReg.HKEY_CURRENT_USER,
-					"SOFTWARE\\Estrutura de Aprendizagem", "Estilo", "Nimbus");
+					"SOFTWARE\\Estrutura de Aprendizagem", "Estilo", estilo);
 			Advapi32Util
 					.registrySetStringValue(WinReg.HKEY_CURRENT_USER,
 							"SOFTWARE\\Estrutura de Aprendizagem",
-							"TamanhoLetra", "16");
+							"TamanhoLetra", tamanholetra);
 		} catch (Exception e) {
 			System.out.println("Erro!, não é possivel inserir!");
 		}
@@ -53,7 +53,25 @@ public class WinRegistry {
 		} catch (Exception e) {
 			System.out.println("Não há Registros!");
 		}
-
+	}
+	/**
+	 * getchaves
+	 * @return as chaves de registro
+	 */
+	public String[] getChaves(){
+		//0 linguagem, 1 estilo, 2 tamanho da letra
+		String[] chave = new String[2];
+		chave[0]= Advapi32Util.registryGetStringValue(
+				WinReg.HKEY_CURRENT_USER,
+				"SOFTWARE\\Estrutura de Aprendizagem", "Linguagem");
+		chave[1]= Advapi32Util.registryGetStringValue(
+				WinReg.HKEY_CURRENT_USER,
+				"SOFTWARE\\Estrutura de Aprendizagem", "Estilo");
+		chave[2]= Advapi32Util.registryGetStringValue(
+				WinReg.HKEY_CURRENT_USER,
+				"SOFTWARE\\Estrutura de Aprendizagem", "TamanhoLetra");
+		
+		return chave;
 	}
 
 	/**

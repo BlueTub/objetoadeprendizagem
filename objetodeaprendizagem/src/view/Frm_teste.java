@@ -70,7 +70,7 @@ public class Frm_teste extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Create a key and write a string
-				reg.geraChave();
+				reg.geraChave("Portugues","Nimbus","17");
 
 			}
 		});
