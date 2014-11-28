@@ -1,23 +1,18 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
 
 import controller.WinRegistry;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.lang.reflect.InvocationTargetException;
-import javax.swing.JLabel;
-
-import com.sun.jna.platform.win32.Advapi32Util;
-import com.sun.jna.platform.win32.WinReg;
-
+@SuppressWarnings("serial")
 public class Frm_teste extends JFrame {
 
 	private JPanel contentPane;
